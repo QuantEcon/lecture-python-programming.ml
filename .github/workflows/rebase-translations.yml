@@ -1,0 +1,65 @@
+# Rebase Translation PRs
+#
+# Install this workflow in the TARGET (translated) repository.
+# When a translation PR is merged, this workflow automatically rebases the
+# other open translation PRs against the updated main branch. It covers both
+# kinds this tool creates: `translation-sync-*` branches from the Action's sync
+# mode, and `resync/*` branches from the CLI's `translate forward --github`.
+#
+# This eliminates merge conflicts caused by multiple upstream PRs
+# modifying the same files. See: https://github.com/QuantEcon/action-translation/issues/63
+#
+# Place this file at: .github/workflows/rebase-translations.yml
+
+name: Rebase Translation PRs
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  rebase:
+    # Only run when a translation PR is merged. Both prefixes must be listed:
+    # sync mode creates `translation-sync-*`, while the CLI's `translate forward --github`
+    # creates `resync/*`, and a wave of resync PRs goes stale the same way.
+    # Keep this in step with `isTranslationBranch` in the action's src/branch-naming.ts
+    # — this `if` decides whether the job runs, that predicate decides which open PRs
+    # it then rebases, so a prefix matching only one of them is a no-op run.
+    # The head-repo check is belt-and-braces: fork PRs never receive secrets, so
+    # the PAT is not exposed either way — but a merged fork PR whose branch happens
+    # to match a prefix would otherwise start this job with an empty token and fail
+    # red. Same-repo branches matching these prefixes only come from the tooling.
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (startsWith(github.event.pull_request.head.ref, 'translation-sync-') ||
+       startsWith(github.event.pull_request.head.ref, 'resync/'))
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    # Prevent concurrent rebases from overlapping
+    concurrency:
+      group: rebase-translations
+      cancel-in-progress: false
+
+    steps:
+      - name: Rebase open translation PRs
+        uses: QuantEcon/action-translation@v0
+        with:
+          mode: rebase
+          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Commits pushed with the default GITHUB_TOKEN do not trigger workflows
+          # (GitHub's recursion guard), so rebased/refreshed branches will get their
+          # new commit but NO CI runs on it. If checks must re-run — and with
+          # required checks a run-less head blocks merging — pass a PAT or App
+          # token here instead, as the sync workflows do.
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Uncomment during a drift-recovery wave. `forward` opens one PR per lecture,
+          # so siblings never share a file and none of them are conflict-rebased — but
+          # every merge still leaves their checks stale. This refreshes them against the
+          # new base without re-translating. Off by default: mid-wave it touches every
+          # other open PR on every merge. See action-translation#123.
+          # rebase-stale-siblings: 'true'

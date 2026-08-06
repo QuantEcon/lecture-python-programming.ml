@@ -1,6 +1,10 @@
 name: quantecon
 channels:
-  - default
+  # `defaults`, not `default` (which the en, fr and fa editions carry). conda
+  # adds `default` as a literal channel name; the build only resolves because
+  # conda still adds `defaults` implicitly, which it now warns about and is
+  # deprecating. zh-cn already has this right.
+  - defaults
 dependencies:
   - python=3.13
   - anaconda=2026.06

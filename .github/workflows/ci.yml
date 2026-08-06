@@ -1,0 +1,222 @@
+name: Build HTML Preview for PR
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  pull_request_target:
+    types: [closed]
+
+# Ported from QuantEcon.manual, which is the only repo in the fleet serving
+# /pr-N/ previews off GitHub Pages (the other translations deploy previews to
+# Netlify, which needs a Netlify site and a NETLIFY_SITE_ID secret this repo
+# does not have). Every job that writes to gh-pages shares one concurrency
+# group with publish.yml and reap-previews.yml: peaceiris/actions-gh-pages
+# force-pushes from a SHA read at job start, so two unserialised writers
+# silently erase each other.
+#
+# Note the group only bounds the damage, it does not eliminate it: GitHub
+# evicts an already-PENDING run when a newer one queues into the group, so a
+# burst of merges can still drop a cleanup. That is what reap-previews.yml is
+# for. Keep the locked section as short as possible so the window stays small.
+jobs:
+  build-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      # No `ref:` — deliberately different from QuantEcon.manual, which pins
+      # the PR head. The seed/* translation branches were cut from an empty
+      # main and carry only `lectures/<name>.md`; the build scaffold lives on
+      # main. Checking out the default merge ref gives us PR content plus the
+      # scaffold, and previews the post-merge state, which is what a reviewer
+      # wants to see.
+      - name: Checkout (PR merge ref)
+        uses: actions/checkout@v4
+
+      - name: Setup Anaconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          auto-activate-base: true
+          miniconda-version: 'latest'
+          python-version: "3.13"
+          environment-file: environment.yml
+          activate-environment: quantecon
+
+      - name: Display Conda Environment Versions
+        shell: bash -l {0}
+        run: conda list
+
+      # `shell: bash -l {0}` is a custom shell spec, so GitHub does NOT inject
+      # `-eo pipefail`. Without the explicit set, a step ending in anything
+      # after the build reports that command's status and masks a failed build
+      # — this produced months of green-on-broken CI in the zh-cn edition.
+      - name: Prune TOC to translated lectures
+        shell: bash -l {0}
+        run: |
+          set -eo pipefail
+          python scripts/prune_toc.py lectures/_toc.yml
+
+      # No -n -W: a partial translation has unresolved cross-references into
+      # lectures that do not exist yet (as of this commit: writing_good_code,
+      # python_advanced_features, scipy, getting_started, oop_intro,
+      # need_for_speed, and the labels pyess_ex2 and oop_ex1). Those must stay
+      # warnings until the translation is complete. The fa and fr editions
+      # relax the same flag for the same reason.
+      - name: Build HTML
+        shell: bash -l {0}
+        run: |
+          set -eo pipefail
+          jb build lectures --path-output ./ --keep-going
+
+      - name: Upload Execution Reports
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: execution-reports
+          path: _build/html/reports
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-preview
+          path: _build/html/
+
+  deploy-preview:
+    needs: build-preview
+    # Fork PRs get the build as a status check but no deploy: the
+    # pull_request GITHUB_TOKEN is read-only for forks, so the push would fail
+    # anyway, and a fork build should never hold the gh-pages lock.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    steps:
+      - name: Download preview artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: html-preview
+          path: _build/html/
+
+      - name: Deploy Preview
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html/
+          destination_dir: pr-${{ github.event.number }}
+          # The `cname` input is deliberately OMITTED, not set to false.
+          # QuantEcon.manual passes `cname: false` intending "no CNAME", but
+          # YAML stringifies that to "false" and peaceiris writes a CNAME file
+          # containing the literal text `false` at the gh-pages ROOT — which
+          # GitHub then reads as a custom domain and the whole site 404s. It is
+          # masked there because publish.yml overwrites the root CNAME with the
+          # real domain; this edition has no custom domain, so nothing would
+          # ever correct it. Omitting the input writes no CNAME at all.
+          force_orphan: false
+
+      - name: Comment PR
+        uses: actions/github-script@v7
+        if: success()
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const base = `https://quantecon.github.io/lecture-python-programming.ml/pr-${prNumber}`;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 7);
+
+            // Deep-link the lectures this PR translates, so the reviewer lands
+            // on the rendered Malayalam page rather than the landing page.
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+
+            const pages = files
+              .filter(f => f.status !== 'removed')
+              .map(f => f.filename)
+              .filter(f => f.startsWith('lectures/') && f.endsWith('.md'))
+              // skip underscore files (_static, _admonition) — not built pages
+              .filter(f => !f.split('/').some(part => part.startsWith('_')))
+              .map(f => {
+                const rel = f.replace(/^lectures\//, '').replace(/\.md$/, '.html');
+                // intro.md is the TOC root, served at the preview root
+                const href = rel === 'intro.html' ? `${base}/` : `${base}/${rel}`;
+                return `- [${rel}](${href})`;
+              });
+
+            let body = `📖 **HTML build** - [view preview](${base}/) (${commitSha})`;
+            if (pages.length > 0) {
+              body += `\n\n**Translated pages in this PR:**\n${pages.join('\n')}`;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: body
+            });
+
+  cleanup-preview:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    steps:
+      # pull_request_target, not pull_request: a pull_request-triggered job on
+      # a closed fork PR gets a read-only token. This is safe only because the
+      # job checks out gh-pages and never executes PR-authored code — do not
+      # add a PR checkout or a build step here.
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Remove PR preview directory
+        run: |
+          set -eo pipefail
+          PR_DIR="pr-${{ github.event.number }}"
+          if [ ! -d "$PR_DIR" ]; then
+            echo "Preview directory $PR_DIR not found — nothing to clean up"
+            exit 0
+          fi
+          rm -rf "$PR_DIR"
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Remove preview for closed PR #${{ github.event.number }}"
+          for i in 1 2 3; do
+            if git push; then
+              echo "Successfully pushed cleanup changes"
+              exit 0
+            fi
+            echo "Push attempt $i failed, rebasing and retrying..."
+            git pull --rebase origin gh-pages
+            sleep 5
+          done
+          echo "Failed to push cleanup after 3 attempts"
+          exit 1
+
+      # Check the pushed branch, not the working tree — the local rm -rf
+      # always succeeds, so only origin/gh-pages proves the cleanup landed.
+      - name: Verify cleanup completion
+        run: |
+          set -eo pipefail
+          PR_DIR="pr-${{ github.event.number }}"
+          git fetch origin gh-pages
+          if git ls-tree -d --name-only origin/gh-pages "$PR_DIR" | grep -q .; then
+            echo "❌ Cleanup failed: $PR_DIR still exists on origin/gh-pages"
+            exit 1
+          fi
+          echo "✅ Cleanup verified: $PR_DIR is absent from origin/gh-pages"

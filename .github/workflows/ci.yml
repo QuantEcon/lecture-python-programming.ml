@@ -106,9 +106,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html/
           destination_dir: pr-${{ github.event.number }}
-          # No CNAME on previews — this edition has no custom domain, and a
-          # CNAME written into pr-N/ would fight the branch root.
-          cname: false
+          # The `cname` input is deliberately OMITTED, not set to false.
+          # QuantEcon.manual passes `cname: false` intending "no CNAME", but
+          # YAML stringifies that to "false" and peaceiris writes a CNAME file
+          # containing the literal text `false` at the gh-pages ROOT — which
+          # GitHub then reads as a custom domain and the whole site 404s. It is
+          # masked there because publish.yml overwrites the root CNAME with the
+          # real domain; this edition has no custom domain, so nothing would
+          # ever correct it. Omitting the input writes no CNAME at all.
           force_orphan: false
 
       - name: Comment PR

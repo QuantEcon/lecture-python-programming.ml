@@ -45,23 +45,22 @@ translation:
 
 ## Overview
 
-നമ്മൾ ഇപ്പോൾ Python language തന്നെ പഠിച്ചു തുടങ്ങാൻ തയ്യാറാണ്.
+ഇനി നമ്മുക്ക് Python language-നെ പറ്റി പഠിക്കാം.
 
 ഈ lecture-ൽ, നമ്മൾ ചെറിയ Python programs എഴുതി, അവയെ വിശദമായി പരിശോധിക്കും.
 
-ഇതിന്റെ ലക്ഷ്യം നിങ്ങൾക്ക് അടിസ്ഥാന Python syntax-ഉം data structures-ഉം പരിചയപ്പെടുത്തുക എന്നതാണ്.
+Basic Python syntax-ഉം data structures-ഉം നിങ്ങൾക്ക് introduce ചെയ്തു തരിക എന്നതാണ് ഈ lecture-ന്റെ ലക്ഷ്യം.
 
-കൂടുതൽ ആഴത്തിലുള്ള concepts പിന്നീടുള്ള lectures-ൽ കൈകാര്യം ചെയ്യും.
+കൂടുതൽ ആഴത്തിലുള്ള concepts പിന്നീടുള്ള lectures-ൽ cover ചെയ്യും.
 
-ഇത് തുടങ്ങുന്നതിന് മുമ്പ് Python-ൽ getting started ചെയ്യുന്നതിനെക്കുറിച്ചുള്ള {doc}`lecture <getting_started>` നിങ്ങൾ വായിച്ചിരിക്കണം.
+ഈ lecture-ലേക്കു കടക്കുന്നതിനു മുമ്പ് നിങ്ങൾ getting started with Python എന്ന {doc}`lecture <getting_started>` വായിച്ചിട്ടുണ്ടാകും എന്ന് കരുതുന്നു.
 
 
 ## The Task: Plotting a White Noise Process
 
-ഓരോ draw $\epsilon_t$-ഉം independent standard normal ആയ white noise
-process $\epsilon_0, \epsilon_1, \ldots, \epsilon_T$ simulate ചെയ്ത് plot ചെയ്യണം എന്ന് കരുതുക.
+നമുക്ക് ഒരു white noise process ($\epsilon_0, \epsilon_1, \ldots, \epsilon_T$) simulate ചെയ്ത്, plot ചെയ്യണം എന്ന് കരുതുക — ഓരോ draw-ഉം ($\epsilon_t$) ഒരു independent standard normal ആണ്.
 
-മറ്റൊരു വിധത്തിൽ പറഞ്ഞാൽ, ഇതുപോലുള്ള figures generate ചെയ്യണം:
+അതായത്, താഴെ കൊടുത്തിരിക്കുന്നത് പോലെയുള്ള ഒരു figure നമുക്ക് generate ചെയ്യണം:
 
 ```{figure} /_static/lecture_specific/python_by_example/test_program_1_updated.png
 :scale: 120
@@ -69,12 +68,12 @@ process $\epsilon_0, \epsilon_1, \ldots, \epsilon_T$ simulate ചെയ്ത്
 
 (ഇവിടെ $t$ horizontal axis-ലും $\epsilon_t$ vertical axis-ലും ആണ്.)
 
-നമ്മൾ ഇത് പല വ്യത്യസ്ത രീതികളിൽ ചെയ്യും, ഓരോ തവണയും Python-നെക്കുറിച്ച് കൂടുതൽ കാര്യങ്ങൾ പഠിക്കും.
+ഈ white noise process plotting നമ്മൾ പല വിധത്തിൽ ചെയ്യും — ഓരോ രീതിയിൽ ചെയ്യുമ്പോഴും നമ്മൾ Python-നെക്കുറിച്ച് കൂടുതൽ കാര്യങ്ങൾ പഠിക്കും.
 
 ## Version 1
 
 (ourfirstprog)=
-നമ്മൾ set ചെയ്ത task ചെയ്യുന്ന കുറച്ച് lines of code ഇവിടെ ഉണ്ട്
+നമ്മൾ set ചെയ്ത task ചെയ്യുന്ന കുറച്ച് lines of code താഴെ കാണാം.
 
 ```{code-cell} ipython
 import numpy as np
@@ -86,24 +85,23 @@ plt.plot(ϵ_values)
 plt.show()
 ```
 
-ഈ program-നെ ഭാഗങ്ങളാക്കി, അത് എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് നോക്കാം.
+നമുക്ക് ഈ program-നെ break down ചെയ്ത്, അത് എങ്ങനെ work ചെയ്യുന്നു എന്ന് നോക്കാം.
 
 (import)=
 ### Imports
 
-Program-ന്റെ ആദ്യ രണ്ട് lines external code
-libraries-ൽ നിന്ന് functionality import ചെയ്യുന്നു.
+ഈ program-ന്റെ ആദ്യത്തെ രണ്ട് lines, external code libraries-ൽ നിന്നും functionality import ചെയ്യുന്നു.
 
-ആദ്യ line {doc}`NumPy <numpy>` import ചെയ്യുന്നു, ഇത് ഇത്തരം tasks-ക്ക് ഇഷ്ടപ്പെട്ട ഒരു Python package ആണ്
+ആദ്യത്തെ line {doc}`NumPy <numpy>` import ചെയ്യുന്നു — NumPy, താഴെ കൊടുത്തിരിക്കുന്ന പോലത്തെ tasks-കൾ ചെയ്യാനുള്ള ഒരു Python package ആണ്:
 
-* arrays (vectors and matrices) കൈകാര്യം ചെയ്യൽ
-* `cos`, `sqrt` പോലുള്ള common mathematical functions
-* random numbers generate ചെയ്യൽ
+* working with arrays (vectors and matrices)
+* common mathematical functions like `cos` and `sqrt`
+* generating random numbers
 * linear algebra, etc.
 
-`import numpy as np` എന്ന് ചെയ്ത ശേഷം, `np.attribute` എന്ന syntax വഴി ഈ attributes-ലേക്ക് നമുക്ക് access ലഭിക്കും.
+`import numpy as np` ചെയ്ത് കഴിഞ്ഞാൽ, `np.attribute` എന്ന syntax ഉപയോഗിച്ച് ഈ attributes നമുക്ക് access ചെയ്യാം.
 
-ഇവിടെ രണ്ട് examples കൂടി
+Here's two more examples
 
 ```{code-cell} python3
 np.sqrt(4)
@@ -116,11 +114,11 @@ np.log(4)
 
 #### Why So Many Imports?
 
-Python programs സാധാരണയായി multiple import statements ആവശ്യപ്പെടുന്നു.
+Python programs-ൽ സാധാരണയായി multiple import statements ആവശ്യമായിവരുന്നു.
 
 കാരണം, core language മനഃപൂർവ്വം ചെറുതായി നിലനിർത്തിയിരിക്കുന്നു, അതുകൊണ്ട് അത് പഠിക്കാനും maintain ചെയ്യാനും improve ചെയ്യാനും easy ആണ്.
 
-Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്കിലും ചെയ്യണമെങ്കിൽ, മിക്കവാറും എപ്പോഴും additional functionality import ചെയ്യേണ്ടി വരും.
+Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്കിലും ചെയ്യണമെങ്കിൽ, മിക്ക സമയത്തും additional functionality import ചെയ്യേണ്ടി വരും.
 
 
 #### Packages
@@ -130,15 +128,15 @@ Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്�
 
 മുകളിൽ പറഞ്ഞതുപോലെ, NumPy ഒരു Python package ആണ്.
 
-Developers അവർ share ചെയ്യാൻ ഉദ്ദേശിക്കുന്ന code organize ചെയ്യാൻ packages ഉപയോഗിക്കുന്നു.
+Share ചെയ്യാൻ ആഗ്രഹിക്കുന്ന code organize ചെയ്യാനാണ് developers packages ഉപയോഗിക്കുന്നത്.
 
-വാസ്തവത്തിൽ, ഒരു **package** എന്നത് ഇവ അടങ്ങിയ ഒരു directory മാത്രമാണ്
+In fact, ഒരു **package** എന്നത് താഴെ കൊടുത്തിരിക്കുന്നവ അടങ്ങിയ ഒരു directory ആണ്:
 
-1. Python code ഉള്ള files --- Python-ന്റെ ഭാഷയിൽ **modules** എന്ന് വിളിക്കുന്നു
-1. Python access ചെയ്യാൻ കഴിയുന്ന compiled code ചിലപ്പോൾ (ഉദാ: C അല്ലെങ്കിൽ FORTRAN code-യിൽ നിന്ന് compile ചെയ്ത functions)
-1. `import package_name` എന്ന് type ചെയ്യുമ്പോൾ എന്ത് execute ചെയ്യണം എന്ന് specify ചെയ്യുന്ന `__init__.py` എന്ന file
+1. Python code ഉള്ള files — Python-ന്റെ ഭാഷയിൽ ഇവയെ **modules** എന്ന് വിളിക്കുന്നു
+1. Python-ന് access ചെയ്യാൻ കഴിയുന്ന compiled code (e.g., functions compiled from C or FORTRAN code)
+1. `__init__.py` എന്ന ഒരു file — നമ്മൾ `import package_name` type ചെയ്യുമ്പോൾ എന്ത് execute ചെയ്യണം എന്ന് ഇത് specify ചെയ്യുന്നു
 
-NumPy-യുടെ `__init__.py`-യുടെ location Python-ൽ ഈ code run ചെയ്ത് check ചെയ്യാം:
+NumPy-യുടെ `__init__.py`-യുടെ location check ചെയ്യാൻ, താഴെ കൊടുത്തിരിക്കുന്ന code Python-ൽ run ചെയ്യുക:
 
 ```{code-block} ipython
 :class: no-execute
@@ -155,11 +153,11 @@ print(np.__file__)
 
 `rng = np.random.default_rng()` എന്ന line നോക്കുക.
 
-ഇവിടെ `np` എന്നത് NumPy package-നെ സൂചിപ്പിക്കുന്നു, `random` എന്നത് NumPy-യുടെ ഒരു **subpackage** ആണ്.
+ഇവിടെ `np` എന്നത് NumPy package-നെ refer ചെയ്യുന്നു, അതേ സമയം `random` എന്നത് NumPy-യുടെ ഒരു **subpackage** ആണ്.
 
-Subpackages എന്നത് മറ്റൊരു package-ന്റെ subdirectories ആയ packages മാത്രമാണ്.
+Subpackages എന്നത് മറ്റൊരു package-ന്റെ subdirectory ആയ packages മാത്രമാണ്.
 
-ഉദാഹരണത്തിന്, NumPy-യുടെ directory-യുടെ കീഴിൽ `random` എന്ന folder നിങ്ങൾക്ക് കണ്ടെത്താം.
+ഉദാഹരണത്തിന്, NumPy-യുടെ directory-യിൽ `random` എന്ന folder കാണാം.
 
 ### Importing Names Directly
 
@@ -171,7 +169,7 @@ import numpy as np
 np.sqrt(4)
 ```
 
-NumPy-യുടെ square root function access ചെയ്യാൻ മറ്റൊരു വഴി ഇവിടെ
+NumPy-യുടെ square root function access ചെയ്യാനുള്ള മറ്റൊരു രീതി താഴെ കാണാം
 
 ```{code-cell} python3
 from numpy import sqrt
@@ -181,15 +179,15 @@ sqrt(4)
 
 ഇതും correct ആണ്.
 
-നമ്മുടെ code-ൽ `sqrt` പലപ്പോഴും ഉപയോഗിക്കുകയാണെങ്കിൽ, ഇത് ഉപയോഗിക്കുന്നത് typing കുറയ്ക്കും എന്നതാണ് advantage.
+ഇതിന്റെ advantage — നമ്മുടെ code-ൽ `sqrt` പലപ്പോഴും ഉപയോഗിക്കുകയാണെങ്കിൽ, ഇതുവഴി നമുക്ക് typing കുറക്കാൻ സാധിക്കും.
 
-ദോഷം, ഒരു long program-ൽ, ഈ രണ്ട് lines പലപ്പോഴും പല മറ്റ് lines-ഉം കൊണ്ട് separate ചെയ്യപ്പെട്ടേക്കാം.
+ഇതിന്റെ disadvantage — ഒരു long program-ൽ, ഈ രണ്ട് lines-ന്റെയും ഇടയിൽ മറ്റ് പല lines-ഉം വന്നേക്കാം.
 
-അപ്പോൾ, `sqrt` എവിടെ നിന്ന് വന്നു എന്ന് readers അറിയാൻ ആഗ്രഹിച്ചാൽ, അത് കണ്ടെത്താൻ കൂടുതൽ ബുദ്ധിമുട്ടാകും.
+അങ്ങനെ വരുമ്പോൾ, `sqrt` എവിടെ നിന്ന് വന്നു എന്ന് readers-ന് മനസ്സിലാക്കാൻ ബുദ്ധിമുട്ടായേക്കാം.
 
 ### Random Draws
 
-White noise plot ചെയ്യുന്ന നമ്മുടെ program-ലേക്ക് തിരികെ വരാം, import statements കഴിഞ്ഞുള്ള ബാക്കി മൂന്ന് lines ഇവയാണ്
+White noise plot ചെയ്യുന്ന നമ്മുടെ program-ലേക്ക് തിരികെ വരാം. Import statements കഴിഞ്ഞുള്ള ബാക്കി മൂന്ന് lines ഇവയാണ്:
 
 ```{code-cell} ipython
 ϵ_values = rng.standard_normal(100)
@@ -197,25 +195,23 @@ plt.plot(ϵ_values)
 plt.show()
 ```
 
-ആദ്യ line 100 (quasi) independent standard normals generate ചെയ്ത്
-`ϵ_values`-ൽ store ചെയ്യുന്നു.
+ആദ്യത്തെ line, 100 (quasi) independent standard normals-നെ generate ചെയ്ത് `ϵ_values`-ൽ store ചെയ്യുന്നു.
 
 അടുത്ത രണ്ട് lines plot generate ചെയ്യുന്നു.
 
-താഴെ ഈ plot configure ചെയ്യാനും improve ചെയ്യാനുമുള്ള പല വഴികളും നമുക്ക് നോക്കാം.
+ഈ plot configure ചെയ്യാനും improve ചെയ്യാനുമുള്ള പല വഴികൾ നമുക്ക് താഴെ കാണാം.
 
 ## Alternative Implementations
 
-Standard normal distribution-ൽ നിന്നുള്ള IID draws plot ചെയ്ത {ref}`നമ്മുടെ ആദ്യ program <ourfirstprog>`-ന്റെ ചില alternative versions എഴുതി നോക്കാം.
+Standard normal distribution-ൽ നിന്നും IID draws plot ചെയ്ത {ref}`നമ്മുടെ ആദ്യത്തെ program <ourfirstprog>`, മറ്റു പല രീതികളിൽ എങ്ങനെ എഴുതാം എന്ന് നോക്കാം.
 
-താഴെയുള്ള programs original-നേക്കാൾ less efficient ആണ്, അതുകൊണ്ട്
-ഇവ അല്പം artificial ആണ്.
+താഴെ കൊടുത്തിരിക്കുന്ന programs, original-ന്റെ അത്ര efficient അല്ല - അവ ഒരു ആശയം വിശദീകരിക്കാനായി മാത്രം നിർമ്മിച്ചവയാണ്.
 
 എന്നാൽ ഇവ ഒരു familiar setting-ൽ ചില പ്രധാന Python syntax-ഉം semantics-ഉം illustrate ചെയ്യാൻ സഹായിക്കുന്നു.
 
 ### A Version with a For Loop
 
-`for` loops-ഉം Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version ഇവിടെ.
+`for` loops-ഉം Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version താഴെ കാണാം:
 
 (firstloopprog)=
 ```{code-cell} python3
@@ -232,13 +228,13 @@ plt.show()
 
 ചുരുക്കത്തിൽ,
 
-* ആദ്യ line time series-ന്റെ ആവശ്യമുള്ള length set ചെയ്യുന്നു.
-* അടുത്ത line, ജനറേറ്റ് ചെയ്യുന്ന $\epsilon_t$ values store ചെയ്യാൻ `ϵ_values` എന്ന empty *list* create ചെയ്യുന്നു.
+* ആദ്യത്തെ line, time series-ന് ആവശ്യമായ length set ചെയ്യുന്നു.
+* അടുത്ത line, `ϵ_values` എന്നൊരു empty *list* create ചെയ്യുന്നു — അതിൽ ആയിരിക്കും നമ്മൾ generate ചെയ്യുന്ന $\epsilon_t$ values store ചെയ്യുക.
 * `# empty list` എന്ന statement ഒരു *comment* ആണ്, Python-ന്റെ interpreter ഇത് ignore ചെയ്യും.
-* അടുത്ത മൂന്ന് lines `for` loop ആണ്, ഇത് ആവർത്തിച്ച് പുതിയ random number $\epsilon_t$ draw ചെയ്ത് `ϵ_values` list-ന്റെ അവസാനത്തിൽ append ചെയ്യുന്നു.
-* അവസാന രണ്ട് lines plot generate ചെയ്ത് user-ന് display ചെയ്യുന്നു.
+* അടുത്ത മൂന്ന് lines ആണ് `for` loop — ഇത് repeatedly ഒരു പുതിയ random number $\epsilon_t$ draw ചെയ്ത് `ϵ_values` list-ന്റെ അവസാനം append ചെയ്യുന്നു.
+* അവസാനത്തെ രണ്ട് lines, plot generate ചെയ്ത് user-ന് display ചെയ്യുന്നു.
 
-ഈ program-ന്റെ ചില ഭാഗങ്ങൾ കൂടുതൽ വിശദമായി പഠിക്കാം.
+ഈ program-ന്റെ കുറച്ചു ഭാഗങ്ങൾ നമുക്ക് വിശദമായി പഠിക്കാം.
 
 (lists_ref)=
 ### Lists
@@ -246,9 +242,9 @@ plt.show()
 ```{index} single: Python; Lists
 ```
 
-`ϵ_values = []` എന്ന statement നോക്കുക, ഇത് ഒരു empty list create ചെയ്യുന്നു.
+`ϵ_values = []` എന്ന statement നോക്കുക. ഇത് ഒരു empty list create ചെയ്യുന്നു.
 
-Lists എന്നത് objects-ന്റെ ഒരു collection group ചെയ്യാൻ ഉപയോഗിക്കുന്ന native Python data structure ആണ്.
+ഒരു കൂട്ടം objects-നെ ഒരുമിച്ച് group ചെയ്യാൻ ഉപയോഗിക്കുന്ന Python-ന്റെ ഒരു native data structure ആണ് Lists.
 
 Lists-ലെ items ordered ആണ്, കൂടാതെ lists-ൽ duplicates അനുവദനീയമാണ്.
 
@@ -261,7 +257,7 @@ type(x)
 
 `x`-ന്റെ ആദ്യ element ഒരു [integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) ആണ്, അടുത്തത് ഒരു [string](https://en.wikipedia.org/wiki/String_(computer_science)) ആണ്, മൂന്നാമത്തേത് ഒരു [Boolean value](https://en.wikipedia.org/wiki/Boolean_data_type) ആണ്.
 
-ഒരു list-ലേക്ക് value add ചെയ്യുമ്പോൾ, `list_name.append(some_value)` എന്ന syntax നമുക്ക് ഉപയോഗിക്കാം
+ഒരു list-ലേക്ക് ഒരു value add ചെയ്യാൻ, `list_name.append(some_value)` എന്ന syntax നമുക്ക് ഉപയോഗിക്കാം
 
 ```{code-cell} python3
 x
@@ -272,12 +268,12 @@ x.append(2.5)
 x
 ```
 
-ഇവിടെ `append()` എന്നത് **method** എന്ന് വിളിക്കപ്പെടുന്ന ഒന്നാണ്, ഇത് ഒരു object-ൽ "attach" ചെയ്ത function ആണ്---ഇവിടെ `x` എന്ന list.
+ഇവിടെ `append()` എന്നത് ഒരു **method** ആണ്. ഒരു object-നോട് "attach" ആയിരിക്കുന്ന ഒരു function-നെയാണ് method എന്ന് വിളിക്കുന്നത്. ഇവിടെ ആ object `x` എന്ന list ആണ്.
 
-Methods-നെക്കുറിച്ച് {doc}`പിന്നീട് <oop_intro>` നമ്മൾ എല്ലാം പഠിക്കും, പക്ഷേ ഒരു idea നൽകാൻ,
+Methods-നെ പറ്റി നമ്മൾ {doc}`പിന്നീട് <oop_intro>` വിശദമായി പഠിക്കും, പക്ഷേ ഇപ്പോൾ ഒരു idea കിട്ടാൻ നിങ്ങൾ ഇത്രെയും മനസിലാക്കുക:
 
-* Lists, strings പോലുള്ള Python objects-ന് എല്ലാം, object-ൽ അടങ്ങിയ data manipulate ചെയ്യാൻ ഉപയോഗിക്കുന്ന methods ഉണ്ട്.
-* String objects-ന് [string methods](https://docs.python.org/3/library/stdtypes.html#string-methods) ഉണ്ട്, list objects-ന് [list methods](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) ഉണ്ട്, etc.
+* Lists, strings തുടങ്ങിയ Python objects-ന് എല്ലാം, അവയിൽ അടങ്ങിയിരിക്കുന്ന data manipulate ചെയ്യാൻ ഉപയോഗിക്കുന്ന methods ഉണ്ട്.
+* String objects-ന് [string methods](https://docs.python.org/3/library/stdtypes.html#string-methods) ഉണ്ട്, list objects-ന് [list methods](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) ഉണ്ട്, അങ്ങനെ ഓരോ object-ഇനും അതിന് suitable ആയ methods ഉണ്ടായിരിക്കും.
 
 മറ്റൊരു useful list method ആണ് `pop()`
 
@@ -293,7 +289,7 @@ x.pop()
 x
 ```
 
-Python-ലെ lists zero-based ആണ് (C, Java അല്ലെങ്കിൽ Go-യിലേത് പോലെ), അതുകൊണ്ട് ആദ്യ element `x[0]` എന്ന് reference ചെയ്യുന്നു
+Python-ലെ lists zero-based ആണ് (as in C, Java or Go). അതിനാൽ list-ൽ, ആദ്യത്തെ element-ന്റെ reference `x[0]` ആയി ഉപയോഗിക്കുന്നു
 
 ```{code-cell} python3
 x[0]   # first element of x
@@ -308,7 +304,7 @@ x[1]   # second element of x
 ```{index} single: Python; For loop
 ```
 
-ഇപ്പോൾ {ref}`മുകളിലുള്ള program <firstloopprog>`-ലെ `for` loop നോക്കാം, അത് ഇതായിരുന്നു
+ഇനി നമുക്ക് {ref}`മുകളിലുള്ള program <firstloopprog>`-ലെ `for` loop നോക്കാം. അവിടെ നമ്മൾ ഉപയോഗിച്ച `for` loop താഴെ കാണാം:
 
 ```{code-cell} python3
 for i in range(ts_length):
@@ -316,15 +312,15 @@ for i in range(ts_length):
     ϵ_values.append(e)
 ```
 
-Python ഈ indented ആയ രണ്ട് lines `ts_length` തവണ execute ചെയ്ത ശേഷമേ മുന്നോട്ട് പോകൂ.
+Indent ചെയ്തിരിക്കുന്ന ഈ രണ്ട് lines, `ts_length` തവണ execute ചെയ്ത ശേഷമേ Python മുന്നോട്ട് പോകൂ.
 
-ഈ രണ്ട് lines-നെ **code block** എന്ന് വിളിക്കുന്നു, കാരണം ഇത് നമ്മൾ loop ചെയ്യുന്ന code-ന്റെ "block" ആണ്.
+ഈ രണ്ട് lines-നെ നാം **code block** എന്ന് വിളിക്കുന്നു - കാരണം നമ്മൾ `for` loop ഉപയോഗിച്ച് ഈ "block" of code-നെയാണ് loop ചെയ്യിക്കുന്നത്.
 
-മറ്റ് മിക്ക languages-ൽ നിന്ന് വ്യത്യസ്തമായി, Python code block-ന്റെ extent *indentation-ൽ നിന്ന് മാത്രം* അറിയുന്നു.
+ഒരു code block എവിടെ വരെ extent ചെയ്യുന്നു എന്ന് Python മനസ്സിലാക്കുന്നത് അതിന്റെ *indentation മാത്രം* ഉപയോഗിച്ചാണ്. ഇത്, മറ്റു പല programming languages-ൽ നിന്നും Python-നെ വ്യത്യസ്തമാക്കുന്നു.
 
-നമ്മുടെ program-ൽ, `ϵ_values.append(e)` എന്ന line-ന് ശേഷം indentation കുറയുന്നു, ഇത് Python-നോട് ഈ line code block-ന്റെ lower limit ആണ് എന്ന് പറയുന്നു.
+നമ്മുടെ program-ൽ, `ϵ_values.append(e)` എന്ന line-ന് ശേഷം indentation കുറയുന്നു. ഇതിലൂടെ, ആ code block അവിടെ അവസാനിക്കുന്നു എന്ന് Python മനസ്സിലാക്കുന്നു.
 
-Indentation-നെക്കുറിച്ച് കൂടുതൽ താഴെ---ഇപ്പോൾ, `for` loop-ന്റെ മറ്റൊരു example നോക്കാം
+Indentation-നെ പറ്റി കൂടുതൽ താഴെ കാണാം — ഇപ്പോൾ `for` loop-ന്റെ മറ്റൊരു example നോക്കാം.
 
 ```{code-cell} python3
 animals = ['dog', 'cat', 'bird']
@@ -332,8 +328,7 @@ for animal in animals:
     print("The plural of " + animal + " is " + animal + "s")
 ```
 
-ഈ example `for` loop എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് clarify ചെയ്യാൻ സഹായിക്കുന്നു: ഈ രീതിയിലുള്ള ഒരു
-loop execute ചെയ്യുമ്പോൾ
+ഈ example, `for` loop എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് clarify ചെയ്യാൻ സഹായിക്കുന്നു: താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ ഒരു loop execute ചെയ്യുമ്പോൾ,
 
 ```{code-block} python3
 :class: no-execute
@@ -344,7 +339,7 @@ for variable_name in sequence:
 
 Python interpreter ഇവ perform ചെയ്യുന്നു:
 
-* `sequence`-ലെ ഓരോ element-നും, ആ element-ന് `variable_name` എന്ന name "bind" ചെയ്ത് code block execute ചെയ്യുന്നു.
+* `sequence`-ലെ ഓരോ element-ഇനും, Python ആ element-നെ `variable_name` എന്ന name "bind" ചെയ്യുന്നു. തുടർന്ന് code block execute ചെയ്യുന്നു.
 
 
 ### A Comment on Indentation
@@ -352,35 +347,35 @@ Python interpreter ഇവ perform ചെയ്യുന്നു:
 ```{index} single: Python; Indentation
 ```
 
-`for` loop discuss ചെയ്യുമ്പോൾ, loop ചെയ്യപ്പെടുന്ന code blocks indentation-ൽ delimit ചെയ്യപ്പെടുന്നു എന്ന് നമ്മൾ explain ചെയ്തു.
+`for` loop discuss ചെയ്തപ്പോൾ, loop ചെയ്യപ്പെടുന്ന code block-ന്റെ delimit, അതിന്റെ indentation ഉപയോഗിച്ചാണ് Python മനസ്സിലാക്കുന്നതെന്ന് നമ്മൾ discuss ചെയ്തിരുന്നു.
 
-വാസ്തവത്തിൽ, Python-ൽ, *എല്ലാ* code blocks-ഉം (അതായത്, loops, if clauses, function definitions, etc.-ന് അകത്ത് സംഭവിക്കുന്നവ) indentation-ൽ delimit ചെയ്യപ്പെടുന്നു.
+In fact, Python-ൽ, *എല്ലാ* code blocks-ഉം (അതായത്, loops-ന്റെ code block, if clauses-ന്റെ code block, function definitions-ന്റെ code block, etc.) indentation ഉപയോഗിച്ചാണ് delimit ചെയ്യപ്പെടുന്നത്.
 
-അതുകൊണ്ട്, മറ്റ് മിക്ക languages-ൽ നിന്ന് വ്യത്യസ്തമായി, Python code-ലെ whitespace program-ന്റെ output-നെ affect ചെയ്യുന്നു.
+അതിനാൽ, മറ്റു മിക്ക programming languages-ൽ നിന്നും വ്യത്യസ്തമായി, Python code-ലെ whitespace, program-ന്റെ output-നെ affect ചെയ്യുന്നു.
 
-ഇത് ശീലമായാൽ, ഇത് ഒരു നല്ല കാര്യമാണ്: ഇത്
+ഒരിക്കൽ ഇത് ശീലമായാൽ, ഇത് ഒരു നല്ല കാര്യമാണ്.
 
-* clean-ഉം consistent-ഉം ആയ indentation force ചെയ്യുന്നു, readability improve ചെയ്യുന്നു
+* clean-ഉം consistent-ഉം ആയ indentation വഴി readability improve ചെയ്യുന്നു
 * മറ്റ് languages-ൽ ഉപയോഗിക്കുന്ന brackets അല്ലെങ്കിൽ end statements പോലുള്ള clutter remove ചെയ്യുന്നു
 
-മറുവശത്ത്, ഇത് correct ആയി ചെയ്യാൻ ഒരല്പം care ആവശ്യമാണ്, അതുകൊണ്ട് ദയവായി ഓർക്കുക:
+On the other hand, ഇത് correct ആയി ഉപയോഗിക്കാൻ ഒരല്പം care ആവശ്യമാണ്. അതിനാൽ താഴെപ്പറയുന്ന കാര്യങ്ങൾ ഓർത്തിരിക്കുക:
 
-* ഒരു code block ആരംഭിക്കുന്നതിന് മുമ്പുള്ള line എപ്പോഴും colon-ൽ end ആകുന്നു
+* ഒരു code block ആരംഭിക്കുന്നതിന് മുമ്പുള്ള line എപ്പോഴും colon-ൽ അവസാനിക്കണം
     * `for i in range(10):`
     * `if x > y:`
     * `while x < 100:`
     * etc. 
-* ഒരു code block-ലെ എല്ലാ lines-ഉം ഒരേ amount of indentation ഉള്ളവയായിരിക്കണം.
-* Python standard 4 spaces ആണ്, അത് നിങ്ങൾ ഉപയോഗിക്കണം.
+* ഒരു code block-ലെ എല്ലാ lines-ഇനും ഒരേ amount of indentation ഉണ്ടായിരിക്കണം.
+* Python-ന്റെ standard 4 spaces ആണ്. അതിനാൽ നിങ്ങളും 4 spaces ഉപയോഗിക്കണം.
 
 ### While Loops
 
 ```{index} single: Python; While loop
 ```
 
-Python-ൽ iteration-ന് ഏറ്റവും common ആയ technique `for` loop ആണ്.
+Python-ൽ iteration ചെയ്യാൻ ഏറ്റവും common ആയി ഉപയോഗിക്കുന്ന technique ആണ് `for` loop.
 
-എന്നാൽ, illustration-ന്റെ purpose-ന് വേണ്ടി, {ref}`മുകളിലുള്ള program <firstloopprog>` `while` loop ഉപയോഗിച്ച് modify ചെയ്യാം.
+എന്നാൽ, illustration purpose-ന് വേണ്ടി, {ref}`മുൻപത്തെ program-ൽ <firstloopprog>` `for` loop-നു പകരം `while` loop ഉപയോഗിച്ച് എങ്ങനെ ചെയ്യാം എന്ന് നോക്കാം.
 
 (whileloopprog)=
 ```{code-cell} python3
@@ -395,7 +390,7 @@ plt.plot(ϵ_values)
 plt.show()
 ```
 
-Condition (```i < ts_length```) satisfy ആകുന്നത് വരെ, indentation-ൽ delimit ചെയ്ത code block ഒരു while loop execute ചെയ്ത് കൊണ്ടേയിരിക്കും.
+Indentation ഉപയോഗിച്ച് delimit ചെയ്തിരിക്കുന്ന while loop-ന്റെ code block, (```i < ts_length```) എന്ന condition satisfy ആകുന്നത് വരെ execute ചെയ്ത് കൊണ്ടേയിരിക്കും.
 
 ഈ case-ൽ, ```i``` ```ts_length```-ന് equal ആകുന്നത് വരെ program ```ϵ_values``` list-ലേക്ക് values add ചെയ്ത് കൊണ്ടേയിരിക്കും:
 
@@ -405,22 +400,22 @@ i == ts_length #the ending condition for the while loop
 
 ശ്രദ്ധിക്കുക,
 
-* `while` loop-ന്റെ code block ഇവിടെയും indentation-ൽ മാത്രമേ delimit ചെയ്യപ്പെടുന്നുള്ളൂ.
-* `i = i + 1` എന്ന statement `i += 1` എന്ന് replace ചെയ്യാം.
+* `while` loop-ന്റെ code block, indentation മാത്രം ഉപയോഗിച്ചാണ് delimit ചെയ്തിരിക്കുന്നത്.
+* `i = i + 1` എന്ന statement-ന് പകരം `i += 1` എന്നും എഴുതാം.
 
 ## Another Application
 
-Exercises-ലേക്ക് പോകുന്നതിന് മുമ്പ് ഒരു application കൂടി ചെയ്യാം.
+Exercises-ലേക്ക് കടക്കുന്നതിന് മുമ്പ് ഒരു application കൂടി നോക്കാം.
 
-ഈ application-ൽ, നമ്മൾ ഒരു bank account-ന്റെ balance കാലക്രമേണ plot ചെയ്യുന്നു.
+ഈ application-ൽ, സമയം കടന്നുപോകുന്നതിനനുസരിച്ച് ഒരു bank account-ന്റെ balance എങ്ങനെ മാറുന്നു എന്ന് നാം plot ചെയ്യുന്നു.
 
-$T$ എന്ന് denote ചെയ്യുന്ന last date വരെയുള്ള time period-ൽ withdraws ഒന്നും ഇല്ല.
+ഈ application-നു വേണ്ടി നമ്മൾ consider ചെയ്യുന്ന time period-ൽ withdraws ഒന്നുമില്ല. കൂടാതെ, നമ്മുടെ time period-ന്റെ last date $T$ എന്ന് denote ചെയ്യുന്നു.
 
 Initial balance $b_0$ ആണ്, interest rate $r$ ആണ്.
 
-Balance, period $t$-ൽ നിന്ന് $t+1$-ലേക്ക് $b_{t+1} = (1 + r) b_t$ എന്ന formula അനുസരിച്ച് update ആകുന്നു.
+സമയം $t$-ൽ നിന്നും $t+1$ ആകുമ്പോൾ, balance update ചെയ്യേണ്ട formula: $b_{t+1} = (1 + r) b_t$
 
-താഴെയുള്ള code-ൽ, നമ്മൾ $b_0, b_1, \ldots, b_T$ sequence generate ചെയ്ത് plot ചെയ്യുന്നു.
+താഴെയുള്ള code-ൽ, $b_0, b_1, \ldots, b_T$ എന്ന sequence നാം generate ചെയ്ത് plot ചെയ്യുന്നു.
 
 ഈ sequence store ചെയ്യാൻ ഒരു Python list ഉപയോഗിക്കുന്നതിന് പകരം, നമ്മൾ ഒരു NumPy
 array ഉപയോഗിക്കും.
@@ -439,27 +434,23 @@ plt.legend()
 plt.show()
 ```
 
-`b = np.empty(T+1)` എന്ന statement `T+1`
-(floating point) numbers-ന് memory-ൽ storage allocate ചെയ്യുന്നു.
+`b = np.empty(T+1)` എന്ന statement, `T+1` (floating point) numbers-നുള്ള storage space, memory-യിൽ allocate ചെയ്യുന്നു.
 
 ഈ numbers `for` loop വഴി fill ചെയ്യപ്പെടുന്നു.
 
-തുടക്കത്തിൽ memory allocate ചെയ്യുന്നത്, Python list-ഉം
-`append`-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ്, കാരണം അവസാനത്തേത് operating system-ൽ നിന്ന് ആവർത്തിച്ച് storage space ചോദിക്കേണ്ടി വരും.
+തുടക്കത്തിൽ തന്നെ memory allocate ചെയ്യുന്നത്, Python list-ഉം `append`-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ് — കാരണം, രണ്ടാമത്തെ രീതിയിൽ (list, append), ഓരോ തവണയും storage space നൽകണമെന്ന് operating system-നോട് ആവശ്യപ്പെടേണ്ടി വരും.
 
-Plot-ലേക്ക് ഒരു legend add ചെയ്തത് ശ്രദ്ധിക്കുക --- Exercises-ൽ നിങ്ങൾ
-ഉപയോഗിക്കാൻ ആവശ്യപ്പെടുന്ന ഒരു feature ആണ് ഇത്.
+Plot-ൽ നമ്മൾ ഒരു legend add ചെയ്തത് ശ്രദ്ധിക്കുക — exercises-ൽ നിങ്ങളോട് ഇത് ഉപയോഗിക്കാൻ ആവശ്യപ്പെടും.
 
 ## Exercises
 
-ഇനി നമ്മൾ exercises-ലേക്ക് പോകുന്നു. ഇവ complete ചെയ്യുന്നത് പ്രധാനമാണ്
-തുടരുന്നതിന് മുമ്പ്, കാരണം ഇവ നമുക്ക് ആവശ്യമായ പുതിയ concepts present ചെയ്യുന്നു.
+ഇനി നമ്മൾ exercises-ലേക്ക് കടക്കുന്നു. ഇവ complete ചെയ്തതിന് ശേഷം മാത്രം മുന്നോട്ട് പോകുക — കാരണം, ഇവിടെ പരിചയപ്പെടുത്തുന്ന concepts നമുക്ക് പിന്നീട് ആവശ്യമായി വരും.
 
 ```{exercise-start}
 :label: pbe_ex1
 ```
 
-നിങ്ങളുടെ ആദ്യ task, correlated ആയ ഈ time series simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്
+നിങ്ങളുടെ ആദ്യത്തെ task, correlated ആയ ഈ time series simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്
 
 $$
 x_{t+1} = \alpha \, x_t + \epsilon_{t+1}
@@ -468,9 +459,9 @@ x_0 = 0
 \quad \text{and} \quad t = 0,\ldots,T
 $$
 
-Shocks-ന്റെ sequence $\{\epsilon_t\}$ IID-ഉം standard normal-ഉം ആണ് എന്ന് assume ചെയ്യുന്നു.
+The sequence of shocks $\{\epsilon_t\}$ is assumed to be IID and standard normal.
 
-നിങ്ങളുടെ solution-ൽ, import statements ഇത്രമാത്രം restrict ചെയ്യുക
+നിങ്ങളുടെ solution-ൽ, താഴെ കൊടുത്തിരിക്കുന്ന import statements മാത്രം ഉപയോഗിക്കുക.
 
 ```{code-cell} python3
 import numpy as np
@@ -486,7 +477,7 @@ $T=200$-ഉം $\alpha = 0.9$-ഉം set ചെയ്യുക.
 :class: dropdown
 ```
 
-ഒരു solution ഇവിടെ.
+Here's one solution.
 
 ```{code-cell} python3
 α = 0.9
@@ -509,17 +500,17 @@ plt.show()
 ```{exercise-start}
 :label: pbe_ex2
 
-Exercise 1-ലേക്കുള്ള നിങ്ങളുടെ solution ആരംഭ point ആയി എടുത്ത്, $\alpha=0$, $\alpha=0.8$, $\alpha=0.98$ എന്നീ ഓരോ cases-നും ഓരോന്ന്, മൂന്ന് simulated time series plot ചെയ്യുക.
+Exercise 1-ന്റെ നിങ്ങളുടെ solution-ൽ നിന്ന് തുടങ്ങി, $\alpha=0$, $\alpha=0.8$, $\alpha=0.98$ എന്ന മൂന്ന് cases-നും ഓരോ simulated time series plot ചെയ്യുക.
 
-$\alpha$ values-ലൂടെ step ചെയ്യാൻ ഒരു `for` loop ഉപയോഗിക്കുക.
+$\alpha$ values ഒന്നൊന്നായി തിരഞ്ഞെടുക്കാൻ ഒരു `for` loop ഉപയോഗിക്കുക.
 
-സാധിക്കുമെങ്കിൽ, മൂന്ന് time series-നെ വേർതിരിക്കാൻ സഹായിക്കുന്ന ഒരു legend add ചെയ്യുക.
+കഴിയുമെങ്കിൽ, മൂന്ന് time series-നെയും വേർതിരിച്ച് കാണിക്കാൻ ഒരു legend കൂടി add ചെയ്യുക.
 
 ```{hint}
 :class: dropdown
 
-* `show()` call ചെയ്യുന്നതിന് മുമ്പ് `plot()` function multiple times call ചെയ്താൽ, നിങ്ങൾ produce ചെയ്യുന്ന എല്ലാ lines-ഉം ഒരേ figure-ൽ end ആകും.
-* Legend-ന് വേണ്ടി, `var = 42` എന്ന് suppose ചെയ്താൽ, `f'foo{var}'` എന്ന expression `'foo42'` എന്ന് evaluate ചെയ്യുന്നു എന്ന് ശ്രദ്ധിക്കുക.
+* `show()` call ചെയ്യുന്നതിന് മുൻപ് `plot()` function പലതവണ call ചെയ്താൽ, നിങ്ങൾ produce ചെയ്യുന്ന lines എല്ലാം ഒരേ figure-ൽ വരും.
+* Legend-നായി, `var = 42` എന്ന് കരുതുക. അങ്ങനെയെങ്കിൽ `f'foo{var}'` എന്ന expression-ന്റെ result `'foo42'` ആയിരിക്കും.
 ```
 
 ```{exercise-end}
@@ -547,9 +538,9 @@ plt.show()
 ```
 
 ```{note}
-Solution-ലെ `f'$\\alpha = {α}$'` എന്നത് [f-String](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings)-ന്റെ ഒരു application ആണ്, ഇത് `{}` ഉപയോഗിച്ച് ഒരു expression contain ചെയ്യാൻ അനുവദിക്കുന്നു.
+Solution-ലെ `f'$\\alpha = {α}$'` എന്നത് [f-String](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings)-ന്റെ ഒരു application ആണ്. ഒരു expression-നെ `{}`-ക്കുള്ളിൽ എഴുതാൻ f-string അനുവദിക്കുന്നു.
 
-Contain ചെയ്ത expression evaluate ചെയ്യപ്പെടും, result string-ലേക്ക് place ചെയ്യപ്പെടും.
+അങ്ങനെ `{}`-ക്കുള്ളിൽ എഴുതിയിരിക്കുന്ന expression Python evaluate ചെയ്യും. ലഭിക്കുന്ന result string-ലേക്ക് ചേർക്കപ്പെടും.
 ```
 
 ```{solution-end}
@@ -558,7 +549,7 @@ Contain ചെയ്ത expression evaluate ചെയ്യപ്പെടും
 ```{exercise-start}
 :label: pbe_ex3
 
-മുൻ exercises-ന് സമാനമായി, ഈ time series plot ചെയ്യുക
+മുൻപത്തെ exercises പോലെ, താഴെ കൊടുത്തിരിക്കുന്ന time series-ഉം plot ചെയ്യുക:
 
 $$
 x_{t+1} = \alpha \, |x_t| + \epsilon_{t+1}
@@ -567,9 +558,9 @@ x_0 = 0
 \quad \text{and} \quad t = 0,\ldots,T
 $$
 
-$T=200$, $\alpha = 0.9$, മുമ്പത്തെ പോലെ $\{\epsilon_t\}$ ഉപയോഗിക്കുക.
+Use $T=200$, $\alpha = 0.9$ and $\{\epsilon_t\}$ as before.
 
-Absolute value $|x_t|$ compute ചെയ്യാൻ ഉപയോഗിക്കാവുന്ന ഒരു function online search ചെയ്യുക.
+$|x_t|$ എന്ന absolute value compute ചെയ്യാൻ ഉപയോഗിക്കാവുന്ന ഒരു function online-ൽ search ചെയ്യുക.
 ```
 
 ```{exercise-end}
@@ -580,7 +571,7 @@ Absolute value $|x_t|$ compute ചെയ്യാൻ ഉപയോഗിക്ക
 :class: dropdown
 ```
 
-ഒരു solution ഇവിടെ:
+Here's one solution:
 
 ```{code-cell} python3
 α = 0.9
@@ -609,8 +600,7 @@ conditions-ഉം ആണ്.
 
 Python-ൽ, conditions സാധാരണയായി if--else syntax ഉപയോഗിച്ചാണ് implement ചെയ്യുന്നത്.
 
-ഇവിടെ ഒരു example, ഒരു array-ലെ ഓരോ negative number-നും -1-ഉം, ഓരോ nonnegative number-നും 1-ഉം
-print ചെയ്യുന്നു
+താഴെക്കൊടുത്തിരിക്കുന്ന example-ൽ, ഒരു array-യിലെ ഓരോ negative number-നും -1-ഉം, ഓരോ nonnegative number-നും 1-ഉം print ചെയ്യുന്നു.
 
 ```{code-cell} python3
 numbers = [-9, 2.3, -11, 0]
@@ -624,10 +614,9 @@ for x in numbers:
         print(1)
 ```
 
-ഇപ്പോൾ, absolute value compute ചെയ്യാൻ ഒരു existing function ഉപയോഗിക്കാതെ Exercise 3-ന് ഒരു
-പുതിയ solution എഴുതുക.
+ഇനി, absolute value compute ചെയ്യാൻ ഒരു existing function ഉപയോഗിക്കാതെ Exercise 3-ന് ഒരു പുതിയ solution എഴുതുക.
 
-ഈ existing function-ന് പകരം ഒരു if--else condition ഉപയോഗിക്കുക.
+ആ existing function-ന് പകരം ഒരു if--else condition ഉപയോഗിക്കുക.
 
 ```{exercise-end}
 ```
@@ -636,7 +625,7 @@ for x in numbers:
 :class: dropdown
 ```
 
-ഒരു വഴി ഇവിടെ:
+Here's one way:
 
 ```{code-cell} python3
 α = 0.9
@@ -656,7 +645,7 @@ plt.plot(x)
 plt.show()
 ```
 
-ഇത് തന്നെ എഴുതാൻ ഒരു shorter വഴി:
+short ആയിട്ടുള്ള ഒരു solution താഴെ കാണാം:
 
 ```{code-cell} python3
 α = 0.9
@@ -682,11 +671,11 @@ plt.show()
 :label: pbe_ex5
 ```
 
-ഇവിടെ കുറച്ച് thought-ഉം planning-ഉം ആവശ്യമുള്ള ഒരു harder exercise ഉണ്ട്.
+ഇനി കുറച്ച് thought-ഉം planning-ഉം ആവശ്യമുള്ള ഒരു harder exercise ചെയ്യാം.
 
-[Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) ഉപയോഗിച്ച് $\pi$-ന്റെ ഒരു approximation compute ചെയ്യുക എന്നതാണ് task.
+[Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) ഉപയോഗിച്ച് $\pi$-യുടെ ഒരു approximation compute ചെയ്യുക എന്നതാണ് task.
 
-ഇത് കൂടാതെ മറ്റൊന്നും import ചെയ്യരുത്
+താഴെ കൊടുത്തിരിക്കുന്ന import statement മാത്രം ഉപയോഗിക്കുക:
 
 ```{code-cell} python3
 import numpy as np
@@ -695,11 +684,11 @@ import numpy as np
 ```{hint}
 :class: dropdown
 
-നിങ്ങളുടെ hints ഇവയാണ്:
+Your hints are as follows:
 
-* $U$ എന്നത് unit square $(0, 1)^2$-ലെ ഒരു bivariate uniform random variable ആണെങ്കിൽ, $U$, $(0,1)^2$-ന്റെ ഒരു subset $B$-ൽ വീഴാനുള്ള probability $B$-യുടെ area-ന് equal ആണ്.
-* $U_1,\ldots,U_n$ എന്നത് $U$-യുടെ IID copies ആണെങ്കിൽ, $n$ വലുതാകുന്നതിനനുസരിച്ച്, $B$-ൽ വീഴുന്ന fraction, $B$-യിൽ വീഴാനുള്ള probability-ലേക്ക് converge ചെയ്യുന്നു.
-* ഒരു circle-ന്, $area = \pi * radius^2$.
+* If $U$ is a bivariate uniform random variable on the unit square $(0, 1)^2$, then the probability that $U$ lies in a subset $B$ of $(0,1)^2$ is equal to the area of $B$.
+* If $U_1,\ldots,U_n$ are IID copies of $U$, then, as $n$ gets large, the fraction that falls in $B$, converges to the probability of landing in $B$.
+* For a circle, $area = \pi * radius^2$.
 ```
 
 ```{exercise-end}
@@ -710,21 +699,21 @@ import numpy as np
 :class: dropdown
 ```
 
-Unit square-ൽ embed ചെയ്ത diameter 1 ഉള്ള circle കരുതുക.
+Consider the circle of diameter 1 embedded in the unit square.
 
-$A$ അതിന്റെ area ആണെന്നും $r=1/2$ അതിന്റെ radius ആണെന്നും കരുതുക.
+Let $A$ be its area and let $r=1/2$ be its radius.
 
-$\pi$ അറിയാമെങ്കിൽ, $A$
-$A = \pi r^2$ വഴി compute ചെയ്യാം.
+If we know $\pi$ then we can compute $A$ via
+$A = \pi r^2$.
 
-എന്നാൽ ഇവിടെ point $\pi$ compute ചെയ്യുക എന്നതാണ്, ഇത് നമുക്ക്
-$\pi = A / r^2$ വഴി ചെയ്യാം.
+But here the point is to compute $\pi$, which we can do by
+$\pi = A / r^2$.
 
-Summary: Diameter 1 ഉള്ള ഒരു circle-ന്റെ area estimate ചെയ്യാൻ കഴിഞ്ഞാൽ, $r^2 = (1/2)^2 = 1/4$ കൊണ്ട്
-divide ചെയ്യുന്നത് $\pi$-ന്റെ ഒരു estimate നൽകുന്നു.
+Summary: If we can estimate the area of a circle with diameter 1, then dividing
+by $r^2 = (1/2)^2 = 1/4$ gives an estimate of $\pi$.
 
-Bivariate uniforms sample ചെയ്ത്, circle-ൽ വീഴുന്ന
-fraction നോക്കി നമ്മൾ area estimate ചെയ്യുന്നു.
+We estimate the area by sampling bivariate uniforms and looking at the
+fraction that falls into the circle.
 
 ```{code-cell} python3
 n = 1000000 # sample size for Monte Carlo simulation

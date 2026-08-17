@@ -283,7 +283,7 @@
 
                     <!-- Last modified / Changelog dropdown -->
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Aug 06, 2026
+                            Last changed: Aug 17, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
 
@@ -294,11 +294,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/739974a" class="changelog-hash">739974a</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/9fd1222" class="changelog-hash">9fd1222</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Merge ff09b87e96c88f351a304e46b68a57bac3c9dd63 into 23ef144870be8930f61fb0d80771171390654a7a</span>
+                                <span class="changelog-message">Merge 6ee7130e0cf7ef2ffb22e6a760367952c8ea2b5e into 23ef144870be8930f61fb0d80771171390654a7a</span>
                             </li>
                             
                         </ul>
@@ -317,27 +317,26 @@
 <h1><span class="section-number">1. </span>An Introductory Example<a class="headerlink" href="#an-introductory-example" title="Link to this heading">#</a></h1>
 <section id="overview">
 <span id="index-0"></span><h2><span class="section-number">1.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>നമ്മൾ ഇപ്പോൾ Python language തന്നെ പഠിച്ചു തുടങ്ങാൻ തയ്യാറാണ്.</p>
+<p>ഇനി നമ്മുക്ക് Python language-നെ പറ്റി പഠിക്കാം.</p>
 <p>ഈ lecture-ൽ, നമ്മൾ ചെറിയ Python programs എഴുതി, അവയെ വിശദമായി പരിശോധിക്കും.</p>
-<p>ഇതിന്റെ ലക്ഷ്യം നിങ്ങൾക്ക് അടിസ്ഥാന Python syntax-ഉം data structures-ഉം പരിചയപ്പെടുത്തുക എന്നതാണ്.</p>
-<p>കൂടുതൽ ആഴത്തിലുള്ള concepts പിന്നീടുള്ള lectures-ൽ കൈകാര്യം ചെയ്യും.</p>
-<p>ഇത് തുടങ്ങുന്നതിന് മുമ്പ് Python-ൽ getting started ചെയ്യുന്നതിനെക്കുറിച്ചുള്ള <span class="xref std std-doc">lecture</span> നിങ്ങൾ വായിച്ചിരിക്കണം.</p>
+<p>Basic Python syntax-ഉം data structures-ഉം നിങ്ങൾക്ക് introduce ചെയ്തു തരിക എന്നതാണ് ഈ lecture-ന്റെ ലക്ഷ്യം.</p>
+<p>കൂടുതൽ ആഴത്തിലുള്ള concepts പിന്നീടുള്ള lectures-ൽ cover ചെയ്യും.</p>
+<p>ഈ lecture-ലേക്കു കടക്കുന്നതിനു മുമ്പ് നിങ്ങൾ getting started with Python എന്ന <span class="xref std std-doc">lecture</span> വായിച്ചിട്ടുണ്ടാകും എന്ന് കരുതുന്നു.</p>
 </section>
 <section id="the-task-plotting-a-white-noise-process">
 <h2><span class="section-number">1.2. </span>The Task: Plotting a White Noise Process<a class="headerlink" href="#the-task-plotting-a-white-noise-process" title="Link to this heading">#</a></h2>
-<p>ഓരോ draw <span class="math notranslate nohighlight">\(\epsilon_t\)</span>-ഉം independent standard normal ആയ white noise
-process <span class="math notranslate nohighlight">\(\epsilon_0, \epsilon_1, \ldots, \epsilon_T\)</span> simulate ചെയ്ത് plot ചെയ്യണം എന്ന് കരുതുക.</p>
-<p>മറ്റൊരു വിധത്തിൽ പറഞ്ഞാൽ, ഇതുപോലുള്ള figures generate ചെയ്യണം:</p>
+<p>നമുക്ക് ഒരു white noise process (<span class="math notranslate nohighlight">\(\epsilon_0, \epsilon_1, \ldots, \epsilon_T\)</span>) simulate ചെയ്ത്, plot ചെയ്യണം എന്ന് കരുതുക — ഓരോ draw-ഉം (<span class="math notranslate nohighlight">\(\epsilon_t\)</span>) ഒരു independent standard normal ആണ്.</p>
+<p>അതായത്, താഴെ കൊടുത്തിരിക്കുന്നത് പോലെയുള്ള ഒരു figure നമുക്ക് generate ചെയ്യണം:</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="_images/test_program_1_updated.png"><img alt="_images/test_program_1_updated.png" src="_images/test_program_1_updated.png" style="width: 444.0px; height: 297.59999999999997px;" />
 </a>
 </figure>
 <p>(ഇവിടെ <span class="math notranslate nohighlight">\(t\)</span> horizontal axis-ലും <span class="math notranslate nohighlight">\(\epsilon_t\)</span> vertical axis-ലും ആണ്.)</p>
-<p>നമ്മൾ ഇത് പല വ്യത്യസ്ത രീതികളിൽ ചെയ്യും, ഓരോ തവണയും Python-നെക്കുറിച്ച് കൂടുതൽ കാര്യങ്ങൾ പഠിക്കും.</p>
+<p>ഈ white noise process plotting നമ്മൾ പല വിധത്തിൽ ചെയ്യും — ഓരോ രീതിയിൽ ചെയ്യുമ്പോഴും നമ്മൾ Python-നെക്കുറിച്ച് കൂടുതൽ കാര്യങ്ങൾ പഠിക്കും.</p>
 </section>
 <section id="version-1">
 <h2><span class="section-number">1.3. </span>Version 1<a class="headerlink" href="#version-1" title="Link to this heading">#</a></h2>
-<p id="ourfirstprog">നമ്മൾ set ചെയ്ത task ചെയ്യുന്ന കുറച്ച് lines of code ഇവിടെ ഉണ്ട്</p>
+<p id="ourfirstprog">നമ്മൾ set ചെയ്ത task ചെയ്യുന്ന കുറച്ച് lines of code താഴെ കാണാം.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -351,23 +350,22 @@ process <span class="math notranslate nohighlight">\(\epsilon_0, \epsilon_1, \ld
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3ffa8ec2b7cf2115e48060d0b34146501e670c72519ebe926f353ab2a5fc2c5e.png" src="_images/3ffa8ec2b7cf2115e48060d0b34146501e670c72519ebe926f353ab2a5fc2c5e.png" />
+<img alt="_images/617a8c4711a545e509f7603a8073d662cf69cd8c6a80d7775636fb3e47705878.png" src="_images/617a8c4711a545e509f7603a8073d662cf69cd8c6a80d7775636fb3e47705878.png" />
 </div>
 </div>
-<p>ഈ program-നെ ഭാഗങ്ങളാക്കി, അത് എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് നോക്കാം.</p>
+<p>നമുക്ക് ഈ program-നെ break down ചെയ്ത്, അത് എങ്ങനെ work ചെയ്യുന്നു എന്ന് നോക്കാം.</p>
 <section id="imports">
 <span id="import"></span><h3><span class="section-number">1.3.1. </span>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h3>
-<p>Program-ന്റെ ആദ്യ രണ്ട് lines external code
-libraries-ൽ നിന്ന് functionality import ചെയ്യുന്നു.</p>
-<p>ആദ്യ line <span class="xref std std-doc">NumPy</span> import ചെയ്യുന്നു, ഇത് ഇത്തരം tasks-ക്ക് ഇഷ്ടപ്പെട്ട ഒരു Python package ആണ്</p>
+<p>ഈ program-ന്റെ ആദ്യത്തെ രണ്ട് lines, external code libraries-ൽ നിന്നും functionality import ചെയ്യുന്നു.</p>
+<p>ആദ്യത്തെ line <span class="xref std std-doc">NumPy</span> import ചെയ്യുന്നു — NumPy, താഴെ കൊടുത്തിരിക്കുന്ന പോലത്തെ tasks-കൾ ചെയ്യാനുള്ള ഒരു Python package ആണ്:</p>
 <ul class="simple">
-<li><p>arrays (vectors and matrices) കൈകാര്യം ചെയ്യൽ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> പോലുള്ള common mathematical functions</p></li>
-<li><p>random numbers generate ചെയ്യൽ</p></li>
+<li><p>working with arrays (vectors and matrices)</p></li>
+<li><p>common mathematical functions like <code class="docutils literal notranslate"><span class="pre">cos</span></code> and <code class="docutils literal notranslate"><span class="pre">sqrt</span></code></p></li>
+<li><p>generating random numbers</p></li>
 <li><p>linear algebra, etc.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> എന്ന് ചെയ്ത ശേഷം, <code class="docutils literal notranslate"><span class="pre">np.attribute</span></code> എന്ന syntax വഴി ഈ attributes-ലേക്ക് നമുക്ക് access ലഭിക്കും.</p>
-<p>ഇവിടെ രണ്ട് examples കൂടി</p>
+<p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> ചെയ്ത് കഴിഞ്ഞാൽ, <code class="docutils literal notranslate"><span class="pre">np.attribute</span></code> എന്ന syntax ഉപയോഗിച്ച് ഈ attributes നമുക്ക് access ചെയ്യാം.</p>
+<p>Here's two more examples</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -394,21 +392,21 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 <section id="why-so-many-imports">
 <h4><span class="section-number">1.3.1.1. </span>Why So Many Imports?<a class="headerlink" href="#why-so-many-imports" title="Link to this heading">#</a></h4>
-<p>Python programs സാധാരണയായി multiple import statements ആവശ്യപ്പെടുന്നു.</p>
+<p>Python programs-ൽ സാധാരണയായി multiple import statements ആവശ്യമായിവരുന്നു.</p>
 <p>കാരണം, core language മനഃപൂർവ്വം ചെറുതായി നിലനിർത്തിയിരിക്കുന്നു, അതുകൊണ്ട് അത് പഠിക്കാനും maintain ചെയ്യാനും improve ചെയ്യാനും easy ആണ്.</p>
-<p>Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്കിലും ചെയ്യണമെങ്കിൽ, മിക്കവാറും എപ്പോഴും additional functionality import ചെയ്യേണ്ടി വരും.</p>
+<p>Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്കിലും ചെയ്യണമെങ്കിൽ, മിക്ക സമയത്തും additional functionality import ചെയ്യേണ്ടി വരും.</p>
 </section>
 <section id="packages">
 <h4><span class="section-number">1.3.1.2. </span>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h4>
 <p id="index-1">മുകളിൽ പറഞ്ഞതുപോലെ, NumPy ഒരു Python package ആണ്.</p>
-<p>Developers അവർ share ചെയ്യാൻ ഉദ്ദേശിക്കുന്ന code organize ചെയ്യാൻ packages ഉപയോഗിക്കുന്നു.</p>
-<p>വാസ്തവത്തിൽ, ഒരു <strong>package</strong> എന്നത് ഇവ അടങ്ങിയ ഒരു directory മാത്രമാണ്</p>
+<p>Share ചെയ്യാൻ ആഗ്രഹിക്കുന്ന code organize ചെയ്യാനാണ് developers packages ഉപയോഗിക്കുന്നത്.</p>
+<p>In fact, ഒരു <strong>package</strong> എന്നത് താഴെ കൊടുത്തിരിക്കുന്നവ അടങ്ങിയ ഒരു directory ആണ്:</p>
 <ol class="arabic simple">
-<li><p>Python code ഉള്ള files --- Python-ന്റെ ഭാഷയിൽ <strong>modules</strong> എന്ന് വിളിക്കുന്നു</p></li>
-<li><p>Python access ചെയ്യാൻ കഴിയുന്ന compiled code ചിലപ്പോൾ (ഉദാ: C അല്ലെങ്കിൽ FORTRAN code-യിൽ നിന്ന് compile ചെയ്ത functions)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">package_name</span></code> എന്ന് type ചെയ്യുമ്പോൾ എന്ത് execute ചെയ്യണം എന്ന് specify ചെയ്യുന്ന <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> എന്ന file</p></li>
+<li><p>Python code ഉള്ള files — Python-ന്റെ ഭാഷയിൽ ഇവയെ <strong>modules</strong> എന്ന് വിളിക്കുന്നു</p></li>
+<li><p>Python-ന് access ചെയ്യാൻ കഴിയുന്ന compiled code (e.g., functions compiled from C or FORTRAN code)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> എന്ന ഒരു file — നമ്മൾ <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">package_name</span></code> type ചെയ്യുമ്പോൾ എന്ത് execute ചെയ്യണം എന്ന് ഇത് specify ചെയ്യുന്നു</p></li>
 </ol>
-<p>NumPy-യുടെ <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>-യുടെ location Python-ൽ ഈ code run ചെയ്ത് check ചെയ്യാം:</p>
+<p>NumPy-യുടെ <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>-യുടെ location check ചെയ്യാൻ, താഴെ കൊടുത്തിരിക്കുന്ന code Python-ൽ run ചെയ്യുക:</p>
 <div class="no-execute highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
@@ -418,9 +416,9 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 <section id="subpackages">
 <h4><span class="section-number">1.3.1.3. </span>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h4>
 <p id="index-2"><code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng()</span></code> എന്ന line നോക്കുക.</p>
-<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">np</span></code> എന്നത് NumPy package-നെ സൂചിപ്പിക്കുന്നു, <code class="docutils literal notranslate"><span class="pre">random</span></code> എന്നത് NumPy-യുടെ ഒരു <strong>subpackage</strong> ആണ്.</p>
-<p>Subpackages എന്നത് മറ്റൊരു package-ന്റെ subdirectories ആയ packages മാത്രമാണ്.</p>
-<p>ഉദാഹരണത്തിന്, NumPy-യുടെ directory-യുടെ കീഴിൽ <code class="docutils literal notranslate"><span class="pre">random</span></code> എന്ന folder നിങ്ങൾക്ക് കണ്ടെത്താം.</p>
+<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">np</span></code> എന്നത് NumPy package-നെ refer ചെയ്യുന്നു, അതേ സമയം <code class="docutils literal notranslate"><span class="pre">random</span></code> എന്നത് NumPy-യുടെ ഒരു <strong>subpackage</strong> ആണ്.</p>
+<p>Subpackages എന്നത് മറ്റൊരു package-ന്റെ subdirectory ആയ packages മാത്രമാണ്.</p>
+<p>ഉദാഹരണത്തിന്, NumPy-യുടെ directory-യിൽ <code class="docutils literal notranslate"><span class="pre">random</span></code> എന്ന folder കാണാം.</p>
 </section>
 </section>
 <section id="importing-names-directly">
@@ -440,7 +438,7 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 </div>
-<p>NumPy-യുടെ square root function access ചെയ്യാൻ മറ്റൊരു വഴി ഇവിടെ</p>
+<p>NumPy-യുടെ square root function access ചെയ്യാനുള്ള മറ്റൊരു രീതി താഴെ കാണാം</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
@@ -456,13 +454,13 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 <p>ഇതും correct ആണ്.</p>
-<p>നമ്മുടെ code-ൽ <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> പലപ്പോഴും ഉപയോഗിക്കുകയാണെങ്കിൽ, ഇത് ഉപയോഗിക്കുന്നത് typing കുറയ്ക്കും എന്നതാണ് advantage.</p>
-<p>ദോഷം, ഒരു long program-ൽ, ഈ രണ്ട് lines പലപ്പോഴും പല മറ്റ് lines-ഉം കൊണ്ട് separate ചെയ്യപ്പെട്ടേക്കാം.</p>
-<p>അപ്പോൾ, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> എവിടെ നിന്ന് വന്നു എന്ന് readers അറിയാൻ ആഗ്രഹിച്ചാൽ, അത് കണ്ടെത്താൻ കൂടുതൽ ബുദ്ധിമുട്ടാകും.</p>
+<p>ഇതിന്റെ advantage — നമ്മുടെ code-ൽ <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> പലപ്പോഴും ഉപയോഗിക്കുകയാണെങ്കിൽ, ഇതുവഴി നമുക്ക് typing കുറക്കാൻ സാധിക്കും.</p>
+<p>ഇതിന്റെ disadvantage — ഒരു long program-ൽ, ഈ രണ്ട് lines-ന്റെയും ഇടയിൽ മറ്റ് പല lines-ഉം വന്നേക്കാം.</p>
+<p>അങ്ങനെ വരുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> എവിടെ നിന്ന് വന്നു എന്ന് readers-ന് മനസ്സിലാക്കാൻ ബുദ്ധിമുട്ടായേക്കാം.</p>
 </section>
 <section id="random-draws">
 <h3><span class="section-number">1.3.3. </span>Random Draws<a class="headerlink" href="#random-draws" title="Link to this heading">#</a></h3>
-<p>White noise plot ചെയ്യുന്ന നമ്മുടെ program-ലേക്ക് തിരികെ വരാം, import statements കഴിഞ്ഞുള്ള ബാക്കി മൂന്ന് lines ഇവയാണ്</p>
+<p>White noise plot ചെയ്യുന്ന നമ്മുടെ program-ലേക്ക് തിരികെ വരാം. Import statements കഴിഞ്ഞുള്ള ബാക്കി മൂന്ന് lines ഇവയാണ്:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϵ_values</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -472,24 +470,22 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/aee5860e99fca40a4bfd1bd2ecaf4eae6bc02cd1530fda0e7184fd9ff02a1b2c.png" src="_images/aee5860e99fca40a4bfd1bd2ecaf4eae6bc02cd1530fda0e7184fd9ff02a1b2c.png" />
+<img alt="_images/1a7e914a2449e3f76f02fcde0139a37f0b439116840881d229d1756c869793f2.png" src="_images/1a7e914a2449e3f76f02fcde0139a37f0b439116840881d229d1756c869793f2.png" />
 </div>
 </div>
-<p>ആദ്യ line 100 (quasi) independent standard normals generate ചെയ്ത്
-<code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code>-ൽ store ചെയ്യുന്നു.</p>
+<p>ആദ്യത്തെ line, 100 (quasi) independent standard normals-നെ generate ചെയ്ത് <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code>-ൽ store ചെയ്യുന്നു.</p>
 <p>അടുത്ത രണ്ട് lines plot generate ചെയ്യുന്നു.</p>
-<p>താഴെ ഈ plot configure ചെയ്യാനും improve ചെയ്യാനുമുള്ള പല വഴികളും നമുക്ക് നോക്കാം.</p>
+<p>ഈ plot configure ചെയ്യാനും improve ചെയ്യാനുമുള്ള പല വഴികൾ നമുക്ക് താഴെ കാണാം.</p>
 </section>
 </section>
 <section id="alternative-implementations">
 <h2><span class="section-number">1.4. </span>Alternative Implementations<a class="headerlink" href="#alternative-implementations" title="Link to this heading">#</a></h2>
-<p>Standard normal distribution-ൽ നിന്നുള്ള IID draws plot ചെയ്ത <a class="reference internal" href="#ourfirstprog"><span class="std std-ref">നമ്മുടെ ആദ്യ program</span></a>-ന്റെ ചില alternative versions എഴുതി നോക്കാം.</p>
-<p>താഴെയുള്ള programs original-നേക്കാൾ less efficient ആണ്, അതുകൊണ്ട്
-ഇവ അല്പം artificial ആണ്.</p>
+<p>Standard normal distribution-ൽ നിന്നും IID draws plot ചെയ്ത <a class="reference internal" href="#ourfirstprog"><span class="std std-ref">നമ്മുടെ ആദ്യത്തെ program</span></a>, മറ്റു പല രീതികളിൽ എങ്ങനെ എഴുതാം എന്ന് നോക്കാം.</p>
+<p>താഴെ കൊടുത്തിരിക്കുന്ന programs, original-ന്റെ അത്ര efficient അല്ല - അവ ഒരു ആശയം വിശദീകരിക്കാനായി മാത്രം നിർമ്മിച്ചവയാണ്.</p>
 <p>എന്നാൽ ഇവ ഒരു familiar setting-ൽ ചില പ്രധാന Python syntax-ഉം semantics-ഉം illustrate ചെയ്യാൻ സഹായിക്കുന്നു.</p>
 <section id="a-version-with-a-for-loop">
 <h3><span class="section-number">1.4.1. </span>A Version with a For Loop<a class="headerlink" href="#a-version-with-a-for-loop" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops-ഉം Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version ഇവിടെ.</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops-ഉം Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version താഴെ കാണാം:</p>
 <div class="cell docutils container" id="firstloopprog">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_length</span> <span class="o">=</span> <span class="mi">100</span>
@@ -505,23 +501,23 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/04c1c5f4d56a63dcf4a4c91bbf7ed985bcf363a99a7ee6b496a93a2f8eb94812.png" src="_images/04c1c5f4d56a63dcf4a4c91bbf7ed985bcf363a99a7ee6b496a93a2f8eb94812.png" />
+<img alt="_images/66e5a645477cf3a731797c5f1534c231816e7561a49220263105a5e09d882657.png" src="_images/66e5a645477cf3a731797c5f1534c231816e7561a49220263105a5e09d882657.png" />
 </div>
 </div>
 <p>ചുരുക്കത്തിൽ,</p>
 <ul class="simple">
-<li><p>ആദ്യ line time series-ന്റെ ആവശ്യമുള്ള length set ചെയ്യുന്നു.</p></li>
-<li><p>അടുത്ത line, ജനറേറ്റ് ചെയ്യുന്ന <span class="math notranslate nohighlight">\(\epsilon_t\)</span> values store ചെയ്യാൻ <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> എന്ന empty <em>list</em> create ചെയ്യുന്നു.</p></li>
+<li><p>ആദ്യത്തെ line, time series-ന് ആവശ്യമായ length set ചെയ്യുന്നു.</p></li>
+<li><p>അടുത്ത line, <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> എന്നൊരു empty <em>list</em> create ചെയ്യുന്നു — അതിൽ ആയിരിക്കും നമ്മൾ generate ചെയ്യുന്ന <span class="math notranslate nohighlight">\(\epsilon_t\)</span> values store ചെയ്യുക.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">empty</span> <span class="pre">list</span></code> എന്ന statement ഒരു <em>comment</em> ആണ്, Python-ന്റെ interpreter ഇത് ignore ചെയ്യും.</p></li>
-<li><p>അടുത്ത മൂന്ന് lines <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ആണ്, ഇത് ആവർത്തിച്ച് പുതിയ random number <span class="math notranslate nohighlight">\(\epsilon_t\)</span> draw ചെയ്ത് <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> list-ന്റെ അവസാനത്തിൽ append ചെയ്യുന്നു.</p></li>
-<li><p>അവസാന രണ്ട് lines plot generate ചെയ്ത് user-ന് display ചെയ്യുന്നു.</p></li>
+<li><p>അടുത്ത മൂന്ന് lines ആണ് <code class="docutils literal notranslate"><span class="pre">for</span></code> loop — ഇത് repeatedly ഒരു പുതിയ random number <span class="math notranslate nohighlight">\(\epsilon_t\)</span> draw ചെയ്ത് <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> list-ന്റെ അവസാനം append ചെയ്യുന്നു.</p></li>
+<li><p>അവസാനത്തെ രണ്ട് lines, plot generate ചെയ്ത് user-ന് display ചെയ്യുന്നു.</p></li>
 </ul>
-<p>ഈ program-ന്റെ ചില ഭാഗങ്ങൾ കൂടുതൽ വിശദമായി പഠിക്കാം.</p>
+<p>ഈ program-ന്റെ കുറച്ചു ഭാഗങ്ങൾ നമുക്ക് വിശദമായി പഠിക്കാം.</p>
 </section>
 <section id="lists">
 <span id="lists-ref"></span><h3><span class="section-number">1.4.2. </span>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
-<p id="index-3"><code class="docutils literal notranslate"><span class="pre">ϵ_values</span> <span class="pre">=</span> <span class="pre">[]</span></code> എന്ന statement നോക്കുക, ഇത് ഒരു empty list create ചെയ്യുന്നു.</p>
-<p>Lists എന്നത് objects-ന്റെ ഒരു collection group ചെയ്യാൻ ഉപയോഗിക്കുന്ന native Python data structure ആണ്.</p>
+<p id="index-3"><code class="docutils literal notranslate"><span class="pre">ϵ_values</span> <span class="pre">=</span> <span class="pre">[]</span></code> എന്ന statement നോക്കുക. ഇത് ഒരു empty list create ചെയ്യുന്നു.</p>
+<p>ഒരു കൂട്ടം objects-നെ ഒരുമിച്ച് group ചെയ്യാൻ ഉപയോഗിക്കുന്ന Python-ന്റെ ഒരു native data structure ആണ് Lists.</p>
 <p>Lists-ലെ items ordered ആണ്, കൂടാതെ lists-ൽ duplicates അനുവദനീയമാണ്.</p>
 <p>ഉദാഹരണത്തിന്, ഇത് try ചെയ്യുക</p>
 <div class="cell docutils container">
@@ -538,7 +534,7 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">x</span></code>-ന്റെ ആദ്യ element ഒരു <a class="reference external" href="https://en.wikipedia.org/wiki/Integer_(computer_science)">integer</a> ആണ്, അടുത്തത് ഒരു <a class="reference external" href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a> ആണ്, മൂന്നാമത്തേത് ഒരു <a class="reference external" href="https://en.wikipedia.org/wiki/Boolean_data_type">Boolean value</a> ആണ്.</p>
-<p>ഒരു list-ലേക്ക് value add ചെയ്യുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">list_name.append(some_value)</span></code> എന്ന syntax നമുക്ക് ഉപയോഗിക്കാം</p>
+<p>ഒരു list-ലേക്ക് ഒരു value add ചെയ്യാൻ, <code class="docutils literal notranslate"><span class="pre">list_name.append(some_value)</span></code> എന്ന syntax നമുക്ക് ഉപയോഗിക്കാം</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
@@ -564,11 +560,11 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 </div>
-<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">append()</span></code> എന്നത് <strong>method</strong> എന്ന് വിളിക്കപ്പെടുന്ന ഒന്നാണ്, ഇത് ഒരു object-ൽ &quot;attach&quot; ചെയ്ത function ആണ്---ഇവിടെ <code class="docutils literal notranslate"><span class="pre">x</span></code> എന്ന list.</p>
-<p>Methods-നെക്കുറിച്ച് <span class="xref std std-doc">പിന്നീട്</span> നമ്മൾ എല്ലാം പഠിക്കും, പക്ഷേ ഒരു idea നൽകാൻ,</p>
+<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">append()</span></code> എന്നത് ഒരു <strong>method</strong> ആണ്. ഒരു object-നോട് &quot;attach&quot; ആയിരിക്കുന്ന ഒരു function-നെയാണ് method എന്ന് വിളിക്കുന്നത്. ഇവിടെ ആ object <code class="docutils literal notranslate"><span class="pre">x</span></code> എന്ന list ആണ്.</p>
+<p>Methods-നെ പറ്റി നമ്മൾ <span class="xref std std-doc">പിന്നീട്</span> വിശദമായി പഠിക്കും, പക്ഷേ ഇപ്പോൾ ഒരു idea കിട്ടാൻ നിങ്ങൾ ഇത്രെയും മനസിലാക്കുക:</p>
 <ul class="simple">
-<li><p>Lists, strings പോലുള്ള Python objects-ന് എല്ലാം, object-ൽ അടങ്ങിയ data manipulate ചെയ്യാൻ ഉപയോഗിക്കുന്ന methods ഉണ്ട്.</p></li>
-<li><p>String objects-ന് <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a> ഉണ്ട്, list objects-ന് <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> ഉണ്ട്, etc.</p></li>
+<li><p>Lists, strings തുടങ്ങിയ Python objects-ന് എല്ലാം, അവയിൽ അടങ്ങിയിരിക്കുന്ന data manipulate ചെയ്യാൻ ഉപയോഗിക്കുന്ന methods ഉണ്ട്.</p></li>
+<li><p>String objects-ന് <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">string methods</a> ഉണ്ട്, list objects-ന് <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">list methods</a> ഉണ്ട്, അങ്ങനെ ഓരോ object-ഇനും അതിന് suitable ആയ methods ഉണ്ടായിരിക്കും.</p></li>
 </ul>
 <p>മറ്റൊരു useful list method ആണ് <code class="docutils literal notranslate"><span class="pre">pop()</span></code></p>
 <div class="cell docutils container">
@@ -607,7 +603,7 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 </div>
-<p>Python-ലെ lists zero-based ആണ് (C, Java അല്ലെങ്കിൽ Go-യിലേത് പോലെ), അതുകൊണ്ട് ആദ്യ element <code class="docutils literal notranslate"><span class="pre">x[0]</span></code> എന്ന് reference ചെയ്യുന്നു</p>
+<p>Python-ലെ lists zero-based ആണ് (as in C, Java or Go). അതിനാൽ list-ൽ, ആദ്യത്തെ element-ന്റെ reference <code class="docutils literal notranslate"><span class="pre">x[0]</span></code> ആയി ഉപയോഗിക്കുന്നു</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>   <span class="c1"># first element of x</span>
@@ -635,7 +631,7 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </section>
 <section id="the-for-loop">
 <h3><span class="section-number">1.4.3. </span>The For Loop<a class="headerlink" href="#the-for-loop" title="Link to this heading">#</a></h3>
-<p id="index-4">ഇപ്പോൾ <a class="reference internal" href="#firstloopprog"><span class="std std-ref">മുകളിലുള്ള program</span></a>-ലെ <code class="docutils literal notranslate"><span class="pre">for</span></code> loop നോക്കാം, അത് ഇതായിരുന്നു</p>
+<p id="index-4">ഇനി നമുക്ക് <a class="reference internal" href="#firstloopprog"><span class="std std-ref">മുകളിലുള്ള program</span></a>-ലെ <code class="docutils literal notranslate"><span class="pre">for</span></code> loop നോക്കാം. അവിടെ നമ്മൾ ഉപയോഗിച്ച <code class="docutils literal notranslate"><span class="pre">for</span></code> loop താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ts_length</span><span class="p">):</span>
@@ -645,11 +641,11 @@ libraries-ൽ നിന്ന് functionality import ചെയ്യുന്�
 </div>
 </div>
 </div>
-<p>Python ഈ indented ആയ രണ്ട് lines <code class="docutils literal notranslate"><span class="pre">ts_length</span></code> തവണ execute ചെയ്ത ശേഷമേ മുന്നോട്ട് പോകൂ.</p>
-<p>ഈ രണ്ട് lines-നെ <strong>code block</strong> എന്ന് വിളിക്കുന്നു, കാരണം ഇത് നമ്മൾ loop ചെയ്യുന്ന code-ന്റെ &quot;block&quot; ആണ്.</p>
-<p>മറ്റ് മിക്ക languages-ൽ നിന്ന് വ്യത്യസ്തമായി, Python code block-ന്റെ extent <em>indentation-ൽ നിന്ന് മാത്രം</em> അറിയുന്നു.</p>
-<p>നമ്മുടെ program-ൽ, <code class="docutils literal notranslate"><span class="pre">ϵ_values.append(e)</span></code> എന്ന line-ന് ശേഷം indentation കുറയുന്നു, ഇത് Python-നോട് ഈ line code block-ന്റെ lower limit ആണ് എന്ന് പറയുന്നു.</p>
-<p>Indentation-നെക്കുറിച്ച് കൂടുതൽ താഴെ---ഇപ്പോൾ, <code class="docutils literal notranslate"><span class="pre">for</span></code> loop-ന്റെ മറ്റൊരു example നോക്കാം</p>
+<p>Indent ചെയ്തിരിക്കുന്ന ഈ രണ്ട് lines, <code class="docutils literal notranslate"><span class="pre">ts_length</span></code> തവണ execute ചെയ്ത ശേഷമേ Python മുന്നോട്ട് പോകൂ.</p>
+<p>ഈ രണ്ട് lines-നെ നാം <strong>code block</strong> എന്ന് വിളിക്കുന്നു - കാരണം നമ്മൾ <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ഉപയോഗിച്ച് ഈ &quot;block&quot; of code-നെയാണ് loop ചെയ്യിക്കുന്നത്.</p>
+<p>ഒരു code block എവിടെ വരെ extent ചെയ്യുന്നു എന്ന് Python മനസ്സിലാക്കുന്നത് അതിന്റെ <em>indentation മാത്രം</em> ഉപയോഗിച്ചാണ്. ഇത്, മറ്റു പല programming languages-ൽ നിന്നും Python-നെ വ്യത്യസ്തമാക്കുന്നു.</p>
+<p>നമ്മുടെ program-ൽ, <code class="docutils literal notranslate"><span class="pre">ϵ_values.append(e)</span></code> എന്ന line-ന് ശേഷം indentation കുറയുന്നു. ഇതിലൂടെ, ആ code block അവിടെ അവസാനിക്കുന്നു എന്ന് Python മനസ്സിലാക്കുന്നു.</p>
+<p>Indentation-നെ പറ്റി കൂടുതൽ താഴെ കാണാം — ഇപ്പോൾ <code class="docutils literal notranslate"><span class="pre">for</span></code> loop-ന്റെ മറ്റൊരു example നോക്കാം.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">]</span>
@@ -666,30 +662,29 @@ The plural of bird is birds
 </div>
 </div>
 </div>
-<p>ഈ example <code class="docutils literal notranslate"><span class="pre">for</span></code> loop എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് clarify ചെയ്യാൻ സഹായിക്കുന്നു: ഈ രീതിയിലുള്ള ഒരു
-loop execute ചെയ്യുമ്പോൾ</p>
+<p>ഈ example, <code class="docutils literal notranslate"><span class="pre">for</span></code> loop എങ്ങനെ പ്രവർത്തിക്കുന്നു എന്ന് clarify ചെയ്യാൻ സഹായിക്കുന്നു: താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ ഒരു loop execute ചെയ്യുമ്പോൾ,</p>
 <div class="no-execute highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable_name</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">code</span> <span class="n">block</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Python interpreter ഇവ perform ചെയ്യുന്നു:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sequence</span></code>-ലെ ഓരോ element-നും, ആ element-ന് <code class="docutils literal notranslate"><span class="pre">variable_name</span></code> എന്ന name &quot;bind&quot; ചെയ്ത് code block execute ചെയ്യുന്നു.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sequence</span></code>-ലെ ഓരോ element-ഇനും, Python ആ element-നെ <code class="docutils literal notranslate"><span class="pre">variable_name</span></code> എന്ന name &quot;bind&quot; ചെയ്യുന്നു. തുടർന്ന് code block execute ചെയ്യുന്നു.</p></li>
 </ul>
 </section>
 <section id="a-comment-on-indentation">
 <h3><span class="section-number">1.4.4. </span>A Comment on Indentation<a class="headerlink" href="#a-comment-on-indentation" title="Link to this heading">#</a></h3>
-<p id="index-5"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop discuss ചെയ്യുമ്പോൾ, loop ചെയ്യപ്പെടുന്ന code blocks indentation-ൽ delimit ചെയ്യപ്പെടുന്നു എന്ന് നമ്മൾ explain ചെയ്തു.</p>
-<p>വാസ്തവത്തിൽ, Python-ൽ, <em>എല്ലാ</em> code blocks-ഉം (അതായത്, loops, if clauses, function definitions, etc.-ന് അകത്ത് സംഭവിക്കുന്നവ) indentation-ൽ delimit ചെയ്യപ്പെടുന്നു.</p>
-<p>അതുകൊണ്ട്, മറ്റ് മിക്ക languages-ൽ നിന്ന് വ്യത്യസ്തമായി, Python code-ലെ whitespace program-ന്റെ output-നെ affect ചെയ്യുന്നു.</p>
-<p>ഇത് ശീലമായാൽ, ഇത് ഒരു നല്ല കാര്യമാണ്: ഇത്</p>
+<p id="index-5"><code class="docutils literal notranslate"><span class="pre">for</span></code> loop discuss ചെയ്തപ്പോൾ, loop ചെയ്യപ്പെടുന്ന code block-ന്റെ delimit, അതിന്റെ indentation ഉപയോഗിച്ചാണ് Python മനസ്സിലാക്കുന്നതെന്ന് നമ്മൾ discuss ചെയ്തിരുന്നു.</p>
+<p>In fact, Python-ൽ, <em>എല്ലാ</em> code blocks-ഉം (അതായത്, loops-ന്റെ code block, if clauses-ന്റെ code block, function definitions-ന്റെ code block, etc.) indentation ഉപയോഗിച്ചാണ് delimit ചെയ്യപ്പെടുന്നത്.</p>
+<p>അതിനാൽ, മറ്റു മിക്ക programming languages-ൽ നിന്നും വ്യത്യസ്തമായി, Python code-ലെ whitespace, program-ന്റെ output-നെ affect ചെയ്യുന്നു.</p>
+<p>ഒരിക്കൽ ഇത് ശീലമായാൽ, ഇത് ഒരു നല്ല കാര്യമാണ്.</p>
 <ul class="simple">
-<li><p>clean-ഉം consistent-ഉം ആയ indentation force ചെയ്യുന്നു, readability improve ചെയ്യുന്നു</p></li>
+<li><p>clean-ഉം consistent-ഉം ആയ indentation വഴി readability improve ചെയ്യുന്നു</p></li>
 <li><p>മറ്റ് languages-ൽ ഉപയോഗിക്കുന്ന brackets അല്ലെങ്കിൽ end statements പോലുള്ള clutter remove ചെയ്യുന്നു</p></li>
 </ul>
-<p>മറുവശത്ത്, ഇത് correct ആയി ചെയ്യാൻ ഒരല്പം care ആവശ്യമാണ്, അതുകൊണ്ട് ദയവായി ഓർക്കുക:</p>
+<p>On the other hand, ഇത് correct ആയി ഉപയോഗിക്കാൻ ഒരല്പം care ആവശ്യമാണ്. അതിനാൽ താഴെപ്പറയുന്ന കാര്യങ്ങൾ ഓർത്തിരിക്കുക:</p>
 <ul class="simple">
-<li><p>ഒരു code block ആരംഭിക്കുന്നതിന് മുമ്പുള്ള line എപ്പോഴും colon-ൽ end ആകുന്നു</p>
+<li><p>ഒരു code block ആരംഭിക്കുന്നതിന് മുമ്പുള്ള line എപ്പോഴും colon-ൽ അവസാനിക്കണം</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(10):</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y:</span></code></p></li>
@@ -697,14 +692,14 @@ loop execute ചെയ്യുമ്പോൾ</p>
 <li><p>etc.</p></li>
 </ul>
 </li>
-<li><p>ഒരു code block-ലെ എല്ലാ lines-ഉം ഒരേ amount of indentation ഉള്ളവയായിരിക്കണം.</p></li>
-<li><p>Python standard 4 spaces ആണ്, അത് നിങ്ങൾ ഉപയോഗിക്കണം.</p></li>
+<li><p>ഒരു code block-ലെ എല്ലാ lines-ഇനും ഒരേ amount of indentation ഉണ്ടായിരിക്കണം.</p></li>
+<li><p>Python-ന്റെ standard 4 spaces ആണ്. അതിനാൽ നിങ്ങളും 4 spaces ഉപയോഗിക്കണം.</p></li>
 </ul>
 </section>
 <section id="while-loops">
 <h3><span class="section-number">1.4.5. </span>While Loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
-<p id="index-6">Python-ൽ iteration-ന് ഏറ്റവും common ആയ technique <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ആണ്.</p>
-<p>എന്നാൽ, illustration-ന്റെ purpose-ന് വേണ്ടി, <a class="reference internal" href="#firstloopprog"><span class="std std-ref">മുകളിലുള്ള program</span></a> <code class="docutils literal notranslate"><span class="pre">while</span></code> loop ഉപയോഗിച്ച് modify ചെയ്യാം.</p>
+<p id="index-6">Python-ൽ iteration ചെയ്യാൻ ഏറ്റവും common ആയി ഉപയോഗിക്കുന്ന technique ആണ് <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>എന്നാൽ, illustration purpose-ന് വേണ്ടി, <a class="reference internal" href="#firstloopprog"><span class="std std-ref">മുൻപത്തെ program-ൽ</span></a> <code class="docutils literal notranslate"><span class="pre">for</span></code> loop-നു പകരം <code class="docutils literal notranslate"><span class="pre">while</span></code> loop ഉപയോഗിച്ച് എങ്ങനെ ചെയ്യാം എന്ന് നോക്കാം.</p>
 <div class="cell docutils container" id="whileloopprog">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_length</span> <span class="o">=</span> <span class="mi">100</span>
@@ -720,10 +715,10 @@ loop execute ചെയ്യുമ്പോൾ</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c71de0081abf1ed93d3971799d2cf33620a1e594a39502c17febac38c8898623.png" src="_images/c71de0081abf1ed93d3971799d2cf33620a1e594a39502c17febac38c8898623.png" />
+<img alt="_images/d91a4c949ccf74b11b6bd304b8aef8745ace1ef1464317b42c29ba3317a0ecb8.png" src="_images/d91a4c949ccf74b11b6bd304b8aef8745ace1ef1464317b42c29ba3317a0ecb8.png" />
 </div>
 </div>
-<p>Condition (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">ts_length</span></code>) satisfy ആകുന്നത് വരെ, indentation-ൽ delimit ചെയ്ത code block ഒരു while loop execute ചെയ്ത് കൊണ്ടേയിരിക്കും.</p>
+<p>Indentation ഉപയോഗിച്ച് delimit ചെയ്തിരിക്കുന്ന while loop-ന്റെ code block, (<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">ts_length</span></code>) എന്ന condition satisfy ആകുന്നത് വരെ execute ചെയ്ത് കൊണ്ടേയിരിക്കും.</p>
 <p>ഈ case-ൽ, <code class="docutils literal notranslate"><span class="pre">i</span></code> <code class="docutils literal notranslate"><span class="pre">ts_length</span></code>-ന് equal ആകുന്നത് വരെ program <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> list-ലേക്ക് values add ചെയ്ത് കൊണ്ടേയിരിക്കും:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,19 +734,19 @@ loop execute ചെയ്യുമ്പോൾ</p>
 </div>
 <p>ശ്രദ്ധിക്കുക,</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop-ന്റെ code block ഇവിടെയും indentation-ൽ മാത്രമേ delimit ചെയ്യപ്പെടുന്നുള്ളൂ.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> എന്ന statement <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+=</span> <span class="pre">1</span></code> എന്ന് replace ചെയ്യാം.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code> loop-ന്റെ code block, indentation മാത്രം ഉപയോഗിച്ചാണ് delimit ചെയ്തിരിക്കുന്നത്.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> എന്ന statement-ന് പകരം <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+=</span> <span class="pre">1</span></code> എന്നും എഴുതാം.</p></li>
 </ul>
 </section>
 </section>
 <section id="another-application">
 <h2><span class="section-number">1.5. </span>Another Application<a class="headerlink" href="#another-application" title="Link to this heading">#</a></h2>
-<p>Exercises-ലേക്ക് പോകുന്നതിന് മുമ്പ് ഒരു application കൂടി ചെയ്യാം.</p>
-<p>ഈ application-ൽ, നമ്മൾ ഒരു bank account-ന്റെ balance കാലക്രമേണ plot ചെയ്യുന്നു.</p>
-<p><span class="math notranslate nohighlight">\(T\)</span> എന്ന് denote ചെയ്യുന്ന last date വരെയുള്ള time period-ൽ withdraws ഒന്നും ഇല്ല.</p>
+<p>Exercises-ലേക്ക് കടക്കുന്നതിന് മുമ്പ് ഒരു application കൂടി നോക്കാം.</p>
+<p>ഈ application-ൽ, സമയം കടന്നുപോകുന്നതിനനുസരിച്ച് ഒരു bank account-ന്റെ balance എങ്ങനെ മാറുന്നു എന്ന് നാം plot ചെയ്യുന്നു.</p>
+<p>ഈ application-നു വേണ്ടി നമ്മൾ consider ചെയ്യുന്ന time period-ൽ withdraws ഒന്നുമില്ല. കൂടാതെ, നമ്മുടെ time period-ന്റെ last date <span class="math notranslate nohighlight">\(T\)</span> എന്ന് denote ചെയ്യുന്നു.</p>
 <p>Initial balance <span class="math notranslate nohighlight">\(b_0\)</span> ആണ്, interest rate <span class="math notranslate nohighlight">\(r\)</span> ആണ്.</p>
-<p>Balance, period <span class="math notranslate nohighlight">\(t\)</span>-ൽ നിന്ന് <span class="math notranslate nohighlight">\(t+1\)</span>-ലേക്ക് <span class="math notranslate nohighlight">\(b_{t+1} = (1 + r) b_t\)</span> എന്ന formula അനുസരിച്ച് update ആകുന്നു.</p>
-<p>താഴെയുള്ള code-ൽ, നമ്മൾ <span class="math notranslate nohighlight">\(b_0, b_1, \ldots, b_T\)</span> sequence generate ചെയ്ത് plot ചെയ്യുന്നു.</p>
+<p>സമയം <span class="math notranslate nohighlight">\(t\)</span>-ൽ നിന്നും <span class="math notranslate nohighlight">\(t+1\)</span> ആകുമ്പോൾ, balance update ചെയ്യേണ്ട formula: <span class="math notranslate nohighlight">\(b_{t+1} = (1 + r) b_t\)</span></p>
+<p>താഴെയുള്ള code-ൽ, <span class="math notranslate nohighlight">\(b_0, b_1, \ldots, b_T\)</span> എന്ന sequence നാം generate ചെയ്ത് plot ചെയ്യുന്നു.</p>
 <p>ഈ sequence store ചെയ്യാൻ ഒരു Python list ഉപയോഗിക്കുന്നതിന് പകരം, നമ്മൾ ഒരു NumPy
 array ഉപയോഗിക്കും.</p>
 <div class="cell docutils container">
@@ -774,23 +769,19 @@ array ഉപയോഗിക്കും.</p>
 <img alt="_images/bbf3eb22427a00fc4ed1cc8082d668148c43268f4d84680e7ecb9cce9e6c530d.png" src="_images/bbf3eb22427a00fc4ed1cc8082d668148c43268f4d84680e7ecb9cce9e6c530d.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">np.empty(T+1)</span></code> എന്ന statement <code class="docutils literal notranslate"><span class="pre">T+1</span></code>
-(floating point) numbers-ന് memory-ൽ storage allocate ചെയ്യുന്നു.</p>
+<p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">np.empty(T+1)</span></code> എന്ന statement, <code class="docutils literal notranslate"><span class="pre">T+1</span></code> (floating point) numbers-നുള്ള storage space, memory-യിൽ allocate ചെയ്യുന്നു.</p>
 <p>ഈ numbers <code class="docutils literal notranslate"><span class="pre">for</span></code> loop വഴി fill ചെയ്യപ്പെടുന്നു.</p>
-<p>തുടക്കത്തിൽ memory allocate ചെയ്യുന്നത്, Python list-ഉം
-<code class="docutils literal notranslate"><span class="pre">append</span></code>-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ്, കാരണം അവസാനത്തേത് operating system-ൽ നിന്ന് ആവർത്തിച്ച് storage space ചോദിക്കേണ്ടി വരും.</p>
-<p>Plot-ലേക്ക് ഒരു legend add ചെയ്തത് ശ്രദ്ധിക്കുക --- Exercises-ൽ നിങ്ങൾ
-ഉപയോഗിക്കാൻ ആവശ്യപ്പെടുന്ന ഒരു feature ആണ് ഇത്.</p>
+<p>തുടക്കത്തിൽ തന്നെ memory allocate ചെയ്യുന്നത്, Python list-ഉം <code class="docutils literal notranslate"><span class="pre">append</span></code>-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ് — കാരണം, രണ്ടാമത്തെ രീതിയിൽ (list, append), ഓരോ തവണയും storage space നൽകണമെന്ന് operating system-നോട് ആവശ്യപ്പെടേണ്ടി വരും.</p>
+<p>Plot-ൽ നമ്മൾ ഒരു legend add ചെയ്തത് ശ്രദ്ധിക്കുക — exercises-ൽ നിങ്ങളോട് ഇത് ഉപയോഗിക്കാൻ ആവശ്യപ്പെടും.</p>
 </section>
 <section id="exercises">
 <h2><span class="section-number">1.6. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<p>ഇനി നമ്മൾ exercises-ലേക്ക് പോകുന്നു. ഇവ complete ചെയ്യുന്നത് പ്രധാനമാണ്
-തുടരുന്നതിന് മുമ്പ്, കാരണം ഇവ നമുക്ക് ആവശ്യമായ പുതിയ concepts present ചെയ്യുന്നു.</p>
+<p>ഇനി നമ്മൾ exercises-ലേക്ക് കടക്കുന്നു. ഇവ complete ചെയ്തതിന് ശേഷം മാത്രം മുന്നോട്ട് പോകുക — കാരണം, ഇവിടെ പരിചയപ്പെടുത്തുന്ന concepts നമുക്ക് പിന്നീട് ആവശ്യമായി വരും.</p>
 <div class="exercise admonition" id="pbe_ex1">
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
 <section id="exercise-content">
-<p>നിങ്ങളുടെ ആദ്യ task, correlated ആയ ഈ time series simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്</p>
+<p>നിങ്ങളുടെ ആദ്യത്തെ task, correlated ആയ ഈ time series simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്</p>
 <div class="math notranslate nohighlight">
 \[
 x_{t+1} = \alpha \, x_t + \epsilon_{t+1}
@@ -798,8 +789,8 @@ x_{t+1} = \alpha \, x_t + \epsilon_{t+1}
 x_0 = 0
 \quad \text{and} \quad t = 0,\ldots,T
 \]</div>
-<p>Shocks-ന്റെ sequence <span class="math notranslate nohighlight">\(\{\epsilon_t\}\)</span> IID-ഉം standard normal-ഉം ആണ് എന്ന് assume ചെയ്യുന്നു.</p>
-<p>നിങ്ങളുടെ solution-ൽ, import statements ഇത്രമാത്രം restrict ചെയ്യുക</p>
+<p>The sequence of shocks <span class="math notranslate nohighlight">\(\{\epsilon_t\}\)</span> is assumed to be IID and standard normal.</p>
+<p>നിങ്ങളുടെ solution-ൽ, താഴെ കൊടുത്തിരിക്കുന്ന import statements മാത്രം ഉപയോഗിക്കുക.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -815,7 +806,7 @@ x_0 = 0
 
 <p class="admonition-title">Solution</p>
 <section id="solution-content">
-<p>ഒരു solution ഇവിടെ.</p>
+<p>Here's one solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.9</span>
@@ -833,7 +824,7 @@ x_0 = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2bf34e9bab886d0c86ab25a37e7a357facf10694a54710267bca71d269de0703.png" src="_images/2bf34e9bab886d0c86ab25a37e7a357facf10694a54710267bca71d269de0703.png" />
+<img alt="_images/1327d2291fe68367c5c25e23a7180d6e7ba5556a320165c2479aed80e2e4281a.png" src="_images/1327d2291fe68367c5c25e23a7180d6e7ba5556a320165c2479aed80e2e4281a.png" />
 </div>
 </div>
 </section>
@@ -842,14 +833,14 @@ x_0 = 0
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
 <section id="exercise-content">
-<p>Exercise 1-ലേക്കുള്ള നിങ്ങളുടെ solution ആരംഭ point ആയി എടുത്ത്, <span class="math notranslate nohighlight">\(\alpha=0\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.8\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.98\)</span> എന്നീ ഓരോ cases-നും ഓരോന്ന്, മൂന്ന് simulated time series plot ചെയ്യുക.</p>
-<p><span class="math notranslate nohighlight">\(\alpha\)</span> values-ലൂടെ step ചെയ്യാൻ ഒരു <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ഉപയോഗിക്കുക.</p>
-<p>സാധിക്കുമെങ്കിൽ, മൂന്ന് time series-നെ വേർതിരിക്കാൻ സഹായിക്കുന്ന ഒരു legend add ചെയ്യുക.</p>
+<p>Exercise 1-ന്റെ നിങ്ങളുടെ solution-ൽ നിന്ന് തുടങ്ങി, <span class="math notranslate nohighlight">\(\alpha=0\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.8\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.98\)</span> എന്ന മൂന്ന് cases-നും ഓരോ simulated time series plot ചെയ്യുക.</p>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> values ഒന്നൊന്നായി തിരഞ്ഞെടുക്കാൻ ഒരു <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ഉപയോഗിക്കുക.</p>
+<p>കഴിയുമെങ്കിൽ, മൂന്ന് time series-നെയും വേർതിരിച്ച് കാണിക്കാൻ ഒരു legend കൂടി add ചെയ്യുക.</p>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">show()</span></code> call ചെയ്യുന്നതിന് മുമ്പ് <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function multiple times call ചെയ്താൽ, നിങ്ങൾ produce ചെയ്യുന്ന എല്ലാ lines-ഉം ഒരേ figure-ൽ end ആകും.</p></li>
-<li><p>Legend-ന് വേണ്ടി, <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">42</span></code> എന്ന് suppose ചെയ്താൽ, <code class="docutils literal notranslate"><span class="pre">f'foo{var}'</span></code> എന്ന expression <code class="docutils literal notranslate"><span class="pre">'foo42'</span></code> എന്ന് evaluate ചെയ്യുന്നു എന്ന് ശ്രദ്ധിക്കുക.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show()</span></code> call ചെയ്യുന്നതിന് മുൻപ് <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function പലതവണ call ചെയ്താൽ, നിങ്ങൾ produce ചെയ്യുന്ന lines എല്ലാം ഒരേ figure-ൽ വരും.</p></li>
+<li><p>Legend-നായി, <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">42</span></code> എന്ന് കരുതുക. അങ്ങനെയെങ്കിൽ <code class="docutils literal notranslate"><span class="pre">f'foo{var}'</span></code> എന്ന expression-ന്റെ result <code class="docutils literal notranslate"><span class="pre">'foo42'</span></code> ആയിരിക്കും.</p></li>
 </ul>
 </div>
 </section>
@@ -877,13 +868,13 @@ x_0 = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10f21fbe6e24ae3449c88736754b57d9021fdb309abdc9d5562c8be41728d1a7.png" src="_images/10f21fbe6e24ae3449c88736754b57d9021fdb309abdc9d5562c8be41728d1a7.png" />
+<img alt="_images/3055ccd66c187050a9982f1c89064166ce8833808f113dd46d418a2af508a94d.png" src="_images/3055ccd66c187050a9982f1c89064166ce8833808f113dd46d418a2af508a94d.png" />
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Solution-ലെ <code class="docutils literal notranslate"><span class="pre">f'$\\alpha</span> <span class="pre">=</span> <span class="pre">{α}$'</span></code> എന്നത് <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings">f-String</a>-ന്റെ ഒരു application ആണ്, ഇത് <code class="docutils literal notranslate"><span class="pre">{}</span></code> ഉപയോഗിച്ച് ഒരു expression contain ചെയ്യാൻ അനുവദിക്കുന്നു.</p>
-<p>Contain ചെയ്ത expression evaluate ചെയ്യപ്പെടും, result string-ലേക്ക് place ചെയ്യപ്പെടും.</p>
+<p>Solution-ലെ <code class="docutils literal notranslate"><span class="pre">f'$\\alpha</span> <span class="pre">=</span> <span class="pre">{α}$'</span></code> എന്നത് <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings">f-String</a>-ന്റെ ഒരു application ആണ്. ഒരു expression-നെ <code class="docutils literal notranslate"><span class="pre">{}</span></code>-ക്കുള്ളിൽ എഴുതാൻ f-string അനുവദിക്കുന്നു.</p>
+<p>അങ്ങനെ <code class="docutils literal notranslate"><span class="pre">{}</span></code>-ക്കുള്ളിൽ എഴുതിയിരിക്കുന്ന expression Python evaluate ചെയ്യും. ലഭിക്കുന്ന result string-ലേക്ക് ചേർക്കപ്പെടും.</p>
 </div>
 </section>
 </div>
@@ -891,7 +882,7 @@ x_0 = 0
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.3 </span></p>
 <section id="exercise-content">
-<p>മുൻ exercises-ന് സമാനമായി, ഈ time series plot ചെയ്യുക</p>
+<p>മുൻപത്തെ exercises പോലെ, താഴെ കൊടുത്തിരിക്കുന്ന time series-ഉം plot ചെയ്യുക:</p>
 <div class="math notranslate nohighlight">
 \[
 x_{t+1} = \alpha \, |x_t| + \epsilon_{t+1}
@@ -899,15 +890,15 @@ x_{t+1} = \alpha \, |x_t| + \epsilon_{t+1}
 x_0 = 0
 \quad \text{and} \quad t = 0,\ldots,T
 \]</div>
-<p><span class="math notranslate nohighlight">\(T=200\)</span>, <span class="math notranslate nohighlight">\(\alpha = 0.9\)</span>, മുമ്പത്തെ പോലെ <span class="math notranslate nohighlight">\(\{\epsilon_t\}\)</span> ഉപയോഗിക്കുക.</p>
-<p>Absolute value <span class="math notranslate nohighlight">\(|x_t|\)</span> compute ചെയ്യാൻ ഉപയോഗിക്കാവുന്ന ഒരു function online search ചെയ്യുക.</p>
+<p>Use <span class="math notranslate nohighlight">\(T=200\)</span>, <span class="math notranslate nohighlight">\(\alpha = 0.9\)</span> and <span class="math notranslate nohighlight">\(\{\epsilon_t\}\)</span> as before.</p>
+<p><span class="math notranslate nohighlight">\(|x_t|\)</span> എന്ന absolute value compute ചെയ്യാൻ ഉപയോഗിക്കാവുന്ന ഒരു function online-ൽ search ചെയ്യുക.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="python_by_example-solution-5">
 
 <p class="admonition-title">Solution</p>
 <section id="solution-content">
-<p>ഒരു solution ഇവിടെ:</p>
+<p>Here's one solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.9</span>
@@ -925,7 +916,7 @@ x_0 = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fd9f18c9bfa06956c6e0fb0c9c3e5376d478d07e5189369310c90b86a1b778fe.png" src="_images/fd9f18c9bfa06956c6e0fb0c9c3e5376d478d07e5189369310c90b86a1b778fe.png" />
+<img alt="_images/60d82fe17e9cf6f11d8214b8667c08ea28419a3795aa232c02b73d7ffc2e2c79.png" src="_images/60d82fe17e9cf6f11d8214b8667c08ea28419a3795aa232c02b73d7ffc2e2c79.png" />
 </div>
 </div>
 </section>
@@ -937,8 +928,7 @@ x_0 = 0
 <p>മിക്കവാറും എല്ലാ programming languages-ന്റെയും ഒരു പ്രധാന aspect branching-ഉം
 conditions-ഉം ആണ്.</p>
 <p>Python-ൽ, conditions സാധാരണയായി if--else syntax ഉപയോഗിച്ചാണ് implement ചെയ്യുന്നത്.</p>
-<p>ഇവിടെ ഒരു example, ഒരു array-ലെ ഓരോ negative number-നും -1-ഉം, ഓരോ nonnegative number-നും 1-ഉം
-print ചെയ്യുന്നു</p>
+<p>താഴെക്കൊടുത്തിരിക്കുന്ന example-ൽ, ഒരു array-യിലെ ഓരോ negative number-നും -1-ഉം, ഓരോ nonnegative number-നും 1-ഉം print ചെയ്യുന്നു.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -965,16 +955,15 @@ print ചെയ്യുന്നു</p>
 </div>
 </div>
 </div>
-<p>ഇപ്പോൾ, absolute value compute ചെയ്യാൻ ഒരു existing function ഉപയോഗിക്കാതെ Exercise 3-ന് ഒരു
-പുതിയ solution എഴുതുക.</p>
-<p>ഈ existing function-ന് പകരം ഒരു if--else condition ഉപയോഗിക്കുക.</p>
+<p>ഇനി, absolute value compute ചെയ്യാൻ ഒരു existing function ഉപയോഗിക്കാതെ Exercise 3-ന് ഒരു പുതിയ solution എഴുതുക.</p>
+<p>ആ existing function-ന് പകരം ഒരു if--else condition ഉപയോഗിക്കുക.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="python_by_example-solution-7">
 
 <p class="admonition-title">Solution</p>
 <section id="solution-content">
-<p>ഒരു വഴി ഇവിടെ:</p>
+<p>Here's one way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.9</span>
@@ -996,10 +985,10 @@ print ചെയ്യുന്നു</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6e20871deb031ecbc0843595416b2720b3f40cdd5e20f30c2a1c94fd9c8be7cd.png" src="_images/6e20871deb031ecbc0843595416b2720b3f40cdd5e20f30c2a1c94fd9c8be7cd.png" />
+<img alt="_images/7c4b90b72776e68fe1d2bd6a3db29fbf0871d1e54e0ae8b53872005e98fbc647.png" src="_images/7c4b90b72776e68fe1d2bd6a3db29fbf0871d1e54e0ae8b53872005e98fbc647.png" />
 </div>
 </div>
-<p>ഇത് തന്നെ എഴുതാൻ ഒരു shorter വഴി:</p>
+<p>short ആയിട്ടുള്ള ഒരു solution താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.9</span>
@@ -1018,7 +1007,7 @@ print ചെയ്യുന്നു</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ae94f4994c733b1ca511e26b076714c1081d5aeb4d8f45f62679aab86a07e8b3.png" src="_images/ae94f4994c733b1ca511e26b076714c1081d5aeb4d8f45f62679aab86a07e8b3.png" />
+<img alt="_images/df6e3f5d80c153a9676587e2e0b72dbf4a2412526a8357673773fad1f7bffa4a.png" src="_images/df6e3f5d80c153a9676587e2e0b72dbf4a2412526a8357673773fad1f7bffa4a.png" />
 </div>
 </div>
 </section>
@@ -1027,9 +1016,9 @@ print ചെയ്യുന്നു</p>
 
 <p class="admonition-title"><span class="caption-number">Exercise 1.5 </span></p>
 <section id="exercise-content">
-<p>ഇവിടെ കുറച്ച് thought-ഉം planning-ഉം ആവശ്യമുള്ള ഒരു harder exercise ഉണ്ട്.</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a> ഉപയോഗിച്ച് <span class="math notranslate nohighlight">\(\pi\)</span>-ന്റെ ഒരു approximation compute ചെയ്യുക എന്നതാണ് task.</p>
-<p>ഇത് കൂടാതെ മറ്റൊന്നും import ചെയ്യരുത്</p>
+<p>ഇനി കുറച്ച് thought-ഉം planning-ഉം ആവശ്യമുള്ള ഒരു harder exercise ചെയ്യാം.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a> ഉപയോഗിച്ച് <span class="math notranslate nohighlight">\(\pi\)</span>-യുടെ ഒരു approximation compute ചെയ്യുക എന്നതാണ് task.</p>
+<p>താഴെ കൊടുത്തിരിക്കുന്ന import statement മാത്രം ഉപയോഗിക്കുക:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1039,11 +1028,11 @@ print ചെയ്യുന്നു</p>
 </div>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
-<p>നിങ്ങളുടെ hints ഇവയാണ്:</p>
+<p>Your hints are as follows:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(U\)</span> എന്നത് unit square <span class="math notranslate nohighlight">\((0, 1)^2\)</span>-ലെ ഒരു bivariate uniform random variable ആണെങ്കിൽ, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\((0,1)^2\)</span>-ന്റെ ഒരു subset <span class="math notranslate nohighlight">\(B\)</span>-ൽ വീഴാനുള്ള probability <span class="math notranslate nohighlight">\(B\)</span>-യുടെ area-ന് equal ആണ്.</p></li>
-<li><p><span class="math notranslate nohighlight">\(U_1,\ldots,U_n\)</span> എന്നത് <span class="math notranslate nohighlight">\(U\)</span>-യുടെ IID copies ആണെങ്കിൽ, <span class="math notranslate nohighlight">\(n\)</span> വലുതാകുന്നതിനനുസരിച്ച്, <span class="math notranslate nohighlight">\(B\)</span>-ൽ വീഴുന്ന fraction, <span class="math notranslate nohighlight">\(B\)</span>-യിൽ വീഴാനുള്ള probability-ലേക്ക് converge ചെയ്യുന്നു.</p></li>
-<li><p>ഒരു circle-ന്, <span class="math notranslate nohighlight">\(area = \pi * radius^2\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(U\)</span> is a bivariate uniform random variable on the unit square <span class="math notranslate nohighlight">\((0, 1)^2\)</span>, then the probability that <span class="math notranslate nohighlight">\(U\)</span> lies in a subset <span class="math notranslate nohighlight">\(B\)</span> of <span class="math notranslate nohighlight">\((0,1)^2\)</span> is equal to the area of <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(U_1,\ldots,U_n\)</span> are IID copies of <span class="math notranslate nohighlight">\(U\)</span>, then, as <span class="math notranslate nohighlight">\(n\)</span> gets large, the fraction that falls in <span class="math notranslate nohighlight">\(B\)</span>, converges to the probability of landing in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>For a circle, <span class="math notranslate nohighlight">\(area = \pi * radius^2\)</span>.</p></li>
 </ul>
 </div>
 </section>
@@ -1052,16 +1041,16 @@ print ചെയ്യുന്നു</p>
 
 <p class="admonition-title">Solution</p>
 <section id="solution-content">
-<p>Unit square-ൽ embed ചെയ്ത diameter 1 ഉള്ള circle കരുതുക.</p>
-<p><span class="math notranslate nohighlight">\(A\)</span> അതിന്റെ area ആണെന്നും <span class="math notranslate nohighlight">\(r=1/2\)</span> അതിന്റെ radius ആണെന്നും കരുതുക.</p>
-<p><span class="math notranslate nohighlight">\(\pi\)</span> അറിയാമെങ്കിൽ, <span class="math notranslate nohighlight">\(A\)</span>
-<span class="math notranslate nohighlight">\(A = \pi r^2\)</span> വഴി compute ചെയ്യാം.</p>
-<p>എന്നാൽ ഇവിടെ point <span class="math notranslate nohighlight">\(\pi\)</span> compute ചെയ്യുക എന്നതാണ്, ഇത് നമുക്ക്
-<span class="math notranslate nohighlight">\(\pi = A / r^2\)</span> വഴി ചെയ്യാം.</p>
-<p>Summary: Diameter 1 ഉള്ള ഒരു circle-ന്റെ area estimate ചെയ്യാൻ കഴിഞ്ഞാൽ, <span class="math notranslate nohighlight">\(r^2 = (1/2)^2 = 1/4\)</span> കൊണ്ട്
-divide ചെയ്യുന്നത് <span class="math notranslate nohighlight">\(\pi\)</span>-ന്റെ ഒരു estimate നൽകുന്നു.</p>
-<p>Bivariate uniforms sample ചെയ്ത്, circle-ൽ വീഴുന്ന
-fraction നോക്കി നമ്മൾ area estimate ചെയ്യുന്നു.</p>
+<p>Consider the circle of diameter 1 embedded in the unit square.</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be its area and let <span class="math notranslate nohighlight">\(r=1/2\)</span> be its radius.</p>
+<p>If we know <span class="math notranslate nohighlight">\(\pi\)</span> then we can compute <span class="math notranslate nohighlight">\(A\)</span> via
+<span class="math notranslate nohighlight">\(A = \pi r^2\)</span>.</p>
+<p>But here the point is to compute <span class="math notranslate nohighlight">\(\pi\)</span>, which we can do by
+<span class="math notranslate nohighlight">\(\pi = A / r^2\)</span>.</p>
+<p>Summary: If we can estimate the area of a circle with diameter 1, then dividing
+by <span class="math notranslate nohighlight">\(r^2 = (1/2)^2 = 1/4\)</span> gives an estimate of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>We estimate the area by sampling bivariate uniforms and looking at the
+fraction that falls into the circle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="c1"># sample size for Monte Carlo simulation</span>
@@ -1089,7 +1078,7 @@ fraction നോക്കി നമ്മൾ area estimate ചെയ്യുന�
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14326
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.140392
 </pre></div>
 </div>
 </div>

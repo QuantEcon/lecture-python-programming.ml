@@ -10,7 +10,7 @@
  * Malayalam Unicode range only (unicode-range), so Latin text, digits and
  * punctuation keep the theme's fonts. The woff2 files are the Google Fonts
  * "malayalam" subsets of each family, self-hosted under _static/fonts/
- * (SIL Open Font License 1.1).
+ * (SIL Open Font License 1.1 — see fonts/OFL.txt).
  *
  * If the Malayalam still looks large or small next to the Latin, tune
  * `size-adjust` on the four faces below (e.g. 95%) rather than font-size.

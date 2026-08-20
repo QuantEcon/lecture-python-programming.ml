@@ -1,0 +1,85 @@
+name: Build & Publish to GH Pages
+on:
+  push:
+    branches:
+      - main
+
+# Split into a lock-free build and a short locked deploy, which is where this
+# diverges from QuantEcon.manual. There the concurrency group wraps the whole
+# publish job, so the gh-pages lock is held across the conda solve and the
+# Jupyter Book build (~2 minutes). GitHub evicts an already-PENDING run when a
+# newer one queues into a group, so that long hold evicts queued cleanups: a
+# merge train on 2026-08-02 dropped two runs in 68 seconds and left an orphan
+# preview live on that site. Locking only the deploy keeps the window seconds
+# long. reap-previews.yml covers what still slips through.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Anaconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          auto-activate-base: true
+          miniconda-version: 'latest'
+          python-version: "3.13"
+          environment-file: environment.yml
+          activate-environment: quantecon
+
+      - name: Display Conda Environment Versions
+        shell: bash -l {0}
+        run: conda list
+
+      # See ci.yml for why `set -eo pipefail` is explicit and why the TOC is
+      # pruned at build time rather than maintained in the repo.
+      - name: Prune TOC to translated lectures
+        shell: bash -l {0}
+        run: |
+          set -eo pipefail
+          python scripts/prune_toc.py lectures/_toc.yml
+
+      - name: Build HTML
+        shell: bash -l {0}
+        run: |
+          set -eo pipefail
+          jb build lectures --path-output ./ --keep-going
+
+      - name: Upload Execution Reports
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: execution-reports
+          path: _build/html/reports
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-site
+          path: _build/html/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: html-site
+          path: _build/html/
+
+      - name: Deploy with Preview Preservation
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html/
+          # keep_files is mandatory: without it every push to main wipes the
+          # live pr-N preview directories out from under open reviews.
+          keep_files: true

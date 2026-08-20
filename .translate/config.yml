@@ -2,3 +2,6 @@ source-language: en
 target-language: ml
 docs-folder: lectures
 tool-version: 0.24.0
+editors:
+  primary: adisankarmt
+  secondary: []

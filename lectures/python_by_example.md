@@ -45,7 +45,7 @@ translation:
 
 ## Overview
 
-ഇനി നമ്മുക്ക് Python language-നെ പറ്റി പഠിക്കാം.
+ഇനി നമുക്ക് Python language-നെ പറ്റി പഠിക്കാം.
 
 ഈ lecture-ൽ, നമ്മൾ ചെറിയ Python programs എഴുതി, അവയെ വിശദമായി പരിശോധിക്കും.
 
@@ -66,7 +66,7 @@ Basic Python syntax-ഉം data structures-ഉം നിങ്ങൾക്ക്
 :scale: 120
 ```
 
-(ഇവിടെ $t$ horizontal axis-ലും $\epsilon_t$ vertical axis-ലും ആണ്.)
+(ഇവിടെ $t$ horizontal axis-ലും, $\epsilon_t$ vertical axis-ലും ആണ്.)
 
 ഈ white noise process plotting നമ്മൾ പല വിധത്തിൽ ചെയ്യും — ഓരോ രീതിയിൽ ചെയ്യുമ്പോഴും നമ്മൾ Python-നെക്കുറിച്ച് കൂടുതൽ കാര്യങ്ങൾ പഠിക്കും.
 
@@ -128,7 +128,7 @@ Python ഉപയോഗിച്ച് interesting ആയ എന്തെങ്�
 
 മുകളിൽ പറഞ്ഞതുപോലെ, NumPy ഒരു Python package ആണ്.
 
-Share ചെയ്യാൻ ആഗ്രഹിക്കുന്ന code organize ചെയ്യാനാണ് developers packages ഉപയോഗിക്കുന്നത്.
+Share ചെയ്യാൻ ആഗ്രഹിക്കുന്ന code-നെ organize ചെയ്യാനാണ് developers packages ഉപയോഗിക്കുന്നത്.
 
 In fact, ഒരു **package** എന്നത് താഴെ കൊടുത്തിരിക്കുന്നവ അടങ്ങിയ ഒരു directory ആണ്:
 
@@ -169,7 +169,7 @@ import numpy as np
 np.sqrt(4)
 ```
 
-NumPy-യുടെ square root function access ചെയ്യാനുള്ള മറ്റൊരു രീതി താഴെ കാണാം
+NumPy-യുടെ square root function access ചെയ്യാനുള്ള മറ്റൊരു രീതി താഴെ കാണാം:
 
 ```{code-cell} python3
 from numpy import sqrt
@@ -195,7 +195,7 @@ plt.plot(ϵ_values)
 plt.show()
 ```
 
-ആദ്യത്തെ line, 100 (quasi) independent standard normals-നെ generate ചെയ്ത് `ϵ_values`-ൽ store ചെയ്യുന്നു.
+ആദ്യത്തെ line, 100 (quasi) independent standard normals-നെ generate ചെയ്ത്, `ϵ_values`-ൽ store ചെയ്യുന്നു.
 
 അടുത്ത രണ്ട് lines plot generate ചെയ്യുന്നു.
 
@@ -207,11 +207,11 @@ Standard normal distribution-ൽ നിന്നും IID draws plot ചെയ�
 
 താഴെ കൊടുത്തിരിക്കുന്ന programs, original-ന്റെ അത്ര efficient അല്ല - അവ ഒരു ആശയം വിശദീകരിക്കാനായി മാത്രം നിർമ്മിച്ചവയാണ്.
 
-എന്നാൽ ഇവ ഒരു familiar setting-ൽ ചില പ്രധാന Python syntax-ഉം semantics-ഉം illustrate ചെയ്യാൻ സഹായിക്കുന്നു.
+എന്നാൽ ഇവ ഒരു familiar setting-ൽ ചില പ്രധാന Python syntax-ഉം, semantics-ഉം illustrate ചെയ്യാൻ സഹായിക്കുന്നു.
 
 ### A Version with a For Loop
 
-`for` loops-ഉം Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version താഴെ കാണാം:
+`for` loops-ഉം, Python lists-ഉം illustrate ചെയ്യുന്ന ഒരു version താഴെ കാണാം:
 
 (firstloopprog)=
 ```{code-cell} python3
@@ -232,7 +232,7 @@ plt.show()
 * അടുത്ത line, `ϵ_values` എന്നൊരു empty *list* create ചെയ്യുന്നു — അതിൽ ആയിരിക്കും നമ്മൾ generate ചെയ്യുന്ന $\epsilon_t$ values store ചെയ്യുക.
 * `# empty list` എന്ന statement ഒരു *comment* ആണ്, Python-ന്റെ interpreter ഇത് ignore ചെയ്യും.
 * അടുത്ത മൂന്ന് lines ആണ് `for` loop — ഇത് repeatedly ഒരു പുതിയ random number $\epsilon_t$ draw ചെയ്ത് `ϵ_values` list-ന്റെ അവസാനം append ചെയ്യുന്നു.
-* അവസാനത്തെ രണ്ട് lines, plot generate ചെയ്ത് user-ന് display ചെയ്യുന്നു.
+* അവസാനത്തെ രണ്ട് lines, plot generate ചെയ്ത്, user-ന് display ചെയ്യുന്നു.
 
 ഈ program-ന്റെ കുറച്ചു ഭാഗങ്ങൾ നമുക്ക് വിശദമായി പഠിക്കാം.
 
@@ -255,7 +255,7 @@ x = [10, 'foo', False]
 type(x)
 ```
 
-`x`-ന്റെ ആദ്യ element ഒരു [integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) ആണ്, അടുത്തത് ഒരു [string](https://en.wikipedia.org/wiki/String_(computer_science)) ആണ്, മൂന്നാമത്തേത് ഒരു [Boolean value](https://en.wikipedia.org/wiki/Boolean_data_type) ആണ്.
+`x`-ന്റെ ആദ്യത്തെ element ഒരു [integer](https://en.wikipedia.org/wiki/Integer_(computer_science)) ആണ്, അടുത്തത് ഒരു [string](https://en.wikipedia.org/wiki/String_(computer_science)) ആണ്, മൂന്നാമത്തേത് ഒരു [Boolean value](https://en.wikipedia.org/wiki/Boolean_data_type) ആണ്.
 
 ഒരു list-ലേക്ക് ഒരു value add ചെയ്യാൻ, `list_name.append(some_value)` എന്ന syntax നമുക്ക് ഉപയോഗിക്കാം
 
@@ -450,7 +450,7 @@ Plot-ൽ നമ്മൾ ഒരു legend add ചെയ്തത് ശ്രദ
 :label: pbe_ex1
 ```
 
-നിങ്ങളുടെ ആദ്യത്തെ task, correlated ആയ ഈ time series simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്
+നിങ്ങളുടെ ആദ്യത്തെ task, correlated ആയ ഈ time series-നെ simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്
 
 $$
 x_{t+1} = \alpha \, x_t + \epsilon_{t+1}
@@ -468,7 +468,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-$T=200$-ഉം $\alpha = 0.9$-ഉം set ചെയ്യുക.
+$T=200$-ഉം, $\alpha = 0.9$-ഉം set ചെയ്യുക.
 
 ```{exercise-end}
 ```
@@ -595,7 +595,7 @@ plt.show()
 :label: pbe_ex4
 ```
 
-മിക്കവാറും എല്ലാ programming languages-ന്റെയും ഒരു പ്രധാന aspect branching-ഉം
+മിക്കവാറും എല്ലാ programming languages-ന്റെയും ഒരു പ്രധാന aspect എന്നുപറയുന്നത് branching-ഉം
 conditions-ഉം ആണ്.
 
 Python-ൽ, conditions സാധാരണയായി if--else syntax ഉപയോഗിച്ചാണ് implement ചെയ്യുന്നത്.

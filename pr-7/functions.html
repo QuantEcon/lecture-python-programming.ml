@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Functions &#8212; Python Programming for Economics and Finance</title>
+    <title>2. Functions &#8212; Python Programming for Economics and Finance</title>
     
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -77,7 +77,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=1c349b9a0045df0ce6f4a606c2cc9441cbf3bef6" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=d33b6885fb389884ac791c8a9c6b6ea3b92d4477" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -102,7 +102,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=b8b12719"></script>
-    <script src="_static/scripts/quantecon-book-theme.js?digest=9980b4379844dc0b911d69b62b295f34ede88fac"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=4ee6b0d39d67134a24a514ef2da7c56ba4860b19"></script>
     <script src="_static/scripts/jquery.js?v=5d32c60e"></script>
     <script src="_static/scripts/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -118,7 +118,7 @@
     <link rel="icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Python Programming for Economics and Finance" href="intro.html" />
+    <link rel="prev" title="1. An Introductory Example" href="python_by_example.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent &amp; John Stachurski" />
@@ -189,6 +189,8 @@
 
             <div class="qe-page" id=functions>
 
+                
+
                 <div class="qe-page__toc">
 
                     
@@ -206,28 +208,28 @@
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">1.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-basics">1.2. Function Basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">1.2.1. Built-In Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-functions">1.2.2. Third Party Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">2.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-basics">2.2. Function Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">2.2.1. Built-In Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-functions">2.2.2. Third Party Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">1.3. Defining Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">1.3.1. Basic Syntax</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">1.3.2. Keyword Arguments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-flexibility-of-python-functions">1.3.3. The Flexibility of Python Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-functions-lambda">1.3.4. One-Line Functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-write-functions">1.3.5. Why Write Functions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">2.3. Defining Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">2.3.1. Basic Syntax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">2.3.2. Keyword Arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-flexibility-of-python-functions">2.3.3. The Flexibility of Python Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-line-functions-lambda">2.3.4. One-Line Functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-write-functions">2.3.5. Why Write Functions?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">1.4. Applications</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-draws">1.4.1. Random Draws</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-conditions">1.4.2. Adding Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">2.4. Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-draws">2.4.1. Random Draws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-conditions">2.4.2. Adding Conditions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-function-calls-advanced">1.5. Recursive Function Calls (Advanced)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.6. Exercises</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-exercises">1.7. Advanced Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-function-calls-advanced">2.5. Recursive Function Calls (Advanced)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.6. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-exercises">2.7. Advanced Exercises</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -272,20 +274,24 @@
                         <p class="qe-page__header-authors" font-size="18">
                             
                                 
-                                    <a href="http://www.tomsargent.com/" target="_blank"><span>Thomas J. Sargent</span></a>
+                                    <a href="http://www.tomsargent.com/" rel="author" target="_blank"><span>Thomas J. Sargent</span></a>
                                 
                             
                                 
-                                    and <a href="https://johnstachurski.net/" target="_blank"><span>John Stachurski</span></a>
+                                    and <a href="https://johnstachurski.net/" rel="author" target="_blank"><span>John Stachurski</span></a>
                                 
                             
                         </p>
 
                     <!-- Last modified / Changelog dropdown -->
+                    <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Aug 20, 2026
+                            Last changed: Sep 01, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
+                        <!-- Translators section -->
+                        <p class="qe-page__header-translators"><span class="qe-page__header-translators-label">Translated by</span> <a href="https://www.linkedin.com/in/adisankar-m-t/" target="_blank"><span>Adisankar Manoj Thanuja</span></a></p>
+                    </div>
 
                     <!-- Changelog dropdown content -->
                     <div class="qe-page__header-changelog" id="changelog-content" aria-hidden="true">
@@ -294,11 +300,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/a8f063b" class="changelog-hash">a8f063b</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/ca9c0c5" class="changelog-hash">ca9c0c5</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
-                                <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Merge 5ffae4e2834242b884cc79a9d03a3017031472cd into 37a22cd1dddc9fcf6f0938134dda56497d46b934</span>
+                                <span class="changelog-time">1 minute ago</span>
+                                <span class="changelog-message">Merge a8d7d239f5f5fbe360288c3fdf2d220edca1c725 into eb42856bc97353fc58985d5e1e5f8bafc046bde7</span>
                             </li>
                             
                         </ul>
@@ -314,21 +320,21 @@
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">1. </span>Functions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Functions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="overview">
-<span id="index-0"></span><h2><span class="section-number">1.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>മിക്കവാറും എല്ലാ programming-ഉം നൽകുന്ന അതിയായി ഉപയോഗപ്രദമായ ഒരു construct ആണ് functions.</p>
-<p>നമ്മൾ ഇതിനകം പല functions-ഉം കണ്ടുകഴിഞ്ഞു, ഉദാഹരണത്തിന്</p>
+<span id="index-0"></span><h2><span class="section-number">2.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>മിക്കവാറും എല്ലാ programming languages-ഉം provide ചെയ്യുന്ന വളരെ useful ആയ ഒരു programming construct ആണ് functions.</p>
+<p>നമ്മൾ ഇതിനകം പല functions-ഉം കണ്ടുകഴിഞ്ഞു. ഉദാഹരണത്തിന്,</p>
 <ul class="simple">
-<li><p>NumPy-യിലെ <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> function-ഉം</p></li>
-<li><p>built-in ആയ <code class="docutils literal notranslate"><span class="pre">print()</span></code> function-ഉം</p></li>
+<li><p>NumPy-യിലെ <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code> function</p></li>
+<li><p>Python-ൽ, built-in ആയി ലഭിക്കുന്ന <code class="docutils literal notranslate"><span class="pre">print()</span></code> function</p></li>
 </ul>
-<p>ഈ lecture-ൽ നമ്മൾ</p>
+<p>ഈ lecture-ൽ നമ്മൾ ചെയ്യാൻ പോകുന്ന കാര്യങ്ങൾ:</p>
 <ol class="arabic simple">
-<li><p>functions-നെ systematic ആയി treat ചെയ്യുകയും syntax-ഉം use-cases-ഉം cover ചെയ്യുകയും ചെയ്യും, ഒപ്പം</p></li>
-<li><p>നമ്മുടെ സ്വന്തം user-defined functions എങ്ങനെ build ചെയ്യാമെന്ന് പഠിക്കും.</p></li>
+<li><p>Functions-നെ systematic ആയി പഠിക്കുന്നു; അവയുടെ syntax-ഉം, use-cases-ഉം മനസ്സിലാക്കുന്നു.</p></li>
+<li><p>സ്വന്തമായി user-defined functions എങ്ങനെ build ചെയ്യാമെന്ന് പഠിക്കുന്നു.</p></li>
 </ol>
-<p>താഴെ കാണുന്ന imports നമ്മൾ ഉപയോഗിക്കും.</p>
+<p>ഇതിനായി നമ്മൾ താഴെ കാണുന്ന imports ഉപയോഗിക്കും.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -339,14 +345,14 @@
 </div>
 </section>
 <section id="function-basics">
-<h2><span class="section-number">1.2. </span>Function Basics<a class="headerlink" href="#function-basics" title="Link to this heading">#</a></h2>
-<p>ഒരു പ്രത്യേക task implement ചെയ്യുന്ന, പേരുള്ള ഒരു program-ന്റെ section ആണ് function.</p>
-<p>ഇതിനകം ധാരാളം functions നിലവിലുണ്ട്, അവയെ അതേപടി ഉപയോഗിക്കാം.</p>
-<p>ആദ്യം നമ്മൾ ഈ functions review ചെയ്യാം, എന്നിട്ട് നമ്മുടെ സ്വന്തം functions എങ്ങനെ build ചെയ്യാമെന്ന് discuss ചെയ്യാം.</p>
+<h2><span class="section-number">2.2. </span>Function Basics<a class="headerlink" href="#function-basics" title="Link to this heading">#</a></h2>
+<p>ഒരു program-ന് ഉള്ളിൽ, ഒരു specific task implement ചെയ്യുന്ന ഒരു section ആണ് function. ഈ section-നെ നമ്മൾ ഒരു പേരിട്ടു വിളിക്കുന്നു.</p>
+<p>Already exist ചെയ്യുന്ന ധാരാളം functions ഉണ്ട്. അവയെ നമുക്ക് അതേപടി ഉപയോഗിക്കാൻ പറ്റും.</p>
+<p>ആദ്യമേ നമുക്ക് already exist ചെയ്യുന്ന functions-നെ review ചെയ്യാം. എന്നിട്ട് നമുക്ക് സ്വന്തമായി functions എങ്ങനെ build ചെയ്യാമെന്ന് നോക്കാം.</p>
 <section id="built-in-functions">
-<h3><span class="section-number">1.2.1. </span>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">import</span></code> ഇല്ലാതെ ലഭ്യമായ കുറേ <strong>built-in</strong> functions Python-ൽ ഉണ്ട്.</p>
-<p>ഇവയിൽ ചിലത് നമ്മൾ ഇതിനകം കണ്ടുകഴിഞ്ഞു</p>
+<h3><span class="section-number">2.2.1. </span>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">import</span></code> ചെയ്യാതെ തന്നെ ഉപയോഗിക്കാനാകുന്ന നിരവധി <strong>built-in</strong> functions Python-ൽ ഉണ്ട്.</p>
+<p>ഇവയിൽ ചിലത് നമ്മൾ already കണ്ടുകഴിഞ്ഞു:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -395,13 +401,13 @@
 </div>
 </div>
 </div>
-<p>Python built-ins-ന്റെ പൂർണ്ണമായ list <a class="reference external" href="https://docs.python.org/3/library/functions.html">ഇവിടെ</a> കാണാം.</p>
+<p>Python-ലെ built-in functions-ന്റെ full list <a class="reference external" href="https://docs.python.org/3/library/functions.html">ഇവിടെ</a> കാണാം.</p>
 </section>
 <section id="third-party-functions">
-<h3><span class="section-number">1.2.2. </span>Third Party Functions<a class="headerlink" href="#third-party-functions" title="Link to this heading">#</a></h3>
-<p>built-in functions നമുക്ക് വേണ്ടത് cover ചെയ്യുന്നില്ലെങ്കിൽ, നമുക്ക് ഒന്നുകിൽ functions import ചെയ്യേണ്ടിവരും, അല്ലെങ്കിൽ സ്വന്തമായി create ചെയ്യേണ്ടിവരും.</p>
-<p>functions import ചെയ്ത് ഉപയോഗിക്കുന്നതിന്റെ ഉദാഹരണങ്ങൾ <span class="xref std std-doc">previous lecture</span>-ൽ കൊടുത്തിരുന്നു.</p>
-<p>ഒരു നൽകിയ വർഷം leap year ആണോ എന്ന് test ചെയ്യുന്ന മറ്റൊരു ഉദാഹരണം താഴെ കാണാം:</p>
+<h3><span class="section-number">2.2.2. </span>Third Party Functions<a class="headerlink" href="#third-party-functions" title="Link to this heading">#</a></h3>
+<p>Built-in functions മാത്രം ഉപയോഗിച്ച് നമുക്ക് ആവശ്യമുള്ളത് ചെയ്യാൻ കഴിയുന്നില്ലെങ്കിൽ, ഒന്നുകിൽ മറ്റുള്ള functions-നെ import ചെയ്യേണ്ടി വരും, അല്ലെങ്കിൽ സ്വന്തമായി functions create ചെയ്യേണ്ടി വരും.</p>
+<p>Functions-നെ import ചെയ്ത് ഉപയോഗിക്കുന്ന examples നമ്മൾ <a class="reference internal" href="python_by_example.html"><span class="doc">previous lecture</span></a>-ൽ കണ്ടിരുന്നു.</p>
+<p>തന്നിരിക്കുന്ന വർഷം leap year ആണോ അല്ലയോ എന്ന് test ചെയ്യുന്ന മറ്റൊരു ഉദാഹരണം താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">calendar</span>
@@ -418,12 +424,12 @@
 </section>
 </section>
 <section id="defining-functions">
-<h2><span class="section-number">1.3. </span>Defining Functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h2>
-<p>പല അവസരങ്ങളിലും നമ്മുടെ സ്വന്തം functions define ചെയ്യാൻ കഴിയുന്നത് ഉപയോഗപ്രദമാണ്.</p>
-<p>അത് എങ്ങനെ ചെയ്യാമെന്ന് discuss ചെയ്തുകൊണ്ട് തുടങ്ങാം.</p>
+<h2><span class="section-number">2.3. </span>Defining Functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h2>
+<p>പല അവസരങ്ങളിലും, നമുക്ക് സ്വന്തമായി functions-നെ define ചെയ്യാൻ കഴിയുന്നത് വളരെ useful ആണ്.</p>
+<p>അത് എങ്ങനെ ചെയ്യാമെന്ന് നമുക്ക് നോക്കാം.</p>
 <section id="basic-syntax">
-<h3><span class="section-number">1.3.1. </span>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(f(x) = 2 x + 1\)</span> എന്ന mathematical function implement ചെയ്യുന്ന വളരെ simple ആയ ഒരു Python function താഴെ കാണാം</p>
+<h3><span class="section-number">2.3.1. </span>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(f(x) = 2 x + 1\)</span> എന്ന mathematical function implement ചെയ്യുന്ന വളരെ simple ആയ ഒരു Python function താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -432,7 +438,7 @@
 </div>
 </div>
 </div>
-<p>ഇപ്പോൾ നമ്മൾ ഈ function define ചെയ്തുകഴിഞ്ഞു, ഇനി അതിനെ <em>call</em> ചെയ്ത് അത് നമ്മൾ പ്രതീക്ഷിക്കുന്നത് ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാം:</p>
+<p>നമ്മൾ ഈ function-നെ define ചെയ്ത സ്ഥിതിക്ക്, ഇനി അതിനെ call ചെയ്ത്, നമ്മൾ expect ചെയ്യുന്നത് പോലെ ആ function പ്രവർത്തിക്കുന്നുണ്ടോ എന്ന് നോക്കാം.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>   
@@ -457,8 +463,8 @@
 </div>
 </div>
 </div>
-<p>നൽകിയ ഒരു number-ന്റെ absolute value compute ചെയ്യുന്ന, കുറച്ചുകൂടെ നീളമുള്ള ഒരു function താഴെ കാണാം.</p>
-<p>(ഇത്തരമൊരു function built-in ആയി ഇതിനകം നിലവിലുണ്ട്, പക്ഷേ exercise-ന് വേണ്ടി നമുക്ക് സ്വന്തമായി ഒന്ന് എഴുതാം.)</p>
+<p>കുറച്ചുകൂടി നീളമുള്ള ഒരു function നമുക്ക് താഴെ കാണാം. ഈ function ഉപയോഗിച്ച്, തന്നിരിക്കുന്ന ഒരു number-ന്റെ absolute value compute ചെയ്യാൻ സാധിക്കുന്നു.</p>
+<p>(Absolute value compute ചെയ്യുന്ന ഒരു built-in function already exist ചെയ്യുന്നുണ്ട്. പക്ഷേ exercise-ന് വേണ്ടി നമുക്ക് സ്വന്തമായി ഒരു function എഴുതി നോക്കാം.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">new_abs_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -471,15 +477,15 @@
 </div>
 </div>
 </div>
-<p>ഇവിടെയുള്ള syntax review ചെയ്യാം.</p>
+<p>ഇവിടുത്തെ syntax നമുക്ക് review ചെയ്യാം:</p>
 <ul class="simple">
-<li><p>function definitions തുടങ്ങാൻ ഉപയോഗിക്കുന്ന Python keyword ആണ് <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">new_abs_function(x):</span></code> എന്നത് indicate ചെയ്യുന്നത് function-ന്റെ പേര് <code class="docutils literal notranslate"><span class="pre">new_abs_function</span></code> എന്നാണെന്നും, അതിന് <code class="docutils literal notranslate"><span class="pre">x</span></code> എന്ന ഒരു argument ഉണ്ടെന്നുമാണ്.</p></li>
-<li><p>indent ചെയ്ത code, <em>function body</em> എന്ന് വിളിക്കുന്ന ഒരു code block ആണ്.</p></li>
-<li><p>calling code-ലേക്ക് return ചെയ്യേണ്ട object <code class="docutils literal notranslate"><span class="pre">abs_value</span></code> ആണെന്ന് <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword indicate ചെയ്യുന്നു.</p></li>
+<li><p>ഒരു function definition തുടങ്ങാൻ ഉപയോഗിക്കുന്ന Python keyword ആണ് <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">new_abs_function(x):</span></code> എന്നത് indicate ചെയ്യുന്നത്, function-ന്റെ name <code class="docutils literal notranslate"><span class="pre">new_abs_function</span></code> എന്നാണെന്നും, അതിന് <code class="docutils literal notranslate"><span class="pre">x</span></code> എന്ന ഒരൊറ്റ argument ഉണ്ടെന്നുമാണ്.</p></li>
+<li><p>Indent ചെയ്തിരിക്കുന്ന code-നെ, <em>function body</em> എന്ന് വിളിക്കുന്നു.</p></li>
+<li><p>ഈ function-നെ call ചെയ്ത code-ലേക്ക്, <code class="docutils literal notranslate"><span class="pre">abs_value</span></code> ആണ് return ചെയ്യേണ്ടത് എന്ന് <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword indicate ചെയ്യുന്നു.</p></li>
 </ul>
-<p>ഈ function definition മുഴുവനും Python interpreter വായിച്ച് memory-യിൽ store ചെയ്യുന്നു.</p>
-<p>ഇത് പ്രവർത്തിക്കുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ അതിനെ call ചെയ്യാം:</p>
+<p>ഈ function definition മുഴുവനും Python interpreter വായിച്ച്, അതിനെ memory-യിൽ store ചെയ്യുന്നു.</p>
+<p>ഈ function ശരിയായി work ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ, അതിനെ call ചെയ്ത നോക്കാം.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">new_abs_function</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
@@ -494,8 +500,8 @@
 </div>
 </div>
 </div>
-<p>ഒരു function-ന് അനിയന്ത്രിതമായി എത്ര <code class="docutils literal notranslate"><span class="pre">return</span></code> statements വേണമെങ്കിലും (പൂജ്യം ഉൾപ്പെടെ) ഉണ്ടാകാം എന്നത് ശ്രദ്ധിക്കുക.</p>
-<p>ആദ്യത്തെ return hit ചെയ്യുമ്പോൾ function-ന്റെ execution അവസാനിക്കുന്നു, ഇത് താഴെ കാണുന്ന ഉദാഹരണം പോലുള്ള code സാധ്യമാക്കുന്നു</p>
+<p>ശ്രദ്ധിക്കുക, ഒരു function-ൽ എത്ര <code class="docutils literal notranslate"><span class="pre">return</span></code> statements വേണമെങ്കിലും ഉണ്ടാകാം; ഒന്നും ഇല്ലാതെയും ഇരിക്കാം.</p>
+<p>ഒരു function പ്രവർത്തിക്കുമ്പോൾ ആദ്യം എത്തിച്ചേരുന്ന return statement execute ചെയ്താൽ, ആ function-ന്റെ execution അവിടെ അവസാനിക്കും. അതിനാൽ താഴെ കാണുന്നതുപോലുള്ള code എഴുതാൻ സാധിക്കുന്നു:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -506,24 +512,24 @@
 </div>
 </div>
 </div>
-<p>(multiple return statements ഉള്ള functions എഴുതുന്നത് സാധാരണയായി discourage ചെയ്യപ്പെടുന്നു, കാരണം അത് logic follow ചെയ്യാൻ ബുദ്ധിമുട്ടാക്കും.)</p>
-<p>return statement ഇല്ലാത്ത functions സ്വയമേവ പ്രത്യേക Python object ആയ <code class="docutils literal notranslate"><span class="pre">None</span></code> return ചെയ്യുന്നു.</p>
+<p>(Multiple return statements ഉള്ള functions എഴുതുന്നത് സാധാരണയായി discourage ചെയ്യപ്പെടുന്നു. അങ്ങനെ ചെയ്താൽ, function-ന്റെ logic follow ചെയ്യാൻ ബുദ്ധിമുട്ടാക്കും.)</p>
+<p>Return statement ഇല്ലാത്ത functions, automatically ഒരു പ്രത്യേക Python object ആയ <code class="docutils literal notranslate"><span class="pre">None</span></code> return ചെയ്യുന്നു.</p>
 </section>
 <section id="keyword-arguments">
-<span id="pos-args"></span><h3><span class="section-number">1.3.2. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Link to this heading">#</a></h3>
-<p id="index-1">ഒരു <span class="xref std std-ref">previous lecture</span>-ൽ, നിങ്ങൾ ഈ statement കണ്ടിരുന്നു</p>
+<span id="pos-args"></span><h3><span class="section-number">2.3.2. </span>Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Link to this heading">#</a></h3>
+<p id="index-1">ഒരു <a class="reference internal" href="python_by_example.html#python-by-example"><span class="std std-ref">previous lecture</span></a>-ൽ, നിങ്ങൾ ഈ statement കണ്ടിരുന്നു:</p>
 <div class="no-execute highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;white noise&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Matplotlib-ന്റെ <code class="docutils literal notranslate"><span class="pre">plot</span></code> function-ലേക്കുള്ള ഈ call-ൽ, അവസാനത്തെ argument <code class="docutils literal notranslate"><span class="pre">name=argument</span></code> syntax-ൽ pass ചെയ്യുന്നത് ശ്രദ്ധിക്കുക.</p>
-<p>ഇതിനെ <em>keyword argument</em> എന്ന് വിളിക്കുന്നു, <code class="docutils literal notranslate"><span class="pre">label</span></code> ആണ് ഇവിടെ keyword.</p>
-<p>order അനുസരിച്ച് അർത്ഥം നിശ്ചയിക്കപ്പെടുന്നതിനാൽ, non-keyword arguments-നെ <em>positional arguments</em> എന്ന് വിളിക്കുന്നു</p>
+<p>Matplotlib-ന്റെ <code class="docutils literal notranslate"><span class="pre">plot</span></code> function-നെ call ചെയ്യുമ്പോൾ, അവസാനത്തെ argument <code class="docutils literal notranslate"><span class="pre">name=argument</span></code> എന്ന syntax-ൽ pass ചെയ്യുന്നത് ശ്രദ്ധിക്കുക.</p>
+<p>ഇതിനെ <em>keyword argument</em> എന്ന് വിളിക്കുന്നു. <code class="docutils literal notranslate"><span class="pre">label</span></code> ആണ് ഇവിടെ keyword.</p>
+<p>Order അനുസരിച്ച് അർത്ഥം നിശ്ചയിക്കപ്പെടുന്നതിനാൽ, non-keyword arguments-നെ <em>positional arguments</em> എന്ന് വിളിക്കുന്നു.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">'b-')</span></code>, <code class="docutils literal notranslate"><span class="pre">plot('b-',</span> <span class="pre">x)</span></code>-ൽ നിന്നും വ്യത്യസ്തമാണ്</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot(x,</span> <span class="pre">'b-')</span></code> differs from <code class="docutils literal notranslate"><span class="pre">plot('b-',</span> <span class="pre">x)</span></code>.</p></li>
 </ul>
-<p>ഒരു function-ന് ധാരാളം arguments ഉള്ളപ്പോൾ keyword arguments പ്രത്യേകിച്ചും ഉപയോഗപ്രദമാണ്, കാരണം അപ്പോൾ ശരിയായ order ഓർത്തിരിക്കാൻ ബുദ്ധിമുട്ടാണ്.</p>
-<p>user-defined functions-ൽ keyword arguments ഒരു ബുദ്ധിമുട്ടും കൂടാതെ നിങ്ങൾക്ക് adopt ചെയ്യാം.</p>
-<p>അടുത്ത ഉദാഹരണം syntax illustrate ചെയ്യുന്നു</p>
+<p>ഒരു function-ന് ധാരാളം arguments ഉള്ളപ്പോൾ, keyword arguments പ്രത്യേകിച്ചും ഉപയോഗപ്രദമാണ്. കാരണം ശരിയായ order ഓർത്തിരിക്കാൻ ബുദ്ധിമുട്ടായേക്കാം.</p>
+<p>User-defined functions-ലും keyword arguments നിങ്ങൾക്ക് ഒരു ബുദ്ധിമുട്ടും കൂടാതെ adopt ചെയ്യാം.</p>
+<p>അടുത്ത example, ഇതിന്റെ syntax illustrate ചെയ്യുന്നു:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -532,7 +538,7 @@
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">f</span></code>-ന്റെ definition-ൽ നമ്മൾ നൽകിയ keyword argument values, default values ആയി മാറുന്നു</p>
+<p><code class="docutils literal notranslate"><span class="pre">f</span></code>-ന്റെ definition-ൽ നമ്മൾ നൽകിയിരിക്കുന്ന keyword argument values, default values ആയി മാറുന്നു.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -545,7 +551,7 @@
 </div>
 </div>
 </div>
-<p>താഴെ കാണുന്ന രീതിയിൽ അവയെ modify ചെയ്യാം</p>
+<p>താഴെ കാണുന്ന രീതിയിൽ അവയെ modify ചെയ്യാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -560,21 +566,21 @@
 </div>
 </section>
 <section id="the-flexibility-of-python-functions">
-<h3><span class="section-number">1.3.3. </span>The Flexibility of Python Functions<a class="headerlink" href="#the-flexibility-of-python-functions" title="Link to this heading">#</a></h3>
-<p><span class="xref std std-ref">previous lecture</span>-ൽ നമ്മൾ discuss ചെയ്തതുപോലെ, Python functions വളരെ flexible ആണ്.</p>
+<h3><span class="section-number">2.3.3. </span>The Flexibility of Python Functions<a class="headerlink" href="#the-flexibility-of-python-functions" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="python_by_example.html#python-by-example"><span class="std std-ref">Previous lecture</span></a>-ൽ നമ്മൾ discuss ചെയ്തതുപോലെ, Python functions വളരെ flexible ആണ്.</p>
 <p>പ്രത്യേകിച്ചും</p>
 <ul class="simple">
-<li><p>ഒരു നൽകിയ file-ൽ എത്ര functions വേണമെങ്കിലും define ചെയ്യാം.</p></li>
-<li><p>Functions മറ്റ് functions-ന് ഉള്ളിൽ define ചെയ്യാൻ കഴിയും (ഇത് പലപ്പോഴും ചെയ്യാറുമുണ്ട്).</p></li>
-<li><p>മറ്റ് functions ഉൾപ്പെടെ ഏത് object-നെയും ഒരു function-ലേക്ക് argument ആയി pass ചെയ്യാം.</p></li>
-<li><p>Functions ഉൾപ്പെടെ ഏത് തരം object-ഉം ഒരു function-ന് return ചെയ്യാൻ കഴിയും.</p></li>
+<li><p>തന്നിരിക്കുന്ന ഒരു file-ൽ എത്ര functions വേണമെങ്കിലും define ചെയ്യാം.</p></li>
+<li><p>Functions-നെ മറ്റൊരു function-ന്റെ ഉള്ളിൽ define ചെയ്യാം; പലപ്പോഴും അങ്ങനെ ചെയ്യാറുമുണ്ട്.</p></li>
+<li><p>മറ്റ് functions ഉൾപ്പെടെ, ഏത് object-നെയും ഒരു function-ലേക്ക് argument ആയി pass ചെയ്യാം.</p></li>
+<li><p>Functions ഉൾപ്പെടെ, ഏത് തരം object--നെയും ഒരു function-ന് return ചെയ്യാൻ കഴിയും.</p></li>
 </ul>
-<p>ഒരു function-ലേക്ക് ഒരു function pass ചെയ്യുന്നത് എത്ര straightforward ആണെന്നതിന്റെ ഉദാഹരണങ്ങൾ താഴെയുള്ള sections-ൽ നമ്മൾ നൽകും.</p>
+<p>ഒരു function-നെ മറ്റൊരു function-ലേക്ക് pass ചെയ്യുന്നത് എത്ര എളുപ്പമാണെന്ന് കാണിക്കുന്ന examples താഴെയുള്ള sections-ൽ നമുക്ക് കാണാം.</p>
 </section>
 <section id="one-line-functions-lambda">
-<h3><span class="section-number">1.3.4. </span>One-Line Functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#one-line-functions-lambda" title="Link to this heading">#</a></h3>
-<p id="index-2">ഒരു line-ൽ simple functions create ചെയ്യാൻ <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword ഉപയോഗിക്കുന്നു.</p>
-<p>ഉദാഹരണത്തിന്, ഈ definitions</p>
+<h3><span class="section-number">2.3.4. </span>One-Line Functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code><a class="headerlink" href="#one-line-functions-lambda" title="Link to this heading">#</a></h3>
+<p id="index-2">ഒറ്റ line-ൽ തന്നെ simple functions create ചെയ്യാനാണ് <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword ഉപയോഗിക്കുന്നത്.</p>
+<p>For example, താഴെ കൊടുത്തിരിക്കുന്ന രണ്ട് definitions-ഉം ഒരേ കാര്യമാണ് ചെയ്യുന്നത്:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -583,7 +589,6 @@
 </div>
 </div>
 </div>
-<p>ഒപ്പം</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
@@ -591,11 +596,10 @@
 </div>
 </div>
 </div>
-<p>എന്നിവ പൂർണ്ണമായും equivalent ആണ്.</p>
-<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> എന്തുകൊണ്ട് ഉപയോഗപ്രദമാണെന്ന് കാണാൻ, നമുക്ക് <span class="math notranslate nohighlight">\(\int_0^2 x^3 dx\)</span> calculate ചെയ്യണമെന്ന് കരുതുക (നമ്മുടെ high-school calculus മറന്നുപോയി എന്നും കരുതുക).</p>
-<p>SciPy library-ൽ ഈ calculation നമുക്ക് വേണ്ടി ചെയ്യുന്ന <code class="docutils literal notranslate"><span class="pre">quad</span></code> എന്നൊരു function ഉണ്ട്.</p>
-<p><code class="docutils literal notranslate"><span class="pre">quad</span></code> function-ന്റെ syntax <code class="docutils literal notranslate"><span class="pre">quad(f,</span> <span class="pre">a,</span> <span class="pre">b)</span></code> ആണ്, ഇവിടെ <code class="docutils literal notranslate"><span class="pre">f</span></code> ഒരു function ആണ്, <code class="docutils literal notranslate"><span class="pre">a</span></code>-ഉം <code class="docutils literal notranslate"><span class="pre">b</span></code>-ഉം numbers ആണ്.</p>
-<p><span class="math notranslate nohighlight">\(f(x) = x^3\)</span> എന്ന function create ചെയ്യാൻ നമുക്ക് <code class="docutils literal notranslate"><span class="pre">lambda</span></code> താഴെ കാണുന്ന രീതിയിൽ ഉപയോഗിക്കാം</p>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> എന്തുകൊണ്ട് useful ആകുന്നു എന്ന് മനസ്സിലാക്കാൻ, നമുക്ക് <span class="math notranslate nohighlight">\(\int_0^2 x^3 dx\)</span> calculate ചെയ്യണമെന്ന് കരുതുക. (നമ്മുടെ high-school calculus മറന്നുപോയി എന്നും കരുതുക).</p>
+<p>ഈ calculation നമുക്കുവേണ്ടി ചെയ്യാൻ SciPy library-യിൽ <code class="docutils literal notranslate"><span class="pre">quad</span></code> എന്നൊരു function ഉണ്ട്.</p>
+<p><code class="docutils literal notranslate"><span class="pre">quad</span></code> function-ന്റെ syntax <code class="docutils literal notranslate"><span class="pre">quad(f,</span> <span class="pre">a,</span> <span class="pre">b)</span></code> എന്നാണ്. ഇവിടെ <code class="docutils literal notranslate"><span class="pre">f</span></code> ഒരു function ആണ്. <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> എന്നിവ numbers-ഉം ആണ്.</p>
+<p><span class="math notranslate nohighlight">\(f(x) = x^3\)</span> എന്ന function create ചെയ്യാൻ നമുക്ക് <code class="docutils literal notranslate"><span class="pre">lambda</span></code> താഴെ കാണുന്ന രീതിയിൽ ഉപയോഗിക്കാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">quad</span>
@@ -610,24 +614,24 @@
 </div>
 </div>
 </div>
-<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">lambda</span></code> സൃഷ്ടിച്ച function-ന് ഒരു പേരും നൽകാത്തതിനാൽ അതിനെ <em>anonymous</em> എന്ന് പറയുന്നു.</p>
+<p>ഇവിടെ <code class="docutils literal notranslate"><span class="pre">lambda</span></code> ഉപയോഗിച്ച് create ചെയ്ത function-ന് ഒരു പേരും നൽകാത്തതിനാൽ, ആ function-നെ <em>anonymous</em> എന്ന് വിളിക്കുന്നു.</p>
 </section>
 <section id="why-write-functions">
-<h3><span class="section-number">1.3.5. </span>Why Write Functions?<a class="headerlink" href="#why-write-functions" title="Link to this heading">#</a></h3>
-<p>നിങ്ങളുടെ code-ന്റെ clarity മെച്ചപ്പെടുത്താൻ user-defined functions പ്രധാനമാണ്, കാരണം അവ</p>
+<h3><span class="section-number">2.3.5. </span>Why Write Functions?<a class="headerlink" href="#why-write-functions" title="Link to this heading">#</a></h3>
+<p>നമ്മുടെ code-ന്റെ clarity improve ചെയ്യുന്നതിൽ user-defined functions-ന് പ്രാധാന്യമുണ്ട്. കാരണം അവ:</p>
 <ul class="simple">
-<li><p>വ്യത്യസ്ത logic strands-നെ separate ചെയ്യുന്നു</p></li>
-<li><p>code reuse facilitate ചെയ്യുന്നു</p></li>
+<li><p>വ്യത്യസ്ത logic-ുകളെ separate ചെയ്യുന്നു</p></li>
+<li><p>Code reuse ചെയ്യാൻ സഹായിക്കുന്നു</p></li>
 </ul>
-<p>(ഒരേ കാര്യം രണ്ട് തവണ എഴുതുന്നത് <a class="reference external" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">മിക്ക സമയത്തും ഒരു മോശം ആശയമാണ്</a>)</p>
-<p>ഇതിനെക്കുറിച്ച് <span class="xref std std-doc">later</span> നമ്മൾ കൂടുതൽ പറയും.</p>
+<p>(ഒരേ code രണ്ടുതവണ എഴുതുന്നത് <a class="reference external" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">അത്ര നല്ലതല്ല</a>.)</p>
+<p>ഇതിനെക്കുറിച്ചുള്ള കൂടുതൽ കാര്യങ്ങൾ നമുക്ക് <span class="xref std std-doc">പിന്നീട് കാണാം</span>.</p>
 </section>
 </section>
 <section id="applications">
-<h2><span class="section-number">1.4. </span>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
 <section id="random-draws">
-<h3><span class="section-number">1.4.1. </span>Random Draws<a class="headerlink" href="#random-draws" title="Link to this heading">#</a></h3>
-<p><span class="xref std std-doc">previous lecture</span>-ലെ ഈ code വീണ്ടും കണക്കിലെടുക്കാം</p>
+<h3><span class="section-number">2.4.1. </span>Random Draws<a class="headerlink" href="#random-draws" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="python_by_example.html"><span class="doc">previous lecture</span></a>-ൽ നമ്മൾ കണ്ട ഈ code ഒരിക്കൽക്കൂടി നോക്കാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
@@ -645,20 +649,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13d04d6f6ed1cefa99366be9582e97dd78046a8b7b916a5c92e5651a7988156e.png" src="_images/13d04d6f6ed1cefa99366be9582e97dd78046a8b7b916a5c92e5651a7988156e.png" />
+<img alt="_images/64aad8665d1d75cf10752be4593bb8096614ad407b3a432c872f8291e9d42c13.png" src="_images/64aad8665d1d75cf10752be4593bb8096614ad407b3a432c872f8291e9d42c13.png" />
 </div>
 </div>
-<p>ഈ program-നെ നമ്മൾ രണ്ട് ഭാഗങ്ങളായി break down ചെയ്ത്:</p>
+<p>ഈ program-നെ നമുക്ക് രണ്ട് ഭാഗങ്ങളായി break down ചെയ്യാം:</p>
 <ol class="arabic simple">
-<li><p>random variables-ന്റെ ഒരു list generate ചെയ്യുന്ന user-defined function.</p></li>
-<li><p>program-ന്റെ പ്രധാന ഭാഗം, അത്</p>
+<li><p>User-defined function - Random variables-ന്റെ ഒരു list generate ചെയ്യുന്നു.</p></li>
+<li><p>Main part of the program -</p>
 <ol class="arabic simple">
-<li><p>data ലഭിക്കാൻ ഈ function call ചെയ്യുന്നു</p></li>
-<li><p>data plot ചെയ്യുന്നു</p></li>
+<li><p>Data ലഭിക്കുന്നതിനായി user-defined function-നെ call ചെയ്യുന്നു</p></li>
+<li><p>ലഭിച്ച data-യെ plot ചെയ്യുന്നു</p></li>
 </ol>
 </li>
 </ol>
-<p>ഇത് അടുത്ത program-ൽ accomplish ചെയ്യപ്പെടുന്നു</p>
+<p>മുകളിൽ പറഞ്ഞ കാര്യങ്ങൾ, താഴെയുള്ള program-ൽ കാണിച്ചിരിക്കുന്നു:</p>
 <div class="cell docutils container" id="funcloopprog">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -675,17 +679,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5c90f88f06b3d4cb622823920b978a5be68b561a0a50accde8b69f189deb200e.png" src="_images/5c90f88f06b3d4cb622823920b978a5be68b561a0a50accde8b69f189deb200e.png" />
+<img alt="_images/3fb4d0b1fee478f297bbc811162adb5c870d4f85527116d76caedffca731e4a9.png" src="_images/3fb4d0b1fee478f297bbc811162adb5c870d4f85527116d76caedffca731e4a9.png" />
 </div>
 </div>
-<p>interpreter <code class="docutils literal notranslate"><span class="pre">generate_data(100)</span></code> എന്ന expression-ൽ എത്തുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">n</span></code>, 100-ന് equal ആയി set ചെയ്ത് function body execute ചെയ്യുന്നു.</p>
-<p>ഇതിന്റെ net result, <code class="docutils literal notranslate"><span class="pre">data</span></code> എന്ന പേര് function return ചെയ്ത <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> എന്ന list-ലേക്ക് <em>bind</em> ചെയ്യപ്പെടും എന്നതാണ്.</p>
+<p>Python interpreter, <code class="docutils literal notranslate"><span class="pre">generate_data(100)</span></code> എന്ന expression-ൽ എത്തുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">n</span></code>-ന്റെ value 100 ആയി set ചെയ്ത്, function-ന്റെ body execute ചെയ്യുന്നു.</p>
+<p>ഇതിന്റെ അവസാനം, function return ചെയ്യുന്ന <code class="docutils literal notranslate"><span class="pre">ϵ_values</span></code> എന്ന list-ലേക്ക് <code class="docutils literal notranslate"><span class="pre">data</span></code> എന്ന name <em>bind</em> ചെയ്യപ്പെടുന്നു.</p>
 </section>
 <section id="adding-conditions">
-<h3><span class="section-number">1.4.2. </span>Adding Conditions<a class="headerlink" href="#adding-conditions" title="Link to this heading">#</a></h3>
-<p id="index-3">നമ്മുടെ <code class="docutils literal notranslate"><span class="pre">generate_data()</span></code> function കുറച്ചൊക്കെ limited ആണ്.</p>
-<p>ആവശ്യമുള്ളപ്പോൾ <span class="math notranslate nohighlight">\((0, 1)\)</span>-ൽ standard normals-ഓ uniform random variables-ഓ return ചെയ്യാനുള്ള കഴിവ് നൽകി, ഇതിനെ കുറച്ചുകൂടെ ഉപയോഗപ്രദമാക്കാം.</p>
-<p>താഴെയുള്ള code piece-ൽ ഇത് achieve ചെയ്യപ്പെടുന്നു.</p>
+<h3><span class="section-number">2.4.2. </span>Adding Conditions<a class="headerlink" href="#adding-conditions" title="Link to this heading">#</a></h3>
+<p id="index-3">നമ്മുടെ <code class="docutils literal notranslate"><span class="pre">generate_data()</span></code> function-ന് ചില പരിമിതികളുണ്ട്.</p>
+<p>generate_data() function-നെ നമുക്ക് കുറച്ചുകൂടി useful ആക്കാം — ആവശ്യാനുസരണം, standard normal random variables അല്ലെങ്കിൽ, <span class="math notranslate nohighlight">\((0, 1)\)</span> interval-ൽ ഉള്ള uniform random variables return ചെയ്യാൻ കഴിയുന്ന രീതിയിൽ.</p>
+<p>ഇത് എങ്ങനെ ചെയ്യാമെന്ന് താഴെയുള്ള code-ൽ കാണിച്ചിരിക്കുന്നു.</p>
 <div class="cell docutils container" id="funcloopprog2">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">generator_type</span><span class="p">):</span>
@@ -705,23 +709,23 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3e89fb3b59962d32efcddb191d43e543e03706e0acd6a8577b9877838b606905.png" src="_images/3e89fb3b59962d32efcddb191d43e543e03706e0acd6a8577b9877838b606905.png" />
+<img alt="_images/cdddd1c7b022063adb1773a9d43aa76aa8bc99d05f891985fb8cb2939e4ba69b.png" src="_images/cdddd1c7b022063adb1773a9d43aa76aa8bc99d05f891985fb8cb2939e4ba69b.png" />
 </div>
 </div>
-<p>if/else clause-ന്റെ syntax self-explanatory ആണെന്ന് പ്രതീക്ഷിക്കുന്നു, code blocks-ന്റെ extent വീണ്ടും indentation delimit ചെയ്യുന്നു.</p>
+<p>if/else clause-ന്റെ syntax, self-explanatory ആണെന്ന് വിശ്വസിക്കുന്നു. ഇവിടെയും, indentation ഉപയോഗിച്ചാണ് code blocks-ന്റെ extent-നെ delimit ചെയ്തിരിക്കുന്നത്.</p>
 <p>Notes</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> എന്ന argument ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്, അതുകൊണ്ടാണ് നമ്മൾ അതിനെ <code class="docutils literal notranslate"><span class="pre">'U'</span></code> എന്ന് എഴുതുന്നത്.</p></li>
-<li><p>equality test ചെയ്യുന്നത് <code class="docutils literal notranslate"><span class="pre">==</span></code> syntax ഉപയോഗിച്ചാണ്, <code class="docutils literal notranslate"><span class="pre">=</span></code> അല്ല എന്നത് ശ്രദ്ധിക്കുക.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> എന്ന argument-നെ ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്. അതുകൊണ്ടാണ് നമ്മൾ അതിനെ <code class="docutils literal notranslate"><span class="pre">'U'</span></code> എന്ന് എഴുതുന്നത്.</p></li>
+<li><p>ശ്രദ്ധിക്കുക, equality test ചെയ്യുന്നത് <code class="docutils literal notranslate"><span class="pre">==</span></code> syntax ഉപയോഗിച്ചാണ്, <code class="docutils literal notranslate"><span class="pre">=</span></code> അല്ല.</p>
 <ul>
-<li><p>ഉദാഹരണത്തിന്, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code> എന്ന statement <code class="docutils literal notranslate"><span class="pre">a</span></code> എന്ന പേരിനെ <code class="docutils literal notranslate"><span class="pre">10</span></code> എന്ന value-യിലേക്ക് assign ചെയ്യുന്നു.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">10</span></code> എന്ന expression, <code class="docutils literal notranslate"><span class="pre">a</span></code>-യുടെ value അനുസരിച്ച് <code class="docutils literal notranslate"><span class="pre">True</span></code>-ഓ <code class="docutils literal notranslate"><span class="pre">False</span></code>-ഓ ആയി evaluate ചെയ്യപ്പെടും.</p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code> എന്ന statement, <code class="docutils literal notranslate"><span class="pre">a</span></code> എന്ന name-നെ <code class="docutils literal notranslate"><span class="pre">10</span></code> എന്ന value-യിലേക്ക് assign ചെയ്യുന്നു.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">10</span></code> എന്ന expression, <code class="docutils literal notranslate"><span class="pre">a</span></code>-യുടെ value അനുസരിച്ച്, <code class="docutils literal notranslate"><span class="pre">True</span></code>-ഓ <code class="docutils literal notranslate"><span class="pre">False</span></code>-ഓ ആയി evaluate ചെയ്യപ്പെടുന്നു.</p></li>
 </ul>
 </li>
 </ul>
-<p>ഇനി, മുകളിലുള്ള code simplify ചെയ്യാൻ പല വഴികളും ഉണ്ട്.</p>
-<p>ഉദാഹരണത്തിന്, ആവശ്യമുള്ള generator type-നെ ഒരു function, method, അല്ലെങ്കിൽ മറ്റേതെങ്കിലും <a class="reference external" href="https://typing.python.org/en/latest/spec/callables.html">callable</a> object ആയി pass ചെയ്തുകൊണ്ട് conditionals എല്ലാം ഒഴിവാക്കാം.</p>
-<p>ഇത് മനസ്സിലാക്കാൻ, താഴെയുള്ള version കണക്കിലെടുക്കുക.</p>
+<p>മുകളിലുള്ള code-നെ simplify ചെയ്യാൻ പല വഴികളും ഉണ്ട്.</p>
+<p>For example, നമുക്ക് conditionals-നെ മുഴുവനായും ഒഴിവാക്കാം - ആവശ്യമുള്ള generator type-നെ ഒരു function, method, അല്ലെങ്കിൽ മറ്റേതെങ്കിലും <a class="reference external" href="https://typing.python.org/en/latest/spec/callables.html">callable</a> object ആയി നേരിട്ട് pass ചെയ്തുകൊണ്ട്.</p>
+<p>ഇത് മനസ്സിലാക്കാൻ, താഴെയുള്ള version നോക്കാം.</p>
 <div class="cell docutils container" id="test-program-6">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">generator_type</span><span class="p">):</span>
@@ -738,16 +742,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7d383eaa6bd2decccadc2309b79893d08f6a3a56d6373d0ffab284a5e528dd36.png" src="_images/7d383eaa6bd2decccadc2309b79893d08f6a3a56d6373d0ffab284a5e528dd36.png" />
+<img alt="_images/400ddc4eb7ff0cc3ee42c3d90a0ee92d1c4039e1600819c35b9d85c97504c6a7.png" src="_images/400ddc4eb7ff0cc3ee42c3d90a0ee92d1c4039e1600819c35b9d85c97504c6a7.png" />
 </div>
 </div>
 <p>ഇനി, <code class="docutils literal notranslate"><span class="pre">generate_data()</span></code> function call ചെയ്യുമ്പോൾ, രണ്ടാമത്തെ argument ആയി നമ്മൾ <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code> pass ചെയ്യുന്നു.</p>
 <p>ഈ object ഒരു <em>callable</em> ആണ് — അതായത്, parentheses ഉപയോഗിച്ച് call ചെയ്യാൻ കഴിയുന്ന object.</p>
-<p><code class="docutils literal notranslate"><span class="pre">generate_data(100,</span> <span class="pre">rng.uniform)</span></code> എന്ന function call execute ചെയ്യുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">n</span></code>, 100-ന് equal ആയും <code class="docutils literal notranslate"><span class="pre">generator_type</span></code> എന്ന പേര് <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code> എന്ന callable-ലേക്ക് &quot;bound&quot; ആയും വച്ചുകൊണ്ട് Python function code block run ചെയ്യുന്നു.</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_data(100,</span> <span class="pre">rng.uniform)</span></code> എന്ന function call execute ചെയ്യുമ്പോൾ, Python, function-ന്റെ code block-നെ <code class="docutils literal notranslate"><span class="pre">n</span></code>=100 ആയി run ചെയ്യുന്നു. കൂടാതെ <code class="docutils literal notranslate"><span class="pre">generator_type</span></code> എന്ന name-നെ callable ആയ <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code>-നോട് bind ചെയ്യുന്നു.</p>
 <ul class="simple">
-<li><p>ഈ lines execute ചെയ്യുന്ന സമയത്ത്, <code class="docutils literal notranslate"><span class="pre">generator_type</span></code>-ഉം <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code>-ഉം &quot;synonyms&quot; ആണ്, അവ ഒരേപോലെ ഉപയോഗിക്കാം.</p></li>
+<li><p>ഈ lines execute ചെയ്യുന്ന സമയത്ത്, <code class="docutils literal notranslate"><span class="pre">generator_type</span></code>-എന്നും <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code>-എന്നും ഉള്ള names &quot;synonyms&quot; ആണ്; അതായത് രണ്ടും ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.</p></li>
 </ul>
-<p>ഈ principle കൂടുതൽ generally-യിലും പ്രവർത്തിക്കുന്നു --- ഉദാഹരണത്തിന്, താഴെയുള്ള code piece കണക്കിലെടുക്കുക</p>
+<p>ഈ principle കൂടുതൽ പൊതുവായ രീതിയിലും പ്രവർത്തിക്കും. For example, താഴെ കൊടുത്തിരിക്കുന്ന code നോക്കാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># max() is a built-in Python function</span>
@@ -773,20 +777,20 @@
 </div>
 </div>
 </div>
-<p>ഇവിടെ built-in function ആയ <code class="docutils literal notranslate"><span class="pre">max()</span></code>-ന് നമ്മൾ മറ്റൊരു പേര് create ചെയ്തു, അത് ഒരേപോലെ ഉപയോഗിക്കാൻ കഴിയും.</p>
-<p>നമ്മുടെ program-ന്റെ context-ൽ, functions-ലേക്ക്, അല്ലെങ്കിൽ more generally callable objects-ലേക്ക്, പേരുകൾ bind ചെയ്യാനുള്ള ഈ കഴിവ് അർത്ഥമാക്കുന്നത്, മുകളിൽ <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code>-ഉം ചെയ്തതുപോലെ, ഒരു callable object-നെ മറ്റൊരു callable-ലേക്ക് argument ആയി pass ചെയ്യുന്നതിൽ ഒരു പ്രശ്നവുമില്ല എന്നാണ്.</p>
+<p>ഇവിടെ, built-in function ആയ <code class="docutils literal notranslate"><span class="pre">max()</span></code>-ന് നമ്മൾ മറ്റൊരു name create ചെയ്തു. തുടർന്ന്, ആ പുതിയ name-ഉം, max()-ഉം ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.</p>
+<p>നമ്മുടെ program-ന്റെ context-ൽ, functions-നോ അല്ലെങ്കിൽ more generally, callable objects-നോ names bind ചെയ്യാൻ കഴിയുന്നു എന്നതിന്റെ അർത്ഥം, ഒരു callable object-നെ മറ്റൊരു callable object-ലേക്ക് argument ആയി pass ചെയ്യുന്നതിൽ പ്രശ്നമൊന്നുമില്ല എന്നതാണ്. മുകളിൽ <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code> ഉപയോഗിച്ച് നമ്മൾ അങ്ങനെ ചെയ്തിരുന്നു.</p>
 </section>
 </section>
 <section id="recursive-function-calls-advanced">
-<span id="recursive-functions"></span><h2><span class="section-number">1.5. </span>Recursive Function Calls (Advanced)<a class="headerlink" href="#recursive-function-calls-advanced" title="Link to this heading">#</a></h2>
-<p id="index-4">ഇത് ഒരു advanced topic ആണ്, ഇത് skip ചെയ്യാൻ നിങ്ങൾക്ക് സ്വാതന്ത്ര്യമുണ്ട്.</p>
-<p>അതേസമയം, ഇത് ഒരു neat ആശയമാണ്, നിങ്ങളുടെ programming career-ന്റെ ഏതെങ്കിലും ഘട്ടത്തിൽ ഇത് പഠിക്കണം.</p>
-<p>അടിസ്ഥാനപരമായി, ഒരു recursive function എന്നത് സ്വയം call ചെയ്യുന്ന ഒരു function ആണ്.</p>
-<p>ഉദാഹരണത്തിന്, ഏതെങ്കിലും t-ന് <span class="math notranslate nohighlight">\(x_t\)</span> compute ചെയ്യുന്ന problem കണക്കിലെടുക്കുക, ഇവിടെ</p>
+<span id="recursive-functions"></span><h2><span class="section-number">2.5. </span>Recursive Function Calls (Advanced)<a class="headerlink" href="#recursive-function-calls-advanced" title="Link to this heading">#</a></h2>
+<p id="index-4">ഇത് ഒരു advanced topic ആണ്. അതിനാൽ നിങ്ങൾക്ക് വേണമെങ്കിൽ ഇത് skip ചെയ്യാം.</p>
+<p>അതേസമയം, നിങ്ങളുടെ programming career-ന്റെ ഏതെങ്കിലും ഒരു stage-ൽ, ഇത് പഠിച്ചിരിക്കുന്നത് നല്ലതാണ്.</p>
+<p>Basically, സ്വയം call ചെയ്യുന്ന ഒരു function-നെ recursive function എന്ന് വിളിക്കുന്നു.</p>
+<p>ഉദാഹരണത്തിന്, താഴെ കൊടുത്തിരിക്കുന്ന relation ഉപയോഗിച്ച്, ഏതെങ്കിലും t-ന്, <span class="math notranslate nohighlight">\(x_t\)</span> compute ചെയ്യുന്ന problem consider ചെയ്യുക:</p>
 <div class="math notranslate nohighlight" id="equation-xseqdoub">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-xseqdoub" title="Link to this equation">#</a></span>\[x_{t+1} = 2 x_t, \quad x_0 = 1\]</div>
-<p>വ്യക്തമായും ഉത്തരം <span class="math notranslate nohighlight">\(2^t\)</span> ആണ്.</p>
-<p>ഒരു loop ഉപയോഗിച്ച് നമുക്ക് ഇത് എളുപ്പത്തിൽ compute ചെയ്യാം</p>
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-xseqdoub" title="Link to this equation">#</a></span>\[x_{t+1} = 2 x_t, \quad x_0 = 1\]</div>
+<p>Obviously, ഇതിന്റെ answer <span class="math notranslate nohighlight">\(2^t\)</span> ആണ്.</p>
+<p>ഒരു loop ഉപയോഗിച്ച് നമുക്ക് ഇത് എളുപ്പത്തിൽ compute ചെയ്യാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">x_loop</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -798,7 +802,7 @@
 </div>
 </div>
 </div>
-<p>താഴെ കാണുന്ന രീതിയിൽ ഒരു recursive solution-ഉം നമുക്ക് ഉപയോഗിക്കാം</p>
+<p>താഴെ കാണുന്ന രീതിയിൽ, ഒരു recursive solution-ഉം നമുക്ക് ഉപയോഗിക്കാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">x</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
@@ -810,28 +814,28 @@
 </div>
 </div>
 </div>
-<p>ഇവിടെ സംഭവിക്കുന്നത്, ഓരോ തുടർച്ചയായ call-ഉം <em>stack</em>-ൽ അതിന്റേതായ <em>frame</em> ഉപയോഗിക്കുന്നു എന്നതാണ്</p>
+<p>ഇവിടെ സംഭവിക്കുന്നത് എന്തെന്നാൽ, ഓരോ successive function call-ഉം, stack-ൽ അതിന്റേതായ frame ഉപയോഗിക്കുന്നു.</p>
 <ul class="simple">
-<li><p>ഒരു നൽകിയ function call-ന്റെ local variables സൂക്ഷിക്കുന്ന സ്ഥലമാണ് frame</p></li>
-<li><p>function calls process ചെയ്യാൻ ഉപയോഗിക്കുന്ന memory ആണ് stack</p>
+<li><p>ഒരു function call-ന്റെ local variables സൂക്ഷിക്കുന്ന ഇടമാണ് frame.</p></li>
+<li><p>Function calls process ചെയ്യാൻ ഉപയോഗിക്കുന്ന memory ആണ് stack.</p>
 <ul>
-<li><p>ഒരു last-in, first-out (LIFO) data structure</p></li>
+<li><p>ഇത് ഒരു last-in, first-out (LIFO) data structure ആണ്.</p></li>
 </ul>
 </li>
 </ul>
-<p>ഈ ഉദാഹരണം കുറച്ച് contrived ആണ്, കാരണം സാധാരണയായി ആദ്യത്തെ (iterative) solution ആണ് recursive solution-നേക്കാൾ preferred ആയിരിക്കുക.</p>
-<p>recursion-ന്റെ കുറച്ചുകൂടെ contrived അല്ലാത്ത applications നമ്മൾ പിന്നീട് കാണും.</p>
+<p>ഈ ഉദാഹരണം കുറച്ച് കൃത്രിമമാണ്. കാരണം സാധാരണയായി ആദ്യത്തെ, അതായത് iterative solution, ആണ് recursive solution-നെക്കാൾ മുൻഗണന നൽകുക.</p>
+<p>പിന്നീട്, recursion-ന്റെ കൂടുതൽ സ്വാഭാവികമായ applications നമുക്ക് കാണാം.</p>
 </section>
 <section id="exercises">
-<span id="factorial-exercise"></span><h2><span class="section-number">1.6. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<span id="factorial-exercise"></span><h2><span class="section-number">2.6. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="func_ex1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.1 </span></p>
 <section id="exercise-content">
-<p><span class="math notranslate nohighlight">\(n!\)</span> എന്നത് &quot;<span class="math notranslate nohighlight">\(n\)</span> factorial&quot; എന്ന് വായിക്കപ്പെടുന്നു എന്നും, <span class="math notranslate nohighlight">\(n! = n \times (n - 1) \times \cdots \times 2 \times 1\)</span> എന്ന് define ചെയ്യപ്പെടുന്നു എന്നും ഓർക്കുക.</p>
+<p>ഓർക്കുക: <span class="math notranslate nohighlight">\(n!\)</span>-നെ &quot;<span class="math notranslate nohighlight">\(n\)</span> factorial&quot; എന്നാണ് വായിക്കുന്നത്. <span class="math notranslate nohighlight">\(n! = n \times (n - 1) \times \cdots \times 2 \times 1\)</span>.</p>
 <p>ഇവിടെ <span class="math notranslate nohighlight">\(n\)</span>-നെ ഒരു positive integer ആയി മാത്രമേ നമ്മൾ കണക്കിലെടുക്കൂ.</p>
-<p>വ്യത്യസ്ത modules-ൽ ഇത് compute ചെയ്യാൻ functions ഉണ്ട്, പക്ഷേ ഒരു exercise ആയി നമുക്ക് സ്വന്തം version എഴുതാം.</p>
-<p>പ്രത്യേകിച്ചും, ഏതെങ്കിലും positive integer <span class="math notranslate nohighlight">\(n\)</span>-ന്, <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code>, <span class="math notranslate nohighlight">\(n!\)</span> return ചെയ്യുന്ന വിധത്തിൽ <code class="docutils literal notranslate"><span class="pre">factorial</span></code> എന്നൊരു function എഴുതുക.</p>
+<p>ഇത് compute ചെയ്യാൻ പല modules-ൽ functions ഉണ്ട്. എന്നാൽ ഒരു exercise എന്ന നിലയിൽ, നമുക്ക് സ്വന്തമായി അതിന്റെ ഒരു version എഴുതാം.</p>
+<p>In particular, <code class="docutils literal notranslate"><span class="pre">factorial</span></code> എന്ന് പേരുള്ള ഒരു function എഴുതുക, such that <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> returns <span class="math notranslate nohighlight">\(n!\)</span> for any positive integer <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="functions-solution-1">
@@ -861,10 +865,10 @@
 </div>
 <div class="exercise admonition" id="func_ex2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.2 </span></p>
 <section id="exercise-content">
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial random variable</a> <span class="math notranslate nohighlight">\(Y \sim Bin(n, p)\)</span>, <span class="math notranslate nohighlight">\(n\)</span> binary trials-ൽ ഉള്ള successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു, ഇവിടെ ഓരോ trial-ഉം <span class="math notranslate nohighlight">\(p\)</span> probability-യിൽ succeed ചെയ്യുന്നു.</p>
-<p><code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng()</span></code> ഉപയോഗിച്ച്, <code class="docutils literal notranslate"><span class="pre">binomial_rv(n,</span> <span class="pre">p)</span></code>, <span class="math notranslate nohighlight">\(Y\)</span>-യുടെ ഒരു draw generate ചെയ്യുന്ന വിധത്തിൽ <code class="docutils literal notranslate"><span class="pre">binomial_rv</span></code> എന്നൊരു function എഴുതുക.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial random variable</a> <span class="math notranslate nohighlight">\(Y \sim Bin(n, p)\)</span> എന്നത്, <span class="math notranslate nohighlight">\(n\)</span> binary trials-ൽ ലഭിക്കുന്ന successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു. Each trial succeeds with probability <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng()</span></code>, write a function <code class="docutils literal notranslate"><span class="pre">binomial_rv</span></code> such that `binomial_rv(n,p) generates one draw of <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <div class="dropdown admonition hint">
 <p class="admonition-title">Hint</p>
 <p>If <span class="math notranslate nohighlight">\(U\)</span> is uniform on <span class="math notranslate nohighlight">\((0, 1)\)</span> and <span class="math notranslate nohighlight">\(p \in (0,1)\)</span>, then the expression <code class="docutils literal notranslate"><span class="pre">U</span> <span class="pre">&lt;</span> <span class="pre">p</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> with probability <span class="math notranslate nohighlight">\(p\)</span>.</p>
@@ -893,7 +897,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -902,26 +906,26 @@
 </div>
 <div class="exercise admonition" id="func_ex3">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.3 </span></p>
 <section id="exercise-content">
-<p>ആദ്യം, താഴെയുള്ള random device-ന്റെ ഒരു realization return ചെയ്യുന്ന ഒരു function എഴുതുക</p>
+<p>First, write a function that returns one realization of the following random device:</p>
 <ol class="arabic simple">
-<li><p>ഒരു unbiased coin 10 തവണ flip ചെയ്യുക.</p></li>
-<li><p>ഈ sequence-ൽ head, <code class="docutils literal notranslate"><span class="pre">k</span></code> തവണയോ അതിലധികമോ consecutively ഒരു തവണയെങ്കിലും വന്നാൽ, ഒരു dollar pay ചെയ്യുക.</p></li>
-<li><p>ഇല്ലെങ്കിൽ, ഒന്നും pay ചെയ്യരുത്.</p></li>
+<li><p>Flip an unbiased coin 10 times.</p></li>
+<li><p>If a head occurs <code class="docutils literal notranslate"><span class="pre">k</span></code> or more times consecutively within this sequence at least once, pay one dollar.</p></li>
+<li><p>If not, pay nothing.</p></li>
 </ol>
-<p>രണ്ടാമതായി, മുകളിലുള്ള random device-ന്റെ രണ്ടാമത്തെ rule താഴെപ്പറയുന്ന വിധത്തിൽ ആകുന്നത് ഒഴികെ, ഇതേ task ചെയ്യുന്ന മറ്റൊരു function എഴുതുക</p>
+<p>Second, write another function that does the same task except that the second rule of the above random device becomes:</p>
 <ul class="simple">
-<li><p>ഈ sequence-ൽ head <code class="docutils literal notranslate"><span class="pre">k</span></code> തവണയോ അതിലധികമോ വന്നാൽ, ഒരു dollar pay ചെയ്യുക.</p></li>
+<li><p>If a head occurs <code class="docutils literal notranslate"><span class="pre">k</span></code> or more times within this sequence, pay one dollar.</p></li>
 </ul>
-<p>random numbers generate ചെയ്യാൻ <code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng()</span></code> ഉപയോഗിക്കുക.</p>
+<p>Random numbers generate ചെയ്യാൻ <code class="docutils literal notranslate"><span class="pre">rng</span> <span class="pre">=</span> <span class="pre">np.random.default_rng()</span></code> ഉപയോഗിക്കുക.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="functions-solution-5">
 
 <p class="admonition-title">Solution</p>
 <section id="solution-content">
-<p>ആദ്യത്തെ random device-ന് ഒരു function താഴെ കാണാം.</p>
+<p>Here’s a function for the first random device.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
@@ -947,22 +951,22 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 2
+3
+0
+0
+0
 0
 0
 0
 1
-2
-0
-0
-0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
 </div>
-<p>രണ്ടാമത്തെ random device-ന് വേണ്ടിയുള്ള മറ്റൊരു function താഴെ കാണാം.</p>
+<p>Here’s another function for the second random device.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_new</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>  <span class="c1"># pays if k successes in a sequence</span>
@@ -984,16 +988,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
+0
 1
 2
 3
 3
-3
 4
 5
-6
-7
+5
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
@@ -1005,15 +1009,15 @@
 </div>
 </section>
 <section id="advanced-exercises">
-<h2><span class="section-number">1.7. </span>Advanced Exercises<a class="headerlink" href="#advanced-exercises" title="Link to this heading">#</a></h2>
-<p>താഴെയുള്ള exercises-ൽ, നമ്മൾ ഒരുമിച്ച് recursive functions എഴുതും.</p>
+<h2><span class="section-number">2.7. </span>Advanced Exercises<a class="headerlink" href="#advanced-exercises" title="Link to this heading">#</a></h2>
+<p>താഴെയുള്ള exercises-ൽ, നമുക്ക് ഒരുമിച്ച് recursive functions എഴുതാം.</p>
 <div class="exercise admonition" id="func_ex4">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.4 </span></p>
 <section id="exercise-content">
 <p>The Fibonacci numbers are defined by</p>
 <div class="math notranslate nohighlight" id="equation-fib">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-fib" title="Link to this equation">#</a></span>\[x_{t+1} = x_t + x_{t-1}, \quad x_0 = 0, \; x_1 = 1\]</div>
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-fib" title="Link to this equation">#</a></span>\[x_{t+1} = x_t + x_{t-1}, \quad x_0 = 0, \; x_1 = 1\]</div>
 <p>The first few numbers in the sequence are <span class="math notranslate nohighlight">\(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55\)</span>.</p>
 <p>Write a function to recursively compute the <span class="math notranslate nohighlight">\(t\)</span>-th Fibonacci number for any <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </section>
@@ -1053,9 +1057,9 @@
 </div>
 <div class="exercise admonition" id="func_ex5">
 
-<p class="admonition-title"><span class="caption-number">Exercise 1.5 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 2.5 </span></p>
 <section id="exercise-content">
-<p><a class="reference internal" href="#factorial-exercise"><span class="std std-ref">Exercise 1</span></a>-ലെ <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> function-നെ recursion ഉപയോഗിച്ച് വീണ്ടും എഴുതുക.</p>
+<p><a class="reference internal" href="#factorial-exercise"><span class="std std-ref">Exercise 1</span></a>-ലെ <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> function-നെ, recursion ഉപയോഗിച്ച് വീണ്ടും എഴുതുക.</p>
 </section>
 </div>
 <div class="solution dropdown admonition" id="functions-solution-9">
@@ -1149,9 +1153,14 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_by_example.html">
+   1. An Introductory Example
+  </a>
+ </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   1. Functions
+   2. Functions
   </a>
  </li>
 </ul>

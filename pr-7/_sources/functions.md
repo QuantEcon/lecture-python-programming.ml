@@ -44,19 +44,19 @@ translation:
 
 ## Overview
 
-മിക്കവാറും എല്ലാ programming-ഉം നൽകുന്ന അതിയായി ഉപയോഗപ്രദമായ ഒരു construct ആണ് functions.
+മിക്കവാറും എല്ലാ programming languages-ഉം provide ചെയ്യുന്ന വളരെ useful ആയ ഒരു programming construct ആണ് functions.
 
-നമ്മൾ ഇതിനകം പല functions-ഉം കണ്ടുകഴിഞ്ഞു, ഉദാഹരണത്തിന്
+നമ്മൾ ഇതിനകം പല functions-ഉം കണ്ടുകഴിഞ്ഞു. ഉദാഹരണത്തിന്,
 
-* NumPy-യിലെ `sqrt()` function-ഉം
-* built-in ആയ `print()` function-ഉം
+* NumPy-യിലെ `sqrt()` function
+* Python-ൽ, built-in ആയി ലഭിക്കുന്ന `print()` function
 
-ഈ lecture-ൽ നമ്മൾ
+ഈ lecture-ൽ നമ്മൾ ചെയ്യാൻ പോകുന്ന കാര്യങ്ങൾ:
 
-1. functions-നെ systematic ആയി treat ചെയ്യുകയും syntax-ഉം use-cases-ഉം cover ചെയ്യുകയും ചെയ്യും, ഒപ്പം
-2. നമ്മുടെ സ്വന്തം user-defined functions എങ്ങനെ build ചെയ്യാമെന്ന് പഠിക്കും.
+1. Functions-നെ systematic ആയി പഠിക്കുന്നു; അവയുടെ syntax-ഉം, use-cases-ഉം മനസ്സിലാക്കുന്നു.
+2. സ്വന്തമായി user-defined functions എങ്ങനെ build ചെയ്യാമെന്ന് പഠിക്കുന്നു.
 
-താഴെ കാണുന്ന imports നമ്മൾ ഉപയോഗിക്കും.
+ഇതിനായി നമ്മൾ താഴെ കാണുന്ന imports ഉപയോഗിക്കും.
 
 ```{code-cell} ipython
 import numpy as np
@@ -65,17 +65,17 @@ import matplotlib.pyplot as plt
 
 ## Function Basics
 
-ഒരു പ്രത്യേക task implement ചെയ്യുന്ന, പേരുള്ള ഒരു program-ന്റെ section ആണ് function.
+ഒരു program-ന് ഉള്ളിൽ, ഒരു specific task implement ചെയ്യുന്ന ഒരു section ആണ് function. ഈ section-നെ നമ്മൾ ഒരു പേരിട്ടു വിളിക്കുന്നു.
 
-ഇതിനകം ധാരാളം functions നിലവിലുണ്ട്, അവയെ അതേപടി ഉപയോഗിക്കാം.
+Already exist ചെയ്യുന്ന ധാരാളം functions ഉണ്ട്. അവയെ നമുക്ക് അതേപടി ഉപയോഗിക്കാൻ പറ്റും.
 
-ആദ്യം നമ്മൾ ഈ functions review ചെയ്യാം, എന്നിട്ട് നമ്മുടെ സ്വന്തം functions എങ്ങനെ build ചെയ്യാമെന്ന് discuss ചെയ്യാം.
+ആദ്യമേ നമുക്ക് already exist ചെയ്യുന്ന functions-നെ review ചെയ്യാം. എന്നിട്ട് നമുക്ക് സ്വന്തമായി functions എങ്ങനെ build ചെയ്യാമെന്ന് നോക്കാം.
 
 ### Built-In Functions
 
-`import` ഇല്ലാതെ ലഭ്യമായ കുറേ **built-in** functions Python-ൽ ഉണ്ട്.
+`import` ചെയ്യാതെ തന്നെ ഉപയോഗിക്കാനാകുന്ന നിരവധി **built-in** functions Python-ൽ ഉണ്ട്.
 
-ഇവയിൽ ചിലത് നമ്മൾ ഇതിനകം കണ്ടുകഴിഞ്ഞു
+ഇവയിൽ ചിലത് നമ്മൾ already കണ്ടുകഴിഞ്ഞു:
 
 ```{code-cell} python3
 max(19, 20)
@@ -93,16 +93,16 @@ str(22)
 type(22)
 ```
 
-Python built-ins-ന്റെ പൂർണ്ണമായ list [ഇവിടെ](https://docs.python.org/3/library/functions.html) കാണാം.
+Python-ലെ built-in functions-ന്റെ full list [ഇവിടെ](https://docs.python.org/3/library/functions.html) കാണാം.
 
 
 ### Third Party Functions
 
-built-in functions നമുക്ക് വേണ്ടത് cover ചെയ്യുന്നില്ലെങ്കിൽ, നമുക്ക് ഒന്നുകിൽ functions import ചെയ്യേണ്ടിവരും, അല്ലെങ്കിൽ സ്വന്തമായി create ചെയ്യേണ്ടിവരും.
+Built-in functions മാത്രം ഉപയോഗിച്ച് നമുക്ക് ആവശ്യമുള്ളത് ചെയ്യാൻ കഴിയുന്നില്ലെങ്കിൽ, ഒന്നുകിൽ മറ്റുള്ള functions-നെ import ചെയ്യേണ്ടി വരും, അല്ലെങ്കിൽ സ്വന്തമായി functions create ചെയ്യേണ്ടി വരും.
 
-functions import ചെയ്ത് ഉപയോഗിക്കുന്നതിന്റെ ഉദാഹരണങ്ങൾ {doc}`previous lecture <python_by_example>`-ൽ കൊടുത്തിരുന്നു.
+Functions-നെ import ചെയ്ത് ഉപയോഗിക്കുന്ന examples നമ്മൾ {doc}`previous lecture <python_by_example>`-ൽ കണ്ടിരുന്നു.
 
-ഒരു നൽകിയ വർഷം leap year ആണോ എന്ന് test ചെയ്യുന്ന മറ്റൊരു ഉദാഹരണം താഴെ കാണാം:
+തന്നിരിക്കുന്ന വർഷം leap year ആണോ അല്ലയോ എന്ന് test ചെയ്യുന്ന മറ്റൊരു ഉദാഹരണം താഴെ കാണാം:
 
 ```{code-cell} python3
 import calendar
@@ -111,20 +111,20 @@ calendar.isleap(2024)
 
 ## Defining Functions
 
-പല അവസരങ്ങളിലും നമ്മുടെ സ്വന്തം functions define ചെയ്യാൻ കഴിയുന്നത് ഉപയോഗപ്രദമാണ്.
+പല അവസരങ്ങളിലും, നമുക്ക് സ്വന്തമായി functions-നെ define ചെയ്യാൻ കഴിയുന്നത് വളരെ useful ആണ്.
 
-അത് എങ്ങനെ ചെയ്യാമെന്ന് discuss ചെയ്തുകൊണ്ട് തുടങ്ങാം.
+അത് എങ്ങനെ ചെയ്യാമെന്ന് നമുക്ക് നോക്കാം.
 
 ### Basic Syntax
 
-$f(x) = 2 x + 1$ എന്ന mathematical function implement ചെയ്യുന്ന വളരെ simple ആയ ഒരു Python function താഴെ കാണാം
+$f(x) = 2 x + 1$ എന്ന mathematical function implement ചെയ്യുന്ന വളരെ simple ആയ ഒരു Python function താഴെ കാണാം:
 
 ```{code-cell} python3
 def f(x):
     return 2 * x + 1
 ```
 
-ഇപ്പോൾ നമ്മൾ ഈ function define ചെയ്തുകഴിഞ്ഞു, ഇനി അതിനെ *call* ചെയ്ത് അത് നമ്മൾ പ്രതീക്ഷിക്കുന്നത് ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാം:
+നമ്മൾ ഈ function-നെ define ചെയ്ത സ്ഥിതിക്ക്, ഇനി അതിനെ call ചെയ്ത്, നമ്മൾ expect ചെയ്യുന്നത് പോലെ ആ function പ്രവർത്തിക്കുന്നുണ്ടോ എന്ന് നോക്കാം.
 
 ```{code-cell} python3
 f(1)   
@@ -134,9 +134,9 @@ f(1)
 f(10)
 ```
 
-നൽകിയ ഒരു number-ന്റെ absolute value compute ചെയ്യുന്ന, കുറച്ചുകൂടെ നീളമുള്ള ഒരു function താഴെ കാണാം.
+കുറച്ചുകൂടി നീളമുള്ള ഒരു function നമുക്ക് താഴെ കാണാം. ഈ function ഉപയോഗിച്ച്, തന്നിരിക്കുന്ന ഒരു number-ന്റെ absolute value compute ചെയ്യാൻ സാധിക്കുന്നു.
 
-(ഇത്തരമൊരു function built-in ആയി ഇതിനകം നിലവിലുണ്ട്, പക്ഷേ exercise-ന് വേണ്ടി നമുക്ക് സ്വന്തമായി ഒന്ന് എഴുതാം.)
+(Absolute value compute ചെയ്യുന്ന ഒരു built-in function already exist ചെയ്യുന്നുണ്ട്. പക്ഷേ exercise-ന് വേണ്ടി നമുക്ക് സ്വന്തമായി ഒരു function എഴുതി നോക്കാം.)
 
 ```{code-cell} python3
 def new_abs_function(x):
@@ -147,16 +147,16 @@ def new_abs_function(x):
     return abs_value
 ```
 
-ഇവിടെയുള്ള syntax review ചെയ്യാം.
+ഇവിടുത്തെ syntax നമുക്ക് review ചെയ്യാം:
 
-* function definitions തുടങ്ങാൻ ഉപയോഗിക്കുന്ന Python keyword ആണ് `def`.
-* `def new_abs_function(x):` എന്നത് indicate ചെയ്യുന്നത് function-ന്റെ പേര് `new_abs_function` എന്നാണെന്നും, അതിന് `x` എന്ന ഒരു argument ഉണ്ടെന്നുമാണ്.
-* indent ചെയ്ത code, *function body* എന്ന് വിളിക്കുന്ന ഒരു code block ആണ്.
-* calling code-ലേക്ക് return ചെയ്യേണ്ട object `abs_value` ആണെന്ന് `return` keyword indicate ചെയ്യുന്നു.
+* ഒരു function definition തുടങ്ങാൻ ഉപയോഗിക്കുന്ന Python keyword ആണ് `def`.
+* `def new_abs_function(x):` എന്നത് indicate ചെയ്യുന്നത്, function-ന്റെ name `new_abs_function` എന്നാണെന്നും, അതിന് `x` എന്ന ഒരൊറ്റ argument ഉണ്ടെന്നുമാണ്.
+* Indent ചെയ്തിരിക്കുന്ന code-നെ, *function body* എന്ന് വിളിക്കുന്നു. 
+* ഈ function-നെ call ചെയ്ത code-ലേക്ക്, `abs_value` ആണ് return ചെയ്യേണ്ടത് എന്ന് `return` keyword indicate ചെയ്യുന്നു.
 
-ഈ function definition മുഴുവനും Python interpreter വായിച്ച് memory-യിൽ store ചെയ്യുന്നു.
+ഈ function definition മുഴുവനും Python interpreter വായിച്ച്, അതിനെ memory-യിൽ store ചെയ്യുന്നു.
 
-ഇത് പ്രവർത്തിക്കുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ അതിനെ call ചെയ്യാം:
+ഈ function ശരിയായി work ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ, അതിനെ call ചെയ്ത നോക്കാം.
 
 ```{code-cell} python3
 print(new_abs_function(3))
@@ -164,9 +164,9 @@ print(new_abs_function(-3))
 ```
 
 
-ഒരു function-ന് അനിയന്ത്രിതമായി എത്ര `return` statements വേണമെങ്കിലും (പൂജ്യം ഉൾപ്പെടെ) ഉണ്ടാകാം എന്നത് ശ്രദ്ധിക്കുക.
+ശ്രദ്ധിക്കുക, ഒരു function-ൽ എത്ര `return` statements വേണമെങ്കിലും ഉണ്ടാകാം; ഒന്നും ഇല്ലാതെയും ഇരിക്കാം.
 
-ആദ്യത്തെ return hit ചെയ്യുമ്പോൾ function-ന്റെ execution അവസാനിക്കുന്നു, ഇത് താഴെ കാണുന്ന ഉദാഹരണം പോലുള്ള code സാധ്യമാക്കുന്നു
+ഒരു function പ്രവർത്തിക്കുമ്പോൾ ആദ്യം എത്തിച്ചേരുന്ന return statement execute ചെയ്താൽ, ആ function-ന്റെ execution അവിടെ അവസാനിക്കും. അതിനാൽ താഴെ കാണുന്നതുപോലുള്ള code എഴുതാൻ സാധിക്കുന്നു:
 
 ```{code-cell} python3
 def f(x):
@@ -175,9 +175,9 @@ def f(x):
     return 'nonnegative'
 ```
 
-(multiple return statements ഉള്ള functions എഴുതുന്നത് സാധാരണയായി discourage ചെയ്യപ്പെടുന്നു, കാരണം അത് logic follow ചെയ്യാൻ ബുദ്ധിമുട്ടാക്കും.)
+(Multiple return statements ഉള്ള functions എഴുതുന്നത് സാധാരണയായി discourage ചെയ്യപ്പെടുന്നു. അങ്ങനെ ചെയ്താൽ, function-ന്റെ logic follow ചെയ്യാൻ ബുദ്ധിമുട്ടാക്കും.)
 
-return statement ഇല്ലാത്ത functions സ്വയമേവ പ്രത്യേക Python object ആയ `None` return ചെയ്യുന്നു.
+Return statement ഇല്ലാത്ത functions, automatically ഒരു പ്രത്യേക Python object ആയ `None` return ചെയ്യുന്നു.
 
 (pos_args)=
 ### Keyword Arguments
@@ -185,7 +185,7 @@ return statement ഇല്ലാത്ത functions സ്വയമേവ പ്
 ```{index} single: Python; keyword arguments
 ```
 
-ഒരു {ref}`previous lecture <python_by_example>`-ൽ, നിങ്ങൾ ഈ statement കണ്ടിരുന്നു
+ഒരു {ref}`previous lecture <python_by_example>`-ൽ, നിങ്ങൾ ഈ statement കണ്ടിരുന്നു:
 
 ```{code-block} python3
 :class: no-execute
@@ -193,32 +193,32 @@ return statement ഇല്ലാത്ത functions സ്വയമേവ പ്
 plt.plot(x, 'b-', label="white noise")
 ```
 
-Matplotlib-ന്റെ `plot` function-ലേക്കുള്ള ഈ call-ൽ, അവസാനത്തെ argument `name=argument` syntax-ൽ pass ചെയ്യുന്നത് ശ്രദ്ധിക്കുക.
+Matplotlib-ന്റെ `plot` function-നെ call ചെയ്യുമ്പോൾ, അവസാനത്തെ argument `name=argument` എന്ന syntax-ൽ pass ചെയ്യുന്നത് ശ്രദ്ധിക്കുക.
 
-ഇതിനെ *keyword argument* എന്ന് വിളിക്കുന്നു, `label` ആണ് ഇവിടെ keyword.
+ഇതിനെ *keyword argument* എന്ന് വിളിക്കുന്നു. `label` ആണ് ഇവിടെ keyword.
 
-order അനുസരിച്ച് അർത്ഥം നിശ്ചയിക്കപ്പെടുന്നതിനാൽ, non-keyword arguments-നെ *positional arguments* എന്ന് വിളിക്കുന്നു
+Order അനുസരിച്ച് അർത്ഥം നിശ്ചയിക്കപ്പെടുന്നതിനാൽ, non-keyword arguments-നെ *positional arguments* എന്ന് വിളിക്കുന്നു.
 
-* `plot(x, 'b-')`, `plot('b-', x)`-ൽ നിന്നും വ്യത്യസ്തമാണ്
+* `plot(x, 'b-')` differs from `plot('b-', x)`.
 
-ഒരു function-ന് ധാരാളം arguments ഉള്ളപ്പോൾ keyword arguments പ്രത്യേകിച്ചും ഉപയോഗപ്രദമാണ്, കാരണം അപ്പോൾ ശരിയായ order ഓർത്തിരിക്കാൻ ബുദ്ധിമുട്ടാണ്.
+ഒരു function-ന് ധാരാളം arguments ഉള്ളപ്പോൾ, keyword arguments പ്രത്യേകിച്ചും ഉപയോഗപ്രദമാണ്. കാരണം ശരിയായ order ഓർത്തിരിക്കാൻ ബുദ്ധിമുട്ടായേക്കാം.
 
-user-defined functions-ൽ keyword arguments ഒരു ബുദ്ധിമുട്ടും കൂടാതെ നിങ്ങൾക്ക് adopt ചെയ്യാം.
+User-defined functions-ലും keyword arguments നിങ്ങൾക്ക് ഒരു ബുദ്ധിമുട്ടും കൂടാതെ adopt ചെയ്യാം.
 
-അടുത്ത ഉദാഹരണം syntax illustrate ചെയ്യുന്നു
+അടുത്ത example, ഇതിന്റെ syntax illustrate ചെയ്യുന്നു:
 
 ```{code-cell} python3
 def f(x, a=1, b=1):
     return a + b * x
 ```
 
-`f`-ന്റെ definition-ൽ നമ്മൾ നൽകിയ keyword argument values, default values ആയി മാറുന്നു
+`f`-ന്റെ definition-ൽ നമ്മൾ നൽകിയിരിക്കുന്ന keyword argument values, default values ആയി മാറുന്നു.
 
 ```{code-cell} python3
 f(2)
 ```
 
-താഴെ കാണുന്ന രീതിയിൽ അവയെ modify ചെയ്യാം
+താഴെ കാണുന്ന രീതിയിൽ അവയെ modify ചെയ്യാം:
 
 ```{code-cell} python3
 f(2, a=4, b=5)
@@ -226,46 +226,46 @@ f(2, a=4, b=5)
 
 ### The Flexibility of Python Functions
 
-{ref}`previous lecture <python_by_example>`-ൽ നമ്മൾ discuss ചെയ്തതുപോലെ, Python functions വളരെ flexible ആണ്.
+{ref}`Previous lecture <python_by_example>`-ൽ നമ്മൾ discuss ചെയ്തതുപോലെ, Python functions വളരെ flexible ആണ്.
 
 പ്രത്യേകിച്ചും
 
-* ഒരു നൽകിയ file-ൽ എത്ര functions വേണമെങ്കിലും define ചെയ്യാം.
-* Functions മറ്റ് functions-ന് ഉള്ളിൽ define ചെയ്യാൻ കഴിയും (ഇത് പലപ്പോഴും ചെയ്യാറുമുണ്ട്).
-* മറ്റ് functions ഉൾപ്പെടെ ഏത് object-നെയും ഒരു function-ലേക്ക് argument ആയി pass ചെയ്യാം.
-* Functions ഉൾപ്പെടെ ഏത് തരം object-ഉം ഒരു function-ന് return ചെയ്യാൻ കഴിയും.
+* തന്നിരിക്കുന്ന ഒരു file-ൽ എത്ര functions വേണമെങ്കിലും define ചെയ്യാം.
+* Functions-നെ മറ്റൊരു function-ന്റെ ഉള്ളിൽ define ചെയ്യാം; പലപ്പോഴും അങ്ങനെ ചെയ്യാറുമുണ്ട്.
+* മറ്റ് functions ഉൾപ്പെടെ, ഏത് object-നെയും ഒരു function-ലേക്ക് argument ആയി pass ചെയ്യാം.
+* Functions ഉൾപ്പെടെ, ഏത് തരം object--നെയും ഒരു function-ന് return ചെയ്യാൻ കഴിയും.
 
-ഒരു function-ലേക്ക് ഒരു function pass ചെയ്യുന്നത് എത്ര straightforward ആണെന്നതിന്റെ ഉദാഹരണങ്ങൾ താഴെയുള്ള sections-ൽ നമ്മൾ നൽകും.
+ഒരു function-നെ മറ്റൊരു function-ലേക്ക് pass ചെയ്യുന്നത് എത്ര എളുപ്പമാണെന്ന് കാണിക്കുന്ന examples താഴെയുള്ള sections-ൽ നമുക്ക് കാണാം.
 
 ### One-Line Functions: `lambda`
 
 ```{index} single: Python; lambda functions
 ```
 
-ഒരു line-ൽ simple functions create ചെയ്യാൻ `lambda` keyword ഉപയോഗിക്കുന്നു.
+ഒറ്റ line-ൽ തന്നെ simple functions create ചെയ്യാനാണ് `lambda` keyword ഉപയോഗിക്കുന്നത്.
 
-ഉദാഹരണത്തിന്, ഈ definitions
+For example, താഴെ കൊടുത്തിരിക്കുന്ന രണ്ട് definitions-ഉം ഒരേ കാര്യമാണ് ചെയ്യുന്നത്:
 
 ```{code-cell} python3
 def f(x):
     return x**3
 ```
 
-ഒപ്പം
+
 
 ```{code-cell} python3
 f = lambda x: x**3
 ```
 
-എന്നിവ പൂർണ്ണമായും equivalent ആണ്.
 
-`lambda` എന്തുകൊണ്ട് ഉപയോഗപ്രദമാണെന്ന് കാണാൻ, നമുക്ക് $\int_0^2 x^3 dx$ calculate ചെയ്യണമെന്ന് കരുതുക (നമ്മുടെ high-school calculus മറന്നുപോയി എന്നും കരുതുക).
 
-SciPy library-ൽ ഈ calculation നമുക്ക് വേണ്ടി ചെയ്യുന്ന `quad` എന്നൊരു function ഉണ്ട്.
+`lambda` എന്തുകൊണ്ട് useful ആകുന്നു എന്ന് മനസ്സിലാക്കാൻ, നമുക്ക് $\int_0^2 x^3 dx$ calculate ചെയ്യണമെന്ന് കരുതുക. (നമ്മുടെ high-school calculus മറന്നുപോയി എന്നും കരുതുക).
 
-`quad` function-ന്റെ syntax `quad(f, a, b)` ആണ്, ഇവിടെ `f` ഒരു function ആണ്, `a`-ഉം `b`-ഉം numbers ആണ്.
+ഈ calculation നമുക്കുവേണ്ടി ചെയ്യാൻ SciPy library-യിൽ `quad` എന്നൊരു function ഉണ്ട്.
 
-$f(x) = x^3$ എന്ന function create ചെയ്യാൻ നമുക്ക് `lambda` താഴെ കാണുന്ന രീതിയിൽ ഉപയോഗിക്കാം
+`quad` function-ന്റെ syntax `quad(f, a, b)` എന്നാണ്. ഇവിടെ `f` ഒരു function ആണ്. `a`, `b` എന്നിവ numbers-ഉം ആണ്.
+
+$f(x) = x^3$ എന്ന function create ചെയ്യാൻ നമുക്ക് `lambda` താഴെ കാണുന്ന രീതിയിൽ ഉപയോഗിക്കാം:
 
 ```{code-cell} python3
 from scipy.integrate import quad
@@ -273,25 +273,25 @@ from scipy.integrate import quad
 quad(lambda x: x**3, 0, 2)
 ```
 
-ഇവിടെ `lambda` സൃഷ്ടിച്ച function-ന് ഒരു പേരും നൽകാത്തതിനാൽ അതിനെ *anonymous* എന്ന് പറയുന്നു.
+ഇവിടെ `lambda` ഉപയോഗിച്ച് create ചെയ്ത function-ന് ഒരു പേരും നൽകാത്തതിനാൽ, ആ function-നെ *anonymous* എന്ന് വിളിക്കുന്നു.
 
 
 ### Why Write Functions?
 
-നിങ്ങളുടെ code-ന്റെ clarity മെച്ചപ്പെടുത്താൻ user-defined functions പ്രധാനമാണ്, കാരണം അവ
+നമ്മുടെ code-ന്റെ clarity improve ചെയ്യുന്നതിൽ user-defined functions-ന് പ്രാധാന്യമുണ്ട്. കാരണം അവ:
 
-* വ്യത്യസ്ത logic strands-നെ separate ചെയ്യുന്നു
-* code reuse facilitate ചെയ്യുന്നു
+* വ്യത്യസ്ത logic-ുകളെ separate ചെയ്യുന്നു
+* Code reuse ചെയ്യാൻ സഹായിക്കുന്നു
 
-(ഒരേ കാര്യം രണ്ട് തവണ എഴുതുന്നത് [മിക്ക സമയത്തും ഒരു മോശം ആശയമാണ്](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
+(ഒരേ code രണ്ടുതവണ എഴുതുന്നത് [അത്ര നല്ലതല്ല](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).)
 
-ഇതിനെക്കുറിച്ച് {doc}`later <writing_good_code>` നമ്മൾ കൂടുതൽ പറയും.
+ഇതിനെക്കുറിച്ചുള്ള കൂടുതൽ കാര്യങ്ങൾ നമുക്ക് {doc}`പിന്നീട് കാണാം <writing_good_code>`.
 
 ## Applications
 
 ### Random Draws
 
-{doc}`previous lecture <python_by_example>`-ലെ ഈ code വീണ്ടും കണക്കിലെടുക്കാം
+{doc}`previous lecture <python_by_example>`-ൽ നമ്മൾ കണ്ട ഈ code ഒരിക്കൽക്കൂടി നോക്കാം:
 
 ```{code-cell} python3
 rng = np.random.default_rng()
@@ -307,14 +307,14 @@ plt.plot(ϵ_values)
 plt.show()
 ```
 
-ഈ program-നെ നമ്മൾ രണ്ട് ഭാഗങ്ങളായി break down ചെയ്ത്:
+ഈ program-നെ നമുക്ക് രണ്ട് ഭാഗങ്ങളായി break down ചെയ്യാം:
 
-1. random variables-ന്റെ ഒരു list generate ചെയ്യുന്ന user-defined function.
-1. program-ന്റെ പ്രധാന ഭാഗം, അത്
-    1. data ലഭിക്കാൻ ഈ function call ചെയ്യുന്നു
-    1. data plot ചെയ്യുന്നു
+1. User-defined function - Random variables-ന്റെ ഒരു list generate ചെയ്യുന്നു.
+1. Main part of the program - 
+    1. Data ലഭിക്കുന്നതിനായി user-defined function-നെ call ചെയ്യുന്നു
+    1. ലഭിച്ച data-യെ plot ചെയ്യുന്നു
 
-ഇത് അടുത്ത program-ൽ accomplish ചെയ്യപ്പെടുന്നു
+മുകളിൽ പറഞ്ഞ കാര്യങ്ങൾ, താഴെയുള്ള program-ൽ കാണിച്ചിരിക്കുന്നു:
 
 (funcloopprog)=
 ```{code-cell} python3
@@ -330,20 +330,20 @@ plt.plot(data)
 plt.show()
 ```
 
-interpreter `generate_data(100)` എന്ന expression-ൽ എത്തുമ്പോൾ, `n`, 100-ന് equal ആയി set ചെയ്ത് function body execute ചെയ്യുന്നു.
+Python interpreter, `generate_data(100)` എന്ന expression-ൽ എത്തുമ്പോൾ, `n`-ന്റെ value 100 ആയി set ചെയ്ത്, function-ന്റെ body execute ചെയ്യുന്നു.
 
-ഇതിന്റെ net result, `data` എന്ന പേര് function return ചെയ്ത `ϵ_values` എന്ന list-ലേക്ക് *bind* ചെയ്യപ്പെടും എന്നതാണ്.
+ഇതിന്റെ അവസാനം, function return ചെയ്യുന്ന `ϵ_values` എന്ന list-ലേക്ക് `data` എന്ന name *bind* ചെയ്യപ്പെടുന്നു.
 
 ### Adding Conditions
 
 ```{index} single: Python; Conditions
 ```
 
-നമ്മുടെ `generate_data()` function കുറച്ചൊക്കെ limited ആണ്.
+നമ്മുടെ `generate_data()` function-ന് ചില പരിമിതികളുണ്ട്.
 
-ആവശ്യമുള്ളപ്പോൾ $(0, 1)$-ൽ standard normals-ഓ uniform random variables-ഓ return ചെയ്യാനുള്ള കഴിവ് നൽകി, ഇതിനെ കുറച്ചുകൂടെ ഉപയോഗപ്രദമാക്കാം.
+generate_data() function-നെ നമുക്ക് കുറച്ചുകൂടി useful ആക്കാം — ആവശ്യാനുസരണം, standard normal random variables അല്ലെങ്കിൽ, $(0, 1)$ interval-ൽ ഉള്ള uniform random variables return ചെയ്യാൻ കഴിയുന്ന രീതിയിൽ.
 
-താഴെയുള്ള code piece-ൽ ഇത് achieve ചെയ്യപ്പെടുന്നു.
+ഇത് എങ്ങനെ ചെയ്യാമെന്ന് താഴെയുള്ള code-ൽ കാണിച്ചിരിക്കുന്നു.
 
 (funcloopprog2)=
 ```{code-cell} python3
@@ -362,20 +362,20 @@ plt.plot(data)
 plt.show()
 ```
 
-if/else clause-ന്റെ syntax self-explanatory ആണെന്ന് പ്രതീക്ഷിക്കുന്നു, code blocks-ന്റെ extent വീണ്ടും indentation delimit ചെയ്യുന്നു.
+if/else clause-ന്റെ syntax, self-explanatory ആണെന്ന് വിശ്വസിക്കുന്നു. ഇവിടെയും, indentation ഉപയോഗിച്ചാണ് code blocks-ന്റെ extent-നെ delimit ചെയ്തിരിക്കുന്നത്.
 
 Notes
 
-* `U` എന്ന argument ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്, അതുകൊണ്ടാണ് നമ്മൾ അതിനെ `'U'` എന്ന് എഴുതുന്നത്.
-* equality test ചെയ്യുന്നത് `==` syntax ഉപയോഗിച്ചാണ്, `=` അല്ല എന്നത് ശ്രദ്ധിക്കുക.
-    * ഉദാഹരണത്തിന്, `a = 10` എന്ന statement `a` എന്ന പേരിനെ `10` എന്ന value-യിലേക്ക് assign ചെയ്യുന്നു.
-    * `a == 10` എന്ന expression, `a`-യുടെ value അനുസരിച്ച് `True`-ഓ `False`-ഓ ആയി evaluate ചെയ്യപ്പെടും.
+* `U` എന്ന argument-നെ ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്. അതുകൊണ്ടാണ് നമ്മൾ അതിനെ `'U'` എന്ന് എഴുതുന്നത്. 
+* ശ്രദ്ധിക്കുക, equality test ചെയ്യുന്നത് `==` syntax ഉപയോഗിച്ചാണ്, `=` അല്ല.
+    * For example, `a = 10` എന്ന statement, `a` എന്ന name-നെ `10` എന്ന value-യിലേക്ക് assign ചെയ്യുന്നു.
+    * `a == 10` എന്ന expression, `a`-യുടെ value അനുസരിച്ച്, `True`-ഓ `False`-ഓ ആയി evaluate ചെയ്യപ്പെടുന്നു.
 
-ഇനി, മുകളിലുള്ള code simplify ചെയ്യാൻ പല വഴികളും ഉണ്ട്.
+മുകളിലുള്ള code-നെ simplify ചെയ്യാൻ പല വഴികളും ഉണ്ട്.
 
-ഉദാഹരണത്തിന്, ആവശ്യമുള്ള generator type-നെ ഒരു function, method, അല്ലെങ്കിൽ മറ്റേതെങ്കിലും [callable](https://typing.python.org/en/latest/spec/callables.html) object ആയി pass ചെയ്തുകൊണ്ട് conditionals എല്ലാം ഒഴിവാക്കാം.
+For example, നമുക്ക് conditionals-നെ മുഴുവനായും ഒഴിവാക്കാം - ആവശ്യമുള്ള generator type-നെ ഒരു function, method, അല്ലെങ്കിൽ മറ്റേതെങ്കിലും [callable](https://typing.python.org/en/latest/spec/callables.html) object ആയി നേരിട്ട് pass ചെയ്തുകൊണ്ട്.
 
-ഇത് മനസ്സിലാക്കാൻ, താഴെയുള്ള version കണക്കിലെടുക്കുക.
+ഇത് മനസ്സിലാക്കാൻ, താഴെയുള്ള version നോക്കാം.
 
 (test_program_6)=
 ```{code-cell} python3
@@ -395,11 +395,11 @@ plt.show()
 
 ഈ object ഒരു *callable* ആണ് — അതായത്, parentheses ഉപയോഗിച്ച് call ചെയ്യാൻ കഴിയുന്ന object.
 
-`generate_data(100, rng.uniform)` എന്ന function call execute ചെയ്യുമ്പോൾ, `n`, 100-ന് equal ആയും `generator_type` എന്ന പേര് `rng.uniform` എന്ന callable-ലേക്ക് "bound" ആയും വച്ചുകൊണ്ട് Python function code block run ചെയ്യുന്നു.
+`generate_data(100, rng.uniform)` എന്ന function call execute ചെയ്യുമ്പോൾ, Python, function-ന്റെ code block-നെ `n`=100 ആയി run ചെയ്യുന്നു. കൂടാതെ `generator_type` എന്ന name-നെ callable ആയ `rng.uniform`-നോട് bind ചെയ്യുന്നു.
 
-* ഈ lines execute ചെയ്യുന്ന സമയത്ത്, `generator_type`-ഉം `rng.uniform`-ഉം "synonyms" ആണ്, അവ ഒരേപോലെ ഉപയോഗിക്കാം.
+* ഈ lines execute ചെയ്യുന്ന സമയത്ത്, `generator_type`-എന്നും `rng.uniform`-എന്നും ഉള്ള names "synonyms" ആണ്; അതായത് രണ്ടും ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.
 
-ഈ principle കൂടുതൽ generally-യിലും പ്രവർത്തിക്കുന്നു --- ഉദാഹരണത്തിന്, താഴെയുള്ള code piece കണക്കിലെടുക്കുക
+ഈ principle കൂടുതൽ പൊതുവായ രീതിയിലും പ്രവർത്തിക്കും. For example, താഴെ കൊടുത്തിരിക്കുന്ന code നോക്കാം:
 
 ```{code-cell} python3
 max(7, 2, 4)   # max() is a built-in Python function
@@ -410,9 +410,9 @@ m = max
 m(7, 2, 4)
 ```
 
-ഇവിടെ built-in function ആയ `max()`-ന് നമ്മൾ മറ്റൊരു പേര് create ചെയ്തു, അത് ഒരേപോലെ ഉപയോഗിക്കാൻ കഴിയും.
+ഇവിടെ, built-in function ആയ `max()`-ന് നമ്മൾ മറ്റൊരു name create ചെയ്തു. തുടർന്ന്, ആ പുതിയ name-ഉം, max()-ഉം ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.
 
-നമ്മുടെ program-ന്റെ context-ൽ, functions-ലേക്ക്, അല്ലെങ്കിൽ more generally callable objects-ലേക്ക്, പേരുകൾ bind ചെയ്യാനുള്ള ഈ കഴിവ് അർത്ഥമാക്കുന്നത്, മുകളിൽ `rng.uniform`-ഉം ചെയ്തതുപോലെ, ഒരു callable object-നെ മറ്റൊരു callable-ലേക്ക് argument ആയി pass ചെയ്യുന്നതിൽ ഒരു പ്രശ്നവുമില്ല എന്നാണ്.
+നമ്മുടെ program-ന്റെ context-ൽ, functions-നോ അല്ലെങ്കിൽ more generally, callable objects-നോ names bind ചെയ്യാൻ കഴിയുന്നു എന്നതിന്റെ അർത്ഥം, ഒരു callable object-നെ മറ്റൊരു callable object-ലേക്ക് argument ആയി pass ചെയ്യുന്നതിൽ പ്രശ്നമൊന്നുമില്ല എന്നതാണ്. മുകളിൽ `rng.uniform` ഉപയോഗിച്ച് നമ്മൾ അങ്ങനെ ചെയ്തിരുന്നു.
 
 
 (recursive_functions)=
@@ -421,13 +421,13 @@ m(7, 2, 4)
 ```{index} single: Python; Recursion
 ```
 
-ഇത് ഒരു advanced topic ആണ്, ഇത് skip ചെയ്യാൻ നിങ്ങൾക്ക് സ്വാതന്ത്ര്യമുണ്ട്.
+ഇത് ഒരു advanced topic ആണ്. അതിനാൽ നിങ്ങൾക്ക് വേണമെങ്കിൽ ഇത് skip ചെയ്യാം.
 
-അതേസമയം, ഇത് ഒരു neat ആശയമാണ്, നിങ്ങളുടെ programming career-ന്റെ ഏതെങ്കിലും ഘട്ടത്തിൽ ഇത് പഠിക്കണം.
+അതേസമയം, നിങ്ങളുടെ programming career-ന്റെ ഏതെങ്കിലും ഒരു stage-ൽ, ഇത് പഠിച്ചിരിക്കുന്നത് നല്ലതാണ്.
 
-അടിസ്ഥാനപരമായി, ഒരു recursive function എന്നത് സ്വയം call ചെയ്യുന്ന ഒരു function ആണ്.
+Basically, സ്വയം call ചെയ്യുന്ന ഒരു function-നെ recursive function എന്ന് വിളിക്കുന്നു.
 
-ഉദാഹരണത്തിന്, ഏതെങ്കിലും t-ന് $x_t$ compute ചെയ്യുന്ന problem കണക്കിലെടുക്കുക, ഇവിടെ
+ഉദാഹരണത്തിന്, താഴെ കൊടുത്തിരിക്കുന്ന relation ഉപയോഗിച്ച്, ഏതെങ്കിലും t-ന്, $x_t$ compute ചെയ്യുന്ന problem consider ചെയ്യുക:
 
 ```{math}
 :label: xseqdoub
@@ -435,9 +435,9 @@ m(7, 2, 4)
 x_{t+1} = 2 x_t, \quad x_0 = 1
 ```
 
-വ്യക്തമായും ഉത്തരം $2^t$ ആണ്.
+Obviously, ഇതിന്റെ answer $2^t$ ആണ്.
 
-ഒരു loop ഉപയോഗിച്ച് നമുക്ക് ഇത് എളുപ്പത്തിൽ compute ചെയ്യാം
+ഒരു loop ഉപയോഗിച്ച് നമുക്ക് ഇത് എളുപ്പത്തിൽ compute ചെയ്യാം:
 
 ```{code-cell} python3
 def x_loop(t):
@@ -447,7 +447,7 @@ def x_loop(t):
     return x
 ```
 
-താഴെ കാണുന്ന രീതിയിൽ ഒരു recursive solution-ഉം നമുക്ക് ഉപയോഗിക്കാം
+താഴെ കാണുന്ന രീതിയിൽ, ഒരു recursive solution-ഉം നമുക്ക് ഉപയോഗിക്കാം:
 
 ```{code-cell} python3
 def x(t):
@@ -457,15 +457,15 @@ def x(t):
         return 2 * x(t-1)
 ```
 
-ഇവിടെ സംഭവിക്കുന്നത്, ഓരോ തുടർച്ചയായ call-ഉം *stack*-ൽ അതിന്റേതായ *frame* ഉപയോഗിക്കുന്നു എന്നതാണ്
+ഇവിടെ സംഭവിക്കുന്നത് എന്തെന്നാൽ, ഓരോ successive function call-ഉം, stack-ൽ അതിന്റേതായ frame ഉപയോഗിക്കുന്നു.
 
-* ഒരു നൽകിയ function call-ന്റെ local variables സൂക്ഷിക്കുന്ന സ്ഥലമാണ് frame
-* function calls process ചെയ്യാൻ ഉപയോഗിക്കുന്ന memory ആണ് stack
-  * ഒരു last-in, first-out (LIFO) data structure
+* ഒരു function call-ന്റെ local variables സൂക്ഷിക്കുന്ന ഇടമാണ് frame.
+* Function calls process ചെയ്യാൻ ഉപയോഗിക്കുന്ന memory ആണ് stack.
+  * ഇത് ഒരു last-in, first-out (LIFO) data structure ആണ്.
 
-ഈ ഉദാഹരണം കുറച്ച് contrived ആണ്, കാരണം സാധാരണയായി ആദ്യത്തെ (iterative) solution ആണ് recursive solution-നേക്കാൾ preferred ആയിരിക്കുക.
+ഈ ഉദാഹരണം കുറച്ച് കൃത്രിമമാണ്. കാരണം സാധാരണയായി ആദ്യത്തെ, അതായത് iterative solution, ആണ് recursive solution-നെക്കാൾ മുൻഗണന നൽകുക.
 
-recursion-ന്റെ കുറച്ചുകൂടെ contrived അല്ലാത്ത applications നമ്മൾ പിന്നീട് കാണും.
+പിന്നീട്, recursion-ന്റെ കൂടുതൽ സ്വാഭാവികമായ applications നമുക്ക് കാണാം.
 
 
 (factorial_exercise)=
@@ -475,13 +475,13 @@ recursion-ന്റെ കുറച്ചുകൂടെ contrived അല്ല�
 :label: func_ex1
 ```
 
-$n!$ എന്നത് "$n$ factorial" എന്ന് വായിക്കപ്പെടുന്നു എന്നും, $n! = n \times (n - 1) \times \cdots \times 2 \times 1$ എന്ന് define ചെയ്യപ്പെടുന്നു എന്നും ഓർക്കുക.
+ഓർക്കുക: $n!$-നെ "$n$ factorial" എന്നാണ് വായിക്കുന്നത്. $n! = n \times (n - 1) \times \cdots \times 2 \times 1$.
 
 ഇവിടെ $n$-നെ ഒരു positive integer ആയി മാത്രമേ നമ്മൾ കണക്കിലെടുക്കൂ.
 
-വ്യത്യസ്ത modules-ൽ ഇത് compute ചെയ്യാൻ functions ഉണ്ട്, പക്ഷേ ഒരു exercise ആയി നമുക്ക് സ്വന്തം version എഴുതാം.
+ഇത് compute ചെയ്യാൻ പല modules-ൽ functions ഉണ്ട്. എന്നാൽ ഒരു exercise എന്ന നിലയിൽ, നമുക്ക് സ്വന്തമായി അതിന്റെ ഒരു version എഴുതാം.
 
-പ്രത്യേകിച്ചും, ഏതെങ്കിലും positive integer $n$-ന്, `factorial(n)`, $n!$ return ചെയ്യുന്ന വിധത്തിൽ `factorial` എന്നൊരു function എഴുതുക.
+In particular, `factorial` എന്ന് പേരുള്ള ഒരു function എഴുതുക, such that `factorial(n)` returns $n!$ for any positive integer $n$.
 
 ```{exercise-end}
 ```
@@ -512,9 +512,9 @@ factorial(4)
 :label: func_ex2
 ```
 
-[Binomial random variable](https://en.wikipedia.org/wiki/Binomial_distribution) $Y \sim Bin(n, p)$, $n$ binary trials-ൽ ഉള്ള successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു, ഇവിടെ ഓരോ trial-ഉം $p$ probability-യിൽ succeed ചെയ്യുന്നു.
+[Binomial random variable](https://en.wikipedia.org/wiki/Binomial_distribution) $Y \sim Bin(n, p)$ എന്നത്, $n$ binary trials-ൽ ലഭിക്കുന്ന successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു. Each trial succeeds with probability $p$.
 
-`rng = np.random.default_rng()` ഉപയോഗിച്ച്, `binomial_rv(n, p)`, $Y$-യുടെ ഒരു draw generate ചെയ്യുന്ന വിധത്തിൽ `binomial_rv` എന്നൊരു function എഴുതുക.
+Using `rng = np.random.default_rng()`, write a function `binomial_rv` such that `binomial_rv(n,p) generates one draw of $Y$.
 
 ```{hint}
 :class: dropdown
@@ -554,17 +554,17 @@ binomial_rv(10, 0.5)
 :label: func_ex3
 ```
 
-ആദ്യം, താഴെയുള്ള random device-ന്റെ ഒരു realization return ചെയ്യുന്ന ഒരു function എഴുതുക
+First, write a function that returns one realization of the following random device:
 
-1. ഒരു unbiased coin 10 തവണ flip ചെയ്യുക.
-1. ഈ sequence-ൽ head, `k` തവണയോ അതിലധികമോ consecutively ഒരു തവണയെങ്കിലും വന്നാൽ, ഒരു dollar pay ചെയ്യുക.
-1. ഇല്ലെങ്കിൽ, ഒന്നും pay ചെയ്യരുത്.
+1. Flip an unbiased coin 10 times.
+1. If a head occurs `k` or more times consecutively within this sequence at least once, pay one dollar.
+1. If not, pay nothing.
 
-രണ്ടാമതായി, മുകളിലുള്ള random device-ന്റെ രണ്ടാമത്തെ rule താഴെപ്പറയുന്ന വിധത്തിൽ ആകുന്നത് ഒഴികെ, ഇതേ task ചെയ്യുന്ന മറ്റൊരു function എഴുതുക
+Second, write another function that does the same task except that the second rule of the above random device becomes:
 
-- ഈ sequence-ൽ head `k` തവണയോ അതിലധികമോ വന്നാൽ, ഒരു dollar pay ചെയ്യുക.
+- If a head occurs `k` or more times within this sequence, pay one dollar.
 
-random numbers generate ചെയ്യാൻ `rng = np.random.default_rng()` ഉപയോഗിക്കുക.
+Random numbers generate ചെയ്യാൻ `rng = np.random.default_rng()` ഉപയോഗിക്കുക.
 
 ```{exercise-end}
 ```
@@ -573,7 +573,7 @@ random numbers generate ചെയ്യാൻ `rng = np.random.default_rng()` �
 :class: dropdown
 ```
 
-ആദ്യത്തെ random device-ന് ഒരു function താഴെ കാണാം.
+Here’s a function for the first random device.
 
 
 
@@ -598,7 +598,7 @@ def draw(k):  # pays if k consecutive successes in a sequence
 draw(3)
 ```
 
-രണ്ടാമത്തെ random device-ന് വേണ്ടിയുള്ള മറ്റൊരു function താഴെ കാണാം.
+Here’s another function for the second random device.
 
 ```{code-cell} python3
 def draw_new(k):  # pays if k successes in a sequence
@@ -624,7 +624,7 @@ draw_new(3)
 
 ## Advanced Exercises
 
-താഴെയുള്ള exercises-ൽ, നമ്മൾ ഒരുമിച്ച് recursive functions എഴുതും.
+താഴെയുള്ള exercises-ൽ, നമുക്ക് ഒരുമിച്ച് recursive functions എഴുതാം.
 
 
 ```{exercise-start}
@@ -675,7 +675,7 @@ print([x(i) for i in range(10)])
 :label: func_ex5
 ```
 
-[Exercise 1](factorial_exercise)-ലെ `factorial()` function-നെ recursion ഉപയോഗിച്ച് വീണ്ടും എഴുതുക.
+[Exercise 1](factorial_exercise)-ലെ `factorial()` function-നെ, recursion ഉപയോഗിച്ച് വീണ്ടും എഴുതുക.
 
 ```{exercise-end}
 ```

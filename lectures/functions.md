@@ -151,7 +151,7 @@ def new_abs_function(x):
 
 * ഒരു function definition തുടങ്ങാൻ ഉപയോഗിക്കുന്ന Python keyword ആണ് `def`.
 * `def new_abs_function(x):` എന്നത് indicate ചെയ്യുന്നത്, function-ന്റെ name `new_abs_function` എന്നാണെന്നും, അതിന് `x` എന്ന ഒരൊറ്റ argument ഉണ്ടെന്നുമാണ്.
-* Indent ചെയ്തിരിക്കുന്ന code-നെ, *function body* എന്ന് വിളിക്കുന്നു. 
+* Indent ചെയ്തിരിക്കുന്ന code-നെ, *function body* എന്ന് വിളിക്കുന്നു.
 * ഈ function-നെ call ചെയ്ത code-ലേക്ക്, `abs_value` ആണ് return ചെയ്യേണ്ടത് എന്ന് `return` keyword indicate ചെയ്യുന്നു.
 
 ഈ function definition മുഴുവനും Python interpreter വായിച്ച്, അതിനെ memory-യിൽ store ചെയ്യുന്നു.
@@ -199,7 +199,7 @@ Matplotlib-ന്റെ `plot` function-നെ call ചെയ്യുമ്പ�
 
 Order അനുസരിച്ച് അർത്ഥം നിശ്ചയിക്കപ്പെടുന്നതിനാൽ, non-keyword arguments-നെ *positional arguments* എന്ന് വിളിക്കുന്നു.
 
-* `plot(x, 'b-')` differs from `plot('b-', x)`.
+* `plot(x, 'b-')` differs from `plot('b-', x)`
 
 ഒരു function-ന് ധാരാളം arguments ഉള്ളപ്പോൾ, keyword arguments പ്രത്യേകിച്ചും ഉപയോഗപ്രദമാണ്. കാരണം ശരിയായ order ഓർത്തിരിക്കാൻ ബുദ്ധിമുട്ടായേക്കാം.
 
@@ -233,7 +233,7 @@ f(2, a=4, b=5)
 * തന്നിരിക്കുന്ന ഒരു file-ൽ എത്ര functions വേണമെങ്കിലും define ചെയ്യാം.
 * Functions-നെ മറ്റൊരു function-ന്റെ ഉള്ളിൽ define ചെയ്യാം; പലപ്പോഴും അങ്ങനെ ചെയ്യാറുമുണ്ട്.
 * മറ്റ് functions ഉൾപ്പെടെ, ഏത് object-നെയും ഒരു function-ലേക്ക് argument ആയി pass ചെയ്യാം.
-* Functions ഉൾപ്പെടെ, ഏത് തരം object--നെയും ഒരു function-ന് return ചെയ്യാൻ കഴിയും.
+* Functions ഉൾപ്പെടെ, ഏത് തരം object-നെയും ഒരു function-ന് return ചെയ്യാൻ കഴിയും.
 
 ഒരു function-നെ മറ്റൊരു function-ലേക്ക് pass ചെയ്യുന്നത് എത്ര എളുപ്പമാണെന്ന് കാണിക്കുന്ന examples താഴെയുള്ള sections-ൽ നമുക്ക് കാണാം.
 
@@ -251,13 +251,9 @@ def f(x):
     return x**3
 ```
 
-
-
 ```{code-cell} python3
 f = lambda x: x**3
 ```
-
-
 
 `lambda` എന്തുകൊണ്ട് useful ആകുന്നു എന്ന് മനസ്സിലാക്കാൻ, നമുക്ക് $\int_0^2 x^3 dx$ calculate ചെയ്യണമെന്ന് കരുതുക. (നമ്മുടെ high-school calculus മറന്നുപോയി എന്നും കരുതുക).
 
@@ -341,7 +337,7 @@ Python interpreter, `generate_data(100)` എന്ന expression-ൽ എത്�
 
 നമ്മുടെ `generate_data()` function-ന് ചില പരിമിതികളുണ്ട്.
 
-generate_data() function-നെ നമുക്ക് കുറച്ചുകൂടി useful ആക്കാം — ആവശ്യാനുസരണം, standard normal random variables അല്ലെങ്കിൽ, $(0, 1)$ interval-ൽ ഉള്ള uniform random variables return ചെയ്യാൻ കഴിയുന്ന രീതിയിൽ.
+`generate_data()` function-നെ നമുക്ക് കുറച്ചുകൂടി useful ആക്കാം — ആവശ്യാനുസരണം, standard normal random variables അല്ലെങ്കിൽ, $(0, 1)$ interval-ൽ ഉള്ള uniform random variables return ചെയ്യാൻ കഴിയുന്ന രീതിയിൽ.
 
 ഇത് എങ്ങനെ ചെയ്യാമെന്ന് താഴെയുള്ള code-ൽ കാണിച്ചിരിക്കുന്നു.
 
@@ -366,7 +362,7 @@ if/else clause-ന്റെ syntax, self-explanatory ആണെന്ന് വ�
 
 Notes
 
-* `U` എന്ന argument-നെ ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്. അതുകൊണ്ടാണ് നമ്മൾ അതിനെ `'U'` എന്ന് എഴുതുന്നത്. 
+* `U` എന്ന argument-നെ ഒരു string ആയാണ് നമ്മൾ pass ചെയ്യുന്നത്. അതുകൊണ്ടാണ് നമ്മൾ അതിനെ `'U'` എന്ന് എഴുതുന്നത്.
 * ശ്രദ്ധിക്കുക, equality test ചെയ്യുന്നത് `==` syntax ഉപയോഗിച്ചാണ്, `=` അല്ല.
     * For example, `a = 10` എന്ന statement, `a` എന്ന name-നെ `10` എന്ന value-യിലേക്ക് assign ചെയ്യുന്നു.
     * `a == 10` എന്ന expression, `a`-യുടെ value അനുസരിച്ച്, `True`-ഓ `False`-ഓ ആയി evaluate ചെയ്യപ്പെടുന്നു.
@@ -410,7 +406,7 @@ m = max
 m(7, 2, 4)
 ```
 
-ഇവിടെ, built-in function ആയ `max()`-ന് നമ്മൾ മറ്റൊരു name create ചെയ്തു. തുടർന്ന്, ആ പുതിയ name-ഉം, max()-ഉം ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.
+ഇവിടെ, built-in function ആയ `max()`-ന് നമ്മൾ മറ്റൊരു name create ചെയ്തു. തുടർന്ന്, ആ പുതിയ name-ഉം, `max()`-ഉം ഒരേ രീതിയിൽ ഉപയോഗിക്കാം.
 
 നമ്മുടെ program-ന്റെ context-ൽ, functions-നോ അല്ലെങ്കിൽ more generally, callable objects-നോ names bind ചെയ്യാൻ കഴിയുന്നു എന്നതിന്റെ അർത്ഥം, ഒരു callable object-നെ മറ്റൊരു callable object-ലേക്ക് argument ആയി pass ചെയ്യുന്നതിൽ പ്രശ്നമൊന്നുമില്ല എന്നതാണ്. മുകളിൽ `rng.uniform` ഉപയോഗിച്ച് നമ്മൾ അങ്ങനെ ചെയ്തിരുന്നു.
 
@@ -514,7 +510,7 @@ factorial(4)
 
 [Binomial random variable](https://en.wikipedia.org/wiki/Binomial_distribution) $Y \sim Bin(n, p)$ എന്നത്, $n$ binary trials-ൽ ലഭിക്കുന്ന successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു. Each trial succeeds with probability $p$.
 
-Using `rng = np.random.default_rng()`, write a function `binomial_rv` such that `binomial_rv(n,p) generates one draw of $Y$.
+Using `rng = np.random.default_rng()`, write a function `binomial_rv` such that `binomial_rv(n, p)` generates one draw of $Y$.
 
 ```{hint}
 :class: dropdown
@@ -554,13 +550,13 @@ binomial_rv(10, 0.5)
 :label: func_ex3
 ```
 
-First, write a function that returns one realization of the following random device:
+First, write a function that returns one realization of the following random device
 
 1. Flip an unbiased coin 10 times.
 1. If a head occurs `k` or more times consecutively within this sequence at least once, pay one dollar.
 1. If not, pay nothing.
 
-Second, write another function that does the same task except that the second rule of the above random device becomes:
+Second, write another function that does the same task except that the second rule of the above random device becomes
 
 - If a head occurs `k` or more times within this sequence, pay one dollar.
 
@@ -573,7 +569,7 @@ Random numbers generate ചെയ്യാൻ `rng = np.random.default_rng()` �
 :class: dropdown
 ```
 
-Here’s a function for the first random device.
+Here's a function for the first random device.
 
 
 
@@ -598,7 +594,7 @@ def draw(k):  # pays if k consecutive successes in a sequence
 draw(3)
 ```
 
-Here’s another function for the second random device.
+Here's another function for the second random device.
 
 ```{code-cell} python3
 def draw_new(k):  # pays if k successes in a sequence

@@ -42,27 +42,27 @@ translation:
 
 ## Overview
 
-ഈ lectures-ൽ [Matplotlib](https://matplotlib.org/) ഉപയോഗിച്ച് നമ്മൾ ഇതിനകം ധാരാളം figures generate ചെയ്തിട്ടുണ്ട്.
+ഈ lectures-ൽ [Matplotlib](https://matplotlib.org/) ഉപയോഗിച്ച് നമ്മൾ already ധാരാളം figures generate ചെയ്തിട്ടുണ്ട്.
 
-Matplotlib എന്നത് scientific computing-നു വേണ്ടി design ചെയ്ത ഒരു മികച്ച graphics library ആണ്, അതിൽ ഇവയുണ്ട്:
+Matplotlib scientific computing-നായി design ചെയ്ത ഒരു മികച്ച graphics library ആണ്. ഇതിൽ ഉള്ളത്:
 
-* high-quality 2D, 3D plots
-* സാധാരണ formats-ലെല്ലാമുള്ള output (PDF, PNG മുതലായവ)
+* high-quality 2D and 3D plots
+* സാധാരണ formats-ലെല്ലാം (PDF, PNG, etc.) output
 * LaTeX integration
 * presentation-ന്റെ എല്ലാ വശങ്ങളിലും fine-grained control
-* animation മുതലായവ
+* animation, etc.
 
 ### Matplotlib's Split Personality
 
-Matplotlib വ്യത്യസ്തമായത് അത് plotting-ന് രണ്ട് വ്യത്യസ്ത interfaces provide ചെയ്യുന്നു എന്നതിലാണ്.
+Matplotlib-ന്റെ ഒരു പ്രത്യേകത, plotting-നായി അത് രണ്ട് വ്യത്യസ്ത interfaces provide ചെയ്യുന്നു എന്നതാണ്.
 
-ഒന്ന്, MATLAB refugees-ന് ഒരു ready home കണ്ടെത്താൻ സഹായിക്കാൻ വേണ്ടി എഴുതിയ simple ആയ MATLAB-style API (Application Programming Interface) ആണ്.
+ഒന്ന്, MATLAB refugees-ന് എളുപ്പം home ആയി തോന്താൻ എഴുതിയ ലളിതമായ ഒരു MATLAB-style API (Application Programming Interface) ആണ്.
 
-മറ്റൊന്ന് കൂടുതൽ "Pythonic" ആയ object-oriented API ആണ്.
+മറ്റൊന്ന്, കൂടുതൽ "Pythonic" ആയ object-oriented API ആണ്.
 
-താഴെ വിവരിക്കുന്ന കാരണങ്ങളാൽ, രണ്ടാമത്തെ API ഉപയോഗിക്കാൻ ഞങ്ങൾ recommend ചെയ്യുന്നു.
+താഴെ പറയുന്ന കാരണങ്ങളാൽ, രണ്ടാമത്തെ API ഉപയോഗിക്കാൻ ഞങ്ങൾ recommend ചെയ്യുന്നു.
 
-പക്ഷേ ആദ്യം, ഈ വ്യത്യാസം എന്താണെന്ന് നോക്കാം.
+പക്ഷേ ആദ്യം, ഇവ തമ്മിലുള്ള വ്യത്യാസം നമുക്ക് നോക്കാം.
 
 ## The APIs
 
@@ -71,7 +71,7 @@ Matplotlib വ്യത്യസ്തമായത് അത് plotting-ന് 
 
 ### The MATLAB-style API
 
-Introductory treatments-ൽ കാണാൻ സാധ്യതയുള്ള ഒരു easy ആയ example താഴെ കാണാം:
+Introductory treatments-ൽ കാണാവുന്ന തരത്തിലുള്ള എളുപ്പമായ ഒരു example താഴെ കാണാം:
 
 ```{code-cell} ipython
 import matplotlib.pyplot as plt
@@ -84,17 +84,17 @@ plt.plot(x, y, 'b-', linewidth=2)
 plt.show()
 ```
 
-ഇത് simple-ഉം convenient-ഉം ആണ്, പക്ഷേ ഇതിന് ചില പരിമിതികളുണ്ട്, മാത്രമല്ല ഇത് un-Pythonic ആണ്.
+ഇത് simple-ഉം convenient-ഉം ആണ്, പക്ഷേ ചില പരിമിതികളുണ്ട്, കൂടാതെ un-Pythonic ആണ്.
 
-For example, function calls-ൽ, programmer-നെ അറിയിക്കാതെ തന്നെ ധാരാളം objects create ചെയ്യപ്പെടുകയും pass ചെയ്യപ്പെടുകയും ചെയ്യുന്നു.
+For example, ഈ function calls-ൽ, programmer-ന് അറിയാതെ തന്നെ ധാരാളം objects create ചെയ്യപ്പെടുകയും pass ചെയ്യപ്പെടുകയും ചെയ്യുന്നു.
 
-Python programmers സാധാരണയായി കൂടുതൽ explicit ആയ ഒരു programming style ആണ് preferചെയ്യുന്നത് (ഒരു code block-ൽ `import this` run ചെയ്ത് രണ്ടാമത്തെ line നോക്കുക).
+Python programmers കൂടുതൽ explicit ആയ ഒരു programming style ആണ് പൊതുവെ prefer ചെയ്യുന്നത് (ഒരു code block-ൽ `import this` run ചെയ്ത് രണ്ടാമത്തെ line നോക്കുക).
 
-ഇത് നമ്മെ ഒരു alternative ആയ, object-oriented Matplotlib API-യിലേക്ക് നയിക്കുന്നു.
+ഇത് നമ്മളെ alternative ആയ, object-oriented Matplotlib API-യിലേക്ക് എത്തിക്കുന്നു.
 
 ### The Object-Oriented API
 
-Object-oriented API ഉപയോഗിച്ച്, മുമ്പത്തെ figure-നു അനുയോജ്യമായ code താഴെ കാണാം:
+Object-oriented API ഉപയോഗിച്ച് മുൻപത്തെ figure-ന് സമാനമായ code താഴെ കാണാം:
 
 ```{code-cell} python3
 fig, ax = plt.subplots()
@@ -102,20 +102,20 @@ ax.plot(x, y, 'b-', linewidth=2)
 plt.show()
 ```
 
-ഇവിടെ `fig, ax = plt.subplots()` എന്ന call ഒരു pair return ചെയ്യുന്നു, അതിൽ:
+ഇവിടെ `fig, ax = plt.subplots()` എന്ന call ഒരു pair return ചെയ്യുന്നു. അതിൽ:
 
-* `fig` ഒരു `Figure` instance ആണ് --- ഒരു blank canvas പോലെ.
-* `ax` ഒരു `AxesSubplot` instance ആണ് --- plotting ചെയ്യാനുള്ള ഒരു frame ആയി കരുതുക.
+* `fig` ഒരു `Figure` instance ആണ്---ഒരു blank canvas പോലെ.
+* `ax` ഒരു `AxesSubplot` instance ആണ്---plotting ചെയ്യാനുള്ള ഒരു frame ആയി കരുതുക.
 
 `plot()` function യഥാർത്ഥത്തിൽ `ax`-ന്റെ ഒരു method ആണ്.
 
-കുറച്ചുകൂടി typing വേണ്ടിവരുമെങ്കിലും, objects-ന്റെ കൂടുതൽ explicit ആയ ഉപയോഗം നമുക്ക് കൂടുതൽ നല്ല control നൽകുന്നു.
+കുറച്ചുകൂടി typing വേണ്ടിവരുമെങ്കിലും, objects-ന്റെ കൂടുതൽ explicit ആയ ഉപയോഗം നമുക്ക് മെച്ചപ്പെട്ട control നൽകുന്നു.
 
 നമ്മൾ മുന്നോട്ട് പോകുമ്പോൾ ഇത് കൂടുതൽ വ്യക്തമാകും.
 
 ### Tweaks
 
-ഇവിടെ നമ്മൾ line-ന്റെ നിറം red ആക്കി മാറ്റുകയും ഒരു legend ചേർക്കുകയും ചെയ്തിരിക്കുന്നു:
+ഇവിടെ line-ന്റെ നിറം red ആക്കി മാറ്റുകയും ഒരു legend ചേർക്കുകയും ചെയ്തിരിക്കുന്നു:
 
 ```{code-cell} python3
 fig, ax = plt.subplots()
@@ -124,9 +124,9 @@ ax.legend()
 plt.show()
 ```
 
-Line-നെ അല്പം transparent ആക്കാൻ നമ്മൾ `alpha` ഉപയോഗിച്ചിട്ടുണ്ട് --- ഇത് അതിനെ smooth ആയി കാണിക്കുന്നു.
+Line-നെ അല്പം transparent ആക്കാൻ `alpha` ഉപയോഗിച്ചു---ഇത് കാഴ്ചയിൽ കൂടുതൽ smooth ആയി തോന്നിക്കും.
 
-`ax.legend()`-നെ `ax.legend(loc='upper center')` ഉപയോഗിച്ച് മാറ്റി legend-ന്റെ സ്ഥാനം മാറ്റാൻ സാധിക്കും.
+`ax.legend()`-ന് പകരം `ax.legend(loc='upper center')` ഉപയോഗിച്ച് legend-ന്റെ സ്ഥാനം മാറ്റാം.
 
 ```{code-cell} python3
 fig, ax = plt.subplots()
@@ -135,7 +135,7 @@ ax.legend(loc='upper center')
 plt.show()
 ```
 
-എല്ലാം ശരിയായി configure ചെയ്തിട്ടുണ്ടെങ്കിൽ, LaTeX ചേർക്കുന്നത് വളരെ എളുപ്പം ആണ്:
+എല്ലാം ശരിയായി configure ചെയ്തിട്ടുണ്ടെങ്കിൽ, LaTeX ചേർക്കുന്നത് വളരെ എളുപ്പമാണ്:
 
 ```{code-cell} python3
 fig, ax = plt.subplots()
@@ -144,7 +144,7 @@ ax.legend(loc='upper center')
 plt.show()
 ```
 
-Ticks control ചെയ്യുന്നതും titles ചേർക്കുന്നതും മറ്റും also എളുപ്പം ആണ്:
+Ticks control ചെയ്യുന്നതും titles ചേർക്കുന്നതും മറ്റും അതുപോലെതന്നെ എളുപ്പം ആണ്:
 
 ```{code-cell} python3
 fig, ax = plt.subplots()
@@ -157,18 +157,18 @@ plt.show()
 
 ## More Features
 
-Matplotlib-ന് വളരെ വലിയ ഒരു functions-ന്റെ ഒപ്പം features-ന്റെ collection ഉണ്ട്, ആവശ്യമായി വരുമ്പോൾ കാലക്രമേണ നിങ്ങൾ അവ discover ചെയ്യും.
+Matplotlib-ൽ ധാരാളം functions-ഉം features-ഉം ഉണ്ട്. ആവശ്യം വരുന്ന മുറയ്ക്ക് കാലക്രമേണ അവയെ കണ്ടെത്താം.
 
-അതിൽ ചിലത് മാത്രം ഇവിടെ പറയാം.
+അതിൽ ചിലത് മാത്രം ഇവിടെ പരാമർശിക്കുന്നു.
 
 ### Multiple Plots on One Axis
 
 ```{index} single: Matplotlib; Multiple Plots on One Axis
 ```
 
-ഒരേ axes-ൽ multiple plots generate ചെയ്യുന്നത് വളരെ എളുപ്പം ആണ്.
+ഒരേ axes-ൽ multiple plots generate ചെയ്യുന്നത് വളരെ എളുപ്പമാണ്.
 
-Random ആയി മൂന്ന് normal densities generate ചെയ്ത് അവയുടെ mean-ഉള്ള ഒരു label ചേർക്കുന്ന example താഴെ കാണാം:
+Randomly മൂന്ന് normal densities generate ചെയ്ത്, അവയുടെ mean-നൊപ്പം label ചേർക്കുന്ന ഒരു example താഴെ കാണാം:
 
 ```{code-cell} python3
 from scipy.stats import norm
@@ -190,7 +190,7 @@ plt.show()
 ```{index} single: Matplotlib; Subplots
 ```
 
-ചിലപ്പോൾ നമുക്ക് ഒരു figure-ൽ multiple subplots വേണ്ടിവരും.
+ചിലപ്പോൾ ഒരു figure-ൽ multiple subplots വേണ്ടിവരും.
 
 6 histograms generate ചെയ്യുന്ന ഒരു example താഴെ കാണാം:
 
@@ -212,7 +212,7 @@ plt.show()
 ```{index} single: Matplotlib; 3D Plots
 ```
 
-Matplotlib 3D plots-ന്റെ കാര്യത്തിലും നല്ല ജോലി ചെയ്യുന്നു --- ഒരു example താഴെ കാണാം:
+Matplotlib 3D plots വളരെ നന്നായി ചെയ്യുന്നു --- ഒരു example താഴെ കാണാം:
 
 ```{code-cell} python3
 from mpl_toolkits.mplot3d.axes3d import Axes3D
@@ -241,13 +241,13 @@ plt.show()
 
 ### A Customizing Function
 
-ഒരു set of customizations നിങ്ങൾ സ്ഥിരമായി ഉപയോഗിക്കുന്നത് കണ്ടെത്തിയേക്കാം.
+ഒരുപക്ഷേ നിങ്ങൾ പതിവായി ഉപയോഗിക്കുന്ന ഒരു set of customizations ഉണ്ടാകും.
 
-നമ്മുടെ axes origin-ലൂടെ പോകണം എന്നും, ഒരു grid ഉണ്ടാകണം എന്നും നമ്മൾ സാധാരണയായി preferചെയ്യുന്നു എന്ന് കരുതുക.
+നമ്മുടെ axes origin-ലൂടെ കടന്നുപോകണമെന്നും, ഒരു grid ഉണ്ടാകണമെന്നും നമ്മൾ സാധാരണയായി prefer ചെയ്യുന്നു എന്ന് കരുതുക.
 
-ഈ മാറ്റങ്ങൾ implement ചെയ്യുന്ന ഒരു custom `subplots` function build ചെയ്യാൻ object-oriented API എങ്ങനെ ഉപയോഗിക്കാം എന്നതിന്റെ ഒരു നല്ല example [Matthew Doty](https://github.com/xcthulhu)-യിൽ നിന്നും താഴെ കാണാം.
+ഈ മാറ്റങ്ങൾ implement ചെയ്യുന്ന ഒരു custom `subplots` function object-oriented API ഉപയോഗിച്ച് എങ്ങനെ build ചെയ്യാം എന്നതിന് [Matthew Doty](https://github.com/xcthulhu)-യുടെ ഒരു നല്ല example താഴെ കാണാം.
 
-Code ശ്രദ്ധയോടെ വായിച്ച്, എന്താണ് നടക്കുന്നത് എന്ന് follow ചെയ്യാൻ കഴിയുമോ എന്ന് നോക്കുക:
+Code ശ്രദ്ധയോടെ വായിച്ച്, എന്താണ് നടക്കുന്നത് എന്ന് നിങ്ങൾക്ക് പിന്തുടരാൻ കഴിയുമോ എന്ന് നോക്കുക:
 
 ```{code-cell} python3
 def subplots():
@@ -272,27 +272,27 @@ ax.legend(loc='lower right')
 plt.show()
 ```
 
-Custom `subplots` function:
+ഈ custom `subplots` function:
 
 1. `fig, ax` pair generate ചെയ്യാൻ internal ആയി standard `plt.subplots` function-നെ call ചെയ്യുന്നു,
-1. `ax`-ൽ ആവശ്യമായ customizations വരുത്തുന്നു, ഒപ്പം
-1. `fig, ax` pair-നെ calling code-ലേക്ക് pass ചെയ്ത് തിരികെ നൽകുന്നു.
+1. `ax`-ന് വേണ്ട customizations വരുത്തുന്നു, കൂടാതെ
+1. `fig, ax` pair-നെ calling code-ലേക്ക് തിരികെ pass ചെയ്യുന്നു.
 
 ### Style Sheets
 
 Matplotlib-ലെ മറ്റൊരു വളരെ useful ആയ feature ആണ് [style sheets](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html).
 
-Uniform ആയ styles ഉള്ള plots create ചെയ്യാൻ നമുക്ക് style sheets ഉപയോഗിക്കാം.
+Uniform styles ഉള്ള plots create ചെയ്യാൻ നമുക്ക് style sheets ഉപയോഗിക്കാം.
 
-`plt.style.available` എന്ന attribute print ചെയ്ത് available styles-ന്റെ ഒരു list നമുക്ക് കണ്ടെത്താം:
+`plt.style.available` എന്ന attribute print ചെയ്ത് ലഭ്യമായ styles-ന്റെ ഒരു list നമുക്ക് കണ്ടെത്താം:
 
 ```{code-cell} python3
 print(plt.style.available)
 ```
 
-ഇനി style sheet set ചെയ്യാൻ നമുക്ക് `plt.style.use()` method ഉപയോഗിക്കാം.
+ഇനി style sheet set ചെയ്യാൻ `plt.style.use()` method നമുക്ക് ഉപയോഗിക്കാം.
 
-ഒരു style sheet-ന്റെ പേര് എടുത്ത് ആ style ഉപയോഗിച്ച് വ്യത്യസ്ത plots വരയ്ക്കുന്ന ഒരു function നമുക്ക് എഴുതാം:
+ഒരു style sheet-ന്റെ name എടുത്ത്, ആ style-ൽ വ്യത്യസ്ത plots വരയ്ക്കുന്ന ഒരു function നമുക്ക് എഴുതാം:
 
 ```{code-cell} python3
 
@@ -334,7 +334,7 @@ def draw_graphs(style='default'):
 
 ```
 
-ഈ styles-ൽ ചിലത് എങ്ങനെ കാണപ്പെടുന്നു എന്ന് നോക്കാം.
+ചില styles എങ്ങനെയിരിക്കുമെന്ന് നമുക്ക് നോക്കാം.
 
 ആദ്യം, `seaborn` എന്ന style sheet ഉപയോഗിച്ച് graphs വരയ്ക്കാം:
 
@@ -342,29 +342,29 @@ def draw_graphs(style='default'):
 draw_graphs(style='seaborn-v0_8')
 ```
 
-Plots-ലെ colors ഒഴിവാക്കാൻ നമുക്ക് `grayscale` ഉപയോഗിക്കാം:
+Plots-ലെ colors നീക്കം ചെയ്യാൻ നമുക്ക് `grayscale` ഉപയോഗിക്കാം:
 
 ```{code-cell} python3
 draw_graphs(style='grayscale')
 ```
 
-`ggplot` എങ്ങനെ കാണപ്പെടുന്നു എന്ന് താഴെ കാണാം:
+`ggplot` എങ്ങനെയിരിക്കുമെന്ന് താഴെ കാണാം:
 
 ```{code-cell} python3
 draw_graphs(style='ggplot')
 ```
 
-നമുക്ക് `dark_background` എന്ന style-ഉം ഉപയോഗിക്കാം:
+`dark_background` എന്ന style-ഉം നമുക്ക് ഉപയോഗിക്കാം:
 
 ```{code-cell} python3
 draw_graphs(style='dark_background')
 ```
 
-List-ലെ മറ്റ് styles experiment ചെയ്യാൻ നിങ്ങൾക്ക് ഈ function ഉപയോഗിക്കാം.
+List-ലുള്ള മറ്റ് styles പരീക്ഷിക്കാൻ ഈ function നിങ്ങൾക്ക് ഉപയോഗിക്കാം.
 
-നിങ്ങൾക്ക് താൽപ്പര്യമുണ്ടെങ്കിൽ, നിങ്ങളുടെ own style sheets തന്നെ create ചെയ്യാം.
+താൽപ്പര്യമുണ്ടെങ്കിൽ, നിങ്ങൾക്ക് സ്വന്തമായി style sheets തന്നെ create ചെയ്യാം.
 
-നിങ്ങളുടെ style sheets-ന്റെ parameters `plt.rcParams` എന്ന dictionary-like variable-ൽ store ചെയ്യപ്പെടുന്നു:
+നിങ്ങളുടെ style sheets-ന്റെ parameters `plt.rcParams` എന്ന dictionary-like variable-ൽ ആണ് സൂക്ഷിച്ചിരിക്കുന്നത്:
 
 ```{code-cell} python3
 ---
@@ -375,14 +375,14 @@ print(plt.rcParams.keys())
 
 ```
 
-നിങ്ങളുടെ style sheets-ന് വേണ്ടി set ചെയ്യാൻ കഴിയുന്ന ധാരാളം parameters ഉണ്ട്.
+നിങ്ങളുടെ style sheets-ന് വേണ്ടി set ചെയ്യാവുന്ന ധാരാളം parameters ഉണ്ട്.
 
-നിങ്ങളുടെ style sheet-ന്റെ parameters set ചെയ്യാൻ:
+നിങ്ങളുടെ style sheet-ന്റെ parameters ഇങ്ങനെ set ചെയ്യാം: 
 
-1. നിങ്ങളുടെ own [`matplotlibrc` file](https://matplotlib.org/stable/users/explain/customizing.html) create ചെയ്യുക, അല്ലെങ്കിൽ
-2. `plt.rcParams` എന്ന dictionary-like variable-ൽ store ചെയ്തിരിക്കുന്ന values update ചെയ്യുക
+1. നിങ്ങളുടെ സ്വന്തം [`matplotlibrc` file](https://matplotlib.org/stable/users/explain/customizing.html) create ചെയ്ത്, അല്ലെങ്കിൽ
+2. `plt.rcParams` എന്ന dictionary-like variable-ൽ സൂക്ഷിച്ചിരിക്കുന്ന values update ചെയ്ത്.
 
-രണ്ടാമത്തെ method ഉപയോഗിച്ച് overlay ചെയ്ത നമ്മുടെ density lines-ന്റെ style മാറ്റാം:
+രണ്ടാമത്തെ method ഉപയോഗിച്ച് overlay ചെയ്ത density lines-ന്റെ style നമുക്ക് മാറ്റാം:
 
 ```{code-cell} python3
 from cycler import cycler
@@ -422,9 +422,9 @@ plt.rcParams.update(parameters)
 
 ```{note} 
 
-ഈ settings `global` ആണ്.
+ഈ settings `global` ആണ്. 
 
-`.rcParams`-ലെ parameters മാറ്റിയതിന് ശേഷം generate ചെയ്യുന്ന ഏതൊരു plot-നും ഈ setting affect ചെയ്യും.
+`.rcParams`-ലെ parameters മാറ്റിയതിന് ശേഷം generate ചെയ്യുന്ന ഏത് plot-നെയും ഈ setting affect ചെയ്യും.
 
 ```
 
@@ -440,7 +440,7 @@ ax.legend()
 plt.show()
 ```
 
-നിങ്ങളുടെ style വീണ്ടും default ആയി മാറ്റാൻ `default` style sheet വീണ്ടും apply ചെയ്യുക:
+നിങ്ങളുടെ style-നെ വീണ്ടും default ആക്കി മാറ്റാൻ `default` style sheet ഒരിക്കൽ കൂടി apply ചെയ്യുക:
 
 ```{code-cell} python3
 
@@ -455,8 +455,8 @@ plt.rcParams['figure.figsize'] = (10, 6)
 
 * [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html) ധാരാളം examples provide ചെയ്യുന്നു.
 * Nicolas Rougier, Mike Muller, Gael Varoquaux എന്നിവരുടെ ഒരു നല്ല [Matplotlib tutorial](https://scipy-lectures.org/intro/matplotlib/index.html).
-* [mpltools](https://tonysyu.github.io/mpltools/index.html) plot styles-ന് ഇടയിൽ എളുപ്പം switching ചെയ്യാൻ അനുവദിക്കുന്നു.
-* [Seaborn](https://github.com/mwaskom/seaborn) Matplotlib-ൽ common ആയ statistics plots സഹായിക്കുന്നു.
+* [mpltools](https://tonysyu.github.io/mpltools/index.html) plot styles-ന് ഇടയിൽ എളുപ്പത്തിൽ switch ചെയ്യാൻ അനുവദിക്കുന്നു.
+* [Seaborn](https://github.com/mwaskom/seaborn) Matplotlib-ൽ common statistics plots-നെ സഹായിക്കുന്നു.
 
 ## Exercises
 

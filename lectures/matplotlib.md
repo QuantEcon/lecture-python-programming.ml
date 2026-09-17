@@ -56,7 +56,7 @@ Matplotlib എന്നത്, scientific computing-നായി design ചെ�
 
 Plotting-നായി രണ്ട് വ്യത്യസ്ത interfaces നൽകുന്നു എന്നതാണ് Matplotlib-ന്റെ ഒരു പ്രത്യേകത.
 
-അതിൽ ഒന്ന്, simple ആയ MATLAB-style API (Application Programming Interface) ആണ്. MATLAB ഉപയോഗിച്ചിരുന്നവർക്ക് എളുപ്പത്തിൽ ഉപയോഗിക്കാനാകുന്ന തരത്തിലാണ് ഇത്  എഴുതിയിരിക്കുന്നത്.
+അതിൽ ഒന്ന്, simple ആയ MATLAB-style API (Application Programming Interface) ആണ്. MATLAB ഉപയോഗിച്ചിരുന്നവർക്ക് എളുപ്പത്തിൽ ഉപയോഗിക്കാനാകുന്ന തരത്തിലാണ് ഇത് എഴുതിയിരിക്കുന്നത്.
 
 മറ്റൊന്ന്, കൂടുതൽ "Pythonic" ആയ object-oriented API ആണ്.
 
@@ -88,7 +88,7 @@ plt.show()
 
 For example, ഇവിടുത്തെ function call-കളിൽ, programmer-നെ അറിയിക്കാതെ തന്നെ നിരവധി object-ുകൾ create ചെയ്യപ്പെടുകയും, അവ pass ചെയ്യപ്പെടുകയും ചെയ്യുന്നു.
 
-കാര്യങ്ങൾ കൂടുതൽ വ്യക്തമായി പ്രകടിപ്പിക്കുന്ന ഒരു programming style ആണ് Python programmers പൊതുവെ prefer ചെയ്യുന്നത്. (ഒരു code block-ൽ, import this എന്ന് type ചെയ്ത്, run ചെയ്യുക. തുടർന്ന് ലഭിക്കുന്ന output-ന്റെ രണ്ടാമത്തെ line നോക്കുക.).
+കാര്യങ്ങൾ കൂടുതൽ വ്യക്തമായി പ്രകടിപ്പിക്കുന്ന ഒരു programming style ആണ് Python programmers പൊതുവെ prefer ചെയ്യുന്നത്. (ഒരു code block-ൽ, `import this` എന്ന് type ചെയ്ത്, run ചെയ്യുക. തുടർന്ന് ലഭിക്കുന്ന output-ന്റെ രണ്ടാമത്തെ line നോക്കുക.)
 
 ഇത് നമ്മളെ alternative ആയ, object-oriented Matplotlib API-യിലേക്ക് എത്തിക്കുന്നു.
 
@@ -241,7 +241,7 @@ plt.show()
 
 ### A Customizing Function
 
-ഒരുപക്ഷേ നിങ്ങൾ പതിവായി ഉപയോഗിക്കുന്ന ഒരു set of customizations ഉണ്ടായേകാം.
+ഒരുപക്ഷേ നിങ്ങൾ പതിവായി ഉപയോഗിക്കുന്ന ഒരു set of customizations ഉണ്ടായേക്കാം.
 
 For example, നമ്മുടെ axes, origin-ലൂടെ പോകണമെന്നും, അവയിൽ grid ഉണ്ടായിരിക്കണമെന്നും നമുക്ക് ഇഷ്ടമാണെന്ന് കരുതുക.
 
@@ -455,7 +455,8 @@ plt.rcParams['figure.figsize'] = (10, 6)
 
 * The [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html) provides many examples.
 * A nice [Matplotlib tutorial](https://scipy-lectures.org/intro/matplotlib/index.html) by Nicolas Rougier, Mike Muller and Gael Varoquaux.
-* [mpltools](https://tonysyu.github.io/mpltools/index.html) allows easy switching between plot styles.
+* [mpltools](https://tonysyu.github.io/mpltools/index.html) allows easy
+  switching between plot styles.
 * [Seaborn](https://github.com/mwaskom/seaborn) facilitates common statistics plots in Matplotlib.
 
 ## Exercises

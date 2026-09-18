@@ -118,6 +118,7 @@
     <link rel="icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Matplotlib" href="matplotlib.html" />
     <link rel="prev" title="1. An Introductory Example" href="python_by_example.html" />
 
 <!-- Normal Meta Tags -->
@@ -286,7 +287,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Sep 04, 2026
+                            Last changed: Sep 18, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -300,11 +301,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/4a33f61" class="changelog-hash">4a33f61</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/a24e925" class="changelog-hash">a24e925</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">1 minute ago</span>
-                                <span class="changelog-message">chore: add dependabot config (github-actions + conda, weekly) (#15)</span>
+                                <span class="changelog-message">Malayalam translation: matplotlib — calibration review round 3 (v0.27.0 engine) (#13)</span>
                             </li>
                             
                         </ul>
@@ -649,7 +650,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/721725e6f47f4e3d6e7e92148a7213c85f6a9acd76f7476d265986ff130d747a.png" src="_images/721725e6f47f4e3d6e7e92148a7213c85f6a9acd76f7476d265986ff130d747a.png" />
+<img alt="_images/fd84a8184b1a8f9d7bb0b02f1c25bfef7feb8fdb64b119f3b7f011e0a83c6ecb.png" src="_images/fd84a8184b1a8f9d7bb0b02f1c25bfef7feb8fdb64b119f3b7f011e0a83c6ecb.png" />
 </div>
 </div>
 <p>ഈ program-നെ നമുക്ക് രണ്ട് ഭാഗങ്ങളായി break down ചെയ്യാം:</p>
@@ -679,7 +680,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1aa657aa24250489b14777cbccbbee6656917bc2b1173a801029da7a10179425.png" src="_images/1aa657aa24250489b14777cbccbbee6656917bc2b1173a801029da7a10179425.png" />
+<img alt="_images/f7bfc7961b4aa3c84221c33e5c9aa75b8469d30f9e10748bc836df6923844cc6.png" src="_images/f7bfc7961b4aa3c84221c33e5c9aa75b8469d30f9e10748bc836df6923844cc6.png" />
 </div>
 </div>
 <p>Python interpreter, <code class="docutils literal notranslate"><span class="pre">generate_data(100)</span></code> എന്ന expression-ൽ എത്തുമ്പോൾ, <code class="docutils literal notranslate"><span class="pre">n</span></code>-ന്റെ value 100 ആയി set ചെയ്ത്, function-ന്റെ body execute ചെയ്യുന്നു.</p>
@@ -709,7 +710,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9fe934429e08e5f46b78b61221f84104b70d4b6b11129d4b23be1a238348c2f.png" src="_images/b9fe934429e08e5f46b78b61221f84104b70d4b6b11129d4b23be1a238348c2f.png" />
+<img alt="_images/e3e0d9c43b2466e600c48bbfe6b9adecdd41dd65a6533aa4fe90ea23a78419b8.png" src="_images/e3e0d9c43b2466e600c48bbfe6b9adecdd41dd65a6533aa4fe90ea23a78419b8.png" />
 </div>
 </div>
 <p>if/else clause-ന്റെ syntax, self-explanatory ആണെന്ന് വിശ്വസിക്കുന്നു. ഇവിടെയും, indentation ഉപയോഗിച്ചാണ് code blocks-ന്റെ extent-നെ delimit ചെയ്തിരിക്കുന്നത്.</p>
@@ -742,7 +743,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/14968645d841e5f0d10d54d50f6c81fd9c8075459bb8a5b9b8e211c6855a94a5.png" src="_images/14968645d841e5f0d10d54d50f6c81fd9c8075459bb8a5b9b8e211c6855a94a5.png" />
+<img alt="_images/4af3a54612a10324e18189ff8d8e587687118699f641db76eb319394c6f57ff2.png" src="_images/4af3a54612a10324e18189ff8d8e587687118699f641db76eb319394c6f57ff2.png" />
 </div>
 </div>
 <p>ഇനി, <code class="docutils literal notranslate"><span class="pre">generate_data()</span></code> function call ചെയ്യുമ്പോൾ, രണ്ടാമത്തെ argument ആയി നമ്മൾ <code class="docutils literal notranslate"><span class="pre">rng.uniform</span></code> pass ചെയ്യുന്നു.</p>
@@ -951,17 +952,17 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 2
-3
-4
-5
-6
-7
-8
 0
+1
+0
+1
+0
+0
+1
 0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -988,16 +989,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
 2
 3
-4
+3
+3
 4
 5
-6
-7
+5
+5
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
@@ -1161,6 +1162,18 @@
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
    2. Functions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of Scientific Computing
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matplotlib.html">
+   3. Matplotlib
   </a>
  </li>
 </ul>

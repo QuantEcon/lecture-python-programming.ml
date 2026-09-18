@@ -29,7 +29,7 @@ jobs:
       # scaffold, and previews the post-merge state, which is what a reviewer
       # wants to see.
       - name: Checkout (PR merge ref)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Anaconda
         uses: conda-incubator/setup-miniconda@v3
@@ -172,7 +172,7 @@ jobs:
       # job checks out gh-pages and never executes PR-authored code — do not
       # add a PR checkout or a build step here.
       - name: Checkout gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}

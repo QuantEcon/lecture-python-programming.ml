@@ -450,7 +450,7 @@ Plot-ൽ നമ്മൾ ഒരു legend add ചെയ്തത് ശ്രദ
 :label: pbe_ex1
 ```
 
-നിങ്ങളുടെ ആദ്യത്തെ task, correlated ആയ ഈ time series-നെ simulate ചെയ്ത് plot ചെയ്യുക എന്നതാണ്
+Your first task is to simulate and plot the correlated time series
 
 $$
 x_{t+1} = \alpha \, x_t + \epsilon_{t+1}
@@ -461,14 +461,14 @@ $$
 
 The sequence of shocks $\{\epsilon_t\}$ is assumed to be IID and standard normal.
 
-നിങ്ങളുടെ solution-ൽ, താഴെ കൊടുത്തിരിക്കുന്ന import statements മാത്രം ഉപയോഗിക്കുക.
+In your solution, restrict your import statements to
 
 ```{code-cell} python3
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-$T=200$-ഉം, $\alpha = 0.9$-ഉം set ചെയ്യുക.
+Set $T=200$ and $\alpha = 0.9$.
 
 ```{exercise-end}
 ```
@@ -500,17 +500,18 @@ plt.show()
 ```{exercise-start}
 :label: pbe_ex2
 
-Exercise 1-ന്റെ നിങ്ങളുടെ solution-ൽ നിന്ന് തുടങ്ങി, $\alpha=0$, $\alpha=0.8$, $\alpha=0.98$ എന്ന മൂന്ന് cases-നും ഓരോ simulated time series plot ചെയ്യുക.
+Starting with your solution to exercise 1, plot three simulated time series,
+one for each of the cases $\alpha=0$, $\alpha=0.8$ and $\alpha=0.98$.
 
-$\alpha$ values ഒന്നൊന്നായി തിരഞ്ഞെടുക്കാൻ ഒരു `for` loop ഉപയോഗിക്കുക.
+Use a `for` loop to step through the $\alpha$ values.
 
-കഴിയുമെങ്കിൽ, മൂന്ന് time series-നെയും വേർതിരിച്ച് കാണിക്കാൻ ഒരു legend കൂടി add ചെയ്യുക.
+If you can, add a legend, to help distinguish between the three time series.
 
 ```{hint}
 :class: dropdown
 
-* `show()` call ചെയ്യുന്നതിന് മുൻപ് `plot()` function പലതവണ call ചെയ്താൽ, നിങ്ങൾ produce ചെയ്യുന്ന lines എല്ലാം ഒരേ figure-ൽ വരും.
-* Legend-നായി, `var = 42` എന്ന് കരുതുക. അങ്ങനെയെങ്കിൽ `f'foo{var}'` എന്ന expression-ന്റെ result `'foo42'` ആയിരിക്കും.
+* If you call the `plot()` function multiple times before calling `show()`, all of the lines you produce will end up on the same figure.
+* For the legend, noted that suppose `var = 42`, the expression `f'foo{var}'` evaluates to `'foo42'`.
 ```
 
 ```{exercise-end}
@@ -538,9 +539,9 @@ plt.show()
 ```
 
 ```{note}
-Solution-ലെ `f'$\\alpha = {α}$'` എന്നത് [f-String](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings)-ന്റെ ഒരു application ആണ്. ഒരു expression-നെ `{}`-ക്കുള്ളിൽ എഴുതാൻ f-string അനുവദിക്കുന്നു.
+`f'$\\alpha = {α}$'` in the solution is an application of [f-String](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings), which allows you to use `{}` to contain an expression. 
 
-അങ്ങനെ `{}`-ക്കുള്ളിൽ എഴുതിയിരിക്കുന്ന expression Python evaluate ചെയ്യും. ലഭിക്കുന്ന result string-ലേക്ക് ചേർക്കപ്പെടും.
+The contained expression will be evaluated, and the result will be placed into the string.
 ```
 
 ```{solution-end}
@@ -549,7 +550,7 @@ Solution-ലെ `f'$\\alpha = {α}$'` എന്നത് [f-String](https://docs
 ```{exercise-start}
 :label: pbe_ex3
 
-മുൻപത്തെ exercises പോലെ, താഴെ കൊടുത്തിരിക്കുന്ന time series-ഉം plot ചെയ്യുക:
+Similar to the previous exercises, plot the time series
 
 $$
 x_{t+1} = \alpha \, |x_t| + \epsilon_{t+1}
@@ -560,7 +561,7 @@ $$
 
 Use $T=200$, $\alpha = 0.9$ and $\{\epsilon_t\}$ as before.
 
-$|x_t|$ എന്ന absolute value compute ചെയ്യാൻ ഉപയോഗിക്കാവുന്ന ഒരു function online-ൽ search ചെയ്യുക.
+Search online for a function that can be used to compute the absolute value $|x_t|$.
 ```
 
 ```{exercise-end}
@@ -595,12 +596,13 @@ plt.show()
 :label: pbe_ex4
 ```
 
-മിക്കവാറും എല്ലാ programming languages-ന്റെയും ഒരു പ്രധാന aspect എന്നുപറയുന്നത് branching-ഉം
-conditions-ഉം ആണ്.
+One important aspect of essentially all programming languages is branching and
+conditions.
 
-Python-ൽ, conditions സാധാരണയായി if--else syntax ഉപയോഗിച്ചാണ് implement ചെയ്യുന്നത്.
+In Python, conditions are usually implemented with if--else syntax.
 
-താഴെക്കൊടുത്തിരിക്കുന്ന example-ൽ, ഒരു array-യിലെ ഓരോ negative number-നും -1-ഉം, ഓരോ nonnegative number-നും 1-ഉം print ചെയ്യുന്നു.
+Here's an example, that prints -1 for each negative number in an array and 1
+for each nonnegative number
 
 ```{code-cell} python3
 numbers = [-9, 2.3, -11, 0]
@@ -614,9 +616,10 @@ for x in numbers:
         print(1)
 ```
 
-ഇനി, absolute value compute ചെയ്യാൻ ഒരു existing function ഉപയോഗിക്കാതെ Exercise 3-ന് ഒരു പുതിയ solution എഴുതുക.
+Now, write a new solution to Exercise 3 that does not use an existing function
+to compute the absolute value.
 
-ആ existing function-ന് പകരം ഒരു if--else condition ഉപയോഗിക്കുക.
+Replace this existing function with an if--else condition.
 
 ```{exercise-end}
 ```
@@ -645,7 +648,7 @@ plt.plot(x)
 plt.show()
 ```
 
-short ആയിട്ടുള്ള ഒരു solution താഴെ കാണാം:
+Here's a shorter way to write the same thing:
 
 ```{code-cell} python3
 α = 0.9
@@ -671,11 +674,11 @@ plt.show()
 :label: pbe_ex5
 ```
 
-ഇനി കുറച്ച് thought-ഉം planning-ഉം ആവശ്യമുള്ള ഒരു harder exercise ചെയ്യാം.
+Here's a harder exercise, that takes some thought and planning.
 
-[Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) ഉപയോഗിച്ച് $\pi$-യുടെ ഒരു approximation compute ചെയ്യുക എന്നതാണ് task.
+The task is to compute an approximation to $\pi$ using [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 
-താഴെ കൊടുത്തിരിക്കുന്ന import statement മാത്രം ഉപയോഗിക്കുക:
+Use no imports besides
 
 ```{code-cell} python3
 import numpy as np

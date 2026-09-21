@@ -49,7 +49,7 @@ translation:
 "Let's be clear: the work of science has nothing whatever to do with consensus.  Consensus is the business of politics. Science, on the contrary, requires only one investigator who happens to be right, which means that he or she has results that are verifiable by reference to the real world. In science consensus is irrelevant. What is relevant is reproducible results." -- Michael Crichton
 ```
 
-Anaconda-യിലുള്ളവ കൂടാതെ, ഈ lecture-ന് താഴെ കൊടുത്തിരിക്കുന്ന libraries ആവശ്യമായിവരുന്നു:
+Anaconda-യിൽ ഉള്ളതിന് പുറമേ, ഈ lecture-ന് താഴെ പറയുന്ന libraries ആവശ്യമായിവരുന്നു:
 
 ```{code-cell} ipython3
 :tags: [hide-output]
@@ -59,23 +59,21 @@ Anaconda-യിലുള്ളവ കൂടാതെ, ഈ lecture-ന് താ�
 
 ## Overview
 
-[NumPy](https://en.wikipedia.org/wiki/NumPy) എന്നത്, numerical programming-നുള്ള ഒരു first-rate library ആണ്.
+[NumPy](https://en.wikipedia.org/wiki/NumPy) എന്നത്, numerical programming-നുള്ള ഒരു മികച്ച library ആണ്.
 
 * Academia, finance, industry എന്നിവയിൽ വ്യാപകമായി ഉപയോഗിക്കപ്പെടുന്നു.
-* Mature ആയതും, fast ആയതും, stable ആയതും, തുടർച്ചയായി development നടക്കുന്നതും ആണ്.
+* Mature-ഉം, fast-ഉം, stable-ഉം ആണ്, തുടർച്ചയായി development-ലും ആണ്.
 
-മുൻപത്തെ lectures-ൽ NumPy ഉൾപ്പെടുന്ന കുറച്ച് code നമ്മൾ already കണ്ടിട്ടുണ്ട്.
+മുൻ lectures-ൽ NumPy ഉൾപ്പെടുന്ന കുറച്ച് code നമ്മൾ already കണ്ടിട്ടുണ്ട്.
 
-ഈ lecture-ൽ, നമുക്ക് 
+ഈ lecture-ൽ നമ്മൾ ചെയ്യാൻ പോകുന്ന കാര്യങ്ങൾ:
 
-1. NumPy arrays-നെക്കുറിച്ചും
-1. NumPy provide ചെയ്യുന്ന അടിസ്ഥാന array processing operations-നെക്കുറിച്ചും
+1. NumPy arrays, ഒപ്പം
+1. NumPy നൽകുന്ന അടിസ്ഥാന array processing operations.
 
-കൂടുതൽ systematic ആയ ഒരു discussion തുടങ്ങാം.
+(ഒരു alternative reference-ന്, [the official NumPy documentation](https://numpy.org/doc/stable/reference/) നോക്കുക.)
 
-(ഒരു alternative reference-ന്, [the official NumPy documentation](https://numpy.org/doc/stable/reference/) കാണുക.)
-
-താഴെ കൊടുത്തിരിക്കുന്ന imports നമുക്ക് ഉപയോഗിക്കാം.
+താഴെ പറയുന്ന imports നമുക്ക് ഉപയോഗിക്കാം.
 
 ```{code-cell} python3
 import numpy as np
@@ -94,15 +92,15 @@ from matplotlib import cm
 ```{index} single: NumPy; Arrays
 ```
 
-NumPy പരിഹരിക്കുന്ന അടിസ്ഥാന പ്രശ്നം fast array processing ആണ്.
+NumPy പരിഹരിക്കുന്ന അടിസ്ഥാന പ്രശ്നം, വേഗതയേറിയ array processing ആണ്.
 
-NumPy define ചെയ്യുന്ന ഏറ്റവും പ്രധാനപ്പെട്ട structure, ഔപചാരികമായി [numpy.ndarray](https://numpy.org/doc/stable/reference/arrays.ndarray.html) എന്ന് വിളിക്കുന്ന ഒരു array data type ആണ്.
+NumPy define ചെയ്യുന്ന ഏറ്റവും പ്രധാനപ്പെട്ട structure, ഒരു array data type ആണ്, ഔപചാരികമായി ഇതിനെ [numpy.ndarray](https://numpy.org/doc/stable/reference/arrays.ndarray.html) എന്ന് വിളിക്കുന്നു.
 
-NumPy arrays, scientific Python ecosystem-ന്റെ വളരെ വലിയൊരു ഭാഗത്തിന് power നൽകുന്നു.
+Scientific Python ecosystem-ന്റെ വളരെ വലിയൊരു ഭാഗം NumPy arrays ആണ് പ്രവർത്തിപ്പിക്കുന്നത്.
 
 ### Basics
 
-Zeros മാത്രം അടങ്ങിയ ഒരു NumPy array create ചെയ്യാൻ നമുക്ക് [np.zeros](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros) ഉപയോഗിക്കാം.
+Zeros മാത്രം അടങ്ങിയ ഒരു NumPy array create ചെയ്യാൻ നമ്മൾ [np.zeros](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros) ഉപയോഗിക്കുന്നു.
 
 ```{code-cell} python3
 a = np.zeros(3)
@@ -113,27 +111,27 @@ a
 type(a)
 ```
 
-NumPy arrays, native Python lists പോലെതന്നെയാണ്, പക്ഷേ ഇവിടെ
+NumPy arrays, native Python lists-നെ കുറച്ചൊക്കെ പോലെയാണ്, പക്ഷേ വ്യത്യാസം എന്തെന്നാൽ:
 
-* Data *homogeneous ആയിരിക്കണം* (എല്ലാ elements-ഉം ഒരേ type-ൽ ആയിരിക്കണം).
-* ഈ types, NumPy provide ചെയ്യുന്ന [data types](https://numpy.org/doc/stable/reference/arrays.dtypes.html) (`dtypes`) ഇൽ ഒന്നായിരിക്കണം.
+* Data *homogeneous ആയിരിക്കണം* (എല്ലാ elements-ഉം ഒരേ type-ലുള്ളതായിരിക്കണം).
+* ഈ types, NumPy നൽകുന്ന [data types](https://numpy.org/doc/stable/reference/arrays.dtypes.html) (`dtypes`) ഇൽ ഒന്നായിരിക്കണം.
 
 ഈ dtypes-ൽ ഏറ്റവും പ്രധാനപ്പെട്ടവ:
 
 * float64: 64 bit floating-point number
 * int64: 64 bit integer
-* bool:  8 bit True or False
+* bool: 8 bit True or False
 
-Complex numbers, unsigned integers എന്നിവയെ represent ചെയ്യാൻ വേണ്ടിയുള്ള dtypes-ഉം ഉണ്ട്.
+Complex numbers, unsigned integers, തുടങ്ങിയവ represent ചെയ്യാൻ ഉള്ള dtypes-ഉം ഉണ്ട്.
 
-Modern machines-ൽ, arrays-ന്റെ default dtype `float64` ആണ്.
+ആധുനിക machines-ൽ, arrays-ന്റെ default dtype `float64` ആണ്.
 
 ```{code-cell} python3
 a = np.zeros(3)
 type(a[0])
 ```
 
-Integers ഉപയോഗിക്കണമെങ്കിൽ താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ specify ചെയ്യാം:
+Integers ഉപയോഗിക്കണമെങ്കിൽ താഴെ കാണിച്ചിരിക്കുന്ന പോലെ specify ചെയ്യാം:
 
 ```{code-cell} python3
 a = np.zeros(3, dtype=int)
@@ -152,15 +150,15 @@ type(a[0])
 z = np.zeros(10)
 ```
 
-ഇവിടെ `z` ഒരു **flat** array ആണ് --- row vector-ഉം അല്ല column vector-ഉം അല്ല.
+ഇവിടെ `z` എന്നത് ഒരു **flat** array ആണ് --- row vector-ഉം അല്ല column vector-ഉം അല്ല.
 
 ```{code-cell} python3
 z.shape
 ```
 
-ഇവിടെ shape tuple-ന് ഒരു element മാത്രമേ ഉള്ളൂ, അതാണ് array-ന്റെ length (ഒരു element മാത്രമുള്ള tuples ഒരു comma-യിൽ അവസാനിക്കും).
+ഇവിടെ shape tuple-ന് ഒരു element മാത്രമേയുള്ളൂ, അതായത് array-യുടെ length (ഒരു element മാത്രമുള്ള tuples ഒരു comma-യിൽ അവസാനിക്കും).
 
-ഇതിന് ഒരു additional dimension കൊടുക്കാൻ, നമുക്ക് `shape` attribute മാറ്റാം:
+ഇതിന് ഒരു additional dimension നൽകാൻ, `shape` attribute നമുക്ക് മാറ്റാം:
 
 ```{code-cell} python3
 z.shape = (10, 1)   # Convert flat array to column vector (two-dimensional)
@@ -173,7 +171,7 @@ z.shape = (2, 2)    # Two-dimensional array
 z
 ```
 
-അവസാനത്തെ case-ൽ, 2x2 array ഉണ്ടാക്കാൻ, `z = np.zeros((2, 2))` എന്ന രീതിയിൽ `zeros()` function-ന് ഒരു tuple pass ചെയ്യാനും കഴിയും.
+അവസാനത്തെ case-ൽ, 2x2 array ഉണ്ടാക്കാൻ, `zeros()` function-ന് ഒരു tuple pass ചെയ്യാം, `z = np.zeros((2, 2))` എന്ന പോലെ.
 
 
 
@@ -183,11 +181,11 @@ z
 ```{index} single: NumPy; Arrays (Creating)
 ```
 
-നമ്മൾ കണ്ടതുപോലെ, `np.zeros` function zeros-ന്റെ ഒരു array create ചെയ്യുന്നു.
+നമ്മൾ കണ്ടത് പോലെ, `np.zeros` function zeros-ന്റെ ഒരു array create ചെയ്യുന്നു.
 
-`np.ones` എന്ത് create ചെയ്യുമെന്ന് നിങ്ങൾക്ക് ഊഹിക്കാൻ കഴിയും.
+`np.ones` എന്താണ് create ചെയ്യുന്നതെന്ന് നിങ്ങൾക്ക് ഊഹിക്കാൻ കഴിയും.
 
-ഇതുമായി ബന്ധപ്പെട്ടതാണ് `np.empty`, ഇത് memory-ൽ arrays create ചെയ്യുന്നു, അവ പിന്നീട് data ഉപയോഗിച്ച് populate ചെയ്യാം:
+ഇതുമായി ബന്ധപ്പെട്ടതാണ് `np.empty`, ഇത് memory-യിൽ arrays create ചെയ്യുന്നു, പിന്നീട് data-കൊണ്ട് നിറയ്ക്കാവുന്നത്:
 
 ```{code-cell} python3
 z = np.empty(3)
@@ -196,9 +194,9 @@ z
 
 ഇവിടെ കാണുന്ന numbers garbage values ആണ്.
 
-(Python 3 contiguous 64 bit memory pieces allocate ചെയ്യുന്നു, ആ memory slots-ലെ നിലവിലുള്ള content, `float64` values ആയി interpret ചെയ്യപ്പെടുന്നു)
+(Python 3 contiguous 64 bit memory pieces allocate ചെയ്യുന്നു, ആ memory slots-ലെ നിലവിലുള്ള contents `float64` values ആയി interpret ചെയ്യപ്പെടുന്നു)
 
-Evenly spaced numbers-ന്റെ ഒരു grid set ചെയ്യാൻ `np.linspace` ഉപയോഗിക്കുക:
+Evenly spaced numbers-ന്റെ ഒരു grid set up ചെയ്യാൻ `np.linspace` ഉപയോഗിക്കുക:
 
 ```{code-cell} python3
 z = np.linspace(2, 4, 5)  # From 2 to 4, with 5 elements
@@ -211,7 +209,7 @@ z = np.identity(2)
 z
 ```
 
-കൂടാതെ, `np.array` ഉപയോഗിച്ച് Python lists, tuples, etc. നിന്നും NumPy arrays create ചെയ്യാം:
+കൂടാതെ, `np.array` ഉപയോഗിച്ച് Python lists, tuples, തുടങ്ങിയവയിൽ നിന്നും NumPy arrays create ചെയ്യാം:
 
 ```{code-cell} python3
 z = np.array([10, 20])                 # ndarray from Python list
@@ -232,9 +230,9 @@ z = np.array([[1, 2], [3, 4]])         # 2D array from a list of lists
 z
 ```
 
-`np.asarray` കൂടി കാണുക, ഇത് സമാനമായ ഒരു function perform ചെയ്യുന്നു, പക്ഷേ ഇത് already ഒരു NumPy array-ൽ ഉള്ള data-യുടെ വേറൊരു copy ഉണ്ടാക്കുന്നില്ല.
+`np.asarray` എന്നതും കാണുക, ഇത് similar ആയ ഒരു function ആണ്, പക്ഷേ NumPy array-യിൽ already ഉള്ള data-യുടെ distinct copy ഉണ്ടാക്കുന്നില്ല.
 
-Numeric data അടങ്ങിയ ഒരു text file-ൽ നിന്നും array data read ചെയ്യാൻ `np.loadtxt` ഉപയോഗിക്കുക --- details-ന് [the documentation](https://numpy.org/doc/stable/reference/routines.io.html) കാണുക.
+Numeric data അടങ്ങിയ ഒരു text file-ൽ നിന്നും array data read ചെയ്യാൻ `np.loadtxt` ഉപയോഗിക്കുക --- വിശദാംശങ്ങൾക്ക് [the documentation](https://numpy.org/doc/stable/reference/routines.io.html) കാണുക.
 
 
 
@@ -243,7 +241,7 @@ Numeric data അടങ്ങിയ ഒരു text file-ൽ നിന്നും
 ```{index} single: NumPy; Arrays (Indexing)
 ```
 
-ഒരു flat array-ന്, indexing Python sequences-ന്റേത് പോലെതന്നെയാണ്:
+ഒരു flat array-ന്, indexing Python sequences-ന്റേത് പോലെ തന്നെയാണ്:
 
 ```{code-cell} python3
 z = np.linspace(1, 2, 5)
@@ -262,7 +260,7 @@ z[0:2]  # Two elements, starting at element 0
 z[-1]
 ```
 
-2D arrays-ന്, index syntax താഴെ കാണാം:
+2D arrays-ന് index syntax താഴെ കാണിച്ചിരിക്കുന്ന പോലെയാണ്:
 
 ```{code-cell} python3
 z = np.array([[1, 2], [3, 4]])
@@ -277,9 +275,9 @@ z[0, 0]
 z[0, 1]
 ```
 
-ഇങ്ങനെ തുടരാം.
+ഇങ്ങനെ തുടരും.
 
-Columns-ഉം rows-ഉം താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ extract ചെയ്യാം:
+Columns-ഉം, rows-ഉം താഴെ കാണിച്ചിരിക്കുന്ന പോലെ extract ചെയ്യാം:
 
 ```{code-cell} python3
 z[0, :]
@@ -318,7 +316,7 @@ z[d]
 
 ഇത് എന്തുകൊണ്ട് useful ആണെന്ന് താഴെ നമുക്ക് കാണാം.
 
-ഒരു side note: slice notation ഉപയോഗിച്ച് ഒരു array-യിലെ എല്ലാ elements-ഉം ഒരു number-ന് സമമായി set ചെയ്യാം:
+ഒരു ചെറിയ കാര്യം കൂടി: slice notation ഉപയോഗിച്ച് ഒരു array-യിലെ എല്ലാ elements-ഉം ഒരു number-ന് തുല്യമായി set ചെയ്യാം:
 
 ```{code-cell} python3
 z = np.empty(3)
@@ -335,7 +333,7 @@ z
 ```{index} single: NumPy; Arrays (Methods)
 ```
 
-Arrays-ന് useful methods ഉണ്ട്, അവയെല്ലാം carefully optimize ചെയ്തിരിക്കുന്നു:
+Arrays-ന് useful ആയ methods ഉണ്ട്, ഇവയെല്ലാം carefully optimize ചെയ്തിരിക്കുന്നു:
 
 ```{code-cell} python3
 a = np.array((4, 3, 2, 1))
@@ -386,7 +384,7 @@ a.T                   # Equivalent to a.transpose()
 
 അറിഞ്ഞിരിക്കേണ്ട മറ്റൊരു method ആണ് `searchsorted()`.
 
-`z` ഒരു nondecreasing array ആണെങ്കിൽ, `z.searchsorted(a)`, `z`-ലെ `>= a` ആയ ആദ്യത്തെ element-ന്റെ index return ചെയ്യുന്നു:
+`z` എന്നത് ഒരു nondecreasing array ആണെങ്കിൽ, `z.searchsorted(a)` എന്നത് `z`-യിലെ `>= a` ആയ ആദ്യത്തെ element-ന്റെ index return ചെയ്യുന്നു:
 
 ```{code-cell} python3
 z = np.linspace(2, 4, 5)
@@ -403,7 +401,7 @@ z.searchsorted(2.2)
 ```{index} single: NumPy; Arithmetic Operations
 ```
 
-`+`, `-`, `*`, `/`, `**` എന്നീ operators എല്ലാം arrays-ൽ *elementwise* ആയാണ് work ചെയ്യുന്നത്:
+`+`, `-`, `*`, `/`, `**` എന്നീ operators എല്ലാം arrays-ൽ *elementwise* ആയി act ചെയ്യുന്നു:
 
 ```{code-cell} python3
 a = np.array([1, 2, 3, 4])
@@ -415,19 +413,19 @@ a + b
 a * b
 ```
 
-താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ ഓരോ element-ഇനും ഒരു scalar നമുക്ക് ചേർക്കാം:
+താഴെ കാണിച്ചിരിക്കുന്ന പോലെ ഓരോ element-ഇനും ഒരു scalar നമുക്ക് add ചെയ്യാം:
 
 ```{code-cell} python3
 a + 10
 ```
 
-Scalar multiplication സമാനമാണ്:
+Scalar multiplication similar ആണ്:
 
 ```{code-cell} python3
 a * 10
 ```
 
-Two-dimensional arrays-ഉം അതേ general rules തന്നെ പിന്തുടരുന്നു:
+Two-dimensional arrays-ഉം അതേ general rules തന്നെ follow ചെയ്യുന്നു:
 
 ```{code-cell} python3
 A = np.ones((2, 2))
@@ -444,7 +442,7 @@ A * B
 ```
 
 (numpy_matrix_multiplication)=
-In particular, `A * B` matrix product അല്ല, ഇത് ഒരു element-wise product ആണ്.
+In particular, `A * B` എന്നത് matrix product *അല്ല*, ഇത് ഒരു element-wise product ആണ്.
 
 
 ## Matrix Multiplication
@@ -455,7 +453,7 @@ In particular, `A * B` matrix product അല്ല, ഇത് ഒരു element-
 ```{index} single: NumPy; Matrix Multiplication
 ```
 
-താഴെ കൊടുത്തിരിക്കുന്ന രീതിയിൽ matrix multiplication-ന് നമ്മൾ `@` symbol ഉപയോഗിക്കുന്നു:
+Matrix multiplication-ന് നമ്മൾ `@` symbol ഉപയോഗിക്കുന്നു, താഴെ കാണിച്ചിരിക്കുന്ന പോലെ:
 
 ```{code-cell} python3
 A = np.ones((2, 2))
@@ -463,13 +461,13 @@ B = np.ones((2, 2))
 A @ B
 ```
 
-Flat arrays-ഉമായി ഈ syntax work ചെയ്യുന്നു --- നിങ്ങൾക്ക് എന്താണ് വേണ്ടത് എന്നതിനെക്കുറിച്ച് NumPy ഒരു educated guess ഉണ്ടാക്കുന്നു:
+Syntax flat arrays-ലും work ചെയ്യുന്നു --- നിങ്ങൾക്ക് എന്താണ് വേണ്ടതെന്ന് NumPy ഒരു educated guess നടത്തുന്നു:
 
 ```{code-cell} python3
 A @ (0, 1)
 ```
 
-നമ്മൾ post-multiply ചെയ്യുന്നതിനാൽ, tuple ഒരു column vector ആയാണ് treat ചെയ്യപ്പെടുന്നത്.
+നമ്മൾ post-multiplying ചെയ്യുന്നതിനാൽ, tuple ഒരു column vector ആയി treat ചെയ്യപ്പെടുന്നു.
 
 
 
@@ -479,28 +477,28 @@ A @ (0, 1)
 ```{index} single: NumPy; Broadcasting
 ```
 
-(ഈ section, [Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/02.05-computation-on-arrays-broadcasting.html) provide ചെയ്യുന്ന broadcasting-നെക്കുറിച്ചുള്ള excellent ആയ ഒരു discussion extend ചെയ്യുന്നു.)
+(ഈ section, [Jake VanderPlas](https://jakevdp.github.io/PythonDataScienceHandbook/02.05-computation-on-arrays-broadcasting.html) നൽകിയ broadcasting-നെക്കുറിച്ചുള്ള ഒരു മികച്ച discussion extend ചെയ്യുന്നു.)
 
 ```{note}
-Broadcasting എന്നത്, NumPy-യുടെ വളരെ പ്രധാനപ്പെട്ട ഒരു aspect ആണ്. അതേസമയം, advanced broadcasting താരതമ്യേന complex ആണ്, താഴെയുള്ള ചില details ആദ്യതവണ വായിക്കുമ്പോൾ വേഗത്തിൽ കടന്നുപോകാം.
+Broadcasting എന്നത് NumPy-യുടെ വളരെ പ്രധാനപ്പെട്ട ഒരു aspect ആണ്. അതേസമയം, advanced broadcasting താരതമ്യേന complex ആണ്, താഴെ പറയുന്ന ചില details ആദ്യമായി വായിക്കുമ്പോൾ skim ചെയ്ത് പോകാം.
 ```
 
-Element-wise operations-ൽ, arrays-ന് ഒരേ shape ഇല്ലാതിരിക്കാം.
- 
-ഇത് സംഭവിക്കുമ്പോൾ, സാധ്യമാകുന്നിടത്തെല്ലാം NumPy automatically arrays-നെ ഒരേ shape-ലേക്ക് expand ചെയ്യും.
+Element-wise operations-ൽ, arrays-ന് ഒരേ shape ഉണ്ടാകണമെന്നില്ല.
 
-NumPy-യിലെ ഈ useful ആയ (പക്ഷേ ചിലപ്പോൾ confusing ആയ) feature-നെ **broadcasting** എന്ന് വിളിക്കുന്നു.
+ഇത് സംഭവിക്കുമ്പോൾ, കഴിയുന്നിടത്തെല്ലാം NumPy automatically arrays-നെ ഒരേ shape-ലേക്ക് expand ചെയ്യും.
 
-Broadcasting-ന്റെ value എന്നത്:
+NumPy-യിലെ ഈ useful ആയ (എന്നാൽ ചിലപ്പോൾ confusing ആയ) feature-നെ **broadcasting** എന്ന് വിളിക്കുന്നു.
 
-* `for` loops ഒഴിവാക്കാം, ഇത് numerical code fast ആയി run ചെയ്യാൻ സഹായിക്കുന്നു, കൂടാതെ
-* Arrays-ന്റെ ചില dimensions memory-ൽ actual ആയി create ചെയ്യാതെതന്നെ, ആ arrays-ൽ operations implement ചെയ്യാൻ broadcasting നമ്മളെ അനുവദിക്കുന്നു, arrays വലുതായിരിക്കുമ്പോൾ ഇത് important ആണ്.
+Broadcasting-ന്റെ value എന്തെന്നാൽ:
 
-For example, `a` ഒരു $3 \times 3$ array ആണെന്ന് കരുതുക (`a -> (3, 3)`), `b` ആകട്ടെ മൂന്ന് elements ഉള്ള ഒരു flat array ആണ് (`b -> (3,)`).
+* `for` loops ഒഴിവാക്കാം, ഇത് numerical code വേഗത്തിൽ run ചെയ്യാൻ സഹായിക്കുന്നു, ഒപ്പം
+* arrays-ന്റെ ഈ dimensions memory-യിൽ actually create ചെയ്യാതെ തന്നെ arrays-ൽ operations implement ചെയ്യാൻ broadcasting നമ്മെ അനുവദിക്കുന്നു, arrays വലുതാകുമ്പോൾ ഇത് പ്രധാനമാകാം.
 
-ഇവ ചേർത്ത് add ചെയ്യുമ്പോൾ, NumPy automatically `b -> (3,)`-നെ `b -> (3, 3)` ആയി expand ചെയ്യും.
+For example, `a` എന്നത് ഒരു $3 \times 3$ array ആണെന്ന് കരുതുക (`a -> (3, 3)`), അതേസമയം `b` എന്നത് മൂന്ന് elements ഉള്ള ഒരു flat array ആണ് (`b -> (3,)`).
 
-Element-wise addition, ഒരു $3 \times 3$ array-ൽ result ചെയ്യും:
+ഇവയെ ഒരുമിച്ച് add ചെയ്യുമ്പോൾ, NumPy automatically `b -> (3,)` എന്നതിനെ `b -> (3, 3)` ആയി expand ചെയ്യും.
+
+Element-wise addition-ന്റെ ഫലം ഒരു $3 \times 3$ array ആയിരിക്കും:
 
 ```{code-cell} python3
 
@@ -632,9 +630,9 @@ ax.text(10.5, 7.0, '=', size=12, ha='center', va='center');
 
 `b -> (3, 1)` ആണെങ്കിലോ?
 
-ഈ case-ൽ, NumPy automatically `b -> (3, 1)`-നെ `b -> (3, 3)` ആയി expand ചെയ്യും.
+ഈ case-ൽ, NumPy automatically `b -> (3, 1)` എന്നതിനെ `b -> (3, 3)` ആയി expand ചെയ്യും.
 
-Element-wise addition, അപ്പോൾ ഒരു $3 \times 3$ matrix-ൽ result ചെയ്യും:
+Element-wise addition-ന്റെ ഫലം അപ്പോൾ ഒരു $3 \times 3$ matrix ആയിരിക്കും:
 
 ```{code-cell} python3
 b.shape = (3, 1)
@@ -697,11 +695,11 @@ ax.text(10.5, 7.0, '=', size=12, ha='center', va='center');
 
 ```
 
-ചില cases-ൽ, രണ്ട് operands-ഉം expand ചെയ്യപ്പെടും.
+ചില cases-ൽ, ഇരു operands-ഉം expand ചെയ്യപ്പെടും.
 
-നമുക്ക് `a -> (3,)`-ഉം `b -> (3, 1)`-ഉം ഉള്ളപ്പോൾ, `a`, `a -> (3, 3)` ആയി expand ചെയ്യപ്പെടും, `b`-യാകട്ടെ `b -> (3, 3)` ആയി expand ചെയ്യപ്പെടും.
+`a -> (3,)`, `b -> (3, 1)` എന്നിവയുള്ളപ്പോൾ, `a` എന്നത് `a -> (3, 3)` ആയി expand ചെയ്യപ്പെടും, `b` എന്നത് `b -> (3, 3)` ആയി expand ചെയ്യപ്പെടും.
 
-ഈ case-ൽ, element-wise addition, ഒരു $3 \times 3$ matrix-ൽ result ചെയ്യും:
+ഈ case-ൽ, element-wise addition-ന്റെ ഫലം ഒരു $3 \times 3$ matrix ആയിരിക്കും:
 
 ```{code-cell} python3
 a = np.array([3, 6, 9])
@@ -765,9 +763,9 @@ ax.text(5, 7.0, '+', size=12, ha='center', va='center')
 ax.text(10.5, 7.0, '=', size=12, ha='center', va='center');
 ```
 
-Broadcasting വളരെ useful ആണെങ്കിലും, ചിലപ്പോൾ ഇത് confusing ആയി തോന്നിയേക്കാം.
+Broadcasting വളരെ useful ആണെങ്കിലും, ചിലപ്പോൾ ഇത് confusing ആയി തോന്നാം.
 
-For example, `a -> (3, 2)`-ഉം `b -> (3,)`-ഉം add ചെയ്യാൻ ശ്രമിക്കാം.
+For example, `a -> (3, 2)`, `b -> (3,)` എന്നിവ add ചെയ്യാൻ ശ്രമിക്കാം.
 
 ```{code-cell} python3
 ---
@@ -782,7 +780,7 @@ b = np.array([3, 6, 9])
 a + b
 ```
 
-Operands-നെ ഒരുമിച്ച് broadcast ചെയ്യാൻ കഴിഞ്ഞില്ല എന്ന് `ValueError` നമ്മോട് പറയുന്നു.
+`ValueError`, operands-നെ ഒരുമിച്ച് broadcast ചെയ്യാൻ കഴിഞ്ഞില്ല എന്ന് നമ്മോട് പറയുന്നു.
 
 
 ഈ broadcasting എന്തുകൊണ്ട് execute ചെയ്യാൻ കഴിയില്ല എന്ന് കാണിക്കുന്ന ഒരു visual representation താഴെ കാണാം:
@@ -824,48 +822,48 @@ ax.text(10, 7.0, '=', size=12, ha='center', va='center')
 ax.text(11, 7.0, '?', size=16, ha='center', va='center');
 ```
 
-Arrays-നെ ഒരേ size-ലേക്ക് expand ചെയ്യാൻ NumPy-ക്ക് കഴിയില്ല എന്ന് നമുക്ക് കാണാം.
+NumPy-ക്ക് arrays-നെ ഒരേ size-ലേക്ക് expand ചെയ്യാൻ കഴിയില്ല എന്ന് നമുക്ക് കാണാം.
 
-കാരണം, `b`-നെ `b -> (3,)` എന്നതിൽ നിന്നും `b -> (3, 3)` ആയി expand ചെയ്യുമ്പോൾ, `b`-നെ `a -> (3, 2)`-ഉമായി match ചെയ്യാൻ NumPy-ക്ക് കഴിയുന്നില്ല.
+എന്തുകൊണ്ടെന്നാൽ, `b` എന്നത് `b -> (3,)`-ൽ നിന്നും `b -> (3, 3)`-ലേക്ക് expand ചെയ്യപ്പെടുമ്പോൾ, `b`-നെ `a -> (3, 2)`-മായി match ചെയ്യാൻ NumPy-ക്ക് കഴിയില്ല.
 
-നമ്മൾ higher dimensions-ലേക്ക് പോകുമ്പോൾ കാര്യങ്ങൾ കൂടുതൽ tricky ആയി മാറും.
+Higher dimensions-ലേക്ക് നീങ്ങുമ്പോൾ കാര്യങ്ങൾ കൂടുതൽ ബുദ്ധിമുട്ടാകുന്നു.
 
-നമ്മെ സഹായിക്കാൻ, താഴെ കൊടുത്തിരിക്കുന്ന rules-ന്റെ list നമുക്ക് ഉപയോഗിക്കാം:
+നമ്മെ സഹായിക്കാൻ, താഴെ പറയുന്ന rules-ന്റെ list ഉപയോഗിക്കാം:
 
-* *Step 1:* രണ്ട് arrays-ന്റെയും dimensions match ചെയ്യാത്തപ്പോൾ, കുറച്ച് dimensions ഉള്ളതിനെ, നിലവിലുള്ള dimensions-ന്റെ ഇടതുവശത്ത് dimension(s) ചേർത്ത് NumPy expand ചെയ്യും.
-    - For example, `a -> (3, 3)`-ഉം `b -> (3,)`-ഉം ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് `b -> (1, 3)` ആക്കും;
-    - `a -> (2, 2, 2)`-ഉം `b -> (2, 2)`-ഉം ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് `b -> (1, 2, 2)` ആക്കും;
-    - `a -> (3, 2, 2)`-ഉം `b -> (2,)`-ഉം ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത് `b -> (1, 1, 2)` ആക്കും (ഇത് *Step 1* രണ്ട് തവണ കടന്നുപോകുന്നതായും കാണാം).
+* *Step 1:* രണ്ട് arrays-ന്റെ dimensions match ചെയ്യാത്തപ്പോൾ, കുറച്ച് dimensions ഉള്ളതിനെ, existing dimensions-ന്റെ ഇടതുവശത്ത് dimension(s) കൂട്ടിച്ചേർത്ത് NumPy expand ചെയ്യും.
+    - For example, `a -> (3, 3)`, `b -> (3,)` ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് ഒരു dimension കൂട്ടിച്ചേർക്കും, അതിനാൽ `b -> (1, 3)` ആകും;
+    - `a -> (2, 2, 2)`, `b -> (2, 2)` ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് ഒരു dimension കൂട്ടിച്ചേർക്കും, അതിനാൽ `b -> (1, 2, 2)` ആകും;
+    - `a -> (3, 2, 2)`, `b -> (2,)` ആണെങ്കിൽ, broadcasting ഇടതുവശത്ത് രണ്ട് dimensions കൂട്ടിച്ചേർക്കും, അതിനാൽ `b -> (1, 1, 2)` ആകും (ഈ process, *Step 1* രണ്ട് പ്രാവശ്യം കടന്നുപോകുന്നത് ആയും കാണാം).
 
 
-* *Step 2:* രണ്ട് arrays-ന്റെയും dimension ഒരേപോലെയാണെങ്കിലും shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയിരിക്കുന്ന dimensions expand ചെയ്യാൻ NumPy ശ്രമിക്കും.
-    - For example, `a -> (1, 3)`-ഉം `b -> (3, 1)`-ഉം ആണെങ്കിൽ, broadcasting `a`-യിലും `b`-യിലും shape 1 ഉള്ള dimensions expand ചെയ്ത് `a -> (3, 3)`-ഉം `b -> (3, 3)`-ഉം ആക്കും;
-    - `a -> (2, 2, 2)`-ഉം `b -> (1, 2, 2)`-ഉം ആണെങ്കിൽ, broadcasting `b`-യുടെ ആദ്യത്തെ dimension expand ചെയ്ത് `b -> (2, 2, 2)` ആക്കും;
-    - `a -> (3, 2, 2)`-ഉം `b -> (1, 1, 2)`-ഉം ആണെങ്കിൽ, broadcasting shape 1 ഉള്ള എല്ലാ dimensions-ഇലും `b`-യെ expand ചെയ്ത് `b -> (3, 2, 2)` ആക്കും.
+* *Step 2:* രണ്ട് arrays-ന് ഒരേ dimension ഉണ്ടെങ്കിലും, shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയ dimensions expand ചെയ്യാൻ NumPy ശ്രമിക്കും.
+    - For example, `a -> (1, 3)`, `b -> (3, 1)` ആണെങ്കിൽ, broadcasting `a`-യിലും `b`-യിലും shape 1 ഉള്ള dimensions expand ചെയ്യും, അതിനാൽ `a -> (3, 3)`, `b -> (3, 3)` ആകും;
+    - `a -> (2, 2, 2)`, `b -> (1, 2, 2)` ആണെങ്കിൽ, broadcasting `b`-യുടെ ആദ്യത്തെ dimension expand ചെയ്യും, അതിനാൽ `b -> (2, 2, 2)` ആകും;
+    - `a -> (3, 2, 2)`, `b -> (1, 1, 2)` ആണെങ്കിൽ, broadcasting `b`-യെ shape 1 ഉള്ള എല്ലാ dimensions-ലും expand ചെയ്യും, അതിനാൽ `b -> (3, 2, 2)` ആകും.
 
-* *Step 3:* Step 1-ഉം 2-ഉം കഴിഞ്ഞ്, രണ്ട് arrays-ഉം ഇപ്പോഴും match ചെയ്യുന്നില്ലെങ്കിൽ, ഒരു `ValueError` raise ചെയ്യപ്പെടും. For example, `a -> (2, 2, 3)`-ഉം `b -> (2, 2)`-ഉം ആണെന്ന് കരുതുക
-    - *Step 1* പ്രകാരം, `b`, `b -> (1, 2, 2)` ആയി expand ചെയ്യപ്പെടും;
-    - *Step 2* പ്രകാരം, `b`, `b -> (2, 2, 2)` ആയി expand ചെയ്യപ്പെടും;
-    - ആദ്യത്തെ രണ്ട് steps-ന് ശേഷവും ഇവ പരസ്പരം match ചെയ്യുന്നില്ല എന്ന് നമുക്ക് കാണാം. അതിനാൽ, ഒരു `ValueError` raise ചെയ്യപ്പെടും.
+* *Step 3:* Step 1, 2 എന്നിവയ്ക്ക് ശേഷം, രണ്ട് arrays-ഉം ഇപ്പോഴും match ചെയ്യുന്നില്ലെങ്കിൽ, ഒരു `ValueError` raise ചെയ്യപ്പെടും. For example, `a -> (2, 2, 3)`, `b -> (2, 2)` ആണെന്ന് കരുതുക:
+    - *Step 1* പ്രകാരം, `b` എന്നത് `b -> (1, 2, 2)` ആയി expand ചെയ്യപ്പെടും;
+    - *Step 2* പ്രകാരം, `b` എന്നത് `b -> (2, 2, 2)` ആയി expand ചെയ്യപ്പെടും;
+    - ആദ്യത്തെ രണ്ട് steps-ന് ശേഷവും അവ പരസ്പരം match ചെയ്യുന്നില്ല എന്ന് നമുക്ക് കാണാം. അതിനാൽ, ഒരു `ValueError` raise ചെയ്യപ്പെടും.
 
 
 
 ## Mutability and Copying Arrays
 
-NumPy arrays, Python lists പോലെതന്നെ mutable data types ആണ്.
+NumPy arrays, Python lists-നെ പോലെ mutable data types ആണ്.
 
-അതായത്, initialization-ന് ശേഷം memory-ൽ അവയുടെ contents alter ചെയ്യാൻ (mutate ചെയ്യാൻ) കഴിയും.
+അതായത്, initialization-ന് ശേഷം അവയുടെ contents memory-യിൽ alter ചെയ്യാൻ (mutate ചെയ്യാൻ) കഴിയും.
 
-ഇത് convenient ആണ്, പക്ഷേ Python-ന്റെ naming and reference model-ഉമായി combine ചെയ്യുമ്പോൾ, ഇത് NumPy beginners-ന് mistakes-ലേക്ക് നയിച്ചേക്കാം.
+ഇത് convenient ആണ്, പക്ഷേ Python-ന്റെ naming, reference model എന്നിവയുമായി combine ചെയ്യുമ്പോൾ, NumPy beginners-ന് mistakes-ലേക്ക് നയിക്കാം.
 
-ഈ section-ൽ നമുക്ക് ചില key issues നോക്കാം.
+ഈ section-ൽ കുറച്ച് key issues നമുക്ക് നോക്കാം.
 
 
 ### Mutability
 
-Mutability-യുടെ examples നമ്മൾ മുകളിൽ already കണ്ടിട്ടുണ്ട്.
+Mutability-യുടെ examples നമ്മൾ മുകളിൽ already കണ്ടു.
 
-ഒരു NumPy array-യുടെ mutation-ന്റെ മറ്റൊരു example താഴെ കാണാം:
+NumPy array-യുടെ mutation-ന്റെ മറ്റൊരു example താഴെ കാണാം:
 
 ```{code-cell} python3
 a = np.array([42, 44])
@@ -877,7 +875,7 @@ a[-1] = 0  # Change last element to 0
 a
 ```
 
-Mutability, താഴെ കൊടുത്തിരിക്കുന്ന behavior-ലേക്ക് നയിക്കുന്നു (ഇത് MATLAB programmers-ന് shocking ആയി തോന്നിയേക്കാം...)
+Mutability താഴെ പറയുന്ന behavior-ലേക്ക് നയിക്കുന്നു (ഇത് MATLAB programmers-നെ ഞെട്ടിക്കാം...)
 
 ```{code-cell} python3
 rng = np.random.default_rng()
@@ -891,23 +889,23 @@ b[0] = 0.0
 a
 ```
 
-`b`-നെ മാറ്റുന്നതിലൂടെ നമ്മൾ `a`-യെ മാറ്റി എന്നതാണ് ഇവിടെ സംഭവിച്ചത്.
+സംഭവിച്ചത് എന്തെന്നാൽ, `b`-നെ മാറ്റിയപ്പോൾ നമ്മൾ `a`-യെയും മാറ്റിയിരിക്കുന്നു.
 
-`b` എന്ന name, `a`-യുമായി bind ചെയ്യപ്പെട്ടിരിക്കുന്നു, അത് ആ array-യിലേക്കുള്ള മറ്റൊരു reference മാത്രമായി മാറുന്നു (Python assignment model കൂടുതൽ വിശദമായി {doc}`later in the course <python_advanced_features>`-ൽ describe ചെയ്തിട്ടുണ്ട്).
+`b` എന്ന name, `a`-യുമായി bind ചെയ്യപ്പെട്ടിരിക്കുന്നു, ഇത് ആ array-യുടെ മറ്റൊരു reference മാത്രമായി മാറുന്നു (Python assignment model {doc}`later in the course <python_advanced_features>` കൂടുതൽ വിശദമായി describe ചെയ്യുന്നു).
 
-അതിനാൽ, ആ array-യിൽ changes വരുത്താൻ ഇതിന് തുല്യമായ rights ഉണ്ട്.
+അതിനാൽ, ആ array-യിൽ changes നടത്താൻ അതിന് equal rights ഉണ്ട്.
 
-ഇത് വാസ്തവത്തിൽ ഏറ്റവും sensible ആയ default behavior ആണ്!
+വാസ്തവത്തിൽ ഇതാണ് ഏറ്റവും sensible ആയ default behavior!
 
 ഇതിനർത്ഥം, copies ഉണ്ടാക്കുന്നതിന് പകരം, data-യിലേക്കുള്ള pointers മാത്രമാണ് നമ്മൾ pass ചെയ്യുന്നത് എന്നാണ്.
 
-Copies ഉണ്ടാക്കുന്നത്, speed-ന്റെയും memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.
+Copies ഉണ്ടാക്കുന്നത് speed-ന്റെയും memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.
 
 ### Making Copies
 
-ആവശ്യമുള്ളപ്പോൾ `b`-യെ `a`-യുടെ ഒരു independent copy ആക്കുന്നത് തീർച്ചയായും സാധ്യമാണ്.
+ആവശ്യമുള്ളപ്പോൾ `b`-നെ `a`-യുടെ ഒരു independent copy ആക്കാൻ കഴിയും, തീർച്ചയായും.
 
-`np.copy` ഉപയോഗിച്ച് ഇത് ചെയ്യാം:
+ഇത് `np.copy` ഉപയോഗിച്ച് ചെയ്യാം:
 
 ```{code-cell} python3
 a = rng.standard_normal(3)
@@ -919,7 +917,7 @@ b = np.copy(a)
 b
 ```
 
-ഇനി `b` ഒരു independent copy ആണ് (ഇതിനെ *deep copy* എന്ന് വിളിക്കുന്നു):
+ഇപ്പോൾ `b` എന്നത് ഒരു independent copy ആണ് (ഇതിനെ *deep copy* എന്ന് വിളിക്കുന്നു):
 
 ```{code-cell} python3
 b[:] = 1
@@ -930,7 +928,7 @@ b
 a
 ```
 
-`b`-യിലെ change, `a`-യെ affect ചെയ്തിട്ടില്ല എന്ന് ശ്രദ്ധിക്കുക.
+`b`-യിലെ change, `a`-യെ ബാധിച്ചിട്ടില്ല എന്ന് ശ്രദ്ധിക്കുക.
 
 
 
@@ -945,14 +943,14 @@ NumPy-യുടെ മറ്റ് ചില useful features നമുക്ക�
 ```{index} single: NumPy; Vectorized Functions
 ```
 
-`log`, `exp`, `sin`, etc. പോലുള്ള standard functions-ന്റെ versions, arrays-ൽ *element-wise* ആയി work ചെയ്യുന്ന രീതിയിൽ NumPy provide ചെയ്യുന്നു:
+Arrays-ൽ *element-wise* ആയി act ചെയ്യുന്ന standard functions ആയ `log`, `exp`, `sin`, തുടങ്ങിയവയുടെ versions NumPy നൽകുന്നു:
 
 ```{code-cell} python3
 z = np.array([1, 2, 3])
 np.sin(z)
 ```
 
-ഇത് താഴെ കൊടുത്തിരിക്കുന്നത് പോലുള്ള explicit ആയ element-by-element loops-ന്റെ ആവശ്യം ഒഴിവാക്കുന്നു:
+താഴെ കാണിച്ചിരിക്കുന്നത് പോലുള്ള explicit element-by-element loops-ന്റെ ആവശ്യം ഇത് ഒഴിവാക്കുന്നു:
 
 ```{code-cell} python3
 n = len(z)
@@ -961,11 +959,11 @@ for i in range(n):
     y[i] = np.sin(z[i])
 ```
 
-Arrays-ൽ ഇവ element-wise ആയി work ചെയ്യുന്നതിനാൽ, ഈ functions-നെ ചിലപ്പോൾ **vectorized functions** എന്ന് വിളിക്കുന്നു.
+Arrays-ൽ element-wise ആയി act ചെയ്യുന്നതിനാൽ, ഈ functions-നെ ചിലപ്പോൾ **vectorized functions** എന്ന് വിളിക്കുന്നു.
 
-NumPy-speak-ൽ, ഇവയെ **ufuncs**, അഥവാ **universal functions** എന്നും വിളിക്കുന്നു.
+NumPy-speak-ൽ, ഇവയെ **ufuncs**, അല്ലെങ്കിൽ **universal functions** എന്നും വിളിക്കുന്നു.
 
-മുകളിൽ നമ്മൾ കണ്ടതുപോലെ, സാധാരണ arithmetic operations-ഉം (`+`, `*`, etc.) element-wise ആയി work ചെയ്യുന്നു, ഇവയെ ufuncs-ഉമായി combine ചെയ്യുമ്പോൾ fast element-wise functions-ന്റെ വളരെ വലിയൊരു set ലഭിക്കുന്നു.
+മുകളിൽ നമ്മൾ കണ്ടത് പോലെ, സാധാരണ arithmetic operations (`+`, `*`, തുടങ്ങിയവ) element-wise ആയും work ചെയ്യുന്നു, ഇവയെ ufuncs-ഉമായി combine ചെയ്യുമ്പോൾ, വളരെ വലിയൊരു set of fast element-wise functions ലഭിക്കുന്നു.
 
 ```{code-cell} python3
 z
@@ -975,7 +973,7 @@ z
 (1 / np.sqrt(2 * np.pi)) * np.exp(- 0.5 * z**2)
 ```
 
-എല്ലാ user-defined functions-ഉം element-wise ആയി work ചെയ്യില്ല.
+എല്ലാ user-defined functions-ഉം element-wise ആയി act ചെയ്യണമെന്നില്ല.
 
 For example, താഴെ define ചെയ്തിരിക്കുന്ന `f` എന്ന function-ന് ഒരു NumPy array pass ചെയ്യുന്നത് ഒരു `ValueError`-ന് കാരണമാകുന്നു:
 
@@ -984,7 +982,7 @@ def f(x):
     return 1 if x > 0 else 0
 ```
 
-NumPy function `np.where`, ഒരു vectorized alternative provide ചെയ്യുന്നു:
+NumPy function `np.where`, ഒരു vectorized alternative നൽകുന്നു:
 
 ```{code-cell} python3
 x = rng.standard_normal(4)
@@ -995,16 +993,16 @@ x
 np.where(x > 0, 1, 0)  # Insert 1 if x > 0 true, otherwise 0
 ```
 
-തന്നിരിക്കുന്ന ഒരു function vectorize ചെയ്യാൻ നിങ്ങൾക്ക് `np.vectorize`-ഉം ഉപയോഗിക്കാം:
+തന്നിരിക്കുന്ന ഒരു function vectorize ചെയ്യാൻ `np.vectorize`-ഉം ഉപയോഗിക്കാം:
 
 ```{code-cell} python3
 f = np.vectorize(f)
 f(x)                # Passing the same vector x as in the previous example
 ```
 
-എന്നിരുന്നാലും, ഈ approach-ന്, കൂടുതൽ carefully crafted ആയ ഒരു vectorized function-ന് ഉള്ളത്ര speed എപ്പോഴും ലഭിക്കണമെന്നില്ല.
+എന്നിരുന്നാലും, ഈ approach, കൂടുതൽ carefully crafted ആയ ഒരു vectorized function-ന്റെ speed എപ്പോഴും obtain ചെയ്യില്ല.
 
-(പിന്നീട് നമുക്ക് കാണാം, JAX-ന്, `np.vectorize`-ന്റെ ഒരു powerful version ഉണ്ട്, അത് highly efficient ആയ code generate ചെയ്യാൻ കഴിയുന്നതും, മിക്ക സമയത്തും അങ്ങനെ ചെയ്യുന്നതും ആണ്.)
+(പിന്നീട് നമ്മൾ കാണും, JAX-ന് `np.vectorize`-ന്റെ ഒരു powerful version ഉണ്ട്, ഇത് പലപ്പോഴും highly efficient code generate ചെയ്യും.)
 
 
 ### Comparisons
@@ -1029,7 +1027,7 @@ z == y
 z != y
 ```
 
-`>`, `<`, `>=`, `<=` എന്നിവയ്ക്കും situation സമാനമാണ്.
+`>`, `<`, `>=`, `<=` എന്നിവയ്ക്കും situation similar ആണ്.
 
 Scalars-നെതിരെയും നമുക്ക് comparisons ചെയ്യാം:
 
@@ -1053,7 +1051,7 @@ b
 z[b]
 ```
 
-തീർച്ചയായും നമുക്ക് ഇത് ഒറ്റ step-ൽ perform ചെയ്യാം --- മിക്ക സമയത്തും നമ്മൾ ഇങ്ങനെയാണ് ചെയ്യുന്നത്:
+തീർച്ചയായും നമുക്ക് ഇത് ഒറ്റ step-ൽ ചെയ്യാം---അതാണ് പലപ്പോഴും ചെയ്യുന്നത്:
 
 ```{code-cell} python3
 z[z > 3]
@@ -1061,9 +1059,9 @@ z[z > 3]
 
 ### Sub-packages
 
-Scientific programming-മായി ബന്ധപ്പെട്ട additional functionality, NumPy അതിന്റെ sub-packages വഴി provide ചെയ്യുന്നു.
+Scientific programming-മായി ബന്ധപ്പെട്ട ചില additional functionality, NumPy അതിന്റെ sub-packages വഴി നൽകുന്നു.
 
-NumPy-യുടെ [random `Generator`](https://numpy.org/doc/stable/reference/random/generator.html#random-generator) ഉപയോഗിച്ച് random variables എങ്ങനെ generate ചെയ്യാം എന്ന് നമ്മൾ already കണ്ടിട്ടുണ്ട്.
+NumPy-യുടെ [random `Generator`](https://numpy.org/doc/stable/reference/random/generator.html#random-generator) ഉപയോഗിച്ച് random variables generate ചെയ്യുന്നത് നമ്മൾ already കണ്ടു.
 
 ```{code-cell} python3
 z = rng.standard_normal(10000)  # Generate standard normals
@@ -1089,24 +1087,24 @@ np.linalg.inv(A)           # Compute the inverse
 ```{index} single: Python; SciPy
 ```
 
-NumPy-യുടെ മുകളിൽ build ചെയ്തിരിക്കുന്ന modules-ന്റെ ഒരു collection ആയ [SciPy](https://scipy.org/)-യിലും ഈ functionality-യുടെ ഭൂരിഭാഗവും ലഭ്യമാണ്.
+ഈ functionality-യുടെ ഭൂരിഭാഗവും [SciPy](https://scipy.org/)-യിലും ലഭ്യമാണ്, NumPy-യുടെ മുകളിൽ build ചെയ്തിരിക്കുന്ന modules-ന്റെ ഒരു collection ആണിത്.
 
-SciPy versions നമുക്ക് {doc}`soon <scipy>` കൂടുതൽ വിശദമായി cover ചെയ്യാം.
+SciPy versions നമ്മൾ {doc}`soon <scipy>` കൂടുതൽ വിശദമായി cover ചെയ്യും.
 
 NumPy-യിൽ ലഭ്യമായതിന്റെ ഒരു comprehensive list-ന് [this documentation](https://numpy.org/doc/stable/reference/routines.html) കാണുക.
 
 
 ### Implicit Multithreading 
 
-[Previously](need_for_speed) multithreading വഴിയുള്ള parallelization എന്ന concept നമ്മൾ discuss ചെയ്തിരുന്നു.
+[Previously](need_for_speed) multithreading വഴിയുള്ള parallelization-ന്റെ concept നമ്മൾ discuss ചെയ്തു.
 
-NumPy, അതിന്റെ compiled code-ന്റെ ഭൂരിഭാഗത്തിലും multithreading implement ചെയ്യാൻ ശ്രമിക്കുന്നു.
+NumPy അതിന്റെ compiled code-ന്റെ ഭൂരിഭാഗത്തിലും multithreading implement ചെയ്യാൻ ശ്രമിക്കുന്നു.
 
 ഇത് action-ൽ കാണാൻ ഒരു example നമുക്ക് നോക്കാം.
 
-താഴെ കൊടുത്തിരിക്കുന്ന code, randomly generate ചെയ്ത ഒരു വലിയ എണ്ണം matrices-ന്റെ eigenvalues compute ചെയ്യുന്നു.
+അടുത്ത code piece, randomly generate ചെയ്ത ധാരാളം matrices-ന്റെ eigenvalues compute ചെയ്യുന്നു.
 
-ഇത് run ചെയ്യാൻ കുറച്ച് seconds എടുക്കുന്നു.
+ഇത് run ചെയ്യാൻ കുറച്ച് seconds എടുക്കും.
 
 ```{code-cell} python3
 n = 20
@@ -1116,7 +1114,7 @@ for i in range(n):
     λ = np.linalg.eigvals(X)
 ```
 
-ഇനി, ഈ code run ചെയ്യുമ്പോൾ, നമ്മുടെ machine-ലെ htop system monitor-ന്റെ output നമുക്ക് നോക്കാം:
+ഇനി, ഈ code run ചെയ്യുമ്പോൾ നമ്മുടെ machine-ലെ htop system monitor-ന്റെ output നമുക്ക് നോക്കാം:
 
 ```{figure} /_static/lecture_specific/parallelization/htop_parallel_npmat.png
 :scale: 80
@@ -1124,7 +1122,7 @@ for i in range(n):
 
 8 CPUs-ൽ 4 എണ്ണം full speed-ൽ run ചെയ്യുന്നത് നമുക്ക് കാണാം.
 
-ഇത് സംഭവിക്കുന്നത്, NumPy-യുടെ `eigvals` routine, tasks-നെ neat ആയി split ചെയ്ത് വ്യത്യസ്ത threads-ലേക്ക് distribute ചെയ്യുന്നത് കൊണ്ടാണ്.
+NumPy-യുടെ `eigvals` routine tasks-നെ neat ആയി split up ചെയ്ത് വ്യത്യസ്ത threads-ലേക്ക് distribute ചെയ്യുന്നത് കൊണ്ടാണ് ഇത്.
 
 
 

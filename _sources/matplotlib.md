@@ -84,9 +84,9 @@ plt.plot(x, y, 'b-', linewidth=2)
 plt.show()
 ```
 
-ഇത് simple-ഉം convenient-ഉം ആണ്. പക്ഷേ കുറച്ചൊക്കെ പരിമിതികളും, Python-ന്റെ സാധാരണ ശൈലിയോട് പൊരുത്തപ്പെടാത്ത സ്വഭാവവും ഇതിനുണ്ട്.
+ഇത് simple-ഉം, convenient-ഉം ആണ്. പക്ഷേ കുറച്ചൊക്കെ പരിമിതികളും, Python-ന്റെ സാധാരണ ശൈലിയോട് പൊരുത്തപ്പെടാത്ത സ്വഭാവവും ഇതിനുണ്ട്.
 
-For example, ഇവിടുത്തെ function call-കളിൽ, programmer-നെ അറിയിക്കാതെ തന്നെ നിരവധി object-ുകൾ create ചെയ്യപ്പെടുകയും, അവ pass ചെയ്യപ്പെടുകയും ചെയ്യുന്നു.
+For example, ഇവിടുത്തെ function calls-ൽ, programmer-നെ അറിയിക്കാതെ തന്നെ നിരവധി objects create ചെയ്യപ്പെടുകയും, അവ pass ചെയ്യപ്പെടുകയും ചെയ്യുന്നു.
 
 കാര്യങ്ങൾ കൂടുതൽ വ്യക്തമായി പ്രകടിപ്പിക്കുന്ന ഒരു programming style ആണ് Python programmers പൊതുവെ prefer ചെയ്യുന്നത്. (ഒരു code block-ൽ, `import this` എന്ന് type ചെയ്ത്, run ചെയ്യുക. തുടർന്ന് ലഭിക്കുന്ന output-ന്റെ രണ്ടാമത്തെ line നോക്കുക.)
 

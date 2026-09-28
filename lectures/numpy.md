@@ -194,7 +194,7 @@ z
 
 ഇവിടെ കാണുന്ന numbers, garbage values ആണ്.
 
-(തുടർച്ചയായി കിടക്കുന്ന മൂന്ന് 64-bit pieces of memory Python allocate ചെയ്യുന്നു. ആ memory slots-ലെ നിലവിലുള്ള contents-നെ float64 values ആയി interpret ചെയ്യുന്നു.)
+(തുടർച്ചയായി കിടക്കുന്ന മൂന്ന് 64-bit pieces of memory Python allocate ചെയ്യുന്നു. ആ memory slots-ലെ നിലവിലുള്ള contents-നെ `float64` values ആയി interpret ചെയ്യുന്നു.)
 
 Evenly spaced numbers-ന്റെ ഒരു grid set up ചെയ്യാൻ `np.linspace` ഉപയോഗിക്കുക:
 
@@ -492,7 +492,7 @@ NumPy-യിലെ ഈ useful ആയ (എന്നാൽ ചിലപ്പോ�
 Broadcasting-ന്റെ ഗുണം എന്തെന്നാൽ:
 
 * `for` loops ഒഴിവാക്കാം. ഇത് numerical code വേഗത്തിൽ run ചെയ്യാൻ സഹായിക്കുന്നു, ഒപ്പം
-* arrays-ന്റെ ഈ dimensions, memory-യിൽ actually create ചെയ്യാതെ തന്നെ arrays-ൽ operations implement ചെയ്യാൻ broadcasting നമ്മെ അനുവദിക്കുന്നു. arrays വലുതാകുമ്പോൾ ഇത് പ്രധാനമാണ്.
+* arrays-ന്റെ ഈ dimensions, memory-യിൽ actually create ചെയ്യാതെ തന്നെ arrays-ൽ operations implement ചെയ്യാൻ broadcasting നമ്മെ അനുവദിക്കുന്നു. Arrays വലുതാകുമ്പോൾ ഇത് പ്രധാനമാണ്.
 
 For example, `a` എന്നത് ഒരു $3 \times 3$ array ആണെന്ന് കരുതുക (`a -> (3, 3)`). അതേസമയം `b` എന്നത് മൂന്ന് elements ഉള്ള ഒരു flat array ആണ് (`b -> (3,)`).
 
@@ -632,7 +632,7 @@ ax.text(10.5, 7.0, '=', size=12, ha='center', va='center');
 
 ഈ case-ൽ, NumPy automatically `b -> (3, 1)` എന്നതിനെ `b -> (3, 3)` ആയി expand ചെയ്യും.
 
-Element-wise addition ചെയ്യുമ്പോൾ result ആയി ഒരു $3 \times 3$ array ലഭിക്കും:
+Element-wise addition ചെയ്യുമ്പോൾ result ആയി ഒരു $3 \times 3$ matrix ലഭിക്കും:
 
 ```{code-cell} python3
 b.shape = (3, 1)
@@ -830,7 +830,7 @@ Higher dimensions-ലേക്ക് കടക്കുമ്പോൾ കാര
 
 നമ്മെ സഹായിക്കാൻ, താഴെ പറയുന്ന list of rules ഉപയോഗിക്കാം:
 
-* *Step 1:* രണ്ട് arrays-ന്റെ dimensions match ചെയ്യാത്തപ്പോൾ, കുറവ് dimensions ഉള്ള array-യുടെ നിലവിലുള്ള dimensions-ന്റെ ഇടതുവശത്ത് പുതിയ dimension-കൾ ചേർത്ത് NumPy അതിനെ expand ചെയ്യും.
+* *Step 1:* രണ്ട് arrays-ന്റെ dimensions match ചെയ്യാത്തപ്പോൾ, കുറവ് dimensions ഉള്ള array-യുടെ നിലവിലുള്ള dimensions-ന്റെ ഇടതുവശത്ത് പുതിയ dimensions ചേർത്ത് NumPy അതിനെ expand ചെയ്യും.
     - For example, `a -> (3, 3)`, `b -> (3,)` ആണെങ്കിൽ, broadcasting, `b`-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് അതിനെ `b -> (1, 3)` ആകും;
     - `a -> (2, 2, 2)`, `b -> (2, 2)` ആണെങ്കിൽ, broadcasting, `b`-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത്, അതിനെ `b -> (1, 2, 2)` ആകും;
     - `a -> (3, 2, 2)`, `b -> (2,)` ആണെങ്കിൽ, broadcasting, `b`-യുടെ ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത്, അതിനെ `b -> (1, 1, 2)` ആകും (ഈ process, *Step 1* രണ്ട് പ്രാവശ്യം നടക്കുന്നതായും കാണാം).

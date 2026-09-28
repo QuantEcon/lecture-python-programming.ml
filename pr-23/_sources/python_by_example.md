@@ -92,7 +92,7 @@ plt.show()
 
 ഈ program-ന്റെ ആദ്യത്തെ രണ്ട് lines, external code libraries-ൽ നിന്നും functionality import ചെയ്യുന്നു.
 
-ആദ്യത്തെ line {doc}`NumPy <numpy>` import ചെയ്യുന്നു — NumPy, താഴെ കൊടുത്തിരിക്കുന്ന പോലത്തെ tasks-കൾ ചെയ്യാനുള്ള ഒരു Python package ആണ്:
+ആദ്യത്തെ line {doc}`NumPy <numpy>` import ചെയ്യുന്നു — NumPy, താഴെ കൊടുത്തിരിക്കുന്ന പോലത്തെ tasks ചെയ്യാനുള്ള ഒരു Python package ആണ്:
 
 * working with arrays (vectors and matrices)
 * common mathematical functions like `cos` and `sqrt`
@@ -355,7 +355,7 @@ In fact, Python-ൽ, *എല്ലാ* code blocks-ഉം (അതായത്, l
 
 ഒരിക്കൽ ഇത് ശീലമായാൽ, ഇത് ഒരു നല്ല കാര്യമാണ്.
 
-* clean-ഉം consistent-ഉം ആയ indentation വഴി readability improve ചെയ്യുന്നു
+* clean-ഉം, consistent-ഉം ആയ indentation വഴി readability improve ചെയ്യുന്നു
 * മറ്റ് languages-ൽ ഉപയോഗിക്കുന്ന brackets അല്ലെങ്കിൽ end statements പോലുള്ള clutter remove ചെയ്യുന്നു
 
 On the other hand, ഇത് correct ആയി ഉപയോഗിക്കാൻ ഒരല്പം care ആവശ്യമാണ്. അതിനാൽ താഴെപ്പറയുന്ന കാര്യങ്ങൾ ഓർത്തിരിക്കുക:
@@ -438,7 +438,7 @@ plt.show()
 
 ഈ numbers `for` loop വഴി fill ചെയ്യപ്പെടുന്നു.
 
-തുടക്കത്തിൽ തന്നെ memory allocate ചെയ്യുന്നത്, Python list-ഉം `append`-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ് — കാരണം, രണ്ടാമത്തെ രീതിയിൽ (list, append), ഓരോ തവണയും storage space നൽകണമെന്ന് operating system-നോട് ആവശ്യപ്പെടേണ്ടി വരും.
+തുടക്കത്തിൽ തന്നെ memory allocate ചെയ്യുന്നത്, Python list-ഉം, `append`-ഉം ഉപയോഗിക്കുന്നതിനേക്കാൾ efficient ആണ് — കാരണം, രണ്ടാമത്തെ രീതിയിൽ (list, append), ഓരോ തവണയും storage space നൽകണമെന്ന് operating system-നോട് ആവശ്യപ്പെടേണ്ടി വരും.
 
 Plot-ൽ നമ്മൾ ഒരു legend add ചെയ്തത് ശ്രദ്ധിക്കുക — exercises-ൽ നിങ്ങളോട് ഇത് ഉപയോഗിക്കാൻ ആവശ്യപ്പെടും.
 

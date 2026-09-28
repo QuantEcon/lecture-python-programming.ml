@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Matplotlib &#8212; Python Programming for Economics and Finance</title>
+    <title>4. Matplotlib &#8212; Python Programming for Economics and Finance</title>
     
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -118,7 +118,7 @@
     <link rel="icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="2. Functions" href="functions.html" />
+    <link rel="prev" title="3. NumPy" href="numpy.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent &amp; John Stachurski" />
@@ -208,26 +208,26 @@
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">3.1. Overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-s-split-personality">3.1.1. Matplotlib's Split Personality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">4.1. Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-s-split-personality">4.1.1. Matplotlib's Split Personality</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-apis">3.2. The APIs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-style-api">3.2.1. The MATLAB-style API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-object-oriented-api">3.2.2. The Object-Oriented API</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tweaks">3.2.3. Tweaks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-apis">4.2. The APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-style-api">4.2.1. The MATLAB-style API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-object-oriented-api">4.2.2. The Object-Oriented API</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tweaks">4.2.3. Tweaks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-features">3.3. More Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-on-one-axis">3.3.1. Multiple Plots on One Axis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots">3.3.2. Multiple Subplots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots">3.3.3. 3D Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-customizing-function">3.3.4. A Customizing Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#style-sheets">3.3.5. Style Sheets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-features">4.3. More Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-on-one-axis">4.3.1. Multiple Plots on One Axis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-subplots">4.3.2. Multiple Subplots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots">4.3.3. 3D Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-customizing-function">4.3.4. A Customizing Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#style-sheets">4.3.5. Style Sheets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">3.4. Further Reading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">3.5. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">4.4. Further Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.5. Exercises</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -298,11 +298,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/a8235ae" class="changelog-hash">a8235ae</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/7e373de" class="changelog-hash">7e373de</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
-                                <span class="changelog-time">1 minute ago</span>
-                                <span class="changelog-message">Apply the editor's ml#22 answers to the reviewed pages: plurals and -ഉം commas (#24)</span>
+                                <span class="changelog-time">2 minutes ago</span>
+                                <span class="changelog-message">Malayalam translation: numpy — calibration review round 4 (v0.29.2 engine) (#23)</span>
                             </li>
                             
                         </ul>
@@ -318,9 +318,9 @@
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">3. </span><span class="target" id="index-0"></span>Matplotlib<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span><span class="target" id="index-0"></span>Matplotlib<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="overview">
-<span id="index-1"></span><h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<span id="index-1"></span><h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>ഈ lectures-ൽ <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> ഉപയോഗിച്ച് നമ്മൾ already ധാരാളം figures generate ചെയ്തിട്ടുണ്ട്.</p>
 <p>Matplotlib എന്നത്, scientific computing-നായി design ചെയ്തിരിക്കുന്ന ഒരു മികച്ച graphics library ആണ്. ഇതിൽ ഉള്ളത്:</p>
 <ul class="simple">
@@ -331,7 +331,7 @@
 <li><p>animation, etc.</p></li>
 </ul>
 <section id="matplotlib-s-split-personality">
-<h3><span class="section-number">3.1.1. </span>Matplotlib's Split Personality<a class="headerlink" href="#matplotlib-s-split-personality" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Matplotlib's Split Personality<a class="headerlink" href="#matplotlib-s-split-personality" title="Link to this heading">#</a></h3>
 <p>Plotting-നായി രണ്ട് വ്യത്യസ്ത interfaces നൽകുന്നു എന്നതാണ് Matplotlib-ന്റെ ഒരു പ്രത്യേകത.</p>
 <p>അതിൽ ഒന്ന്, simple ആയ MATLAB-style API (Application Programming Interface) ആണ്. MATLAB ഉപയോഗിച്ചിരുന്നവർക്ക് എളുപ്പത്തിൽ ഉപയോഗിക്കാനാകുന്ന തരത്തിലാണ് ഇത് എഴുതിയിരിക്കുന്നത്.</p>
 <p>മറ്റൊന്ന്, കൂടുതൽ &quot;Pythonic&quot; ആയ object-oriented API ആണ്.</p>
@@ -340,9 +340,9 @@
 </section>
 </section>
 <section id="the-apis">
-<h2><span class="section-number">3.2. </span>The APIs<a class="headerlink" href="#the-apis" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>The APIs<a class="headerlink" href="#the-apis" title="Link to this heading">#</a></h2>
 <section id="the-matlab-style-api">
-<span id="index-2"></span><h3><span class="section-number">3.2.1. </span>The MATLAB-style API<a class="headerlink" href="#the-matlab-style-api" title="Link to this heading">#</a></h3>
+<span id="index-2"></span><h3><span class="section-number">4.2.1. </span>The MATLAB-style API<a class="headerlink" href="#the-matlab-style-api" title="Link to this heading">#</a></h3>
 <p>Introductory പാഠങ്ങളിൽ കാണാൻ സാധ്യതയുള്ള ഒരു എളുപ്പമായ example താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -367,7 +367,7 @@
 <p>ഇത് നമ്മളെ alternative ആയ, object-oriented Matplotlib API-യിലേക്ക് എത്തിക്കുന്നു.</p>
 </section>
 <section id="the-object-oriented-api">
-<h3><span class="section-number">3.2.2. </span>The Object-Oriented API<a class="headerlink" href="#the-object-oriented-api" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>The Object-Oriented API<a class="headerlink" href="#the-object-oriented-api" title="Link to this heading">#</a></h3>
 <p>Object-oriented API ഉപയോഗിച്ച് മുൻപത്തെ figure create ചെയ്യുന്ന code താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -391,7 +391,7 @@
 <p>നമ്മൾ മുന്നോട്ട് പോകുമ്പോൾ ഇത് കൂടുതൽ വ്യക്തമാകും.</p>
 </section>
 <section id="tweaks">
-<h3><span class="section-number">3.2.3. </span>Tweaks<a class="headerlink" href="#tweaks" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.3. </span>Tweaks<a class="headerlink" href="#tweaks" title="Link to this heading">#</a></h3>
 <p>ഇവിടെ line-ന്റെ നിറം red ആക്കി മാറ്റുകയും, അതോടൊപ്പം ഒരു legend ചേർക്കുകയും ചെയ്തിരിക്കുന്നു:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,11 +454,11 @@
 </section>
 </section>
 <section id="more-features">
-<h2><span class="section-number">3.3. </span>More Features<a class="headerlink" href="#more-features" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>More Features<a class="headerlink" href="#more-features" title="Link to this heading">#</a></h2>
 <p>Matplotlib-ൽ ധാരാളം functions-ഉം, features-ഉം ഉണ്ട്. ആവശ്യം വരുന്ന മുറയ്ക്ക്, കാലക്രമേണ അവയെക്കുറിച്ച് മനസ്സിലാക്കാം.</p>
 <p>അതിൽ ചിലത് മാത്രം ഇവിടെ പരാമർശിക്കുന്നു.</p>
 <section id="multiple-plots-on-one-axis">
-<h3><span class="section-number">3.3.1. </span>Multiple Plots on One Axis<a class="headerlink" href="#multiple-plots-on-one-axis" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.1. </span>Multiple Plots on One Axis<a class="headerlink" href="#multiple-plots-on-one-axis" title="Link to this heading">#</a></h3>
 <p id="index-3">ഒരേ axes-ൽ, ഒന്നിലധികം plots generate ചെയ്യുന്നത് വളരെ എളുപ്പമാണ്.</p>
 <p>Randomly മൂന്ന് normal densities generate ചെയ്ത്, അവയുടെ mean-നെ label ചെയ്യുന്ന ഒരു example താഴെ കാണാം:</p>
 <div class="cell docutils container">
@@ -479,12 +479,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b2cadc498a7f05fd47f96f1ed32fddf8bb5fc116ea6662370e522ed91a621a0c.png" src="_images/b2cadc498a7f05fd47f96f1ed32fddf8bb5fc116ea6662370e522ed91a621a0c.png" />
+<img alt="_images/e339bb3a77280819f95e7fe81c58a728881430dee6e4adb9fa1ef8a5531e4980.png" src="_images/e339bb3a77280819f95e7fe81c58a728881430dee6e4adb9fa1ef8a5531e4980.png" />
 </div>
 </div>
 </section>
 <section id="multiple-subplots">
-<h3><span class="section-number">3.3.2. </span>Multiple Subplots<a class="headerlink" href="#multiple-subplots" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.2. </span>Multiple Subplots<a class="headerlink" href="#multiple-subplots" title="Link to this heading">#</a></h3>
 <p id="index-4">ചിലപ്പോൾ ഒരു figure-ൽ ഒന്നിലധികം subplots ആവശ്യമായി വരും.</p>
 <p>6 histograms generate ചെയ്യുന്ന ഒരു example താഴെ കാണാം:</p>
 <div class="cell docutils container">
@@ -503,12 +503,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/94a832d6b0cfc0cb35b2d842ef6419a95ddf5409f651c40ae8d13bfbf9276142.png" src="_images/94a832d6b0cfc0cb35b2d842ef6419a95ddf5409f651c40ae8d13bfbf9276142.png" />
+<img alt="_images/c82b16e9ed2d685462c627acb78b65ea4f1ab294b347fa21fa97f29211a997a7.png" src="_images/c82b16e9ed2d685462c627acb78b65ea4f1ab294b347fa21fa97f29211a997a7.png" />
 </div>
 </div>
 </section>
 <section id="d-plots">
-<h3><span class="section-number">3.3.3. </span>3D Plots<a class="headerlink" href="#d-plots" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.3. </span>3D Plots<a class="headerlink" href="#d-plots" title="Link to this heading">#</a></h3>
 <p id="index-5">Matplotlib 3D plots വളരെ നന്നായി ചെയ്യുന്നു --- ഒരു example താഴെ കാണാം:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +543,7 @@
 </div>
 </section>
 <section id="a-customizing-function">
-<h3><span class="section-number">3.3.4. </span>A Customizing Function<a class="headerlink" href="#a-customizing-function" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.4. </span>A Customizing Function<a class="headerlink" href="#a-customizing-function" title="Link to this heading">#</a></h3>
 <p>ഒരുപക്ഷേ നിങ്ങൾ പതിവായി ഉപയോഗിക്കുന്ന ഒരു set of customizations ഉണ്ടായേക്കാം.</p>
 <p>For example, നമ്മുടെ axes, origin-ലൂടെ പോകണമെന്നും, അവയിൽ grid ഉണ്ടായിരിക്കണമെന്നും നമുക്ക് ഇഷ്ടമാണെന്ന് കരുതുക.</p>
 <p>ഈ മാറ്റങ്ങൾ implement ചെയ്യുന്ന ഒരു custom <code class="docutils literal notranslate"><span class="pre">subplots</span></code> function, object-oriented API ഉപയോഗിച്ച് എങ്ങനെ build ചെയ്യാം എന്നതിന് <a class="reference external" href="https://github.com/xcthulhu">Matthew Doty</a>-യുടെ ഒരു നല്ല example താഴെ കാണാം.</p>
@@ -585,7 +585,7 @@
 </ol>
 </section>
 <section id="style-sheets">
-<h3><span class="section-number">3.3.5. </span>Style Sheets<a class="headerlink" href="#style-sheets" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.3.5. </span>Style Sheets<a class="headerlink" href="#style-sheets" title="Link to this heading">#</a></h3>
 <p>Matplotlib-ലെ വളരെ useful ആയ മറ്റൊരു feature ആണ് <a class="reference external" href="https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html">style sheets</a>.</p>
 <p>Uniform styles ഉള്ള plots create ചെയ്യാൻ നമുക്ക് style sheets ഉപയോഗിക്കാം.</p>
 <p><code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code> എന്ന attribute print ചെയ്താൽ, available ആയിട്ടുള്ള styles-ന്റെ ഒരു list നമുക്ക് കാണാം:</p>
@@ -1151,7 +1151,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0a735a3d55505e4d0058aaf71da9e3cefc088b4041a5282f7b8d22bf410adee9.png" src="_images/0a735a3d55505e4d0058aaf71da9e3cefc088b4041a5282f7b8d22bf410adee9.png" />
+<img alt="_images/3cf8550b56e2d8f258c24442949392d342da539912480286e63a2fbf45bd7c04.png" src="_images/3cf8550b56e2d8f258c24442949392d342da539912480286e63a2fbf45bd7c04.png" />
 </div>
 </div>
 <p>നിങ്ങളുടെ style-നെ വീണ്ടും default ആക്കി മാറ്റാൻ, <code class="docutils literal notranslate"><span class="pre">default</span></code> style sheet ഒരിക്കൽ കൂടി apply ചെയ്യുക:</p>
@@ -1168,7 +1168,7 @@
 </section>
 </section>
 <section id="further-reading">
-<h2><span class="section-number">3.4. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">Matplotlib gallery</a> provides many examples.</p></li>
 <li><p>A nice <a class="reference external" href="https://scipy-lectures.org/intro/matplotlib/index.html">Matplotlib tutorial</a> by Nicolas Rougier, Mike Muller and Gael Varoquaux.</p></li>
@@ -1178,10 +1178,10 @@ switching between plot styles.</p></li>
 </ul>
 </section>
 <section id="exercises">
-<h2><span class="section-number">3.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="exercise admonition" id="mpl_ex1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
 <section id="exercise-content">
 <p>Plot the function</p>
 <div class="math notranslate nohighlight">
@@ -1299,9 +1299,14 @@ f(x) = \cos(\pi \theta x) \exp(-x)
  </span>
 </p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   3. NumPy
+  </a>
+ </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   3. Matplotlib
+   4. Matplotlib
   </a>
  </li>
 </ul>

@@ -48,14 +48,14 @@ jobs:
           jb build lectures --path-output ./ --keep-going
 
       - name: Upload Execution Reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: execution-reports
           path: _build/html/reports
 
       - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: html-site
           path: _build/html/

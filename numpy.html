@@ -290,7 +290,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Sep 28, 2026
+                            Last changed: Oct 05, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -304,11 +304,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/7e373de" class="changelog-hash">7e373de</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/21e37d1" class="changelog-hash">21e37d1</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
-                                <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Malayalam translation: numpy — calibration review round 4 (v0.29.2 engine) (#23)</span>
+                                <span class="changelog-time">1 minute ago</span>
+                                <span class="changelog-message">Apply the editor's ml#25 answer to numpy: ആകും → ആക്കും (3 places) (#29)</span>
                             </li>
                             
                         </ul>
@@ -1544,9 +1544,9 @@ Successfully installed quantecon-0.12.0
 <ul class="simple">
 <li><p><em>Step 1:</em> രണ്ട് arrays-ന്റെ dimensions match ചെയ്യാത്തപ്പോൾ, കുറവ് dimensions ഉള്ള array-യുടെ നിലവിലുള്ള dimensions-ന്റെ ഇടതുവശത്ത് പുതിയ dimensions ചേർത്ത് NumPy അതിനെ expand ചെയ്യും.</p>
 <ul>
-<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code> ആകും;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആകും;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> ആകും (ഈ process, <em>Step 1</em> രണ്ട് പ്രാവശ്യം നടക്കുന്നതായും കാണാം).</p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code> ആക്കും;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആക്കും;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> ആക്കും (ഈ process, <em>Step 1</em> രണ്ട് പ്രാവശ്യം നടക്കുന്നതായും കാണാം).</p></li>
 </ul>
 </li>
 <li><p><em>Step 2:</em> രണ്ട് arrays-ന് ഒരേ dimension ഉണ്ടെങ്കിലും, shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയിരിക്കുന്ന dimensions-നെ NumPy expand ചെയ്യാൻ ശ്രമിക്കും.</p>
@@ -1611,7 +1611,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00272384,  1.30453982, -1.0143944 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.72115234,  0.09730647,  0.69909943])
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1625,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  1.30453982, -1.0143944 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.09730647, 0.69909943])
 </pre></div>
 </div>
 </div>
@@ -1649,7 +1649,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.80814863,  1.6654274 ,  1.21818703])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.20358585, -0.62360578, -0.49605677])
 </pre></div>
 </div>
 </div>
@@ -1662,7 +1662,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.80814863,  1.6654274 ,  1.21818703])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.20358585, -0.62360578, -0.49605677])
 </pre></div>
 </div>
 </div>
@@ -1688,7 +1688,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.80814863,  1.6654274 ,  1.21818703])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.20358585, -0.62360578, -0.49605677])
 </pre></div>
 </div>
 </div>
@@ -1772,7 +1772,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.4552015 , -1.41398299,  2.16071729, -1.31044903])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.62843751, -2.02955915,  2.32217941, -1.47386595])
 </pre></div>
 </div>
 </div>
@@ -1784,7 +1784,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1798,7 +1798,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 0, 1, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 1, 0])
 </pre></div>
 </div>
 </div>
@@ -1928,7 +1928,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.976)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.999)
 </pre></div>
 </div>
 </div>
@@ -2261,7 +2261,7 @@ from QuantEcon and added in a plot method</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/edfe3781a282facee442819144022794f35482dff1402759fbad76ab9b7dc436.png" src="_images/edfe3781a282facee442819144022794f35482dff1402759fbad76ab9b7dc436.png" />
+<img alt="_images/f2876a67328d6e540adc3fa4ca36bb1e7374f164fb8e02552b68d16381a898d1.png" src="_images/f2876a67328d6e540adc3fa4ca36bb1e7374f164fb8e02552b68d16381a898d1.png" />
 </div>
 </div>
 </section>
@@ -2348,7 +2348,7 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0109 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0090 seconds elapsed
 </pre></div>
 </div>
 </div>
@@ -2531,7 +2531,7 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 3.7856 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 3.0808 seconds elapsed
 </pre></div>
 </div>
 </div>

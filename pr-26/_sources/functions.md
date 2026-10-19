@@ -156,7 +156,7 @@ def new_abs_function(x):
 
 ഈ function definition മുഴുവനും Python interpreter വായിച്ച്, അതിനെ memory-യിൽ store ചെയ്യുന്നു.
 
-ഈ function ശരിയായി work ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ, അതിനെ call ചെയ്ത നോക്കാം.
+ഈ function ശരിയായി work ചെയ്യുന്നുണ്ടോ എന്ന് check ചെയ്യാൻ, അതിനെ call ചെയ്ത് നോക്കാം.
 
 ```{code-cell} python3
 print(new_abs_function(3))
@@ -471,13 +471,16 @@ def x(t):
 :label: func_ex1
 ```
 
-ഓർക്കുക: $n!$-നെ "$n$ factorial" എന്നാണ് വായിക്കുന്നത്. $n! = n \times (n - 1) \times \cdots \times 2 \times 1$.
+Recall that $n!$ is read as "$n$ factorial" and defined as
+$n! = n \times (n - 1) \times \cdots \times 2 \times 1$.
 
-ഇവിടെ $n$-നെ ഒരു positive integer ആയി മാത്രമേ നമ്മൾ കണക്കിലെടുക്കൂ.
+We will only consider $n$ as a positive integer here.
 
-ഇത് compute ചെയ്യാൻ പല modules-ൽ functions ഉണ്ട്. എന്നാൽ ഒരു exercise എന്ന നിലയിൽ, നമുക്ക് സ്വന്തമായി അതിന്റെ ഒരു version എഴുതാം.
+There are functions to compute this in various modules, but let's
+write our own version as an exercise.
 
-In particular, `factorial` എന്ന് പേരുള്ള ഒരു function എഴുതുക, such that `factorial(n)` returns $n!$ for any positive integer $n$.
+In particular, write a function `factorial` such that `factorial(n)` returns $n!$
+for any positive integer $n$.
 
 ```{exercise-end}
 ```
@@ -508,9 +511,10 @@ factorial(4)
 :label: func_ex2
 ```
 
-[Binomial random variable](https://en.wikipedia.org/wiki/Binomial_distribution) $Y \sim Bin(n, p)$ എന്നത്, $n$ binary trials-ൽ ലഭിക്കുന്ന successes-ന്റെ എണ്ണത്തെ represent ചെയ്യുന്നു. Each trial succeeds with probability $p$.
+The [binomial random variable](https://en.wikipedia.org/wiki/Binomial_distribution) $Y \sim Bin(n, p)$ represents the number of successes in $n$ binary trials, where each trial succeeds with probability $p$.
 
-Using `rng = np.random.default_rng()`, write a function `binomial_rv` such that `binomial_rv(n, p)` generates one draw of $Y$.
+Using `rng = np.random.default_rng()`, write a function
+`binomial_rv` such that `binomial_rv(n, p)` generates one draw of $Y$.
 
 ```{hint}
 :class: dropdown
@@ -560,7 +564,7 @@ Second, write another function that does the same task except that the second ru
 
 - If a head occurs `k` or more times within this sequence, pay one dollar.
 
-Random numbers generate ചെയ്യാൻ `rng = np.random.default_rng()` ഉപയോഗിക്കുക.
+Use `rng = np.random.default_rng()` to generate random numbers.
 
 ```{exercise-end}
 ```
@@ -671,7 +675,7 @@ print([x(i) for i in range(10)])
 :label: func_ex5
 ```
 
-[Exercise 1](factorial_exercise)-ലെ `factorial()` function-നെ, recursion ഉപയോഗിച്ച് വീണ്ടും എഴുതുക.
+Rewrite the function `factorial()` in from [Exercise 1](factorial_exercise) using recursion.
 
 ```{exercise-end}
 ```

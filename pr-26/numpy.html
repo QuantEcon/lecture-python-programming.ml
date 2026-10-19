@@ -97,7 +97,6 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -290,7 +289,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Sep 28, 2026
+                            Last changed: Oct 19, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -304,11 +303,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/3cf1fc3" class="changelog-hash">3cf1fc3</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/7dd1496" class="changelog-hash">7dd1496</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Merge a4b45b300bde943c7940ea92cabb6e6383b9b811 into 7e373de957695cea53d3c40e8081c01515036197</span>
+                                <span class="changelog-message">Merge 5da1c5c6a843976d1ca5e2af42a322dd9a1a1f50 into 2ad67a3e48ee0f96d31e1c9aa5fc5309feeb5d25</span>
                             </li>
                             
                         </ul>
@@ -342,19 +341,14 @@
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting quantecon
-  Downloading quantecon-0.12.0-py3-none-any.whl.metadata (5.5 kB)
+  Downloading quantecon-0.13.1-py3-none-any.whl.metadata (5.3 kB)
 Requirement already satisfied: numba&gt;=0.56.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (0.65.1)
 Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (2.4.6)
-Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (2.34.2)
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (1.18.0)
 Requirement already satisfied: llvmlite&lt;0.48,&gt;=0.47.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from numba&gt;=0.56.0-&gt;quantecon) (0.47.0)
-Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (3.4.7)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (3.18)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (2.7.0)
-Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (2026.6.17)
-Downloading quantecon-0.12.0-py3-none-any.whl (351 kB)
+Downloading quantecon-0.13.1-py3-none-any.whl (357 kB)
 Installing collected packages: quantecon
-Successfully installed quantecon-0.12.0
+Successfully installed quantecon-0.13.1
 </pre></div>
 </div>
 </div>
@@ -1544,9 +1538,9 @@ Successfully installed quantecon-0.12.0
 <ul class="simple">
 <li><p><em>Step 1:</em> രണ്ട് arrays-ന്റെ dimensions match ചെയ്യാത്തപ്പോൾ, കുറവ് dimensions ഉള്ള array-യുടെ നിലവിലുള്ള dimensions-ന്റെ ഇടതുവശത്ത് പുതിയ dimensions ചേർത്ത് NumPy അതിനെ expand ചെയ്യും.</p>
 <ul>
-<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code> ആകും;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആകും;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> ആകും (ഈ process, <em>Step 1</em> രണ്ട് പ്രാവശ്യം നടക്കുന്നതായും കാണാം).</p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത് അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code> ആക്കും;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് ഒരു dimension ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആക്കും;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ഇടതുവശത്ത് രണ്ട് dimensions ചേർത്ത്, അതിനെ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> ആക്കും (ഈ process, <em>Step 1</em> രണ്ട് പ്രാവശ്യം നടക്കുന്നതായും കാണാം).</p></li>
 </ul>
 </li>
 <li><p><em>Step 2:</em> രണ്ട് arrays-ന് ഒരേ dimension ഉണ്ടെങ്കിലും, shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയിരിക്കുന്ന dimensions-നെ NumPy expand ചെയ്യാൻ ശ്രമിക്കും.</p>
@@ -1611,7 +1605,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.9206345 , -0.31715264, -2.26860143])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.14252374,  1.42903494, -0.25555966])
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1619,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.31715264, -2.26860143])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  1.42903494, -0.25555966])
 </pre></div>
 </div>
 </div>
@@ -1649,7 +1643,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.28507261,  0.61128068,  1.13725909])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.41426026, -0.16541654, -1.09028151])
 </pre></div>
 </div>
 </div>
@@ -1662,7 +1656,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.28507261,  0.61128068,  1.13725909])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.41426026, -0.16541654, -1.09028151])
 </pre></div>
 </div>
 </div>
@@ -1688,7 +1682,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.28507261,  0.61128068,  1.13725909])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.41426026, -0.16541654, -1.09028151])
 </pre></div>
 </div>
 </div>
@@ -1772,7 +1766,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.04397787, -0.87153115, -0.11043137, -0.64546508])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.54660247,  0.76554515, -0.54860656,  1.5627839 ])
 </pre></div>
 </div>
 </div>
@@ -1784,7 +1778,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -1798,7 +1792,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 1])
 </pre></div>
 </div>
 </div>
@@ -1928,7 +1922,7 @@ Successfully installed quantecon-0.12.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.014)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.896)
 </pre></div>
 </div>
 </div>
@@ -2261,7 +2255,7 @@ from QuantEcon and added in a plot method</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/43b20ba07a48c918fdf102bb06d2cf849b5dbf2a00a5466f19b266e25b1ecfb8.png" src="_images/43b20ba07a48c918fdf102bb06d2cf849b5dbf2a00a5466f19b266e25b1ecfb8.png" />
+<img alt="_images/797da6697cc2c25071ef62855cc6776c064fe528b71aa9d4d7bc1466a883c1ba.png" src="_images/797da6697cc2c25071ef62855cc6776c064fe528b71aa9d4d7bc1466a883c1ba.png" />
 </div>
 </div>
 </section>
@@ -2320,16 +2314,11 @@ from QuantEcon and added in a plot method</p>
 <p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (0.12.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (0.13.1)
 Requirement already satisfied: numba&gt;=0.56.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (0.65.1)
 Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (2.4.6)
-Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (2.34.2)
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from quantecon) (1.18.0)
 Requirement already satisfied: llvmlite&lt;0.48,&gt;=0.47.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from numba&gt;=0.56.0-&gt;quantecon) (0.47.0)
-Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (3.4.7)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (3.18)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (2.7.0)
-Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;quantecon) (2026.6.17)
 </pre></div>
 </div>
 </div>
@@ -2348,7 +2337,7 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0210 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0110 seconds elapsed
 </pre></div>
 </div>
 </div>
@@ -2531,7 +2520,7 @@ Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 2.6929 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 3.7032 seconds elapsed
 </pre></div>
 </div>
 </div>

@@ -51,7 +51,7 @@ Anaconda-യിൽ ഉള്ളവ കൂടാതെ, ഈ lecture-ന് താ
 
 ## Overview
 
-Python-ൽ വേഗത്തിലും, efficient-ആയും data analysis നടത്താൻ സഹായിക്കുന്ന tools-ന്റെ ഒരു package ആണ് [Pandas](https://pandas.pydata.org/) .
+Python-ൽ വേഗത്തിലും, efficient-ആയും data analysis നടത്താൻ സഹായിക്കുന്ന tools-ന്റെ ഒരു package ആണ് [Pandas](https://pandas.pydata.org/).
 
 Data science, machine learning തുടങ്ങിയ മേഖലകളുടെ വളർച്ചയ്‌ക്കൊപ്പം, pandas package-ന്റെ popularity ഈ അടുത്ത വർഷങ്ങളിൽ വളരെയധികം ഉയർന്നിട്ടുണ്ട്.
 
@@ -158,7 +158,7 @@ s
 
 In essence, pandas-ലെ ഒരു `DataFrame`, ഒരു (highly optimized) Excel spreadsheet-ന് സമാനമാണ്.
 
-അതിനാൽ, rows-ലും columns-ലുമായി organize ചെയ്തിരിക്കുന്ന data-യെ represent ചെയ്യാനും analyze ചെയ്യാനും  ഇത് ഒരു powerful tool ആണ്. Individual rows-ഇനും, individual columns-ഇനും പലപ്പോഴും descriptive indexes ഉണ്ടായിരിക്കും.
+അതിനാൽ, rows-ലും columns-ലുമായി organize ചെയ്തിരിക്കുന്ന data-യെ represent ചെയ്യാനും analyze ചെയ്യാനും ഇത് ഒരു powerful tool ആണ്. Individual rows-ഇനും, individual columns-ഇനും പലപ്പോഴും descriptive indexes ഉണ്ടായിരിക്കും.
 
 `test_pwt.csv` എന്ന CSV file-ൽ നിന്നും data read ചെയ്യുന്ന ഒരു example നമുക്ക് നോക്കാം. ഈ file [Penn World Tables](https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt-7.0)-ൽ നിന്നാണ് എടുത്തിരിക്കുന്നത്.
 
@@ -337,7 +337,7 @@ complexCondition = df.apply(
     axis=1), ['country', 'year', 'POP', 'XRAT', 'tcgdp']
 ```
 
-`df.apply()`, if-else statement-ൽ പറഞ്ഞിരിക്കുന്ന condition satisy ചെയ്യുന്ന rows-ന്റെ boolean values-ന്റെ ഒരു series ഇവിടെ return ചെയ്യുന്നു.
+`df.apply()`, if-else statement-ൽ പറഞ്ഞിരിക്കുന്ന condition satisfy ചെയ്യുന്ന rows-ന്റെ boolean values-ന്റെ ഒരു series ഇവിടെ return ചെയ്യുന്നു.
 
 ഇത് കൂടാതെ, നമുക്ക് താൽപ്പര്യമുള്ള variables-ന്റെ ഒരു subset-ഉം ഇത് define ചെയ്യുന്നു.
 

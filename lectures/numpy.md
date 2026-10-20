@@ -837,7 +837,7 @@ Higher dimensions-ലേക്ക് കടക്കുമ്പോൾ കാര
 
 
 * *Step 2:* രണ്ട് arrays-ന് ഒരേ dimension ഉണ്ടെങ്കിലും, shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയിരിക്കുന്ന dimensions-നെ NumPy expand ചെയ്യാൻ ശ്രമിക്കും.
-    - For example, `a -> (1, 3)`, `b -> (3, 1)` ആണെങ്കിൽ, broadcasting `a`-യിലും `b`-യിലും shape 1 ആയിരിക്കുന്ന dimensions expand ചെയ്യും. അതിനാൽ `a -> (3, 3)`, `b -> (3, 3)` ആകും;
+    - For example, `a -> (1, 3)`, `b -> (3, 1)` ആണെങ്കിൽ, broadcasting `a`-യിലും, `b`-യിലും shape 1 ആയിരിക്കുന്ന dimensions expand ചെയ്യും. അതിനാൽ `a -> (3, 3)`, `b -> (3, 3)` ആകും;
     - `a -> (2, 2, 2)`, `b -> (1, 2, 2)` ആണെങ്കിൽ, broadcasting `b`-യുടെ ആദ്യത്തെ dimension expand ചെയ്യും. അതിനാൽ `b -> (2, 2, 2)` ആകും;
     - `a -> (3, 2, 2)`, `b -> (1, 1, 2)` ആണെങ്കിൽ, broadcasting, `b`-യിലെ shape 1 ആയിരിക്കുന്ന എല്ലാ dimensions-ഉം expand ചെയ്യും. അതിനാൽ `b -> (3, 2, 2)` ആകും.
 
@@ -899,7 +899,7 @@ a
 
 ഇതിനർത്ഥം, copies ഉണ്ടാക്കുന്നതിന് പകരം, data-യിലേക്കുള്ള pointers മാത്രമാണ് നമ്മൾ pass ചെയ്യുന്നത് എന്നാണ്.
 
-Copies ഉണ്ടാക്കുന്നത് speed-ന്റെയും memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.
+Copies ഉണ്ടാക്കുന്നത് speed-ന്റെയും, memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.
 
 ### Making Copies
 

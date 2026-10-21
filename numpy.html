@@ -289,7 +289,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Oct 19, 2026
+                            Last changed: Oct 21, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -303,11 +303,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/5378fd3" class="changelog-hash">5378fd3</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/96c1825" class="changelog-hash">96c1825</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Malayalam translation: pandas — calibration review round 5 (v0.29.3 engine) (#26)</span>
+                                <span class="changelog-message">Apply the editor's ml#57 answer to numpy: commas on case-marked -ഉം pairs (#59)</span>
                             </li>
                             
                         </ul>
@@ -1545,7 +1545,7 @@ Successfully installed quantecon-0.13.1
 </li>
 <li><p><em>Step 2:</em> രണ്ട് arrays-ന് ഒരേ dimension ഉണ്ടെങ്കിലും, shapes വ്യത്യസ്തമാണെങ്കിൽ, shape index 1 ആയിരിക്കുന്ന dimensions-നെ NumPy expand ചെയ്യാൻ ശ്രമിക്കും.</p>
 <ul>
-<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">1)</span></code> ആണെങ്കിൽ, broadcasting <code class="docutils literal notranslate"><span class="pre">a</span></code>-യിലും <code class="docutils literal notranslate"><span class="pre">b</span></code>-യിലും shape 1 ആയിരിക്കുന്ന dimensions expand ചെയ്യും. അതിനാൽ <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code> ആകും;</p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">1)</span></code> ആണെങ്കിൽ, broadcasting <code class="docutils literal notranslate"><span class="pre">a</span></code>-യിലും, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യിലും shape 1 ആയിരിക്കുന്ന dimensions expand ചെയ്യും. അതിനാൽ <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">3)</span></code> ആകും;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting <code class="docutils literal notranslate"><span class="pre">b</span></code>-യുടെ ആദ്യത്തെ dimension expand ചെയ്യും. അതിനാൽ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആകും;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">2)</span></code> ആണെങ്കിൽ, broadcasting, <code class="docutils literal notranslate"><span class="pre">b</span></code>-യിലെ shape 1 ആയിരിക്കുന്ന എല്ലാ dimensions-ഉം expand ചെയ്യും. അതിനാൽ <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-&gt;</span> <span class="pre">(3,</span> <span class="pre">2,</span> <span class="pre">2)</span></code> ആകും.</p></li>
 </ul>
@@ -1605,7 +1605,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.61720823, -0.09726918,  0.54988498])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.79768951,  0.76448852, -0.04333318])
 </pre></div>
 </div>
 </div>
@@ -1619,7 +1619,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , -0.09726918,  0.54988498])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.76448852, -0.04333318])
 </pre></div>
 </div>
 </div>
@@ -1629,7 +1629,7 @@ Successfully installed quantecon-0.13.1
 <p>അതിനാൽ, ആ array-യിൽ changes നടത്താൻ അതിന് equal rights ഉണ്ട്.</p>
 <p>വാസ്തവത്തിൽ ഇതാണ് ഏറ്റവും sensible ആയ default behavior!</p>
 <p>ഇതിനർത്ഥം, copies ഉണ്ടാക്കുന്നതിന് പകരം, data-യിലേക്കുള്ള pointers മാത്രമാണ് നമ്മൾ pass ചെയ്യുന്നത് എന്നാണ്.</p>
-<p>Copies ഉണ്ടാക്കുന്നത് speed-ന്റെയും memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.</p>
+<p>Copies ഉണ്ടാക്കുന്നത് speed-ന്റെയും, memory-യുടെയും കാര്യത്തിൽ expensive ആണ്.</p>
 </section>
 <section id="making-copies">
 <h3><span class="section-number">3.6.2. </span>Making Copies<a class="headerlink" href="#making-copies" title="Link to this heading">#</a></h3>
@@ -1643,7 +1643,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.26344166, -0.16962034,  0.80842402])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.49096085,  1.12998394,  1.32339506])
 </pre></div>
 </div>
 </div>
@@ -1656,7 +1656,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.26344166, -0.16962034,  0.80842402])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.49096085,  1.12998394,  1.32339506])
 </pre></div>
 </div>
 </div>
@@ -1682,7 +1682,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.26344166, -0.16962034,  0.80842402])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.49096085,  1.12998394,  1.32339506])
 </pre></div>
 </div>
 </div>
@@ -1766,7 +1766,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.22755333,  0.70713642,  0.77268366,  0.35224746])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.67147751, -0.90906988, -0.72896704, -0.56371509])
 </pre></div>
 </div>
 </div>
@@ -1778,7 +1778,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
 </pre></div>
 </div>
 </div>
@@ -1792,7 +1792,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0])
 </pre></div>
 </div>
 </div>
@@ -1922,7 +1922,7 @@ Successfully installed quantecon-0.13.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.004)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.051)
 </pre></div>
 </div>
 </div>
@@ -2255,7 +2255,7 @@ from QuantEcon and added in a plot method</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e584fc8663332ae7e3878e06222cfe628604eecfe354bc767dde8eb900fb4bb1.png" src="_images/e584fc8663332ae7e3878e06222cfe628604eecfe354bc767dde8eb900fb4bb1.png" />
+<img alt="_images/105e5e2926e6168347f682f2c52565ef3f06f15ebddeb8ce75c4727074c12194.png" src="_images/105e5e2926e6168347f682f2c52565ef3f06f15ebddeb8ce75c4727074c12194.png" />
 </div>
 </div>
 </section>
@@ -2337,7 +2337,7 @@ Requirement already satisfied: llvmlite&lt;0.48,&gt;=0.47.0dev0 in /home/runner/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0121 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broadcasting operation: 0.0091 seconds elapsed
 </pre></div>
 </div>
 </div>
@@ -2520,7 +2520,7 @@ Requirement already satisfied: llvmlite&lt;0.48,&gt;=0.47.0dev0 in /home/runner/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 3.8829 seconds elapsed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop operation: 2.9545 seconds elapsed
 </pre></div>
 </div>
 </div>

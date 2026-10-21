@@ -277,7 +277,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Oct 19, 2026
+                            Last changed: Oct 21, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -291,11 +291,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/5378fd3" class="changelog-hash">5378fd3</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/96c1825" class="changelog-hash">96c1825</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Malayalam translation: pandas — calibration review round 5 (v0.29.3 engine) (#26)</span>
+                                <span class="changelog-message">Apply the editor's ml#57 answer to numpy: commas on case-marked -ഉം pairs (#59)</span>
                             </li>
                             
                         </ul>
@@ -370,16 +370,16 @@ Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /home/runner/miniconda3
 Downloading yfinance-1.7.0-py3-none-any.whl (149 kB)
 Downloading curl_cffi-0.16.3-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (13.5 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/13.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.5/13.5 MB</span> <span class=" -Color -Color-Red">254.5 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.5/13.5 MB</span> <span class=" -Color -Color-Red">97.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.2/5.2 MB</span> <span class=" -Color -Color-Red">298.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.2/5.2 MB</span> <span class=" -Color -Color-Red">139.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
 ?25hDownloading multitasking-0.0.13-py3-none-any.whl (16 kB)
 Downloading peewee-4.5.3-py3-none-any.whl (194 kB)
 Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
 Installing collected packages: pytz, multitasking, peewee, lxml, curl_cffi, yfinance
 ?25l
    ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [peewee]
-   ━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3/6</span> [lxml]
    ━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/6</span> [curl_cffi]
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6/6</span> [yfinance]
 
@@ -441,10 +441,10 @@ Successfully installed curl_cffi-0.16.3 lxml-6.1.3 multitasking-0.0.13 peewee-4.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.036637
-1   -0.295389
-2    0.269236
-3   -1.133119
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.907441
+1   -1.515509
+2   -2.468865
+3   -0.227930
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -459,10 +459,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      3.663719
-1    -29.538935
-2     26.923586
-3   -113.311919
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     90.744054
+1   -151.550887
+2   -246.886508
+3    -22.793022
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -475,10 +475,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.036637
-1    0.295389
-2    0.269236
-3    1.133119
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.907441
+1    1.515509
+2    2.468865
+3    0.227930
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -494,13 +494,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.280659
-std      0.613723
-min     -1.133119
-25%     -0.504822
-50%     -0.129376
-75%      0.094787
-max      0.269236
+mean    -0.826216
+std      1.476136
+min     -2.468865
+25%     -1.753848
+50%     -0.871720
+75%      0.055912
+max      0.907441
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -515,10 +515,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.036637
-AAPL   -0.295389
-MSFT    0.269236
-GOOG   -1.133119
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.907441
+AAPL   -1.515509
+MSFT   -2.468865
+GOOG   -0.227930
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -533,7 +533,7 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.03663719181654747)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9074405409518537)
 </pre></div>
 </div>
 </div>
@@ -547,9 +547,9 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -0.295389
-MSFT    0.269236
-GOOG   -1.133119
+AAPL   -1.515509
+MSFT   -2.468865
+GOOG   -0.227930
 Name: daily returns, dtype: float64
 </pre></div>
 </div>

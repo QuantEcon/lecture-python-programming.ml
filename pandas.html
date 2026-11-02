@@ -277,7 +277,7 @@
                     <!-- Last modified / Changelog dropdown -->
                     <div class="qe-page__header-meta">
                         <button class="qe-page__header-changed" id="changelog-toggle" aria-expanded="false">
-                            Last changed: Oct 21, 2026
+                            Last changed: Nov 02, 2026
                             <span class="changelog-icon">▼</span>
                         </button>
                         <!-- Translators section -->
@@ -291,11 +291,11 @@
                             
                             <li class="changelog-entry">
                                 
-                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/96c1825" class="changelog-hash">96c1825</a>
+                                <a href="https://github.com/QuantEcon/lecture-python-programming.ml/commit/807da9a" class="changelog-hash">807da9a</a>
                                 
                                 <span class="changelog-author">Matt McKay</span>
                                 <span class="changelog-time">2 minutes ago</span>
-                                <span class="changelog-message">Apply the editor's ml#57 answer to numpy: commas on case-marked -ഉം pairs (#59)</span>
+                                <span class="changelog-message">[numpy] Remove the duplicated {index} directive under Matrix Multiplication (#60)</span>
                             </li>
                             
                         </ul>
@@ -334,7 +334,7 @@ Requirement already satisfied: tabulate in /home/runner/miniconda3/envs/quanteco
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;wbgapi) (3.4.7)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;wbgapi) (3.18)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;wbgapi) (2.7.0)
-Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;wbgapi) (2026.6.17)
+Requirement already satisfied: certifi&gt;=2023.5.7 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests-&gt;wbgapi) (2026.10.23)
 Downloading wbgapi-1.0.14-py3-none-any.whl (36 kB)
 Installing collected packages: wbgapi
 Successfully installed wbgapi-1.0.14
@@ -342,7 +342,7 @@ Collecting yfinance
   Downloading yfinance-1.7.0-py3-none-any.whl.metadata (6.7 kB)
 Requirement already satisfied: beautifulsoup4&gt;=4.11.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from yfinance) (4.15.0)
 Collecting curl_cffi&gt;=0.15 (from yfinance)
-  Downloading curl_cffi-0.16.3-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (17 kB)
+  Downloading curl_cffi-0.17.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (18 kB)
 Collecting lxml&gt;=4.9.0 (from yfinance)
   Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
 Collecting multitasking&gt;=0.0.7 (from yfinance)
@@ -354,36 +354,45 @@ Collecting peewee&gt;=3.16.2 (from yfinance)
 Requirement already satisfied: platformdirs&gt;=2.0.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from yfinance) (4.9.4)
 Requirement already satisfied: protobuf&gt;=3.19.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from yfinance) (6.33.5)
 Collecting pytz&gt;=2022.5 (from yfinance)
-  Downloading pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+  Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
 Requirement already satisfied: requests&gt;=2.31 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from yfinance) (2.34.2)
 Requirement already satisfied: websockets&gt;=13.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from yfinance) (16.0)
 Requirement already satisfied: soupsieve&gt;=1.6.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from beautifulsoup4&gt;=4.11.1-&gt;yfinance) (2.8.4)
 Requirement already satisfied: typing-extensions&gt;=4.0.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from beautifulsoup4&gt;=4.11.1-&gt;yfinance) (4.16.0)
-Requirement already satisfied: cffi&gt;=2.0.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from curl_cffi&gt;=0.15-&gt;yfinance) (2.1.0)
-Requirement already satisfied: certifi&gt;=2024.2.2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from curl_cffi&gt;=0.15-&gt;yfinance) (2026.6.17)
-Requirement already satisfied: pycparser in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from cffi&gt;=2.0.0-&gt;curl_cffi&gt;=0.15-&gt;yfinance) (3.0)
+Collecting cffi&gt;=2.1.1 (from curl_cffi&gt;=0.15-&gt;yfinance)
+  Downloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Requirement already satisfied: certifi&gt;=2026.10.19 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from curl_cffi&gt;=0.15-&gt;yfinance) (2026.10.23)
+Requirement already satisfied: pycparser in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from cffi&gt;=2.1.1-&gt;curl_cffi&gt;=0.15-&gt;yfinance) (3.0)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from pandas&gt;=1.3.0-&gt;yfinance) (2.9.0.post0)
 Requirement already satisfied: six&gt;=1.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.3.0-&gt;yfinance) (1.17.0)
 Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests&gt;=2.31-&gt;yfinance) (3.4.7)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests&gt;=2.31-&gt;yfinance) (3.18)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.26 in /home/runner/miniconda3/envs/quantecon/lib/python3.13/site-packages (from requests&gt;=2.31-&gt;yfinance) (2.7.0)
 Downloading yfinance-1.7.0-py3-none-any.whl (149 kB)
-Downloading curl_cffi-0.16.3-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (13.5 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/13.5 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.5/13.5 MB</span> <span class=" -Color -Color-Red">97.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/5.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.2/5.2 MB</span> <span class=" -Color -Color-Red">139.1 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
-?25hDownloading multitasking-0.0.13-py3-none-any.whl (16 kB)
+Downloading curl_cffi-0.17.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (14.1 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/14.1 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">14.1/14.1 MB</span> <span class=" -Color -Color-Red">133.6 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25hDownloading cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">5.2/5.2 MB</span> <span class=" -Color -Color-Red">219.4 MB/s</span>  <span class=" -Color -Color-Yellow">0:00:00</span>
+?25h
+Downloading multitasking-0.0.13-py3-none-any.whl (16 kB)
 Downloading peewee-4.5.3-py3-none-any.whl (194 kB)
-Downloading pytz-2026.5-py2.py3-none-any.whl (506 kB)
-Installing collected packages: pytz, multitasking, peewee, lxml, curl_cffi, yfinance
+Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+Installing collected packages: pytz, multitasking, peewee, lxml, cffi, curl_cffi, yfinance
 ?25l
-   ━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/6</span> [peewee]
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/6</span> [curl_cffi]
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6/6</span> [yfinance]
+   ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2/7</span> [peewee]
+  Attempting uninstall: cffi
+    Found existing installation: cffi 2.1.0
+    Uninstalling cffi-2.1.0:
+   ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3/7</span> [lxml]
+   ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/7</span> [cffi]
+      Successfully uninstalled cffi-2.1.0
+   ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">4/7</span> [cffi]
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ <span class=" -Color -Color-Green">5/7</span> [curl_cffi]
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">7/7</span> [yfinance]
 
-Successfully installed curl_cffi-0.16.3 lxml-6.1.3 multitasking-0.0.13 peewee-4.5.3 pytz-2026.5 yfinance-1.7.0
+Successfully installed cffi-2.1.1 curl_cffi-0.17.0 lxml-6.1.3 multitasking-0.0.13 peewee-4.5.3 pytz-2026.6 yfinance-1.7.0
 </pre></div>
 </div>
 </div>
@@ -441,10 +450,10 @@ Successfully installed curl_cffi-0.16.3 lxml-6.1.3 multitasking-0.0.13 peewee-4.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.907441
-1   -1.515509
-2   -2.468865
-3   -0.227930
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.254208
+1   -0.522330
+2    2.349102
+3    0.389100
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -459,10 +468,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     90.744054
-1   -151.550887
-2   -246.886508
-3    -22.793022
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    -25.420833
+1    -52.232996
+2    234.910219
+3     38.909995
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -475,10 +484,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.907441
-1    1.515509
-2    2.468865
-3    0.227930
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.254208
+1    0.522330
+2    2.349102
+3    0.389100
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -494,13 +503,13 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    4.000000
-mean    -0.826216
-std      1.476136
-min     -2.468865
-25%     -1.753848
-50%     -0.871720
-75%      0.055912
-max      0.907441
+mean     0.490416
+std      1.296804
+min     -0.522330
+25%     -0.321239
+50%      0.067446
+75%      0.879101
+max      2.349102
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -515,10 +524,10 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.907441
-AAPL   -1.515509
-MSFT   -2.468865
-GOOG   -0.227930
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN   -0.254208
+AAPL   -0.522330
+MSFT    2.349102
+GOOG    0.389100
 Name: daily returns, dtype: float64
 </pre></div>
 </div>
@@ -533,7 +542,7 @@ Name: daily returns, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9074405409518537)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.2542083345500741)
 </pre></div>
 </div>
 </div>
@@ -547,9 +556,9 @@ Name: daily returns, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AMZN    0.000000
-AAPL   -1.515509
-MSFT   -2.468865
-GOOG   -0.227930
+AAPL   -0.522330
+MSFT    2.349102
+GOOG    0.389100
 Name: daily returns, dtype: float64
 </pre></div>
 </div>

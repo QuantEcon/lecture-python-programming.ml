@@ -450,9 +450,6 @@ In particular, `A * B` എന്നത് matrix product *അല്ല*, ഇത�
 ```{index} single: NumPy; Matrix Multiplication
 ```
 
-```{index} single: NumPy; Matrix Multiplication
-```
-
 Matrix multiplication-ന് നമ്മൾ `@` symbol ഉപയോഗിക്കുന്നു, താഴെ കാണിച്ചിരിക്കുന്ന പോലെ:
 
 ```{code-cell} python3

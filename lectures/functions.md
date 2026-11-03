@@ -423,7 +423,7 @@ m(7, 2, 4)
 
 Basically, സ്വയം call ചെയ്യുന്ന ഒരു function-നെ recursive function എന്ന് വിളിക്കുന്നു.
 
-ഉദാഹരണത്തിന്, താഴെ കൊടുത്തിരിക്കുന്ന relation ഉപയോഗിച്ച്, ഏതെങ്കിലും t-ന്, $x_t$ compute ചെയ്യുന്ന problem consider ചെയ്യുക:
+ഉദാഹരണത്തിന്, താഴെ കൊടുത്തിരിക്കുന്ന relation ഉപയോഗിച്ച്, ഏതെങ്കിലും $t$-ന്, $x_t$ compute ചെയ്യുന്ന problem consider ചെയ്യുക:
 
 ```{math}
 :label: xseqdoub

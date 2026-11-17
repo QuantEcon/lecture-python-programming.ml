@@ -7,15 +7,15 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+translation:
+  title: Python Programming for Economics and Finance
 ---
 
 # Python Programming for Economics and Finance
 
-These lectures are the first in [the set of lecture series](https://quantecon.org/lectures/) provided by QuantEcon.
+QuantEcon നൽകുന്ന [lecture series ശേഖരത്തിലെ](https://quantecon.org/lectures/) ആദ്യത്തേതാണ് ഇവിടെ കാണുന്ന lectures.
 
-They focus on learning to program in Python, with a view to applications in
-economics and finance.
+Economics-ലും, finance-ലും ഉള്ള applications-നെ ലക്ഷ്യം വെച്ചുകൊണ്ട്, Python-ൽ programming ചെയ്യാൻ പഠിക്കുക എന്നതിലാണ് ഈ lecture focus ചെയ്യുന്നത്.
 
 ```{tableofcontents}
 ```
-

@@ -13,9 +13,9 @@ translation:
 
 # Python Programming for Economics and Finance
 
-QuantEcon നൽകുന്ന [lecture series-കളുടെ ശേഖരത്തിലെ](https://quantecon.org/lectures/) ആദ്യത്തേതാണ് ഈ lectures.
+QuantEcon നൽകുന്ന [lecture series ശേഖരത്തിലെ](https://quantecon.org/lectures/) ആദ്യത്തേതാണ് ഇവിടെ കാണുന്ന lectures.
 
-economics-ലും finance-ലും ഉള്ള applications ലക്ഷ്യം വെച്ചുകൊണ്ട്, Python-ൽ programming ചെയ്യാൻ പഠിക്കുന്നതിലാണ് ഇവ ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നത്.
+Economics-ലും, finance-ലും ഉള്ള applications-നെ ലക്ഷ്യം വെച്ചുകൊണ്ട്, Python-ൽ programming ചെയ്യാൻ പഠിക്കുക എന്നതിലാണ് ഈ lecture focus ചെയ്യുന്നത്.
 
 ```{tableofcontents}
 ```
